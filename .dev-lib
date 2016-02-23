@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-DEV_LIB_SKIP=codeception
+DEV_LIB_SKIP=codeception,jscs,yuicompressor
 CHECK_SCOPE=all
