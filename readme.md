@@ -5,10 +5,12 @@
 Display contact information on your website beautifully with these simple widgets.
 
 **Contributors:** [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [fjarrett](https://profiles.wordpress.org/fjarrett)  
-**Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing)  
+**Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
 **Requires at least:** 4.4.2  
 **Tested up to:** 4.4.2  
 **Stable tag:** trunk (master)  
+
+[![Build Status](https://travis-ci.org/jonathanbardo/WP-Contact-Widgets.svg?branch=master)](https://travis-ci.org/jonathanbardo/WP-Contact-Widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
 
 ## Description ##
 
