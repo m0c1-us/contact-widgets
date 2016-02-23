@@ -8,9 +8,9 @@ function run_wp_codeception {
 		download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /tmp/wp-cli.phar
 	fi
 
-	cd "$INSTALL_PATH"
+	INSTALL_PATH="$WP_CORE_DIR/src/wp-content/plugins/$PROJECT_SLUG"
 
-	php /tmp/wp-cli.phar codeception run --debug
+	php /tmp/wp-cli.phar codeception run --debug --path="$INSTALL_PATH"
 
 }
 
