@@ -12,9 +12,8 @@ php:
 
 env:
     - WP_VERSION=latest WP_MULTISITE=0
-    - WP_VERSION=latest WP_MULTISITE=1
     - WP_VERSION=trunk WP_MULTISITE=0
-    - WP_VERSION=trunk WP_MULTISITE=1
+    - DEV_LIB_SKIP=codeception
 
 install:
     - export DEV_LIB_PATH=dev-lib
@@ -24,6 +23,7 @@ install:
 
 script:
     - source $DEV_LIB_PATH/travis.script.sh
+    - source bin/travis.script.sh
 
 after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
