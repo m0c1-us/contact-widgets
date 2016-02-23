@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-DEV_LIB_SKIP=codeception,jscs,yuicompressor
+DEV_LIB_SKIP=codeception,jscs,yuicompressor,phpunit
 CHECK_SCOPE=all
