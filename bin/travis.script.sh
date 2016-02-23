@@ -2,7 +2,7 @@
 
 set -e
 
-function run_codeception {
+function run_wp_codeception {
 
 	if [ ! -f "/tmp/wp-cli.phar" ];  then
 		download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /tmp/wp-cli.phar
