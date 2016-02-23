@@ -1,0 +1,20 @@
+{
+  "require": {
+      "10up/wp-codeception": "^1.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$name}/": ["type:wordpress-plugin"]
+    }
+  },
+  "autoload": {
+    "files": [
+      "vendor/wp-codeception/wp-codeception.php"
+    ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "bin/install-wp-codeception.sh"
+    ]
+  }
+}
