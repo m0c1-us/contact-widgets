@@ -13,6 +13,8 @@ Display contact information on your website beautifully with these simple widget
 
 **Note: This plugin requires PHP 5.4 or higher to be activated.**
 
+This plugin adds 2 new widgets at your disposal. One for displaying social media links and another one to display contact information (email, phone numbers, address );
+
 **Languages Supported:**
 
  * English
