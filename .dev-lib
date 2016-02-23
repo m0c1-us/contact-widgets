@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 DEV_LIB_SKIP=codeception
+CHECK_SCOPE=all

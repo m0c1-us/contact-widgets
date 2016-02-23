@@ -8,6 +8,8 @@ function run_wp_codeception {
 		download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /tmp/wp-cli.phar
 	fi
 
+	cd "$INSTALL_PATH"
+
 	php /tmp/wp-cli.phar codeception run --debug
 
 }
