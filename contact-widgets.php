@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contact Widgets
  * Description: Display contact information on your website beautifully with these simple widgets.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Jonathan Bardo & Frankie Jarrett
  * Text Domain: contact-widgets
  * Domain Path: /languages

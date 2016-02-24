@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 				options: {
 					plugin_slug: SLUG,
 					build_dir: BUILD_DIR,
-					assets_dir: 'wp-assets'
+					assets_dir: 'wp-org-assets'
 				},
 			}
 		}
