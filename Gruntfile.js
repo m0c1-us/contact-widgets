@@ -1,9 +1,13 @@
 module.exports = function(grunt) {
 
+	var BUILD_DIR = 'build',
+			SOURCE_DIR = '.';
+
 	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
 	grunt.initConfig({
+
 		pkg: grunt.file.readJSON('package.json'),
 
 		cssmin: {
@@ -53,11 +57,41 @@ module.exports = function(grunt) {
 				},
 				tasks: ['uglify']
 			}
+		},
+
+		clean: [ BUILD_DIR ],
+
+		copy: {
+			files: {
+				cwd: SOURCE_DIR,
+				expand: true,
+				src: [
+					'contact-widgets.php',
+					'readme.txt',
+					'languages/**',
+					'includes/**',
+					'assets/**',
+					'!assets/*.png'
+				],
+				dest: BUILD_DIR
+			}
+		},
+
+		wp_deploy: {
+			deploy: {
+				options: {
+					plugin_slug: 'contact-widgets',
+					build_dir: BUILD_DIR,
+					assets_dir: 'wp-assets'
+				},
+			}
 		}
 
 	});
 
 	// Default task(s).
 	grunt.registerTask('default', ['cssmin', 'uglify']);
+	grunt.registerTask('build', ['clean', 'copy']);
+	grunt.registerTask('deploy', ['build','wp_deploy']);
 
 };
