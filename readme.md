@@ -36,6 +36,10 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Contact-Widg
 
 ![Social widget](wp-org-assets/screenshot-2.png)
 
+### Twenty Sixteen theme showing both widgets
+
+![Twenty Sixteen theme showing both widgets](wp-org-assets/screenshot-3.png)
+
 ## Frequently Asked Questions ##
 
 ### How do I add additional fields to the contact widget?
