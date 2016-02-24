@@ -25,7 +25,7 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Contact-Widg
 
 1. Contact widget
 2. Social widget
-2. Twenty Sixteen theme showing both widgets
+3. Twenty Sixteen theme showing both widgets
 
 
 == Frequently Asked Questions ==
