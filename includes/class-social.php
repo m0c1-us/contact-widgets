@@ -221,6 +221,7 @@ final class Social extends Base_Widget {
 			'show_front_end' => false,
 		];
 
+		$fields = apply_filters( 'wpcw_widget_social_custom_fields', $fields, $instance );
 		$fields = parent::get_fields( $instance, $fields, $ordered );
 
 		/**

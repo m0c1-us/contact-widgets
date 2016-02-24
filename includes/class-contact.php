@@ -198,6 +198,7 @@ final class Contact extends Base_Widget {
 			],
 		];
 
+		$fields = apply_filters( 'wpcw_widget_contact_custom_fields', $fields, $instance );
 		$fields = parent::get_fields( $instance, $fields );
 
 		/**
