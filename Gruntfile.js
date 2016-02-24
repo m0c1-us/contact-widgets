@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['cssmin', 'uglify']);
-	grunt.registerTask('build', ['clean', 'copy']);
+	grunt.registerTask('build', ['default', 'clean', 'copy']);
 	grunt.registerTask('deploy', ['build','wp_deploy']);
 
 };
