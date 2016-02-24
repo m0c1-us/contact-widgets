@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
 
 	var BUILD_DIR = 'build',
-			SOURCE_DIR = '.';
+			SOURCE_DIR = '.',
+			SLUG = 'contact-widgets';
 
 	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
@@ -66,7 +67,7 @@ module.exports = function(grunt) {
 				cwd: SOURCE_DIR,
 				expand: true,
 				src: [
-					'contact-widgets.php',
+					SLUG + '.php',
 					'readme.txt',
 					'languages/**',
 					'includes/**',
@@ -80,7 +81,7 @@ module.exports = function(grunt) {
 		wp_deploy: {
 			deploy: {
 				options: {
-					plugin_slug: 'contact-widgets',
+					plugin_slug: SLUG,
 					build_dir: BUILD_DIR,
 					assets_dir: 'wp-assets'
 				},
