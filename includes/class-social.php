@@ -221,7 +221,7 @@ final class Social extends Base_Widget {
 			'sortable'       => false,
 			'show_front_end' => false,
 			'show_empty'     => true,
-			'default'        => '2x', // for back compat
+			'value'          => ! empty( $instance[ $key ]['value'] ) ? $instance[ $key ]['value'] : '2x', // for back compat
 			'form_callback'  => 'render_form_select',
 			'select_options' => [
 				'lg' => __( 'Normal', 'contact-widgets' ),
