@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Contact Widgets\n"
-"POT-Creation-Date: 2016-02-23 10:49-0500\n"
+"POT-Creation-Date: 2016-02-26 09:13-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: includes/class-social.php:163
 #, php-format
-msgid "Visit %s on %s"
+msgid "Visit %1$s on %2$s"
 msgstr ""
 
 #: includes/social-networks.php:9
