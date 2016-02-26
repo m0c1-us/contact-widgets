@@ -1,5 +1,5 @@
 #: includes/class-contact.php:20
-msgid "Custom contact links"
+msgid "Display custom contact information."
 msgstr ""
 
 #: includes/class-contact.php:25
@@ -55,7 +55,7 @@ msgid "Display map of address?"
 msgstr ""
 
 #: includes/class-social.php:20
-msgid "Custom social links"
+msgid "Display custom social media profile links."
 msgstr ""
 
 #: includes/class-social.php:25

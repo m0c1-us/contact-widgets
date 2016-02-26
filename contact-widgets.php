@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Contact Widgets
- * Description: Display contact information on your website beautifully with these simple widgets.
+ * Description: Beautifully display social media and contact information on your website with these simple widgets.
  * Version: 1.0.1
  * Author: Jonathan Bardo & Frankie Jarrett
  * Text Domain: contact-widgets

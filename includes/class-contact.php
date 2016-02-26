@@ -17,7 +17,7 @@ final class Contact extends Base_Widget {
 
 		$widget_options = [
 			'classname'   => 'wpcw-widget-contact',
-			'description' => __( 'Custom contact links', 'contact-widgets' ),
+			'description' => __( 'Display custom contact information.', 'contact-widgets' ),
 		];
 
 		parent::__construct(
