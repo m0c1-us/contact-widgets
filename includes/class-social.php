@@ -165,7 +165,7 @@ final class Social extends Base_Widget {
 				$escape_callback( $field['value'] ),
 				esc_attr( $field['target'] ),
 				sprintf( esc_attr_x( 'Visit %1$s on %2$s', '1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook)', 'contact-widgets' ), get_bloginfo( 'name' ), $field['label'] ),
-				esc_attr( $fields['icon_size']['value'] ),
+				isset( $fields['icon_size']['value'] ) ? esc_attr( $fields['icon_size']['value'] ) : '2x',
 				esc_attr( $field['icon'] ),
 				$display_labels ? esc_html( $field['label'] ) : ''
 			);
@@ -214,23 +214,6 @@ final class Social extends Base_Widget {
 
 		// Prepend title field to the array
 		$fields = $title + $fields;
-
-		$fields['icon_size'] = [
-			'label'          => __( 'Icon size', 'contact-widgets' ) . ':',
-			'type'           => 'select',
-			'sortable'       => false,
-			'show_front_end' => false,
-			'show_empty'     => true,
-			'value'          => ! empty( $instance[ $key ]['value'] ) ? $instance[ $key ]['value'] : '2x', // for back compat
-			'form_callback'  => 'render_form_select',
-			'select_options' => [
-				'lg' => __( 'Normal', 'contact-widgets' ),
-				'2x' => __( '2x', 'contact-widgets' ),
-				'3x' => __( '3x', 'contact-widgets' ),
-				'4x' => __( '4x', 'contact-widgets' ),
-				'5x' => __( '5x', 'contact-widgets' ),
-			],
-		];
 
 		$fields['labels'] = [
 			'label'          => __( 'Display labels?', 'contact-widgets' ),
