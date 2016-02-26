@@ -160,7 +160,7 @@ final class Social extends Base_Widget {
 				$display_labels ? 'has-label' : 'no-label',
 				$escape_callback( $field['value'] ),
 				esc_attr( $field['target'] ),
-				sprintf( esc_attr_x( 'Visit %s on %s', '1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook)', 'contact-widgets' ), get_bloginfo( 'name' ), $field['label'] ),
+				sprintf( esc_attr_x( 'Visit %1$s on %2$s', '1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook)', 'contact-widgets' ), get_bloginfo( 'name' ), $field['label'] ),
 				esc_attr( $field['icon'] ),
 				$display_labels ? esc_html( $field['label'] ) : ''
 			);
