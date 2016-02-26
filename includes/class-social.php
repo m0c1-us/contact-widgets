@@ -17,7 +17,7 @@ final class Social extends Base_Widget {
 
 		$widget_options = [
 			'classname'   => 'wpcw-widget-social',
-			'description' => __( 'Custom social links', 'contact-widgets' ),
+			'description' => __( 'Display custom social media profile links.', 'contact-widgets' ),
 		];
 
 		parent::__construct(

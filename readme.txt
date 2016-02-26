@@ -5,13 +5,17 @@ Requires at least: 4.4.2
 Tested up to:      4.4.2
 Stable tag:        trunk
 
-Display contact information on your website beautifully with these simple widgets.
+Beautifully display social media and contact information on your website with these simple widgets.
 
 == Description ==
 
 **Note: This plugin requires PHP 5.4 or higher to be activated.**
 
-This plugin adds 2 new widgets to your WordPress site. One for displaying social media links and another one to display contact information (email, phone numbers, address). Both widgets are compatible with the customizer and will refresh when changes are made. 
+This plugin adds two new widgets to your WordPress website:
+* Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).
+* Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.
+
+Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
 
 **Languages Supported:**
 
