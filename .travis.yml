@@ -23,6 +23,7 @@ install:
 
 before_script:
     - php -S localhost:8888 -t $WP_CORE_DIR  > /dev/null &
+    - ln -s $TRAVIS_BUILD_DIR $WP_CORE_DIR/wp-content/plugins/
 
 script:
     - source $DEV_LIB_PATH/travis.script.sh
