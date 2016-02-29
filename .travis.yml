@@ -24,6 +24,7 @@ install:
 before_script:
     - php -S localhost:8888 -t $WP_CORE_DIR  > /dev/null &
     - ln -s $TRAVIS_BUILD_DIR $WP_CORE_DIR/wp-content/plugins/
+    - "php /tmp/wp-cli.phar plugin activate $(basename $TRAVIS_BUILD_DIR) --path=$WP_CORE_DIR"
 
 script:
     - source $DEV_LIB_PATH/travis.script.sh
