@@ -31,3 +31,6 @@ script:
     - phpunit
     - "php /tmp/wp-cli.phar plugin list --path=$WP_CORE_DIR"
     - "php /tmp/wp-cli.phar codeception run --debug --path=$WP_CORE_DIR"
+
+after_script:
+    - "echo 'SCREENSHOT OUTPUT $EOF'; for i in $TRAVIS_BUILD_DIR/tests/codeception/_output/*.png; do echo $i; base64 $i; echo $EOF; done"

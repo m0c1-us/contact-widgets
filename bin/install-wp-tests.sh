@@ -125,7 +125,7 @@ install_default_site() {
 	cd $WP_CORE_DIR
 
 	php /tmp/wp-cli.phar core config --dbname="$DB_NAME" --dbuser="$DB_USER"
-	php /tmp/wp-cli.phar core install --url=localhost:8888 --title=Test --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
+	php /tmp/wp-cli.phar core install --url="localhost:8888" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
 }
 
 install_wp_core
