@@ -1,36 +1,40 @@
 sudo: false
 
 language:
-    - php
-    - node_js
+  - php
+  - node_js
 
 php:
-    - 5.5
-    - 5.6
-    - 7.0
+  - 5.5
+#  - 5.6
+#  - 7.0
 
 env:
-    - WP_VERSION=latest WP_MULTISITE=0
-    - WP_VERSION=trunk WP_MULTISITE=0
+  - WP_VERSION=latest WP_MULTISITE=0
+#  - WP_VERSION=trunk WP_MULTISITE=0
+
+addons:
+  apt:
+    packages:
+      - openjdk-7-jre-headless
 
 install:
-    - export DEV_LIB_PATH=dev-lib
-    - if [ ! -e "$DEV_LIB_PATH" ] && [ -L .travis.yml ]; then export DEV_LIB_PATH=$( dirname $( readlink .travis.yml ) ); fi
-    - if [ ! -e "$DEV_LIB_PATH" ]; then git clone https://github.com/xwp/wp-dev-lib.git $DEV_LIB_PATH; fi
-    - source $DEV_LIB_PATH/travis.install.sh
-    - bash bin/install-wp-tests.sh wordpress wordpress_test root '' localhost $WP_VERSION
+  - export DEV_LIB_PATH=dev-lib
+  - if [ ! -e "$DEV_LIB_PATH" ] && [ -L .travis.yml ]; then export DEV_LIB_PATH=$( dirname $( readlink .travis.yml ) ); fi
+  - if [ ! -e "$DEV_LIB_PATH" ]; then git clone https://github.com/xwp/wp-dev-lib.git $DEV_LIB_PATH; fi
+  - source $DEV_LIB_PATH/travis.install.sh
+  - bash bin/install-wp-tests.sh wordpress wordpress_test root '' localhost $WP_VERSION
 
 before_script:
-    - php -S localhost:8888 -t $WP_CORE_DIR  > /dev/null &
-    - ln -s $TRAVIS_BUILD_DIR $WP_CORE_DIR/wp-content/plugins/
-    - "php /tmp/wp-cli.phar plugin activate $(basename $TRAVIS_BUILD_DIR) --path=$WP_CORE_DIR"
-    - "php /tmp/wp-cli.phar selenium start --path=$WP_CORE_DIR"
+  - "php /tmp/wp-cli.phar server --path=$WP_CORE_DIR &"
+  - sleep 3
+  - ln -s $TRAVIS_BUILD_DIR $WP_CORE_DIR/wp-content/plugins/
+  - "php /tmp/wp-cli.phar plugin activate $(basename $TRAVIS_BUILD_DIR) --path=$WP_CORE_DIR"
+  - "php /tmp/wp-cli.phar selenium start --path=$WP_CORE_DIR"
 
 script:
-    - source $DEV_LIB_PATH/travis.script.sh
-    - phpunit
-    - "php /tmp/wp-cli.phar plugin list --path=$WP_CORE_DIR"
-    - "php /tmp/wp-cli.phar codeception run --debug --path=$WP_CORE_DIR"
-
-after_script:
-    - "echo 'SCREENSHOT OUTPUT $EOF'; for i in $TRAVIS_BUILD_DIR/tests/codeception/_output/*.png; do echo $i; base64 $i; echo $EOF; done"
+  - source $DEV_LIB_PATH/travis.script.sh
+  - phpunit
+  - "curl http://localhost:8080"
+  - "curl http://localhost:8080/wp-login.php"
+  - "php /tmp/wp-cli.phar codeception run --debug --path=$WP_CORE_DIR"

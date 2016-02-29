@@ -1,4 +1,5 @@
 <?php
+
 // Workaround to boot individual bootstrap
 $args = WP_CLI::get_runner()->arguments;
 

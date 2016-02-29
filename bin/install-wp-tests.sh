@@ -118,14 +118,18 @@ install_db() {
 }
 
 install_wp_cli() {
-	download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar  /tmp/wp-cli.phar
+	download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /tmp/wp-cli.phar
 }
 
 install_default_site() {
 	cd $WP_CORE_DIR
 
-	php /tmp/wp-cli.phar core config --dbname="$DB_NAME" --dbuser="$DB_USER"
-	php /tmp/wp-cli.phar core install --url="localhost:8888" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
+	if [ ! -f wp-config.php ]; then
+		php /tmp/wp-cli.phar core config --dbname="$DB_NAME" --dbuser="$DB_USER"
+		php /tmp/wp-cli.phar core install --url="localhost:8080" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
+		php /tmp/wp-cli.phar option set siteurl "http://localhost:8080"
+		php /tmp/wp-cli.phar option set home "http://localhost:8080"
+	fi
 }
 
 install_wp_core
