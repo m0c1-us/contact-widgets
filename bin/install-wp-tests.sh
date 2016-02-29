@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
-if [ $# -lt 3 ]; then
-	echo "usage: $0 <db-name> <db-user> <db-pass> [db-host] [wp-version]"
+if [ $# -lt 4 ]; then
+	echo "usage: $0 <db-name> <db-name-tests> <db-user> <db-pass> [db-host] [wp-version]"
 	exit 1
 fi
 
 DB_NAME=$1
-DB_USER=$2
-DB_PASS=$3
-DB_HOST=${4-localhost}
-WP_VERSION=${5-latest}
+DB_NAME_TEST=$2
+DB_USER=$3
+DB_PASS=$4
+DB_HOST=${5-localhost}
+WP_VERSION=${6-latest}
 
 WP_TESTS_DIR=${WP_TESTS_DIR-/tmp/wordpress-tests-lib}
 WP_CORE_DIR=${WP_CORE_DIR-/tmp/wordpress/}
@@ -40,7 +41,7 @@ fi
 
 set -ex
 
-install_wp() {
+install_wp_core() {
 
 	if [ -d $WP_CORE_DIR ]; then
 		return;
@@ -86,7 +87,7 @@ install_test_suite() {
 	if [ ! -f wp-tests-config.php ]; then
 		download https://develop.svn.wordpress.org/${WP_TESTS_TAG}/wp-tests-config-sample.php "$WP_TESTS_DIR"/wp-tests-config.php
 		sed $ioption "s:dirname( __FILE__ ) . '/src/':'$WP_CORE_DIR':" "$WP_TESTS_DIR"/wp-tests-config.php
-		sed $ioption "s/youremptytestdbnamehere/$DB_NAME/" "$WP_TESTS_DIR"/wp-tests-config.php
+		sed $ioption "s/youremptytestdbnamehere/$DB_NAME_TEST/" "$WP_TESTS_DIR"/wp-tests-config.php
 		sed $ioption "s/yourusernamehere/$DB_USER/" "$WP_TESTS_DIR"/wp-tests-config.php
 		sed $ioption "s/yourpasswordhere/$DB_PASS/" "$WP_TESTS_DIR"/wp-tests-config.php
 		sed $ioption "s|localhost|${DB_HOST}|" "$WP_TESTS_DIR"/wp-tests-config.php
@@ -112,9 +113,23 @@ install_db() {
 	fi
 
 	# create database
+	mysqladmin create $DB_NAME_TEST --user="$DB_USER" --password="$DB_PASS"$EXTRA
 	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA
 }
 
-install_wp
+install_wp_cli() {
+	download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar  /tmp/wp-cli.phar
+}
+
+install_default_site() {
+	cd $WP_CORE_DIR
+
+	php /tmp/wp-cli.phar core config --dbname="$DB_NAME" --dbuser="$DB_USER"
+	php /tmp/wp-cli.phar wp core install --url=localhost:8888 --title=Test --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
+}
+
+install_wp_core
 install_test_suite
 install_db
+install_wp_cli
+install_default_site
