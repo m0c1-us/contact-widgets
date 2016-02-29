@@ -27,5 +27,5 @@ before_script:
 script:
     - source $DEV_LIB_PATH/travis.script.sh
     - phpunit
-    - php /tmp/wp-cli.phar plugin list
-    - "php /tmp/wp-cli.phar codeception run --debug"
+    - "php /tmp/wp-cli.phar plugin list --path=$WP_CORE_DIR"
+    - "php /tmp/wp-cli.phar codeception run --debug --path=$WP_CORE_DIR"
