@@ -30,8 +30,11 @@ add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $socia
 // Apply filters for browserstack credentials since we don't want to version it
 self::$config['modules'] = [
 	'config' => [
+		'WebDriver' => [
+			'url' => apply_filters( 'webdriver_url', site_url() ),
+		],
 		'BrowserStack' => [
-			'url'        => apply_filters( 'browserstack_url', 'http://src.wordpress-develop.dev/' ),
+			'url'        => apply_filters( 'browserstack_url', site_url() ),
 			'username'   => apply_filters( 'browserstack_username', '' ),
 			'access_key' => apply_filters( 'browserstack_accesskey', '' ),
 		],

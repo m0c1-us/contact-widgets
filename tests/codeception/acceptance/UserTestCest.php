@@ -37,7 +37,7 @@ class AdminTestCest {
 		$I->click( [ 'id' => 'wp-submit' ] );
 
 		// Wait for page to load [Hack for Safari and IE]
-		$I->waitForElementVisible( [ 'css' => 'body.index-php' ] );
+		$I->waitForElementVisible( [ 'css' => 'body.index-php' ], 5 );
 
 		$cookie = $I->grabCookie( AUTH_COOKIE );
 
