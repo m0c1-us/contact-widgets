@@ -126,7 +126,7 @@ install_default_site() {
 
 	if [ ! -f wp-config.php ]; then
 		php /tmp/wp-cli.phar core config --dbname="$DB_NAME" --dbuser="$DB_USER"
-		php /tmp/wp-cli.phar core install --url="localhost:8080" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
+		php /tmp/wp-cli.phar core install --url="http://localhost:8080" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@local.local"
 		php /tmp/wp-cli.phar option set siteurl "http://localhost:8080"
 		php /tmp/wp-cli.phar option set home "http://localhost:8080"
 	fi

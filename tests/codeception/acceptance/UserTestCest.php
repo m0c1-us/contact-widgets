@@ -34,7 +34,7 @@ class AdminTestCest {
 		$I->fillField( [ 'id' => 'user_pass' ], 'password' );
 
 		// Submit the login form
-		$I->click( [ 'id' => 'wp-submit' ] );
+		$I->click( [ 'name' => 'wp-submit' ] );
 
 		// Wait for page to load [Hack for Safari and IE]
 		$I->waitForElementVisible( [ 'css' => 'body.index-php' ], 5 );
