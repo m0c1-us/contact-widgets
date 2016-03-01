@@ -88,7 +88,7 @@ msgstr "компания"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "доска"
+msgstr "форум"
 
 #: includes/social-networks.php:17
 msgid "Facebook"

@@ -88,7 +88,7 @@ msgstr "firma"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "tavle"
+msgstr "forum"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -212,5 +212,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontaktwidgets kræver PHP-version %s eller nyere. Deaktivér plug-in og "
-"kontakt din systemadministrator."
+"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og kontakt "
+"din systemadministrator."

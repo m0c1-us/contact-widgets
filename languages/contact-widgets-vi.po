@@ -88,7 +88,7 @@ msgstr "công ty"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "bảng"
+msgstr "diễn đàn"
 
 #: includes/social-networks.php:17
 msgid "Facebook"

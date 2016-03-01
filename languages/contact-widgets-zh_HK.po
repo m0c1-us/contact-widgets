@@ -78,7 +78,7 @@ msgstr "用戶名"
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "通道"
+msgstr "頻道"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
@@ -88,7 +88,7 @@ msgstr "公司"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "面板"
+msgstr "論壇"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
