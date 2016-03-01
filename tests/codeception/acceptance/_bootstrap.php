@@ -4,7 +4,8 @@
 self::$config['modules'] = [
 	'config' => [
 		'WebDriver' => [
-			'url' => apply_filters( 'webdriver_url', site_url() ),
+			'url'     => apply_filters( 'webdriver_url', site_url() ),
+			'browser' => apply_filters( 'webdriver_browser', 'firefox' ),
 		],
 		'BrowserStack' => [
 			'url'        => apply_filters( 'browserstack_url', site_url() ),
