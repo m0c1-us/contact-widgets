@@ -12,7 +12,6 @@ modules:
     - AcceptanceHelper
   config:
     WebDriver:
-      browser: firefox
       window_size: 1366x764
     BrowserStack:
       browser: IE
@@ -26,13 +25,11 @@ env:
     modules:
       config:
         WebDriver:
-          browser: firefox
           window_size: 320x568
   mobile-lanscape:
     modules:
       config:
         WebDriver:
-          browser: firefox
           window_size: 568x320
   ie8:
     modules:
