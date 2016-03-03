@@ -1,6 +1,6 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Display custom contact information."
+msgstr "사용자 지정 연락처 정보를 표시합니다."
 
 #: includes/class-contact.php:25
 msgid "Contact"
@@ -56,7 +56,7 @@ msgstr "주소 지도를 표시하겠습니까?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Display custom social media profile links."
+msgstr "사용자 지정 소셜 미디어 프로필 링크를 표시합니다."
 
 #: includes/class-social.php:25
 msgid "Social"
@@ -68,7 +68,7 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Visit %1$s on %2$s"
+msgstr "%2$s에 %1$s 방문"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"

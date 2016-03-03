@@ -1,6 +1,6 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Display custom contact information."
+msgstr "Ipakita ang custom na impormasyon sa pakikipag-ugnayan."
 
 #: includes/class-contact.php:25
 msgid "Contact"
@@ -56,7 +56,7 @@ msgstr "Ipakita ang mapa ng address?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Display custom social media profile links."
+msgstr "Ipakita ang mga custom na link ng profile sa social media."
 
 #: includes/class-social.php:25
 msgid "Social"
@@ -68,7 +68,7 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Visit %1$s on %2$s"
+msgstr "Bisitahin ang %1$s sa %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
