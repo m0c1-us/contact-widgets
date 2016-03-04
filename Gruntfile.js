@@ -71,8 +71,7 @@ module.exports = function(grunt) {
 					'readme.txt',
 					'languages/**',
 					'includes/**',
-					'assets/**',
-					'!assets/*.png'
+					'assets/**'
 				],
 				dest: BUILD_DIR
 			}
