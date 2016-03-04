@@ -80,6 +80,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 == Changelog ==
 
+= 1.0.2 - February 24, 2016 =
+Add locales -  da_DK de_DE el es_ES es_MX fi fr_FR id_ID it_IT ja ko_KR ms_MY nb_NO nl_NL pl_PL pt_BR pt_PT ru_RU sv_SE th tl tr_TR uk vi zh_CN zh_HK zh_TW
+
 = 1.0.1 - February 24, 2016 =
 Added possibility to add custom fields to contact and social widget
 
