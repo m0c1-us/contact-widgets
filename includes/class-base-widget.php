@@ -28,12 +28,14 @@ abstract class Base_Widget extends \WP_Widget {
 		'sanitizer'      => 'sanitize_text_field',
 		'escaper'        => 'esc_html',
 		'form_callback'  => 'render_form_input',
-		'default'        => '',
+		'default'        => '', // Used mainly for social fields to add default value
 		'value'          => '',
 		'placeholder'    => '',
 		'sortable'       => true,
-		'atts'           => '',
-		'show_front_end' => true,
+		'atts'           => '', // Input attributes
+		'show_front_end' => true, // Are we showing this field on the front end?
+		'show_empty'     => false, // Show the field even if value is empty
+		'select_options' => [], // Only used if type=select & form_callback=render_form_select
 	];
 
 	/**
@@ -285,6 +287,45 @@ abstract class Base_Widget extends \WP_Widget {
 			esc_attr( $field['placeholder'] ),
 			esc_attr( $field['atts'] )
 		);
+
+		if ( $field['label_after'] ) {
+
+			$this->print_label( $field );
+
+		}
+
+		$this->after_form_field( $field );
+
+	}
+
+	/**
+	 * Render select field
+	 *
+	 * @param array $field
+	 */
+	protected function render_form_select( array $field ) {
+
+		$this->before_form_field( $field );
+
+		printf(
+			'<select class="%s" id="%s" name="%s" autocomplete="off">',
+			esc_attr( $field['class'] ),
+			esc_attr( $field['id'] ),
+			esc_attr( $field['name'] )
+		);
+
+		foreach ( $field['select_options'] as $value => $name ) {
+
+			printf(
+				'<option value="%s" %s>%s</option>',
+				$value,
+				$field['value'] === $value ? 'selected' : '',
+				$name
+			);
+
+		}
+
+		echo '</select>';
 
 		if ( $field['label_after'] ) {
 

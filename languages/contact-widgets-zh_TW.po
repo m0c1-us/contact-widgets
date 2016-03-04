@@ -1,88 +1,66 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: Contact Widgets\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 14:47+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Jonathan Bardo <info@jonathanbardo.com>\n"
-"Language-Team: \n"
-"Language: zh_TW\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
-"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
-"esc_html_x;_c;_nc\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-SearchPath-0: contact-widgets.php\n"
-"X-Poedit-SearchPath-1: includes\n"
-
 #: includes/class-contact.php:20
-msgid "Custom contact links"
-msgstr ""
+msgid "Display custom contact information."
+msgstr "顯示自訂聯絡人資訊。"
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr ""
+msgstr "聯絡人"
 
 #: includes/class-contact.php:146 includes/class-social.php:203
 msgid "Title:"
-msgstr ""
+msgstr "標題："
 
 #: includes/class-contact.php:147 includes/class-social.php:204
 msgid "The title of widget. Leave empty for no title."
-msgstr ""
+msgstr "工具程式標題。 無標題者留空白。"
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr ""
+msgstr "電郵："
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr ""
+msgstr "網站訪客可與您聯繫的電子郵件地址。"
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr ""
+msgstr "電話："
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
+msgstr "網站訪客有問題時可撥打的電話號碼。"
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr ""
+msgstr "傳真："
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
+msgstr "網站訪客可傳送重要文件的傳真號碼。"
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr ""
+msgstr "地址："
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
+msgstr "網站訪客可親自拜訪您的實體地址。"
 
 #: includes/class-contact.php:180 includes/class-social.php:214
 msgid "Display labels?"
-msgstr ""
+msgstr "顯示標籤？"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr ""
+msgstr "顯示地址的地圖？"
 
 #: includes/class-social.php:20
-msgid "Custom social links"
-msgstr ""
+msgid "Display custom social media profile links."
+msgstr "顯示自訂社交媒體個人檔案連結。"
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr ""
+msgstr "社交"
 
 #: includes/class-social.php:163
 #, php-format
@@ -90,147 +68,147 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr ""
+msgstr "在 %2$s 上造訪 %1$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr ""
+msgstr "用戶名"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "頻道"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "公司"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "論壇"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
-msgstr ""
+msgstr "facebook"
 
 #: includes/social-networks.php:22
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: includes/social-networks.php:28
 msgid "Google+"
-msgstr ""
+msgstr "Google +"
 
 #: includes/social-networks.php:34
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: includes/social-networks.php:39
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: includes/social-networks.php:44
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: includes/social-networks.php:49
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: includes/social-networks.php:54
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: includes/social-networks.php:59
 msgid "Foursquare"
-msgstr ""
+msgstr "Foursquare"
 
 #: includes/social-networks.php:64
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: includes/social-networks.php:69
 msgid "Slack"
-msgstr ""
+msgstr "Slack"
 
 #: includes/social-networks.php:74
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #: includes/social-networks.php:80
 msgid "SoundCloud"
-msgstr ""
+msgstr "SoundCloud"
 
 #: includes/social-networks.php:85
 msgid "TripAdvisor"
-msgstr ""
+msgstr "TripAdvisor"
 
 #: includes/social-networks.php:89
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: includes/social-networks.php:94
 msgid "Yelp"
-msgstr ""
+msgstr "Yelp"
 
 #: includes/social-networks.php:99
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: includes/social-networks.php:103
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: includes/social-networks.php:108
 msgid "Vine"
-msgstr ""
+msgstr "Vine"
 
 #: includes/social-networks.php:113
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: includes/social-networks.php:118
 msgid "XING"
-msgstr ""
+msgstr "XING"
 
 #: includes/social-networks.php:122
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: includes/social-networks.php:127
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #: includes/social-networks.php:131
 msgid "WeChat"
-msgstr ""
+msgstr "微信"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr ""
+msgstr "中"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: includes/social-networks.php:145
 msgid "Twitch"
-msgstr ""
+msgstr "Twitch"
 
 #: includes/social-networks.php:150
 msgid "VK"
-msgstr ""
+msgstr "VK"
 
 #: includes/social-networks.php:154
 msgid "Trello"
-msgstr ""
+msgstr "Trello"
 
 #: contact-widgets.php:88
 #, php-format
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr ""
+msgstr "聯絡工具程式需要使用 PHP %s 或以上版本。 請停用外掛程式並聯絡您的系統管理員。"

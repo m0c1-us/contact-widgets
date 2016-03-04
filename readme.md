@@ -2,7 +2,7 @@
 # Contact Widgets
 
 ![Banner](wp-org-assets/banner-1544x500.png)
-Display contact information on your website beautifully with these simple widgets.
+Beautifully display social media and contact information on your website with these simple widgets.
 
 **Contributors:** [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [fjarrett](https://profiles.wordpress.org/fjarrett)  
 **Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
@@ -16,7 +16,11 @@ Display contact information on your website beautifully with these simple widget
 
 **Note: This plugin requires PHP 5.4 or higher to be activated.**
 
-This plugin adds 2 new widgets to your WordPress site. One for displaying social media links and another one to display contact information (email, phone numbers, address). Both widgets are compatible with the customizer and will refresh when changes are made. 
+This plugin adds two new widgets to your WordPress website:
+* Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).
+* Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.
+
+Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
 
 **Languages Supported:**
 

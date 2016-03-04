@@ -1,7 +1,19 @@
 <?php
-// Here you can initialize variables that will be available to your tests
 
-WP_CLI::launch_self( 'selenium start', [], [], false );
+// Apply filters for browserstack credentials since we don't want to version it
+self::$config['modules'] = [
+	'config' => [
+		'WebDriver' => [
+			'url'     => apply_filters( 'webdriver_url', site_url() ),
+			'browser' => apply_filters( 'webdriver_browser', 'firefox' ),
+		],
+		'BrowserStack' => [
+			'url'        => apply_filters( 'browserstack_url', site_url() ),
+			'username'   => apply_filters( 'browserstack_username', '' ),
+			'access_key' => apply_filters( 'browserstack_accesskey', '' ),
+		],
+	],
+];
 
 // Activate twenty_sixteen for our test purpose
 $current_theme = get_stylesheet();
@@ -17,23 +29,14 @@ delete_option( 'widget_wpcw_social' );
 
 add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $social_widgets ) {
 
-	// No need to waste unnecessary ressources
-	WP_CLI::launch_self( 'selenium stop', [], [], false );
-
 	switch_theme( $current_theme );
 
 	update_option( 'widget_wpcw_contact', $contact_widgets );
 	update_option( 'widget_wpcw_social', $social_widgets );
 
+	// No need to waste unnecessary ressources
+	WP_CLI::launch_self( 'selenium stop', [], [], false );
+
 } );
 
-// Apply filters for browserstack credentials since we don't want to version it
-self::$config['modules'] = [
-	'config' => [
-		'BrowserStack' => [
-			'url'        => apply_filters( 'browserstack_url', 'http://src.wordpress-develop.dev/' ),
-			'username'   => apply_filters( 'browserstack_username', '' ),
-			'access_key' => apply_filters( 'browserstack_accesskey', '' ),
-		],
-	],
-];
+WP_CLI::launch_self( 'selenium start', [], [], false );

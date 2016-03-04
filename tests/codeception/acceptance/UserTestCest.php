@@ -28,16 +28,16 @@ class AdminTestCest {
 		$I->amOnPage( wp_login_url() );
 
 		// Populate the login form's user id field
-		$I->fillField( 'input#user_login', 'admin' );
+		$I->fillField( [ 'id' => 'user_login' ], 'admin' );
 
 		// Populate the login form's password field
-		$I->fillField( 'input#user_pass', 'password' );
+		$I->fillField( [ 'id' => 'user_pass' ], 'password' );
 
 		// Submit the login form
-		$I->click( '#wp-submit' );
+		$I->click( [ 'name' => 'wp-submit' ] );
 
 		// Wait for page to load [Hack for Safari and IE]
-		$I->waitForElementVisible( 'body.index-php' );
+		$I->waitForElementVisible( [ 'css' => 'body.index-php' ], 5 );
 
 		$cookie = $I->grabCookie( AUTH_COOKIE );
 
@@ -55,33 +55,33 @@ class AdminTestCest {
 
 	    $I->amOnPage( admin_url( 'widgets.php' ) );
 
-	    $I->canSee( 'Contact', '.widget h3' );
+	    $I->canSee( 'Contact', [ 'css' => '.widget h3' ] );
 
-	    $selector = '#widget-list div[id$="wpcw_contact-__i__"]';
+	    $selector = '#widget-list div[id$=wpcw_contact-__i__]';
 
-	    $I->click( "$selector .widget-title" );
+	    $I->click( [ 'css' => "$selector .widget-title" ] );
 
-	    $I->waitForElementVisible( "$selector .widgets-chooser-actions .button-primary" );
+	    $I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-	    $I->click( "$selector .widgets-chooser-actions .button-primary" );
+	    $I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-	    $selector = '#sidebar-1 div[id*="wpcw_contact"]';
+	    $selector = '#sidebar-1 div[id*=wpcw_contact]';
 
-	    $I->waitForElementVisible( "{$selector} .widget-inside" );
+	    $I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
 
 	    /**
 	     * Fill all fields
 	     */
-	    $I->fillField( "{$selector} form .title input", 'Acceptance tests contact' );
-	    $I->fillField( "{$selector} form .email input", 'info@local.dev' );
-	    $I->fillField( "{$selector} form .phone input", '555-555-5555' );
-	    $I->fillField( "{$selector} form .fax input", '555-555-5556' );
-	    $I->fillField( "{$selector} form .address textarea", '123 santa monica blvd<br> Los Angeles' );
+	    $I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests contact' );
+	    $I->fillField( [ 'css' => "{$selector} form .email input" ], 'info@local.dev' );
+	    $I->fillField( [ 'css' => "{$selector} form .phone input" ], '555-555-5555' );
+	    $I->fillField( [ 'css' => "{$selector} form .fax input" ], '555-555-5556' );
+	    $I->fillField( [ 'css' => "{$selector} form .address textarea" ], '123 santa monica blvd<br> Los Angeles' );
 
 	    /**
 	     * Submit widget form
 	     */
-	    $I->click( "{$selector} form input.button-primary" );
+	    $I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
 	    // Wait for all ajax request to finish
 	    $I->waitForJS( 'return jQuery.active == 0;', 5 );
@@ -99,17 +99,17 @@ class AdminTestCest {
 
 		$I->amOnPage( home_url() );
 
-		$I->canSeeElementInDOM( '.wpcw-widget-contact' );
+		$I->canSeeElementInDOM( [ 'class' => 'wpcw-widget-contact' ] );
 
 		// Let's validate what we submitted earlier
-		$I->canSee( 'Acceptance tests contact', '.wpcw-widget-contact .widget-title' );
-		$I->canSee( 'info@local.dev', '.wpcw-widget-contact ul li' );
-		$I->canSee( '555-555-5555', '.wpcw-widget-contact ul li' );
-		$I->canSee( '555-555-5556', '.wpcw-widget-contact ul li' );
-		$I->canSee( '123 santa monica blvd', '.wpcw-widget-contact ul li' );
+		$I->canSee( 'Acceptance tests contact', [ 'css' => '.wpcw-widget-contact .widget-title' ] );
+		$I->canSee( 'info@local.dev', [ 'css' => '.wpcw-widget-contact ul li' ] );
+		$I->canSee( '555-555-5555', [ 'css' => '.wpcw-widget-contact ul li' ] );
+		$I->canSee( '555-555-5556', [ 'css' => '.wpcw-widget-contact ul li' ] );
+		$I->canSee( '123 santa monica blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
 
-		$I->canSeeElementInDOM( '.wpcw-widget-contact ul li.has-map' );
-		$I->canSeeElementInDOM( '.wpcw-widget-contact ul li.has-map iframe[src="//www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed"]' );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src="//www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed"]' ] );
 
 	}
 
@@ -125,35 +125,35 @@ class AdminTestCest {
 
 		$I->amOnPage( admin_url( 'widgets.php' ) );
 
-		$I->canSee( 'Social', '.widget h3' );
+		$I->canSee( 'Social', [ 'css' => '.widget h3' ] );
 
-		$selector = '#widget-list div[id$="wpcw_social-__i__"]';
+		$selector = '#widget-list div[id$=wpcw_social-__i__]';
 
-		$I->click( "$selector .widget-title" );
+		$I->click( [ 'css' => "$selector .widget-title" ] );
 
-		$I->waitForElementVisible( "$selector .widgets-chooser-actions .button-primary" );
+		$I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-		$I->click( "$selector .widgets-chooser-actions .button-primary" );
+		$I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-		$selector = '#sidebar-1 div[id*="wpcw_social"]';
+		$selector = '#sidebar-1 div[id*=wpcw_social]';
 
-		$I->waitForElementVisible( "{$selector} .widget-inside" );
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
 
 		/**
 		 * Fill all fields
 		 */
-		$I->fillField( "{$selector} form .title input", 'Acceptance tests social' );
+		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests social' );
 
 		$this->selectSocialIcon( $I, 'facebook', $selector );
 		$this->selectSocialIcon( $I, 'twitter', $selector );
 
 		// Let's test reordering so facebook should be first
-		$I->dragAndDrop( "{$selector} form p.facebook .wpcw-widget-sortable-handle", "{$selector} .wpcw-widget-social .icons" );
+		$I->dragAndDrop( [ 'css' => "{$selector} form p.facebook .wpcw-widget-sortable-handle" ], [ 'css' => "{$selector} .wpcw-widget-social .icons" ] );
 
 		/**
 		 * Submit widget form
 		 */
-		$I->click( "{$selector} form input.button-primary" );
+		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
 		// Wait for all ajax request to finish
 		$I->waitForJS( 'return jQuery.active == 0;', 5 );
@@ -169,11 +169,11 @@ class AdminTestCest {
 	 */
 	protected function selectSocialIcon( $I, $name, $selector ) {
 
-		$I->click( "{$selector} form .icons a[data-key='{$name}']" );
+		$I->click( [ 'css' => "{$selector} form .icons a[data-key={$name}]" ] );
 
-		$I->waitForElementVisible( "{$selector} form p.{$name} input" );
+		$I->waitForElementVisible( [ 'css' => "{$selector} form p.{$name} input" ] );
 
-		$I->pressKey( "{$selector} form p.{$name} input", 'test' );
+		$I->pressKey( [ 'css' => "{$selector} form p.{$name} input" ], 'test' );
 
 	}
 
@@ -188,13 +188,13 @@ class AdminTestCest {
 
 		$I->amOnPage( home_url() );
 
-		$I->canSeeElementInDOM( '.wpcw-widget-social' );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social' ] );
 
-		$I->canSee( 'Acceptance tests social', '.wpcw-widget-social .widget-title' );
+		$I->canSee( 'Acceptance tests social', [ 'css' => '.wpcw-widget-social .widget-title' ] );
 
 		// Check that facebook is indeed the first element return in the list
-		$I->canSeeElementInDOM( '.wpcw-widget-social ul li:first-child span[class*="facebook"]' );
-		$I->canSeeElementInDOM( '.wpcw-widget-social ul li:last-child span[class*="twitter"]' );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
 
 	}
 

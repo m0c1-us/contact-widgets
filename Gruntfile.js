@@ -106,8 +106,8 @@ module.exports = function(grunt) {
 		po2mo: {
 			files: {
 				src: 'languages/*.po',
-				expand: true,
-			},
+				expand: true
+			}
 		}
 
 	});

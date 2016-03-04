@@ -17,7 +17,7 @@ final class Social extends Base_Widget {
 
 		$widget_options = [
 			'classname'   => 'wpcw-widget-social',
-			'description' => __( 'Custom social links', 'contact-widgets' ),
+			'description' => __( 'Display custom social media profile links.', 'contact-widgets' ),
 		];
 
 		parent::__construct(
@@ -96,7 +96,11 @@ final class Social extends Base_Widget {
 
 			$method = $field['form_callback'];
 
-			if ( is_callable( [ $this, $method ] ) && ! empty( $field['value'] ) ) {
+			if (
+				is_callable( [ $this, $method ] )
+				&&
+				( ! empty( $field['value'] ) || $field['show_empty'] )
+			) {
 
 				$this->$method( $field );
 
@@ -112,7 +116,7 @@ final class Social extends Base_Widget {
 		echo '<div class="default-fields">';
 
 		// Template form for JS use
-		$this->render_form_input( $this->field_defaults );
+		$this->render_form_input( $this->field_defaults + [ 'social' => true ] );
 
 		echo '</div>'; // End default-fields
 
@@ -156,11 +160,12 @@ final class Social extends Base_Widget {
 			$escape_callback = $field['escaper'];
 
 			printf(
-				'<li class="%s"><a href="%s" target="%s" title="%s"><span class="fa fa-2x fa-%s"></span>%s</a></li>',
+				'<li class="%s"><a href="%s" target="%s" title="%s"><span class="fa fa-%s fa-%s"></span>%s</a></li>',
 				$display_labels ? 'has-label' : 'no-label',
 				$escape_callback( $field['value'] ),
 				esc_attr( $field['target'] ),
 				sprintf( esc_attr_x( 'Visit %1$s on %2$s', '1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook)', 'contact-widgets' ), get_bloginfo( 'name' ), $field['label'] ),
+				isset( $fields['icon_size']['value'] ) ? esc_attr( $fields['icon_size']['value'] ) : '2x',
 				esc_attr( $field['icon'] ),
 				$display_labels ? esc_html( $field['label'] ) : ''
 			);
@@ -241,6 +246,13 @@ final class Social extends Base_Widget {
 	 * @param array $field
 	 */
 	protected function print_label( array $field ) {
+
+		if ( ! isset( $field['social'] ) ) {
+
+			parent::print_label( $field );
+			return;
+
+		}
 
 		printf(
 			'<label for="%s"><span class="fa fa-%s"></span> <span class="text">%s</span></label>',

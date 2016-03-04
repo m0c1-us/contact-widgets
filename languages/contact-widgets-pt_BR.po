@@ -1,18 +1,18 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Vis brugerdefinerede kontaktoplysninger."
+msgstr "Mostrar informações de contato personalizadas."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "Kontakt"
+msgstr "Contato"
 
 #: includes/class-contact.php:146 includes/class-social.php:203
 msgid "Title:"
-msgstr "Titel:"
+msgstr "Título:"
 
 #: includes/class-contact.php:147 includes/class-social.php:204
 msgid "The title of widget. Leave empty for no title."
-msgstr "Titlen på widget Efterlad tom, hvis ingen titel."
+msgstr "Título do widget. Deixe em branco se não quiser título."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,15 +20,15 @@ msgstr "E-mail:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "En e-mailadresse, hvor websidegæster kan kontakte dig."
+msgstr "Endereço de email para contato com os visitantes do seu site."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "Telefon:"
+msgstr "Telefone:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
+msgstr "Telefone para que os visitantes do seu site possam tirar dúvidas."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,27 +36,27 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
+msgstr "Fax para que os visitantes do seu site possam enviar documentos importantes."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "Adresse:"
+msgstr "Endereço:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "En fysisk adresse, hvor websidegæster kan besøge dig personligt."
+msgstr "Endereço para que os visitantes do seu site possam visitá-lo pessoalmente."
 
 #: includes/class-contact.php:180 includes/class-social.php:214
 msgid "Display labels?"
-msgstr "Vis etiketter?"
+msgstr "Exibir etiquetas?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Vis kort med adresse?"
+msgstr "Exibir mapa do endereço?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Vis brugerdefinerede links til profiler på sociale medier."
+msgstr "Mostrar links de perfis personalizados de redes sociais."
 
 #: includes/class-social.php:25
 msgid "Social"
@@ -68,27 +68,27 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Gå til %1$s på %2$s"
+msgstr "Visite %1$s no %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "brugernavn"
+msgstr "nomedeusuario"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "kanal"
+msgstr "canal"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "firma"
+msgstr "empresa"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "forum"
+msgstr "fórum"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -188,7 +188,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr "Medium"
+msgstr "M"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
@@ -212,5 +212,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og kontakt "
-"din systemadministrator."
+"Para usar widgets de contato, é preciso ter versão PHP %s ou superior. "
+"Desative o plug-in e contate o seu administrador de sistemas."

@@ -1,89 +1,66 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: Contact Widgets\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 14:47+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Jonathan Bardo <info@jonathanbardo.com>\n"
-"Language-Team: \n"
-"Language: pl_PL\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
-"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
-"esc_html_x;_c;_nc\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-SearchPath-0: contact-widgets.php\n"
-"X-Poedit-SearchPath-1: includes\n"
-
 #: includes/class-contact.php:20
-msgid "Custom contact links"
-msgstr ""
+msgid "Display custom contact information."
+msgstr "Wyświetl niestandardowe dane kontaktowe."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: includes/class-contact.php:146 includes/class-social.php:203
 msgid "Title:"
-msgstr ""
+msgstr "Tytuł:"
 
 #: includes/class-contact.php:147 includes/class-social.php:204
 msgid "The title of widget. Leave empty for no title."
-msgstr ""
+msgstr "Tytuł widżetu. Pozostaw pole puste, jeśli nie chcesz tytułu."
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr ""
+msgstr "Adres e-mail:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr ""
+msgstr "Adres e-mail, pod jakim odwiedzający witrynę mogą się z Tobą skontaktować."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr ""
+msgstr "Nr tel.:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
+msgstr "Numer telefonu, pod jaki mogą zadzwonić odwiedzający witrynę w razie pytań."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr ""
+msgstr "Faks:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
+msgstr "Numer faksu, pod jaki odwiedzający witrynę mogą przesłać ważne dokumenty."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr ""
+msgstr "Adres:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
+msgstr "Adres, pod jakim odwiedzający witrynę mogą odwiedzić Cię osobiście."
 
 #: includes/class-contact.php:180 includes/class-social.php:214
 msgid "Display labels?"
-msgstr ""
+msgstr "Wyświetlać etykiety?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr ""
+msgstr "Wyświetlać mapę z adresem?"
 
 #: includes/class-social.php:20
-msgid "Custom social links"
-msgstr ""
+msgid "Display custom social media profile links."
+msgstr "Wyświetl niestandardowe łącza do profili w mediach społecznościowych."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr ""
+msgstr "Media społecznościowe"
 
 #: includes/class-social.php:163
 #, php-format
@@ -91,143 +68,143 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr ""
+msgstr "Odwiedź %1$s w serwisie %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr ""
+msgstr "nazwa użytkownika"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "kanał"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "firmę"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "tablicę"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: includes/social-networks.php:22
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: includes/social-networks.php:28
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: includes/social-networks.php:34
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: includes/social-networks.php:39
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: includes/social-networks.php:44
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: includes/social-networks.php:49
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: includes/social-networks.php:54
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: includes/social-networks.php:59
 msgid "Foursquare"
-msgstr ""
+msgstr "Foursquare"
 
 #: includes/social-networks.php:64
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: includes/social-networks.php:69
 msgid "Slack"
-msgstr ""
+msgstr "Slack"
 
 #: includes/social-networks.php:74
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #: includes/social-networks.php:80
 msgid "SoundCloud"
-msgstr ""
+msgstr "SoundCloud"
 
 #: includes/social-networks.php:85
 msgid "TripAdvisor"
-msgstr ""
+msgstr "TripAdvisor"
 
 #: includes/social-networks.php:89
 msgid "WordPress"
-msgstr ""
+msgstr "system WordPress"
 
 #: includes/social-networks.php:94
 msgid "Yelp"
-msgstr ""
+msgstr "Yelp"
 
 #: includes/social-networks.php:99
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: includes/social-networks.php:103
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: includes/social-networks.php:108
 msgid "Vine"
-msgstr ""
+msgstr "Vine"
 
 #: includes/social-networks.php:113
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: includes/social-networks.php:118
 msgid "XING"
-msgstr ""
+msgstr "XING"
 
 #: includes/social-networks.php:122
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: includes/social-networks.php:127
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #: includes/social-networks.php:131
 msgid "WeChat"
-msgstr ""
+msgstr "WeChat"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: includes/social-networks.php:145
 msgid "Twitch"
-msgstr ""
+msgstr "Twitch"
 
 #: includes/social-networks.php:150
 msgid "VK"
-msgstr ""
+msgstr "VK"
 
 #: includes/social-networks.php:154
 msgid "Trello"
-msgstr ""
+msgstr "Trello"
 
 #: contact-widgets.php:88
 #, php-format
@@ -235,3 +212,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
+"Widżety kontaktu wymagają PHP w wersji %s lub wyższej. Dezaktywuj wtyczkę i "
+"skontaktuj się z administratorem systemu."
