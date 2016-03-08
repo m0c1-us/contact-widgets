@@ -29,7 +29,7 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 
 **Improvement? Bugs?**
 
-Please fill out an issue [here](https://github.com/jonathanbardo/WP-Contact-Widgets/issues).
+Please fill out an issue [here](https://github.com/godaddy/wp-contact-widgets/issues).
 
 ## Screenshots ##
 
