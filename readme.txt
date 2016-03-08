@@ -1,5 +1,5 @@
 === Contact Widgets ===
-Contributors:      jonathanbardo, fjarrett
+Contributors:      godaddy, jonathanbardo, fjarrett
 Tags:              widget, contact, social, sharing, share button, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
 Requires at least: 4.4.2
 Tested up to:      4.4.2
@@ -24,7 +24,7 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 
 **Improvement? Bugs?**
 
-Please fill out an issue [here](https://github.com/jonathanbardo/WP-Contact-Widgets/issues). 
+Please fill out an issue [here](https://github.com/godaddy/wp-contact-widgets/issues). 
 
 == Screenshots ==
 
