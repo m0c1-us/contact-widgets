@@ -8,7 +8,7 @@ Beautifully display social media and contact information on your website with th
 **Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
 **Requires at least:** 4.4.2  
 **Tested up to:** 4.4.2  
-**Stable tag:** trunk (master)  
+**Stable tag:** 1.0.3  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
 
@@ -92,6 +92,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 ```
 
 ## Changelog ##
+
+### 1.0.3 - March 9, 2016 ###
+Update locale ms_MY
 
 ### 1.0.2 - February 24, 2016 ###
 Add locales -  da_DK de_DE el es_ES es_MX fi fr_FR id_ID it_IT ja ko_KR ms_MY nb_NO nl_NL pl_PL pt_BR pt_PT ru_RU sv_SE th tl tr_TR uk vi zh_CN zh_HK zh_TW
