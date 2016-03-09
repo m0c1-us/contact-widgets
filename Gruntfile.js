@@ -153,7 +153,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['cssmin', 'uglify']);
 	grunt.registerTask('version', ['replace'] );
 	grunt.registerTask('build', ['default', 'version', 'clean', 'copy']);
-	grunt.registerTask('deploy', ['build','wp_deploy']);
+	grunt.registerTask('deploy', ['build', 'wp_deploy', 'clean']);
 	grunt.registerTask('update_translation', ['pot','po2mo']);
 
 };
