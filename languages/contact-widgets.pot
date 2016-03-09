@@ -6,11 +6,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr ""
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "

@@ -1,68 +1,75 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Affichez les coordonnées personnalisées."
+msgstr "Affichez les coordonnes personnalises."
 
 #: includes/class-contact.php:25
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Titre :"
+msgstr "Titre:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr "Le titre du widget. Laisser vierge pour ne pas avoir de titre."
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "E-mail :"
+msgstr "E-mail:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Une adresse email à laquelle les visiteurs du site Web peuvent vous contacter."
+msgstr ""
+"Une adresse email  laquelle les visiteurs du site Web peuvent vous contacter."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "Téléphone :"
+msgstr "Tlphone:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Un numéro de téléphone auquel les visiteurs du site Web peuvent vous appeler s'ils ont des questions."
+msgstr ""
+"Un numro de tlphone auquel les visiteurs du site Web peuvent vous appeler "
+"s'ils ont des questions."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "Fax :"
+msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Un numéro de fax que les visiteurs du site Web peuvent utiliser pour envoyer des documents importants."
+msgstr ""
+"Un numro de fax que les visiteurs du site Web peuvent utiliser pour envoyer "
+"des documents importants."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "Adresse :"
+msgstr "Adresse:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Une adresse physique à laquelle les visiteurs du site Web peuvent se rendre pour vous voir."
+msgstr ""
+"Une adresse physique  laquelle les visiteurs du site Web peuvent se rendre "
+"pour vous voir."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Afficher les étiquettes ?"
+msgstr "Afficher les tiquettes?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Afficher un plan de l'adresse ?"
+msgstr "Afficher un plan de l'adresse?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Affichez les liens des profils de médias sociaux personnalisés."
+msgstr "Affichez les liens des profils de mdias sociaux personnaliss."
 
 #: includes/class-social.php:25
 msgid "Social"
 msgstr "Social"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -73,7 +80,7 @@ msgstr "Visitez %1$s sur %2$s"
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "nom d’utilisateur"
+msgstr "nom dutilisateur"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -83,7 +90,7 @@ msgstr "canal"
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "société"
+msgstr "socit"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
@@ -212,5 +219,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Contact Widget nécessite une version PHP %s ou supérieure. Veuillez "
-"désactiver le plug-in et contacter votre administrateur système."
+"Contact Widget ncessite une version PHP %s ou suprieure. Veuillez dsactiver "
+"le plug-in et contacter votre administrateur systme."

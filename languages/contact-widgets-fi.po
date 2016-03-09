@@ -1,26 +1,28 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Näytä mukautetut yhteystiedot."
+msgstr "Nyt mukautetut yhteystiedot."
 
 #: includes/class-contact.php:25
 msgid "Contact"
 msgstr "Yhteydenotot"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Pienoissovelluksen nimi. Jätä tyhjäksi, jos et halua valita nimeä."
+msgstr "Pienoissovelluksen nimi. Jt tyhjksi, jos et halua valita nime."
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "Sähköposti:"
+msgstr "Shkposti:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Sähköpostiosoite, jonka kautta sivuston vierailijat voivat ottaa sinuun yhteyttä."
+msgstr ""
+"Shkpostiosoite, jonka kautta sivuston vierailijat voivat ottaa sinuun "
+"yhteytt."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +30,9 @@ msgstr "Puhelin:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Puhelinnumero, johon sivuston vierailijat voivat soittaa, jos heillä on kysyttävää."
+msgstr ""
+"Puhelinnumero, johon sivuston vierailijat voivat soittaa, jos heill on "
+"kysyttv."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +40,9 @@ msgstr "Faksi:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Faksinumero, jota sivuston vierailijat voivat käyttää tärkeiden asiakirjojen lähettämiseen."
+msgstr ""
+"Faksinumero, jota sivuston vierailijat voivat kytt trkeiden asiakirjojen "
+"lhettmiseen."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,25 +50,26 @@ msgstr "Osoite:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Fyysinen osoite, jossa sivuston vierailijat voivat käydä henkilökohtaisesti."
+msgstr ""
+"Fyysinen osoite, jossa sivuston vierailijat voivat kyd henkilkohtaisesti."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Näytetäänkö selitteet?"
+msgstr "Nytetnk selitteet?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Näytetäänkö osoitteen kartta?"
+msgstr "Nytetnk osoitteen kartta?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Näytä mukautetut sosiaalisen median profiilien linkit."
+msgstr "Nyt mukautetut sosiaalisen median profiilien linkit."
 
 #: includes/class-social.php:25
 msgid "Social"
 msgstr "Sosiaalinen"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -73,7 +80,7 @@ msgstr "Vieraile: %1$s - %2$s"
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "käyttäjänimi"
+msgstr "kyttjnimi"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -212,5 +219,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Yhteystietosovellukset edellyttävät, että PHP-versio on vähintään %s. Poista "
-"laajennus käytöstä ja ota yhteyttä järjestelmänvalvojaasi."
+"Yhteystietosovellukset edellyttvt, ett PHP-versio on vhintn %s. Poista "
+"laajennus kytst ja ota yhteytt jrjestelmnvalvojaasi."

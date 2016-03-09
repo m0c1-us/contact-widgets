@@ -1,18 +1,18 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Hiển thị thông tin liên hệ tùy chỉnh."
+msgstr "Hin th thng tin lin h ty chnh."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "Liên hệ"
+msgstr "Lin h"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Tiêu đề:"
+msgstr "Tiu :"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Tiêu đề widget. Để trống nếu không có tiêu đề."
+msgstr "Tiu  widget.  trng nu khng c tiu ."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,15 +20,15 @@ msgstr "Email:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
+msgstr "a ch email m khch truy cp trang c th s dng  lin h vi bn."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "Điện thoại:"
+msgstr "in thoi:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Số điện thoại mà khách truy cập trang có thể gọi nếu họ có thắc mắc."
+msgstr "S in thoi m khch truy cp trang c th gi nu h c thc mc."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,59 +36,59 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan trọng."
+msgstr "S fax m khch truy cp trang c th s dng  gi nhng ti liu quan trng."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "Địa chỉ:"
+msgstr "a ch:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
+msgstr "a ch thc t m khch truy cp trang c th n  gp bn trc tip."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Hiển thị nhãn?"
+msgstr "Hin th nhn?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Hiển thị bản đồ địa chỉ?"
+msgstr "Hin th bn  a ch?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Hiển thị liên kết truyền thông xã hội tùy chỉnh."
+msgstr "Hin th lin kt truyn thng x hi ty chnh."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "Mạng xã hội"
+msgstr "Mng x hi"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Truy cập %1$s trên %2$s"
+msgstr "Truy cp %1$s trn %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "tên người dùng"
+msgstr "tn ngi dng"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "kênh"
+msgstr "knh"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "công ty"
+msgstr "cng ty"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "diễn đàn"
+msgstr "din n"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -188,7 +188,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr "Phương tiện"
+msgstr "Phng tin"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
@@ -212,5 +212,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widget liên hệ yêu cầu phiên bản PHP %s trở lên. Hãy tắt trình cắm và liên hệ "
-"với quản trị viên hệ thống."
+"Widget lin h yu cu phin bn PHP %s tr ln. Hy tt trnh cm v lin h vi qun tr vin "
+"h thng."

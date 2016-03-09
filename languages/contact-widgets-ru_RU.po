@@ -1,94 +1,94 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Отображение пользовательских контактных данных."
+msgstr "   ."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "Контакт"
+msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Заголовок:"
+msgstr ":"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Название виджета. Если названия нет, оставьте поле пустым."
+msgstr " .   ,   ."
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "Эл. почта:"
+msgstr ". :"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Адрес электронной почты, с помощью которого посетители веб-сайта могут связаться с вами."
+msgstr "  ,     -    ."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "Телефон:"
+msgstr ":"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Номер телефона, по которому посетители веб-сайта могут позвонить вам, если у них возникнут вопросы."
+msgstr " ,    -   ,     ."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "Факс:"
+msgstr ":"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Номер факса, который посетители веб-сайта могут использовать для отправки важных документов."
+msgstr " ,   -      ."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "Адрес:"
+msgstr ":"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Почтовый адрес, с помощью которого посетили веб-сайта смогут посетить вас лично."
+msgstr " ,     -    ."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Показать метки?"
+msgstr " ?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Показать адрес на карте?"
+msgstr "   ?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Отображение ссылок на профили пользовательских социальных сетей."
+msgstr "      ."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "Сообщества"
+msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Посетите %1$s на веб-сайте %2$s"
+msgstr " %1$s  - %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "имя пользователя"
+msgstr " "
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "канал"
+msgstr ""
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "компания"
+msgstr ""
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "форум"
+msgstr ""
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -211,6 +211,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr ""
-"Для виджетов контактов требуется PHP версии %s или выше. Отключите плагин и "
-"обратитесь к системному администратору."
+msgstr "    PHP  %s  .       ."

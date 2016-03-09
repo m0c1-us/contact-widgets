@@ -1,18 +1,18 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Özel irtibat bilgilerini görüntüle."
+msgstr "zel irtibat bilgilerini grntle."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "İletişim"
+msgstr "letiim"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Başlık:"
+msgstr "Balk:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Modülün adı. Herhangi bir ad yoksa boş bırakın."
+msgstr "Modln ad. Herhangi bir ad yoksa bo brakn."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,7 +20,8 @@ msgstr "E-posta:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Web sitesi ziyaretçilerinin sizinle iletişim kurabileceği bir e-posta adresi."
+msgstr ""
+"Web sitesi ziyaretilerinin sizinle iletiim kurabilecei bir e-posta adresi."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +29,8 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Web sitesi ziyaretçilerinin soru sormak için arayabileceği bir telefon numarası."
+msgstr ""
+"Web sitesi ziyaretilerinin soru sormak iin arayabilecei bir telefon numaras."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +38,8 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Web sitesi ziyaretçilerinin önemli belgeleri gönderebileceği bir faks numarası."
+msgstr ""
+"Web sitesi ziyaretilerinin nemli belgeleri gnderebilecei bir faks numaras."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,36 +47,37 @@ msgstr "Adres:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Web sitesi ziyaretçilerinin sizi bire bir ziyaret edebileceği bir açık adres."
+msgstr ""
+"Web sitesi ziyaretilerinin sizi bire bir ziyaret edebilecei bir ak adres."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Etiketler görüntülensin mi?"
+msgstr "Etiketler grntlensin mi?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Adresin haritadaki konumu görüntülensin mi?"
+msgstr "Adresin haritadaki konumu grntlensin mi?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Özel sosyal medya profil bağlantılarını görüntüle."
+msgstr "zel sosyal medya profil balantlarn grntle."
 
 #: includes/class-social.php:25
 msgid "Social"
 msgstr "Sosyal"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "%2$s %1$s sayfasını ziyaret edin"
+msgstr "%2$s %1$s sayfasn ziyaret edin"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "kullanıcı adı"
+msgstr "kullanc ad"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -83,7 +87,7 @@ msgstr "kanal"
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "şirket"
+msgstr "irket"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
@@ -212,5 +216,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kişi modülleri, PHP sürümünü %s ya da üzerini gerektirir. Lütfen eklentiyi "
-"devre dışı bırakın ve sistem yöneticinizle iletişime geçin."
+"Kii modlleri, PHP srmn %s ya da zerini gerektirir. Ltfen eklentiyi devre d "
+"brakn ve sistem yneticinizle iletiime gein."

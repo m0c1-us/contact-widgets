@@ -6,11 +6,11 @@ msgstr "Paparkan maklumat kenalan tersuai."
 msgid "Contact"
 msgstr "Hubungan"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr "Tajuk widget Biarkan kosong untuk yang tiada tajuk"
 
@@ -28,7 +28,9 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Nombor telefon yang pelawat halaman utama boleh panggil jika mereka mempunyai soalan."
+msgstr ""
+"Nombor telefon yang pelawat halaman utama boleh panggil jika mereka "
+"mempunyai soalan."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +38,9 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar dokumen penting,"
+msgstr ""
+"Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar "
+"dokumen penting,"
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,9 +48,10 @@ msgstr "Alamat:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
+msgstr ""
+"Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Paparkan label?"
 
@@ -62,7 +67,7 @@ msgstr "Paparkan pautan profil medial sosial tersuai."
 msgid "Social"
 msgstr "Sosial"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "

@@ -6,11 +6,11 @@ msgstr "Tampilkan informasi kontak yang disesuaikan."
 msgid "Contact"
 msgstr "Kontak"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Judul:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr "Judul widget. Biarkan kosong tanpa judul."
 
@@ -20,7 +20,9 @@ msgstr "Email:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Alamat email yang dapat digunakan pengunjung situs web untuk menghubungi Anda."
+msgstr ""
+"Alamat email yang dapat digunakan pengunjung situs web untuk menghubungi "
+"Anda."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +30,9 @@ msgstr "Telepon:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Nomor telepon yang dapat dihubungi pengunjung situs web jika ingin mengajukan pertanyaan."
+msgstr ""
+"Nomor telepon yang dapat dihubungi pengunjung situs web jika ingin "
+"mengajukan pertanyaan."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +40,9 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Nomor faks yang dapat digunakan pengunjung situs web untuk mengirimkan dokumen penting."
+msgstr ""
+"Nomor faks yang dapat digunakan pengunjung situs web untuk mengirimkan "
+"dokumen penting."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,9 +50,11 @@ msgstr "Alamat:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Alamat fisik yang dapat dikunjungi pengunjung situs web untuk bertemu Anda secara langsung."
+msgstr ""
+"Alamat fisik yang dapat dikunjungi pengunjung situs web untuk bertemu Anda "
+"secara langsung."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Tampilkan label?"
 
@@ -62,7 +70,7 @@ msgstr "Tampilkan tautan profil media sosial yang disesuaikan."
 msgid "Social"
 msgstr "Sosial"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "

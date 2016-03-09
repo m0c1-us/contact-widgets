@@ -1,94 +1,94 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "顯示自訂聯絡人資訊。"
+msgstr ""
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "聯絡人"
+msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "標題："
+msgstr ""
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "工具程式標題。 無標題者留空白。"
+msgstr " "
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "電郵："
+msgstr ""
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "網站訪客可與您聯繫的電子郵件地址。"
+msgstr ""
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "電話："
+msgstr ""
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "網站訪客有問題時可撥打的電話號碼。"
+msgstr ""
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "傳真："
+msgstr ""
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "網站訪客可傳送重要文件的傳真號碼。"
+msgstr ""
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "地址："
+msgstr ""
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "網站訪客可親自拜訪您的實體地址。"
+msgstr ""
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "顯示標籤？"
+msgstr ""
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "顯示地址的地圖？"
+msgstr ""
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "顯示自訂社交媒體個人檔案連結。"
+msgstr ""
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "社交"
+msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "在 %2$s 上造訪 %1$s"
+msgstr " %2$s  %1$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "用戶名"
+msgstr ""
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "頻道"
+msgstr ""
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "公司"
+msgstr ""
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "論壇"
+msgstr ""
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -184,11 +184,11 @@ msgstr "WhatsApp"
 
 #: includes/social-networks.php:131
 msgid "WeChat"
-msgstr "微信"
+msgstr ""
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr "中"
+msgstr ""
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
@@ -211,4 +211,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr "聯絡工具程式需要使用 PHP %s 或以上版本。 請停用外掛程式並聯絡您的系統管理員。"
+msgstr " PHP %s  "

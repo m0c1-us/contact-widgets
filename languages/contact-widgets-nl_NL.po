@@ -6,11 +6,11 @@ msgstr "Geef aangepaste contactinformatie weer."
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr "De titel van de widget. Laat leeg voor geen titel."
 
@@ -28,7 +28,8 @@ msgstr "Telefoon:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Een telefoonnummer dat websitebezoekers kunnen bellen als ze vragen hebben."
+msgstr ""
+"Een telefoonnummer dat websitebezoekers kunnen bellen als ze vragen hebben."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +37,9 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Een faxnummer dat websitebezoekers kunnen gebruiken om belangrijke documenten te verzenden."
+msgstr ""
+"Een faxnummer dat websitebezoekers kunnen gebruiken om belangrijke "
+"documenten te verzenden."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -46,7 +49,7 @@ msgstr "Adres:"
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr "Een fysiek adres waar websitebezoekers u persoonlijk kunnen bezoeken."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Labels weergeven?"
 
@@ -62,7 +65,7 @@ msgstr "Geef aangepaste koppelingen naar sociale mediaprofielen weer."
 msgid "Social"
 msgstr "Sociaal"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "

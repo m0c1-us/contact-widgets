@@ -1,94 +1,94 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "사용자 지정 연락처 정보를 표시합니다."
+msgstr "    ."
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "연락처"
+msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "제목:"
+msgstr ":"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "위젯의 이름. 이름이 없는 경우는 비워 두십시오."
+msgstr " .     ."
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "이메일:"
+msgstr ":"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "웹사이트 방문자가 귀하에게 연락할 수 있는 이메일 주소."
+msgstr "       ."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "전화:"
+msgstr ":"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "웹사이트 방문자에게 문의사항이 있는 경우에 문의할 수 있는 전화 번호."
+msgstr "         ."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "팩스:"
+msgstr ":"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "웹사이트 방문자가 중요한 문서를 보내기 위해 사용할 수 있는 팩스 번호."
+msgstr "          ."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "주소:"
+msgstr ":"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "웹사이트 방문자가 귀하를 직접 방문하기 위해 갈 수 있는 실제 주소."
+msgstr "          ."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "레이블을 표시하겠습니까?"
+msgstr " ?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "주소 지도를 표시하겠습니까?"
+msgstr "  ?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "사용자 지정 소셜 미디어 프로필 링크를 표시합니다."
+msgstr "      ."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "소셜"
+msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "%2$s에 %1$s 방문"
+msgstr "%2$s %1$s "
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "사용자 이름"
+msgstr " "
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "채널"
+msgstr ""
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "회사"
+msgstr ""
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "게시판"
+msgstr ""
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -148,7 +148,7 @@ msgstr "TripAdvisor"
 
 #: includes/social-networks.php:89
 msgid "WordPress"
-msgstr "워드프레스"
+msgstr ""
 
 #: includes/social-networks.php:94
 msgid "Yelp"
@@ -211,4 +211,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr "연락처 위젯은 PHP 버전 %s 이상을 필요로 합니다. 플러그인을 비활성화하고 귀하의 시스템 관리자에게 연락하십시오."
+msgstr "  PHP  %s   .      ."

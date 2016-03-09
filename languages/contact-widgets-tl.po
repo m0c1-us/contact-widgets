@@ -6,11 +6,11 @@ msgstr "Ipakita ang custom na impormasyon sa pakikipag-ugnayan."
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Title:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
 msgstr "Ang pangalan ng widget. Iwanang walang laman para sa walang pangalan."
 
@@ -20,7 +20,9 @@ msgstr "Email:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Isang email address kung saan ang mga bisita ng website ay maaaring makipag-ugnayan sa iyo."
+msgstr ""
+"Isang email address kung saan ang mga bisita ng website ay maaaring makipag-"
+"ugnayan sa iyo."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +30,9 @@ msgstr "Telepono:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Isang numero ng teepono na matatawagan ng mga bisita ng website kung may mga tanong sila."
+msgstr ""
+"Isang numero ng teepono na matatawagan ng mga bisita ng website kung may mga "
+"tanong sila."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +40,9 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Ang numero ng fax na magagamit ng mga bisita ng website para makapagpadala ng mga importanteng dokumento."
+msgstr ""
+"Ang numero ng fax na magagamit ng mga bisita ng website para makapagpadala "
+"ng mga importanteng dokumento."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,9 +50,11 @@ msgstr "Address:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Isang pisikal na address kung saan makakapunta ang mga bisita ng website para makilala kayo nang personal."
+msgstr ""
+"Isang pisikal na address kung saan makakapunta ang mga bisita ng website "
+"para makilala kayo nang personal."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Ipakita ang mga etiketa?"
 
@@ -62,7 +70,7 @@ msgstr "Ipakita ang mga custom na link ng profile sa social media."
 msgid "Social"
 msgstr "Social"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "

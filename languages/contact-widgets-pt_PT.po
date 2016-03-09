@@ -1,18 +1,18 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Apresente informações de contacto personalizadas."
+msgstr "Apresente informaes de contacto personalizadas."
 
 #: includes/class-contact.php:25
 msgid "Contact"
 msgstr "Contacto"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Título:"
+msgstr "Ttulo:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "O título do widget. Deixe em branco para não atribuir um título."
+msgstr "O ttulo do widget. Deixe em branco para no atribuir um ttulo."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,7 +20,9 @@ msgstr "E-mail:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Um endereço de correio eletrónico através do qual os visitantes do sítio da internet o podem contactar."
+msgstr ""
+"Um endereo de correio eletrnico atravs do qual os visitantes do stio da "
+"internet o podem contactar."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +30,9 @@ msgstr "Telefone:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Um número de telefone para o qual os visitantes do sítio da internet podem ligar se pretenderem esclarecer alguma questão."
+msgstr ""
+"Um nmero de telefone para o qual os visitantes do stio da internet podem "
+"ligar se pretenderem esclarecer alguma questo."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,33 +40,37 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Um número de fax que os visitantes do sítio da internet podem utilizar para enviar documentos importantes."
+msgstr ""
+"Um nmero de fax que os visitantes do stio da internet podem utilizar para "
+"enviar documentos importantes."
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "Endereço:"
+msgstr "Endereo:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Um endereço físico onde os visitantes do sítio da internet o podem visitar pessoalmente."
+msgstr ""
+"Um endereo fsico onde os visitantes do stio da internet o podem visitar "
+"pessoalmente."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Apresentar etiquetas?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Apresentar mapa do endereço?"
+msgstr "Apresentar mapa do endereo?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Apresente ligações personalizadas para perfis nas redes sociais."
+msgstr "Apresente ligaes personalizadas para perfis nas redes sociais."
 
 #: includes/class-social.php:25
 msgid "Social"
 msgstr "Redes sociais"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -88,7 +96,7 @@ msgstr "empresa"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "fórum"
+msgstr "frum"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -212,5 +220,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"O widget de contacto requer a versão %s do PHP ou uma versão posterior. "
+"O widget de contacto requer a verso %s do PHP ou uma verso posterior. "
 "Desative o suplemento e contacte o administrador do seu sistema."

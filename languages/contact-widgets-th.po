@@ -1,94 +1,94 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "แสดงข้อมูลติดต่อที่เฉพาะเจาะจง"
+msgstr ""
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "ติดต่อ"
+msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "ชื่อเรื่อง:"
+msgstr ":"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "ชื่อวิดเจ็ท เว้นว่างไว้สำหรับวิดเจ็ตที่ไม่มีชื่อ"
+msgstr " "
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "อีเมล์:"
+msgstr ":"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "ที่อยู่อีเมลที่ผู้เข้าชมเว็บไซต์สามารถติดต่อคุณได้"
+msgstr ""
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "โทรศัพท์:"
+msgstr ":"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "หมายเลขโทรศัพท์ที่ผู้เข้าชมเว็บไซต์สามารถโทรหาได้เมื่อมีคำถาม"
+msgstr ""
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "แฟกซ์:"
+msgstr ":"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "หมายเลขโทรสารที่ผู้เข้าชมเว็บไซต์สามารถใช้เพื่อส่งเอกสารสำคัญ"
+msgstr ""
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "ที่อยู่:"
+msgstr ":"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "ที่อยู่ทางกายภาพที่ผู้เข้าชมเว็บไซต์สามารถพบคุณได้"
+msgstr ""
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "แสดงฉลากหรือไม่"
+msgstr ""
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "แสดงแผนที่ของที่อยู่หรือไม่"
+msgstr ""
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "แสดงลิงก์ไปยังโพรไฟล์บนโซเซียลมีเดียที่เฉพาะเจาะจง"
+msgstr ""
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "โซเชียล"
+msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "เยี่ยมชม %1$s ได้ที่ %2$s"
+msgstr " %1$s  %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "ชื่อผู้ใช้"
+msgstr ""
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "ช่องทาง"
+msgstr ""
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "บริษัท"
+msgstr ""
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "บอร์ด"
+msgstr ""
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -156,11 +156,11 @@ msgstr "Yelp"
 
 #: includes/social-networks.php:99
 msgid "Amazon"
-msgstr "อเมซอน"
+msgstr ""
 
 #: includes/social-networks.php:103
 msgid "Instagram"
-msgstr "อินสตาแกรม"
+msgstr ""
 
 #: includes/social-networks.php:108
 msgid "Vine"
@@ -211,5 +211,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr ""
-"Contact widget ต้องมี PHP เวอร์ชัน %s หรือที่สูงกว่า โปรดปิดใช้งานปลั๊กอินและติดต่อผู้ดูแลระบบของคุณ"
+msgstr "Contact widget  PHP  %s  "

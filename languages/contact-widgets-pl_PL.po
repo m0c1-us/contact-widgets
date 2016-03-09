@@ -1,18 +1,18 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "Wyświetl niestandardowe dane kontaktowe."
+msgstr "Wywietl niestandardowe dane kontaktowe."
 
 #: includes/class-contact.php:25
 msgid "Contact"
 msgstr "Kontakt"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "Tytuł:"
+msgstr "Tytu:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Tytuł widżetu. Pozostaw pole puste, jeśli nie chcesz tytułu."
+msgstr "Tytu widetu. Pozostaw pole puste, jeli nie chcesz tytuu."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,7 +20,7 @@ msgstr "Adres e-mail:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Adres e-mail, pod jakim odwiedzający witrynę mogą się z Tobą skontaktować."
+msgstr "Adres e-mail, pod jakim odwiedzajcy witryn mog si z Tob skontaktowa."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +28,7 @@ msgstr "Nr tel.:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Numer telefonu, pod jaki mogą zadzwonić odwiedzający witrynę w razie pytań."
+msgstr "Numer telefonu, pod jaki mog zadzwoni odwiedzajcy witryn wrazie pyta."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +36,7 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Numer faksu, pod jaki odwiedzający witrynę mogą przesłać ważne dokumenty."
+msgstr "Numer faksu, pod jaki odwiedzajcy witryn mog przesa wane dokumenty."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,51 +44,51 @@ msgstr "Adres:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Adres, pod jakim odwiedzający witrynę mogą odwiedzić Cię osobiście."
+msgstr "Adres, pod jakim odwiedzajcy witryn mog odwiedzi Ci osobicie."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "Wyświetlać etykiety?"
+msgstr "Wywietla etykiety?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Wyświetlać mapę z adresem?"
+msgstr "Wywietla map zadresem?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Wyświetl niestandardowe łącza do profili w mediach społecznościowych."
+msgstr "Wywietl niestandardowe cza do profili wmediach spoecznociowych."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "Media społecznościowe"
+msgstr "Media spoecznociowe"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Odwiedź %1$s w serwisie %2$s"
+msgstr "Odwied %1$s wserwisie %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "nazwa użytkownika"
+msgstr "nazwa uytkownika"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "kanał"
+msgstr "kana"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "firmę"
+msgstr "firm"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "tablicę"
+msgstr "tablic"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -212,5 +212,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widżety kontaktu wymagają PHP w wersji %s lub wyższej. Dezaktywuj wtyczkę i "
-"skontaktuj się z administratorem systemu."
+"Widety kontaktu wymagaj PHP wwersji %s lub wyszej. Dezaktywuj wtyczk "
+"iskontaktuj si zadministratorem systemu."

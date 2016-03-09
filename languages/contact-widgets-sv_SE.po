@@ -6,13 +6,13 @@ msgstr "Visa anpassad kontaktinformation."
 msgid "Contact"
 msgstr "Kontakt"
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "Widgetens namn. Lämna tomt om den ska vara namnlös."
+msgstr "Widgetens namn. Lmna tomt om den ska vara namnls."
 
 #: includes/class-contact.php:152
 msgid "Email:"
@@ -20,7 +20,7 @@ msgstr "E-post:"
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "En e-postadress som webbplatsbesökarna kan kontakta dig på."
+msgstr "En e-postadress som webbplatsbeskarna kan kontakta dig p."
 
 #: includes/class-contact.php:162
 msgid "Phone:"
@@ -28,7 +28,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Ett telefonnummer som webbplatsbesökarna kan ringa om de undrar något."
+msgstr "Ett telefonnummer som webbplatsbeskarna kan ringa om de undrar ngot."
 
 #: includes/class-contact.php:167
 msgid "Fax:"
@@ -36,7 +36,9 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Ett faxnummer som webbplatsbesökarna kan använda för att skicka viktiga dokument."
+msgstr ""
+"Ett faxnummer som webbplatsbeskarna kan anvnda fr att skicka viktiga "
+"dokument."
 
 #: includes/class-contact.php:172
 msgid "Address:"
@@ -44,36 +46,36 @@ msgstr "Adress:"
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "En fysisk adress där webbplatsbesökarna kan besöka dig personligen."
+msgstr "En fysisk adress dr webbplatsbeskarna kan beska dig personligen."
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
 msgstr "Visa etiketter?"
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "Visa karta för adressen?"
+msgstr "Visa karta fr adressen?"
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "Visa anpassade länkar för social medieprofil."
+msgstr "Visa anpassade lnkar fr social medieprofil."
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "Länkar till sociala medier"
+msgstr "Lnkar till sociala medier"
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Besök %1$s på %2$s"
+msgstr "Besk %1$s p %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "användarnamn"
+msgstr "anvndarnamn"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -83,7 +85,7 @@ msgstr "kanal"
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "företag"
+msgstr "fretag"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
@@ -212,5 +214,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontaktwidgeten kräver PHP version %s eller senare. Inaktivera "
-"plugin-programmet och kontakta systemadministratören."
+"Kontaktwidgeten krver PHP version %s eller senare. Inaktivera plugin-"
+"programmet och kontakta systemadministratren."

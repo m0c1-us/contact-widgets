@@ -1,15 +1,16 @@
 module.exports = function(grunt) {
 
 	var BUILD_DIR = 'build',
-			SOURCE_DIR = '.',
-			SLUG = 'contact-widgets';
+			SOURCE_DIR = '.';
+
+	var pkg = grunt.file.readJSON( 'package.json' );
 
 	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
 	grunt.initConfig({
 
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: pkg,
 
 		cssmin: {
 			options: {
@@ -62,12 +63,61 @@ module.exports = function(grunt) {
 
 		clean: [ BUILD_DIR ],
 
+
+		replace: {
+			version_php: {
+				src: [
+					'**/*.php',
+					'!vendor/**',
+					'!dev-lib/*'
+				],
+				overwrite: true,
+				replacements: [ {
+					from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+					to: 'Version:$1' + pkg.version
+				}, {
+					from: /@version(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+					to: '@version$1' + pkg.version
+				}, {
+					from: /@since(.*?)NEXT/mg,
+					to: '@since$1' + pkg.version
+				}, {
+					from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+					to: 'VERSION$1=$2' + pkg.version
+				} ]
+			},
+			version_readme: {
+				src: 'README.txt',
+				overwrite: true,
+				replacements: [ {
+					from: /^\*\*Stable tag:\*\*(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+					to: '**Stable tag:**$1<%= pkg.version %>$2'
+				} ]
+			},
+			readme_txt: {
+				src: 'README.txt',
+				replacements: [ {
+					from: /^# (.*?)( #+)?$/mg,
+					to: '=== $1 ==='
+				}, {
+					from: /^## (.*?)( #+)?$/mg,
+					to: '== $1 =='
+				}, {
+					from: /^### (.*?)( #+)?$/mg,
+					to: '= $1 ='
+				}, {
+					from: /^\*\*(.*?):\*\*/mg,
+					to: '$1:'
+				} ]
+			}
+		},
+
 		copy: {
 			files: {
 				cwd: SOURCE_DIR,
 				expand: true,
 				src: [
-					SLUG + '.php',
+					pkg.name + '.php',
 					'readme.txt',
 					'languages/**',
 					'includes/**',
@@ -80,7 +130,7 @@ module.exports = function(grunt) {
 		wp_deploy: {
 			deploy: {
 				options: {
-					plugin_slug: SLUG,
+					plugin_slug: pkg.name,
 					build_dir: BUILD_DIR,
 					assets_dir: 'wp-org-assets'
 				},
@@ -90,7 +140,7 @@ module.exports = function(grunt) {
 		pot: {
 			options: {
 				omit_header: true,
-				text_domain: 'contact-widgets',
+				text_domain: pkg.name,
 				encoding: 'UTF-8',
 				dest: 'languages/',
 				keywords: [ '__', '_e', '__ngettext:1,2', '_n:1,2', '__ngettext_noop:1,2', '_n_noop:1,2', '_c', '_nc:4c,1,2', '_x:1,2c', '_nx:4c,1,2', '_nx_noop:4c,1,2', '_ex:1,2c', 'esc_attr__', 'esc_attr_e', 'esc_attr_x:1,2c', 'esc_html__', 'esc_html_e', 'esc_html_x:1,2c' ],

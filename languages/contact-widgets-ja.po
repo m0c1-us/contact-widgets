@@ -1,94 +1,94 @@
 #: includes/class-contact.php:20
 msgid "Display custom contact information."
-msgstr "顧客の連絡先情報を表示します。"
+msgstr ""
 
 #: includes/class-contact.php:25
 msgid "Contact"
-msgstr "連絡先"
+msgstr ""
 
-#: includes/class-contact.php:146 includes/class-social.php:203
+#: includes/class-contact.php:146 includes/class-social.php:208
 msgid "Title:"
-msgstr "タイトル："
+msgstr ""
 
-#: includes/class-contact.php:147 includes/class-social.php:204
+#: includes/class-contact.php:147 includes/class-social.php:209
 msgid "The title of widget. Leave empty for no title."
-msgstr "ウィジェットのタイトル。 無題の場合は空欄にしてください。"
+msgstr " "
 
 #: includes/class-contact.php:152
 msgid "Email:"
-msgstr "メール："
+msgstr ""
 
 #: includes/class-contact.php:159
 msgid "An email address where website vistors can contact you."
-msgstr "Webサイト訪問者があなたに連絡するためのメールアドレス。"
+msgstr "Web"
 
 #: includes/class-contact.php:162
 msgid "Phone:"
-msgstr "電話："
+msgstr ""
 
 #: includes/class-contact.php:164
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Webサイト訪問者が質問する際に電話するための電話番号。"
+msgstr "Web"
 
 #: includes/class-contact.php:167
 msgid "Fax:"
-msgstr "ファックス："
+msgstr ""
 
 #: includes/class-contact.php:169
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Webサイト訪問者が重要な書類を送信するための FAX番号。"
+msgstr "Web FAX"
 
 #: includes/class-contact.php:172
 msgid "Address:"
-msgstr "アドレス："
+msgstr ""
 
 #: includes/class-contact.php:177
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Webサイト訪問者が個人的に訪問するための住所。"
+msgstr "Web"
 
-#: includes/class-contact.php:180 includes/class-social.php:214
+#: includes/class-contact.php:180 includes/class-social.php:219
 msgid "Display labels?"
-msgstr "ラベルを表示しますか？"
+msgstr ""
 
 #: includes/class-contact.php:190
 msgid "Display map of address?"
-msgstr "住所のマップを表示しますか？"
+msgstr ""
 
 #: includes/class-social.php:20
 msgid "Display custom social media profile links."
-msgstr "顧客のソーシャルメディアプロファイルリンクを表示します。"
+msgstr ""
 
 #: includes/class-social.php:25
 msgid "Social"
-msgstr "ソーシャル"
+msgstr ""
 
-#: includes/class-social.php:163
+#: includes/class-social.php:167
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "%2$sにログインして、%1$s にアクセス"
+msgstr "%2$s%1$s "
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "ユーザー名"
+msgstr ""
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "チャネル"
+msgstr ""
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "会社"
+msgstr ""
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "掲示板"
+msgstr ""
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -211,4 +211,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr "連絡先ウィジェットが%s以上のバージョンの PHP を要求しています。 プラグインを無効化してシステム管理者に連絡してください。"
+msgstr "%s PHP  "
