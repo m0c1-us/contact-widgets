@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 
-	var BUILD_DIR = 'build',
-			SOURCE_DIR = '.';
+	var BUILD_DIR = 'build';
 
 	var pkg = grunt.file.readJSON( 'package.json' );
 
@@ -61,7 +60,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		clean: [ BUILD_DIR ],
+		clean: {
+			build: [ BUILD_DIR + '/*' ],
+			options: {
+				force: true
+			}
+		},
 
 
 		replace: {
@@ -98,7 +102,7 @@ module.exports = function(grunt) {
 
 		copy: {
 			files: {
-				cwd: SOURCE_DIR,
+				cwd: '.',
 				expand: true,
 				src: [
 					pkg.name + '.php',
