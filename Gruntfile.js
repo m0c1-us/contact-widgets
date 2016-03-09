@@ -87,27 +87,11 @@ module.exports = function(grunt) {
 				} ]
 			},
 			version_readme: {
-				src: 'README.txt',
+				src: 'readme.txt',
 				overwrite: true,
 				replacements: [ {
-					from: /^\*\*Stable tag:\*\*(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
-					to: '**Stable tag:**$1<%= pkg.version %>$2'
-				} ]
-			},
-			readme_txt: {
-				src: 'README.txt',
-				replacements: [ {
-					from: /^# (.*?)( #+)?$/mg,
-					to: '=== $1 ==='
-				}, {
-					from: /^## (.*?)( #+)?$/mg,
-					to: '== $1 =='
-				}, {
-					from: /^### (.*?)( #+)?$/mg,
-					to: '= $1 ='
-				}, {
-					from: /^\*\*(.*?):\*\*/mg,
-					to: '$1:'
+					from: /^Stable tag:(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+					to: 'Stable tag:$1<%= pkg.version %>$2'
 				} ]
 			}
 		},
@@ -147,7 +131,7 @@ module.exports = function(grunt) {
 				msgmerge: true
 			},
 			files: {
-				src: [ 'includes/*.php', 'contact-widgets.php' ],
+				src: [ 'includes/*.php', pkg.name + '.php' ],
 				expand: true
 			}
 		},
@@ -163,7 +147,8 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['cssmin', 'uglify']);
-	grunt.registerTask('build', ['default', 'clean', 'copy']);
+	grunt.registerTask('version', ['replace'] );
+	grunt.registerTask('build', ['default', 'version', 'clean', 'copy']);
 	grunt.registerTask('deploy', ['build','wp_deploy']);
 	grunt.registerTask('update_translation', ['pot','po2mo']);
 
