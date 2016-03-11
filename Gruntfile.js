@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 		svn_username = grunt.file.read( 'svn-username' ).trim();
 
-	} 
+	}
 
 	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 				src: [
 					pkg.name + '.php',
 					'readme.txt',
-					'languages/**',
+					'languages/*.mo',
 					'includes/**',
 					'assets/**'
 				],
