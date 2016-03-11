@@ -1,8 +1,16 @@
 module.exports = function(grunt) {
 
-	var BUILD_DIR = 'build';
+	var BUILD_DIR = 'build/';
 
 	var pkg = grunt.file.readJSON( 'package.json' );
+
+	var svn_username = false;
+
+	if ( grunt.file.exists( 'svn-username' ) ) {
+
+		svn_username = grunt.file.read( 'svn-username' ).trim();
+
+	} 
 
 	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
@@ -61,7 +69,7 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			build: [ BUILD_DIR + '/*' ],
+			build: [ BUILD_DIR + '*' ],
 			options: {
 				force: true
 			}
@@ -120,7 +128,8 @@ module.exports = function(grunt) {
 				options: {
 					plugin_slug: pkg.name,
 					build_dir: BUILD_DIR,
-					assets_dir: 'wp-org-assets'
+					assets_dir: 'wp-org-assets',
+					svn_user: svn_username
 				},
 			}
 		},
