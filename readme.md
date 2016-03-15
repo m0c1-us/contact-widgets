@@ -8,7 +8,7 @@ Beautifully display social media and contact information on your website with th
 **Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
 **Requires at least:** 4.4.2  
 **Tested up to:** 4.4.2  
-**Stable tag:** 1.0.3  
+**Stable tag:** 1.1.0  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
 
@@ -92,6 +92,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 ```
 
 ## Changelog ##
+
+### 1.1.0 - March 9, 2016 ###
+Add i10n to Google Map embed
 
 ### 1.0.3 - March 9, 2016 ###
 Update locale ms_MY
