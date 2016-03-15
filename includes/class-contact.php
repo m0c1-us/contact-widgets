@@ -120,8 +120,9 @@ final class Contact extends Base_Widget {
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
 			printf(
-				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed" scrolling="no" frameborder="0"></iframe></li>',
-				urlencode( trim( strip_tags( $fields['address']['value'] ) ) )
+				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed&hl=%s" scrolling="no" frameborder="0"></iframe></li>',
+				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
+				urlencode( $this->get_google_maps_locale() )
 			);
 
 		}
@@ -209,6 +210,45 @@ final class Contact extends Base_Widget {
 		 * @var array
 		 */
 		return (array) apply_filters( 'wpcw_widget_contact_fields', $fields, $instance );
+
+	}
+
+	/**
+	 * Get the current locale in Google Maps API format
+	 *
+	 * @link https://developers.google.com/maps/faq#languagesupport
+	 *
+	 * @return string
+	 */
+	protected function get_google_maps_locale() {
+
+		$locale = get_locale();
+
+		switch ( $locale ) {
+
+			case 'en_AU' :
+			case 'en_GB' :
+			case 'pt_BR' :
+			case 'pt_PT' :
+			case 'zh_TW' :
+
+				$locale = str_replace( '_', '-', $locale );
+
+				break;
+
+			case 'zh_CH' :
+
+				$locale = 'zh-CN';
+
+				break;
+
+			default :
+
+				$locale = substr( $locale, 0, 2 );
+
+		}
+
+		return $locale;
 
 	}
 
