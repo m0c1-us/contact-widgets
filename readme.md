@@ -25,7 +25,33 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 
 **Languages Supported:**
 
- * English
+* English
+* Dansk
+* Deutsch
+* Ελληνικά
+* Español
+* Español de México
+* Suomi
+* Français
+* Bahasa Indonesia
+* Italiano
+* 日本語
+* 한국어
+* Bahasa Melayu
+* Norsk bokmål
+* Nederlands
+* Polski
+* Português do Brasil
+* Português
+* Русский
+* Svenska
+* ไทย
+* Türkçe
+* Українська
+* Tiếng Việt
+* 简体中文
+* 香港中文版
+* 繁體中文
 
 **Improvement? Bugs?**
 

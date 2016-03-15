@@ -11,27 +11,52 @@ Beautifully display social media and contact information on your website with th
 
 **Note: This plugin requires PHP 5.4 or higher to be activated.**
 
-This plugin adds two new widgets to your WordPress website:  
+This plugin adds two new widgets to your WordPress website:
 
-*  Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).  
-*  Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.  
+*  Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).
+*  Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.
 
 Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
 
 **Languages Supported:**
 
- * English
+* English
+* Dansk
+* Deutsch
+* Ελληνικά
+* Español
+* Español de México
+* Suomi
+* Français
+* Bahasa Indonesia
+* Italiano
+* 日本語
+* 한국어
+* Bahasa Melayu
+* Norsk bokmål
+* Nederlands
+* Polski
+* Português do Brasil
+* Português
+* Русский
+* Svenska
+* ไทย
+* Türkçe
+* Українська
+* Tiếng Việt
+* 简体中文
+* 香港中文版
+* 繁體中文
 
 **Improvement? Bugs?**
 
-Please fill out an issue [here](https://github.com/godaddy/wp-contact-widgets/issues). 
+Please fill out an issue [here](https://github.com/godaddy/wp-contact-widgets/issues).
 
 == Screenshots ==
 
 1. Contact widget
 2. Social widget
 3. Twenty Sixteen theme showing both widgets
-
 
 == Frequently Asked Questions ==
 
