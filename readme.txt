@@ -80,6 +80,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 </pre>
 
 == Changelog ==
+= 1.1.0 - March 9, 2016 =
+Add i10n to Google Map embed
+
 = 1.0.3 - March 9, 2016 =
 Update locale ms_MY
 
