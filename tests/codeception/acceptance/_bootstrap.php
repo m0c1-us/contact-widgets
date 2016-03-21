@@ -34,9 +34,4 @@ add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $socia
 	update_option( 'widget_wpcw_contact', $contact_widgets );
 	update_option( 'widget_wpcw_social', $social_widgets );
 
-	// No need to waste unnecessary ressources
-	WP_CLI::launch_self( 'selenium stop', [], [], false );
-
 } );
-
-WP_CLI::launch_self( 'selenium start', [], [], false );

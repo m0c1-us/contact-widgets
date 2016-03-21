@@ -16,10 +16,10 @@ Beautifully display social media and contact information on your website with th
 
 **Note: This plugin requires PHP 5.4 or higher to be activated.**
 
-This plugin adds two new widgets to your WordPress website:  
+This plugin adds two new widgets to your WordPress website:
 
-*  Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).  
-*  Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.  
+*  Contact Information: Displays your contact information including email address, phone number, fax and physical address (including a map).
+*  Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.
 
 Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
 
@@ -120,7 +120,7 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 ## Changelog ##
 
 ### 1.1.0 - March 9, 2016 ###
-Add i10n to Google Map embed
+Add l10n to Google Map embed
 
 ### 1.0.3 - March 9, 2016 ###
 Update locale ms_MY
