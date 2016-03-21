@@ -55,7 +55,7 @@ class AdminTestCest {
 
 	    $I->amOnPage( admin_url( 'widgets.php' ) );
 
-	    $I->canSee( 'Contact', [ 'css' => '.widget h3' ] );
+	    $I->canSee( 'Contact Details', [ 'css' => '.widget h3' ] );
 
 	    $selector = '#widget-list div[id$=wpcw_contact-__i__]';
 
