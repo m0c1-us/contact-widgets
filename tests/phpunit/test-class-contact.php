@@ -6,9 +6,17 @@ final class TestContact extends TestCase {
 
 	function setUp() {
 
+		global $_wp_sidebars_widgets;
+
 		parent::setUp();
 
 		$this->plugin = new Contact();
+
+		if ( ! isset( $_wp_sidebars_widgets['sidebar-1']['wpcw_contact'] ) ) {
+
+			$_wp_sidebars_widgets['sidebar-1'][] = 'wpcw_contact-1';
+
+		}
 
 	}
 
@@ -60,7 +68,11 @@ final class TestContact extends TestCase {
 
 		$this->plugin->widget( $args, $instance );
 
-		// Make sure the JS file is enqueued
+		// Tests that script & styles are enqueued enqueued
+		do_action( 'wp_enqueue_scripts' );
+
+		$wp_styles = wp_styles();
+
 		$this->assertContains( 'wpcw', $wp_styles->queue );
 
 	}
