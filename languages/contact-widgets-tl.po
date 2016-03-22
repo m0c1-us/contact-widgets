@@ -1,76 +1,79 @@
 #: includes/class-contact.php:20
-msgid "Display custom contact information."
+#, fuzzy
+msgid "Display your contact information."
 msgstr "Ipakita ang custom na impormasyon sa pakikipag-ugnayan."
 
-#: includes/class-contact.php:25
-msgid "Contact"
+#: includes/class-contact.php:26
+#, fuzzy
+msgid "Contact Details"
 msgstr "Contact"
 
-#: includes/class-contact.php:146 includes/class-social.php:208
+#: includes/class-contact.php:164 includes/class-social.php:225
 msgid "Title:"
 msgstr "Title:"
 
-#: includes/class-contact.php:147 includes/class-social.php:209
+#: includes/class-contact.php:165 includes/class-social.php:226
 msgid "The title of widget. Leave empty for no title."
 msgstr "Ang pangalan ng widget. Iwanang walang laman para sa walang pangalan."
 
-#: includes/class-contact.php:152
+#: includes/class-contact.php:170
 msgid "Email:"
 msgstr "Email:"
 
-#: includes/class-contact.php:159
+#: includes/class-contact.php:177
 msgid "An email address where website vistors can contact you."
 msgstr ""
 "Isang email address kung saan ang mga bisita ng website ay maaaring makipag-"
 "ugnayan sa iyo."
 
-#: includes/class-contact.php:162
+#: includes/class-contact.php:180
 msgid "Phone:"
 msgstr "Telepono:"
 
-#: includes/class-contact.php:164
+#: includes/class-contact.php:182
 msgid "A phone number that website vistors can call if they have questions."
 msgstr ""
 "Isang numero ng teepono na matatawagan ng mga bisita ng website kung may mga "
 "tanong sila."
 
-#: includes/class-contact.php:167
+#: includes/class-contact.php:185
 msgid "Fax:"
 msgstr "Fax:"
 
-#: includes/class-contact.php:169
+#: includes/class-contact.php:187
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
 "Ang numero ng fax na magagamit ng mga bisita ng website para makapagpadala "
 "ng mga importanteng dokumento."
 
-#: includes/class-contact.php:172
+#: includes/class-contact.php:190
 msgid "Address:"
 msgstr "Address:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:195
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
 "Isang pisikal na address kung saan makakapunta ang mga bisita ng website "
 "para makilala kayo nang personal."
 
-#: includes/class-contact.php:180 includes/class-social.php:219
+#: includes/class-contact.php:198 includes/class-social.php:236
 msgid "Display labels?"
 msgstr "Ipakita ang mga etiketa?"
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:208
 msgid "Display map of address?"
 msgstr "Ipakita ang mapa ng address?"
 
 #: includes/class-social.php:20
-msgid "Display custom social media profile links."
+#, fuzzy
+msgid "Display links to your social media profiles."
 msgstr "Ipakita ang mga custom na link ng profile sa social media."
 
-#: includes/class-social.php:25
-msgid "Social"
-msgstr "Social"
+#: includes/class-social.php:26
+msgid "Social Profiles"
+msgstr ""
 
-#: includes/class-social.php:167
+#: includes/class-social.php:170
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -214,7 +217,7 @@ msgstr "VK"
 msgid "Trello"
 msgstr "Trello"
 
-#: contact-widgets.php:88
+#: contact-widgets.php:89
 #, php-format
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
@@ -222,3 +225,6 @@ msgid ""
 msgstr ""
 "Kailangan sa contact widget ang PHP na bersyon %s o mas bago pa. Maaari lang "
 "huwag paganahin ang plugin at makipag-ugnayan sa iyong system administrator."
+
+#~ msgid "Social"
+#~ msgstr "Social"

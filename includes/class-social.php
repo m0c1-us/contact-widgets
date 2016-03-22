@@ -17,7 +17,7 @@ final class Social extends Base_Widget {
 
 		$widget_options = [
 			'classname'                   => 'wpcw-widget-social',
-			'description'                 => __( 'Display custom social media profile links.', 'contact-widgets' ),
+			'description'                 => __( 'Display links to your social media profiles.', 'contact-widgets' ),
 			'customize_selective_refresh' => true,
 		];
 

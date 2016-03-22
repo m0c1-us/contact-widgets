@@ -1,68 +1,71 @@
 #: includes/class-contact.php:20
-msgid "Display custom contact information."
+#, fuzzy
+msgid "Display your contact information."
 msgstr "Wywietl niestandardowe dane kontaktowe."
 
-#: includes/class-contact.php:25
-msgid "Contact"
+#: includes/class-contact.php:26
+#, fuzzy
+msgid "Contact Details"
 msgstr "Kontakt"
 
-#: includes/class-contact.php:146 includes/class-social.php:208
+#: includes/class-contact.php:164 includes/class-social.php:225
 msgid "Title:"
 msgstr "Tytu:"
 
-#: includes/class-contact.php:147 includes/class-social.php:209
+#: includes/class-contact.php:165 includes/class-social.php:226
 msgid "The title of widget. Leave empty for no title."
 msgstr "Tytu widetu. Pozostaw pole puste, jeli nie chcesz tytuu."
 
-#: includes/class-contact.php:152
+#: includes/class-contact.php:170
 msgid "Email:"
 msgstr "Adres e-mail:"
 
-#: includes/class-contact.php:159
+#: includes/class-contact.php:177
 msgid "An email address where website vistors can contact you."
 msgstr "Adres e-mail, pod jakim odwiedzajcy witryn mog si z Tob skontaktowa."
 
-#: includes/class-contact.php:162
+#: includes/class-contact.php:180
 msgid "Phone:"
 msgstr "Nr tel.:"
 
-#: includes/class-contact.php:164
+#: includes/class-contact.php:182
 msgid "A phone number that website vistors can call if they have questions."
 msgstr "Numer telefonu, pod jaki mog zadzwoni odwiedzajcy witryn wrazie pyta."
 
-#: includes/class-contact.php:167
+#: includes/class-contact.php:185
 msgid "Fax:"
 msgstr "Faks:"
 
-#: includes/class-contact.php:169
+#: includes/class-contact.php:187
 msgid "A fax number that website vistors can use to send important documents."
 msgstr "Numer faksu, pod jaki odwiedzajcy witryn mog przesa wane dokumenty."
 
-#: includes/class-contact.php:172
+#: includes/class-contact.php:190
 msgid "Address:"
 msgstr "Adres:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:195
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr "Adres, pod jakim odwiedzajcy witryn mog odwiedzi Ci osobicie."
 
-#: includes/class-contact.php:180 includes/class-social.php:219
+#: includes/class-contact.php:198 includes/class-social.php:236
 msgid "Display labels?"
 msgstr "Wywietla etykiety?"
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:208
 msgid "Display map of address?"
 msgstr "Wywietla map zadresem?"
 
 #: includes/class-social.php:20
-msgid "Display custom social media profile links."
+#, fuzzy
+msgid "Display links to your social media profiles."
 msgstr "Wywietl niestandardowe cza do profili wmediach spoecznociowych."
 
-#: includes/class-social.php:25
-msgid "Social"
-msgstr "Media spoecznociowe"
+#: includes/class-social.php:26
+msgid "Social Profiles"
+msgstr ""
 
-#: includes/class-social.php:167
+#: includes/class-social.php:170
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -206,7 +209,7 @@ msgstr "VK"
 msgid "Trello"
 msgstr "Trello"
 
-#: contact-widgets.php:88
+#: contact-widgets.php:89
 #, php-format
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
@@ -214,3 +217,6 @@ msgid ""
 msgstr ""
 "Widety kontaktu wymagaj PHP wwersji %s lub wyszej. Dezaktywuj wtyczk "
 "iskontaktuj si zadministratorem systemu."
+
+#~ msgid "Social"
+#~ msgstr "Media spoecznociowe"

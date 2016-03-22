@@ -17,7 +17,7 @@ final class Contact extends Base_Widget {
 
 		$widget_options = [
 			'classname'                   => 'wpcw-widget-contact',
-			'description'                 => __( 'Display custom contact information.', 'contact-widgets' ),
+			'description'                 => __( 'Display your contact information.', 'contact-widgets' ),
 			'customize_selective_refresh' => true,
 		];
 
