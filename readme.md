@@ -7,7 +7,7 @@ Beautifully display social media and contact information on your website with th
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [fjarrett](https://profiles.wordpress.org/fjarrett)  
 **Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
 **Requires at least:** 4.4.2  
-**Tested up to:** 4.4.2  
+**Tested up to:** 4.5  
 **Stable tag:** 1.2.0  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
@@ -119,7 +119,7 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 ## Changelog ##
 
-### 1.2.0 - April 9, 2016 ###
+### 1.2.0 - April 12, 2016 ###
 WordPress 4.5 compatibility
 
 ### 1.1.0 - March 9, 2016 ###

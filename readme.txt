@@ -2,7 +2,7 @@
 Contributors:      godaddy, jonathanbardo, fjarrett
 Tags:              widget, contact, social, sharing, share button, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
 Requires at least: 4.4.2
-Tested up to:      4.4.2
+Tested up to:      4.5
 Stable tag:        1.2.0
 
 Beautifully display social media and contact information on your website with these simple widgets.
@@ -105,7 +105,7 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 </pre>
 
 == Changelog ==
-= 1.2.0 - April 9, 2016 =
+= 1.2.0 - April 12, 2016 =
 WordPress 4.5 compatibility
 
 = 1.1.0 - March 9, 2016 =
