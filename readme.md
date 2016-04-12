@@ -119,6 +119,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 ## Changelog ##
 
+### 1.2.0 - April 9, 2016 ###
+WordPress 4.5 compatibility
+
 ### 1.1.0 - March 9, 2016 ###
 Add l10n to Google Map embed
 
