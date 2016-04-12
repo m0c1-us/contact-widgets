@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contact Widgets
  * Description: Beautifully display social media and contact information on your website with these simple widgets.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: GoDaddy
  * Author URI: https://godaddy.com
  * Text Domain: contact-widgets
