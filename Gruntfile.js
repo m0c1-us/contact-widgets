@@ -99,11 +99,11 @@ module.exports = function(grunt) {
 				} ]
 			},
 			version_readme: {
-				src: 'readme.txt',
+				src: 'readme.*',
 				overwrite: true,
 				replacements: [ {
-					from: /^Stable tag:(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
-					to: 'Stable tag:$1<%= pkg.version %>$2'
+					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
 				} ]
 			}
 		},
