@@ -39,8 +39,6 @@ final class TestContact extends TestCase {
 
 	function test_widget() {
 
-		$wp_styles = wp_styles();
-
 		$instance = [
 			'title'  => 'test',
 			'labels' => [

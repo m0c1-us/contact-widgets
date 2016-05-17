@@ -163,13 +163,10 @@
 
 	$( document ).ready( function ( $ ) {
 
-		// Sortable
-		$( document.body ).on( 'click.widgets-toggle', start_sortable );
-
-		$( document ).on( 'widget-updated', start_sortable );
-
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
+
+		$( document ).on( 'wpcw.change', start_sortable );
 
 	} );
 

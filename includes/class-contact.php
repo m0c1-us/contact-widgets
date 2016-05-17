@@ -16,7 +16,7 @@ final class Contact extends Base_Widget {
 	public function __construct() {
 
 		$widget_options = [
-			'classname'                   => 'wpcw-widget-contact',
+			'classname'                   => 'wpcw-widgets wpcw-widget-contact',
 			'description'                 => __( 'Display your contact information.', 'contact-widgets' ),
 			'customize_selective_refresh' => true,
 		];
@@ -26,13 +26,6 @@ final class Contact extends Base_Widget {
 			__( 'Contact Details', 'contact-widgets' ),
 			$widget_options
 		);
-
-		// Enqueue style if widget is active (appears in a sidebar) or if in Customizer preview.
-		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
-
-			add_action( 'wp_enqueue_scripts', [ $this, 'front_end_enqueue_scripts' ] );
-
-		}
 
 	}
 
@@ -132,19 +125,6 @@ final class Contact extends Base_Widget {
 		}
 
 		$this->after_widget( $args, $fields );
-
-	}
-
-	/**
-	 * Enqueue scripts and styles for front-end use
-	 *
-	 * @action wp_enqueue_scripts
-	 */
-	public function front_end_enqueue_scripts() {
-
-		$suffix = SCRIPT_DEBUG ? '' : '.min';
-
-		wp_enqueue_style( 'wpcw', \Contact_Widgets::$assets_url . "css/style{$suffix}.css", [], Plugin::$version );
 
 	}
 

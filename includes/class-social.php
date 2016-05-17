@@ -16,7 +16,7 @@ final class Social extends Base_Widget {
 	public function __construct() {
 
 		$widget_options = [
-			'classname'                   => 'wpcw-widget-social',
+			'classname'                   => 'wpcw-widgets wpcw-widget-social',
 			'description'                 => __( 'Display links to your social media profiles.', 'contact-widgets' ),
 			'customize_selective_refresh' => true,
 		];
@@ -26,13 +26,6 @@ final class Social extends Base_Widget {
 			__( 'Social Profiles', 'contact-widgets' ),
 			$widget_options
 		);
-
-		// Enqueue style if widget is active (appears in a sidebar) or if in Customizer preview.
-		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
-
-			add_action( 'wp_enqueue_scripts', [ $this, 'front_end_enqueue_scripts' ] );
-
-		}
 
 	}
 
@@ -186,10 +179,9 @@ final class Social extends Base_Widget {
 	 */
 	public function front_end_enqueue_scripts() {
 
-		$suffix = SCRIPT_DEBUG ? '' : '.min';
-
 		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
-		wp_enqueue_style( 'wpcw', \Contact_Widgets::$assets_url . "css/style{$suffix}.css", [], Plugin::$version );
+
+		parent::front_end_enqueue_scripts();
 
 	}
 

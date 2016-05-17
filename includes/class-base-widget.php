@@ -39,6 +39,32 @@ abstract class Base_Widget extends \WP_Widget {
 	];
 
 	/**
+	 * Widget base constructor
+	 *
+	 * @param string $id_base
+	 * @param string $name
+	 * @param array  $widget_options
+	 */
+	public function __construct( $id_base, $name, array $widget_options ) {
+
+		parent::__construct( $id_base, $name, $widget_options );
+
+		if ( has_action( 'wp_enqueue_scripts', [ $this, 'front_end_enqueue_scripts' ] ) ) {
+
+			return;
+
+		}
+
+		// Enqueue style if widget is active (appears in a sidebar) or if in Customizer preview.
+		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+
+			add_action( 'wp_enqueue_scripts', [ $this, 'front_end_enqueue_scripts' ] );
+
+		}
+
+	}
+
+	/**
 	 * Add common ressources needed for the form
 	 *
 	 * @param array $instance
@@ -49,6 +75,17 @@ abstract class Base_Widget extends \WP_Widget {
 
 		add_action( 'admin_footer',                            [ $this, 'enqueue_scripts' ] );
 		add_action( 'customize_controls_print_footer_scripts', [ $this, 'print_customizer_scripts' ] );
+
+		?>
+		<script>
+			( function ( $ ) {
+
+				// This let us know that we appended a new widget to reset sortables
+				$( document ).trigger( 'wpcw.change' );
+
+			} )( jQuery );
+		</script>
+		<?php
 
 	}
 
@@ -417,6 +454,30 @@ abstract class Base_Widget extends \WP_Widget {
 
 		echo '</ul>';
 
+		if ( current_user_can( 'edit_theme_options' ) && current_user_can( 'customize' ) ) {
+
+			// admin-bar.php -> wp_admin_bar_customize_menu()
+			$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+			$edit_url = add_query_arg(
+				[
+					'autofocus' => [
+						'section' => 'sidebar-widgets-' . $args['id'],
+						'control' => 'widget_' . preg_replace( '/-(\d)/', '[$1]', $args['widget_id'] ),
+					],
+					'url' => urlencode( $current_url ),
+				],
+				wp_customize_url()
+			);
+
+			printf(
+				'<a class="post-edit-link" href="%s">%s</a>',
+				esc_url( $edit_url ),
+				__( 'Edit' )
+			);
+
+		}
+
 		echo $args['after_widget'];
 
 	}
@@ -472,6 +533,25 @@ abstract class Base_Widget extends \WP_Widget {
 
 		wp_print_styles( [ 'font-awesome', 'wpcw-admin', 'wpcw-admin-ie' ] );
 		wp_print_scripts( 'wpcw-admin' );
+
+	}
+
+	/**
+	 * Enqueue scripts and styles for front-end use
+	 *
+	 * @action wp_enqueue_scripts
+	 */
+	public function front_end_enqueue_scripts() {
+
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_style( 'wpcw', \Contact_Widgets::$assets_url . "css/style{$suffix}.css", [], Plugin::$version );
+
+		if ( is_customize_preview() ) {
+
+			wp_enqueue_script( 'wpcw-helper', \Contact_Widgets::$assets_url . "js/customize-preview-helper{$suffix}.js", [], Plugin::$version );
+
+		}
 
 	}
 
