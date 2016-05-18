@@ -22,7 +22,7 @@ final class TestContact extends TestCase {
 
 	function test_construct() {
 
-		$this->assertEquals( $this->plugin->widget_options['classname'], 'wpcw-widget-contact' );
+		$this->assertEquals( $this->plugin->widget_options['classname'], 'wpcw-widgets wpcw-widget-contact' );
 
 		$this->assertEquals( $this->plugin->id_base, 'wpcw_contact' );
 

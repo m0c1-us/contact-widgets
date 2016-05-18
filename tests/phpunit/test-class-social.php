@@ -22,7 +22,7 @@ final class TestSocial extends TestCase {
 
 	function test_construct() {
 
-		$this->assertEquals( $this->plugin->widget_options['classname'], 'wpcw-widget-social' );
+		$this->assertEquals( $this->plugin->widget_options['classname'], 'wpcw-widgets wpcw-widget-social' );
 
 		$this->assertEquals( $this->plugin->id_base, 'wpcw_social' );
 
