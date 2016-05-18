@@ -198,4 +198,31 @@ class AdminTestCest {
 
 	}
 
+	/**
+	 * Validate that the edit link redirects to the customizer correctly
+	 *
+	 * @param AcceptanceTester $I
+	 */
+	public function validateEditLink( AcceptanceTester $I ) {
+
+		$I->wantTo( 'Validate the edit link of our widget' );
+
+		$I->amOnPage( home_url() );
+
+		$I->cantSeeElementInDOM( [ 'css' => '.wpcw-widgets .post-edit-link' ] );
+
+		$this->login( $I );
+
+		$I->amOnPage( home_url() );
+
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widgets .post-edit-link' ] );
+
+		$I->click( [ 'css' => '.wpcw-widget-social .post-edit-link' ] );
+
+		$I->canSeeInCurrentUrl( 'wp-admin/customize.php' );
+
+		$I->canSeeElement( [ 'class' => 'wpcw-widget-social' ] );
+
+	}
+
 }
