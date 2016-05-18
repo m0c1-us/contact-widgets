@@ -166,7 +166,10 @@
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
+		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );
+		$( document ).on( 'click.widgets-toggle', start_sortable );
+		$( document ).on( 'widget-updated', start_sortable );
 
 	} );
 
