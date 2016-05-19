@@ -105,6 +105,9 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 </pre>
 
 == Changelog ==
+= 1.3.0 - May 19, 2016 =
+Add front-end "edit" link to quickly edit widgets in the customizer
+
 = 1.2.0 - April 12, 2016 =
 WordPress 4.5 compatibility
 
