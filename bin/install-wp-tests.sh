@@ -118,7 +118,7 @@ install_db() {
 }
 
 install_wp_cli() {
-	download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /tmp/wp-cli.phar
+	download https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar /tmp/wp-cli.phar
 }
 
 install_default_site() {
