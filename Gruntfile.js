@@ -105,6 +105,14 @@ module.exports = function(grunt) {
 					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
 					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
 				} ]
+			},
+			pot:{
+				src: 'languages/' + pkg.name + '.pot',
+				overwrite: true,
+				replacements: [ {
+					from: 'charset=CHARSET',
+					to: 'charset=UTF-8'
+				} ]
 			}
 		},
 
@@ -163,6 +171,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('version', ['replace'] );
 	grunt.registerTask('build', ['default', 'version', 'clean', 'copy']);
 	grunt.registerTask('deploy', ['build', 'wp_deploy', 'clean']);
+	grunt.registerTask('make_pot', ['pot', 'replace:pot'] );
 	grunt.registerTask('update_translation', ['pot','po2mo']);
 
 };
