@@ -136,7 +136,7 @@ module.exports = function(grunt) {
 
 		pot: {
 			options: {
-				omit_header: true,
+				omit_header: false,
 				text_domain: pkg.name,
 				encoding: 'UTF-8',
 				dest: 'languages/',
