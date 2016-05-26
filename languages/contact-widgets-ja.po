@@ -1,94 +1,104 @@
-#: includes/class-contact.php:20
-msgid "Display your contact information."
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
 msgstr ""
+
+#: includes/class-contact.php:20
+#, fuzzy
+msgid "Display your contact information."
+msgstr "顧客の連絡先情報を表示します。"
 
 #: includes/class-contact.php:26
+#, fuzzy
 msgid "Contact Details"
-msgstr ""
+msgstr "連絡先"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr ""
+msgstr "タイトル："
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr " "
+msgstr "ウィジェットのタイトル。 無題の場合は空欄にしてください。"
+
+#: includes/class-contact.php:150
+msgid "Email:"
+msgstr "メール："
+
+#: includes/class-contact.php:157
+msgid "An email address where website vistors can contact you."
+msgstr "Webサイト訪問者があなたに連絡するためのメールアドレス。"
+
+#: includes/class-contact.php:160
+msgid "Phone:"
+msgstr "電話："
+
+#: includes/class-contact.php:162
+msgid "A phone number that website vistors can call if they have questions."
+msgstr "Webサイト訪問者が質問する際に電話するための電話番号。"
+
+#: includes/class-contact.php:165
+msgid "Fax:"
+msgstr "ファックス："
+
+#: includes/class-contact.php:167
+msgid "A fax number that website vistors can use to send important documents."
+msgstr "Webサイト訪問者が重要な書類を送信するための FAX番号。"
 
 #: includes/class-contact.php:170
-msgid "Email:"
-msgstr ""
-
-#: includes/class-contact.php:177
-msgid "An email address where website vistors can contact you."
-msgstr "Web"
-
-#: includes/class-contact.php:180
-msgid "Phone:"
-msgstr ""
-
-#: includes/class-contact.php:182
-msgid "A phone number that website vistors can call if they have questions."
-msgstr "Web"
-
-#: includes/class-contact.php:185
-msgid "Fax:"
-msgstr ""
-
-#: includes/class-contact.php:187
-msgid "A fax number that website vistors can use to send important documents."
-msgstr "Web FAX"
-
-#: includes/class-contact.php:190
 msgid "Address:"
-msgstr ""
+msgstr "アドレス："
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Web"
+msgstr "Webサイト訪問者が個人的に訪問するための住所。"
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr ""
+msgstr "ラベルを表示しますか？"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr ""
+msgstr "住所のマップを表示しますか？"
 
 #: includes/class-social.php:20
+#, fuzzy
 msgid "Display links to your social media profiles."
-msgstr ""
+msgstr "顧客のソーシャルメディアプロファイルリンクを表示します。"
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "%2$s%1$s "
+msgstr "%2$sにログインして、%1$s にアクセス"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr ""
+msgstr "ユーザー名"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "チャネル"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "会社"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "掲示板"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -211,4 +221,9 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr "%s PHP  "
+msgstr ""
+"連絡先ウィジェットが%s以上のバージョンの PHP を要求しています。 プラグインを"
+"無効化してシステム管理者に連絡してください。"
+
+#~ msgid "Social"
+#~ msgstr "ソーシャル"

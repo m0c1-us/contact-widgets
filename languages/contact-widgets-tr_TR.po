@@ -1,86 +1,95 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "zel irtibat bilgilerini grntle."
+msgstr "Özel irtibat bilgilerini görüntüle."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
-msgstr "letiim"
+msgstr "İletişim"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr "Balk:"
+msgstr "Başlık:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "Modln ad. Herhangi bir ad yoksa bo brakn."
+msgstr "Modülün adı. Herhangi bir ad yoksa boş bırakın."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
 msgstr "E-posta:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
 msgstr ""
-"Web sitesi ziyaretilerinin sizinle iletiim kurabilecei bir e-posta adresi."
+"Web sitesi ziyaretçilerinin sizinle iletişim kurabileceği bir e-posta adresi."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
 msgstr ""
-"Web sitesi ziyaretilerinin soru sormak iin arayabilecei bir telefon numaras."
+"Web sitesi ziyaretçilerinin soru sormak için arayabileceği bir telefon "
+"numarası."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
 msgstr "Faks:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Web sitesi ziyaretilerinin nemli belgeleri gnderebilecei bir faks numaras."
+"Web sitesi ziyaretçilerinin önemli belgeleri gönderebileceği bir faks "
+"numarası."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
 msgstr "Adres:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
-"Web sitesi ziyaretilerinin sizi bire bir ziyaret edebilecei bir ak adres."
+"Web sitesi ziyaretçilerinin sizi bire bir ziyaret edebileceği bir açık adres."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr "Etiketler grntlensin mi?"
+msgstr "Etiketler görüntülensin mi?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Adresin haritadaki konumu grntlensin mi?"
+msgstr "Adresin haritadaki konumu görüntülensin mi?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "zel sosyal medya profil balantlarn grntle."
+msgstr "Özel sosyal medya profil bağlantılarını görüntüle."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "%2$s %1$s sayfasn ziyaret edin"
+msgstr "%2$s %1$s sayfasını ziyaret edin"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "kullanc ad"
+msgstr "kullanıcı adı"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -90,7 +99,7 @@ msgstr "kanal"
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "irket"
+msgstr "şirket"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
@@ -219,8 +228,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kii modlleri, PHP srmn %s ya da zerini gerektirir. Ltfen eklentiyi devre d "
-"brakn ve sistem yneticinizle iletiime gein."
+"Kişi modülleri, PHP sürümünü %s ya da üzerini gerektirir. Lütfen eklentiyi "
+"devre dışı bırakın ve sistem yöneticinizle iletişime geçin."
 
 #~ msgid "Social"
 #~ msgstr "Sosyal"

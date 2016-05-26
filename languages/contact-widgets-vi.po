@@ -1,97 +1,108 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "Hin th thng tin lin h ty chnh."
+msgstr "Hiển thị thông tin liên hệ tùy chỉnh."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
-msgstr "Lin h"
+msgstr "Liên hệ"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr "Tiu :"
+msgstr "Tiêu đề:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "Tiu  widget.  trng nu khng c tiu ."
+msgstr "Tiêu đề widget. Để trống nếu không có tiêu đề."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
 msgstr "Email:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr "a ch email m khch truy cp trang c th s dng  lin h vi bn."
+msgstr ""
+"Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
-msgstr "in thoi:"
+msgstr "Điện thoại:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "S in thoi m khch truy cp trang c th gi nu h c thc mc."
+msgstr "Số điện thoại mà khách truy cập trang có thể gọi nếu họ có thắc mắc."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
 msgstr "Fax:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "S fax m khch truy cp trang c th s dng  gi nhng ti liu quan trng."
+msgstr ""
+"Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan "
+"trọng."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
-msgstr "a ch:"
+msgstr "Địa chỉ:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "a ch thc t m khch truy cp trang c th n  gp bn trc tip."
+msgstr ""
+"Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr "Hin th nhn?"
+msgstr "Hiển thị nhãn?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Hin th bn  a ch?"
+msgstr "Hiển thị bản đồ địa chỉ?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Hin th lin kt truyn thng x hi ty chnh."
+msgstr "Hiển thị liên kết truyền thông xã hội tùy chỉnh."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Truy cp %1$s trn %2$s"
+msgstr "Truy cập %1$s trên %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "tn ngi dng"
+msgstr "tên người dùng"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "knh"
+msgstr "kênh"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "cng ty"
+msgstr "công ty"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "din n"
+msgstr "diễn đàn"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -191,7 +202,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr "Phng tin"
+msgstr "Phương tiện"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
@@ -215,8 +226,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widget lin h yu cu phin bn PHP %s tr ln. Hy tt trnh cm v lin h vi qun tr vin "
-"h thng."
+"Widget liên hệ yêu cầu phiên bản PHP %s trở lên. Hãy tắt trình cắm và liên "
+"hệ với quản trị viên hệ thống."
 
 #~ msgid "Social"
-#~ msgstr "Mng x hi"
+#~ msgstr "Mạng xã hội"

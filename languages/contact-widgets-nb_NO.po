@@ -1,3 +1,10 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
@@ -8,74 +15,75 @@ msgstr "Vis egendefinert kontaktinformasjon."
 msgid "Contact Details"
 msgstr "Kontakt"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
 msgstr "Tittel:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "Navnet p kontrollprogrammet. La st tomt hvis navn ikke finnes."
+msgstr "Navnet på kontrollprogrammet. La stå tomt hvis navn ikke finnes."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
 msgstr "E-post:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr "En e-postadresse beskende til nettstedet kan kontakte deg p."
+msgstr "En e-postadresse besøkende til nettstedet kan kontakte deg på."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Et telefonnummer beskende til nettstedet kan ringe hvis de har sprsml."
+msgstr ""
+"Et telefonnummer besøkende til nettstedet kan ringe hvis de har spørsmål."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
 msgstr "Faks:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Et faksnummer beskende til nettstedet kan bruke til  sende viktige "
+"Et faksnummer besøkende til nettstedet kan bruke til å sende viktige "
 "dokumenter."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
 msgstr "Adresse:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
-"En fysisk adresse beskende til nettstedet kan dra til for  beske deg "
+"En fysisk adresse besøkende til nettstedet kan dra til for å besøke deg "
 "personlig."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
 msgstr "Vis etiketter?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
 msgstr "Vis kart over adresse?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Vis egendefinerte koblinger til profiler p sosiale medier"
+msgstr "Vis egendefinerte koblinger til profiler på sosiale medier"
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Besk %1$s p %2$s"
+msgstr "Besøk %1$s på %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"

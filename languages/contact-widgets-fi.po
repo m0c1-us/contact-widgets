@@ -1,78 +1,85 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "Nyt mukautetut yhteystiedot."
+msgstr "Näytä mukautetut yhteystiedot."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
 msgstr "Yhteydenotot"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "Pienoissovelluksen nimi. Jt tyhjksi, jos et halua valita nime."
+msgstr "Pienoissovelluksen nimi. Jätä tyhjäksi, jos et halua valita nimeä."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
-msgstr "Shkposti:"
+msgstr "Sähköposti:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
 msgstr ""
-"Shkpostiosoite, jonka kautta sivuston vierailijat voivat ottaa sinuun "
-"yhteytt."
+"Sähköpostiosoite, jonka kautta sivuston vierailijat voivat ottaa sinuun "
+"yhteyttä."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
 msgstr "Puhelin:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
 msgstr ""
-"Puhelinnumero, johon sivuston vierailijat voivat soittaa, jos heill on "
-"kysyttv."
+"Puhelinnumero, johon sivuston vierailijat voivat soittaa, jos heillä on "
+"kysyttävää."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
 msgstr "Faksi:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Faksinumero, jota sivuston vierailijat voivat kytt trkeiden asiakirjojen "
-"lhettmiseen."
+"Faksinumero, jota sivuston vierailijat voivat käyttää tärkeiden asiakirjojen "
+"lähettämiseen."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
 msgstr "Osoite:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
-"Fyysinen osoite, jossa sivuston vierailijat voivat kyd henkilkohtaisesti."
+"Fyysinen osoite, jossa sivuston vierailijat voivat käydä henkilökohtaisesti."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr "Nytetnk selitteet?"
+msgstr "Näytetäänkö selitteet?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Nytetnk osoitteen kartta?"
+msgstr "Näytetäänkö osoitteen kartta?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Nyt mukautetut sosiaalisen median profiilien linkit."
+msgstr "Näytä mukautetut sosiaalisen median profiilien linkit."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -83,7 +90,7 @@ msgstr "Vieraile: %1$s - %2$s"
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "kyttjnimi"
+msgstr "käyttäjänimi"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -222,8 +229,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Yhteystietosovellukset edellyttvt, ett PHP-versio on vhintn %s. Poista "
-"laajennus kytst ja ota yhteytt jrjestelmnvalvojaasi."
+"Yhteystietosovellukset edellyttävät, että PHP-versio on vähintään %s. Poista "
+"laajennus käytöstä ja ota yhteyttä järjestelmänvalvojaasi."
 
 #~ msgid "Social"
 #~ msgstr "Sosiaalinen"

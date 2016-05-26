@@ -1,79 +1,86 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "Apresente informaes de contacto personalizadas."
+msgstr "Apresente informações de contacto personalizadas."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
 msgstr "Contacto"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr "Ttulo:"
+msgstr "Título:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "O ttulo do widget. Deixe em branco para no atribuir um ttulo."
+msgstr "O título do widget. Deixe em branco para não atribuir um título."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
 msgstr "E-mail:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
 msgstr ""
-"Um endereo de correio eletrnico atravs do qual os visitantes do stio da "
+"Um endereço de correio eletrónico através do qual os visitantes do sítio da "
 "internet o podem contactar."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
 msgstr "Telefone:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
 msgstr ""
-"Um nmero de telefone para o qual os visitantes do stio da internet podem "
-"ligar se pretenderem esclarecer alguma questo."
+"Um número de telefone para o qual os visitantes do sítio da internet podem "
+"ligar se pretenderem esclarecer alguma questão."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
 msgstr "Fax:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Um nmero de fax que os visitantes do stio da internet podem utilizar para "
+"Um número de fax que os visitantes do sítio da internet podem utilizar para "
 "enviar documentos importantes."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
-msgstr "Endereo:"
+msgstr "Endereço:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
-"Um endereo fsico onde os visitantes do stio da internet o podem visitar "
+"Um endereço físico onde os visitantes do sítio da internet o podem visitar "
 "pessoalmente."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
 msgstr "Apresentar etiquetas?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Apresentar mapa do endereo?"
+msgstr "Apresentar mapa do endereço?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Apresente ligaes personalizadas para perfis nas redes sociais."
+msgstr "Apresente ligações personalizadas para perfis nas redes sociais."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -99,7 +106,7 @@ msgstr "empresa"
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "frum"
+msgstr "fórum"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -223,7 +230,7 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"O widget de contacto requer a verso %s do PHP ou uma verso posterior. "
+"O widget de contacto requer a versão %s do PHP ou uma versão posterior. "
 "Desative o suplemento e contacte o administrador do seu sistema."
 
 #~ msgid "Social"

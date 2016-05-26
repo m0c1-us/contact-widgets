@@ -1,94 +1,104 @@
-#: includes/class-contact.php:20
-msgid "Display your contact information."
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
 msgstr ""
+
+#: includes/class-contact.php:20
+#, fuzzy
+msgid "Display your contact information."
+msgstr "顯示自訂聯絡人資訊。"
 
 #: includes/class-contact.php:26
+#, fuzzy
 msgid "Contact Details"
-msgstr ""
+msgstr "聯絡人"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr ""
+msgstr "標題："
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr " "
+msgstr "工具程式標題。 無標題者留空白。"
+
+#: includes/class-contact.php:150
+msgid "Email:"
+msgstr "電郵："
+
+#: includes/class-contact.php:157
+msgid "An email address where website vistors can contact you."
+msgstr "網站訪客可與您聯繫的電子郵件地址。"
+
+#: includes/class-contact.php:160
+msgid "Phone:"
+msgstr "電話："
+
+#: includes/class-contact.php:162
+msgid "A phone number that website vistors can call if they have questions."
+msgstr "網站訪客有問題時可撥打的電話號碼。"
+
+#: includes/class-contact.php:165
+msgid "Fax:"
+msgstr "傳真："
+
+#: includes/class-contact.php:167
+msgid "A fax number that website vistors can use to send important documents."
+msgstr "網站訪客可傳送重要文件的傳真號碼。"
 
 #: includes/class-contact.php:170
-msgid "Email:"
-msgstr ""
-
-#: includes/class-contact.php:177
-msgid "An email address where website vistors can contact you."
-msgstr ""
-
-#: includes/class-contact.php:180
-msgid "Phone:"
-msgstr ""
-
-#: includes/class-contact.php:182
-msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-
-#: includes/class-contact.php:185
-msgid "Fax:"
-msgstr ""
-
-#: includes/class-contact.php:187
-msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-
-#: includes/class-contact.php:190
 msgid "Address:"
-msgstr ""
+msgstr "地址："
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
+msgstr "網站訪客可親自拜訪您的實體地址。"
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr ""
+msgstr "顯示標籤？"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr ""
+msgstr "顯示地址的地圖？"
 
 #: includes/class-social.php:20
+#, fuzzy
 msgid "Display links to your social media profiles."
-msgstr ""
+msgstr "顯示自訂社交媒體個人檔案連結。"
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr " %2$s  %1$s"
+msgstr "在 %2$s 上造訪 %1$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr ""
+msgstr "用戶名"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "頻道"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "公司"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "論壇"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -184,11 +194,11 @@ msgstr "WhatsApp"
 
 #: includes/social-networks.php:131
 msgid "WeChat"
-msgstr ""
+msgstr "微信"
 
 #: includes/social-networks.php:135
 msgid "Medium"
-msgstr ""
+msgstr "中"
 
 #: includes/social-networks.php:140
 msgid "Dribbble"
@@ -211,4 +221,8 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr " PHP %s  "
+msgstr ""
+"聯絡工具程式需要使用 PHP %s 或以上版本。 請停用外掛程式並聯絡您的系統管理員。"
+
+#~ msgid "Social"
+#~ msgstr "社交"

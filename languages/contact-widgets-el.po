@@ -1,96 +1,112 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "   ."
+msgstr "Προβολή προσαρμοσμένων πληροφοριών επικοινωνίας."
 
 #: includes/class-contact.php:26
+#, fuzzy
 msgid "Contact Details"
-msgstr ""
+msgstr "Επαφή"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr ":"
+msgstr "Τίτλος:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "   widget.        "
+msgstr "Ο τίτλος του widget. Να παραμείνει κενό αν δεν υπάρχει τίτλος "
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
 msgstr "Email:"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr "  email           ."
+msgstr ""
+"Μια διεύθυνση email στην οποία οι επισκέπτες του ιστοτόπου μπορούν να "
+"επικοινωνήσουν μαζί σας."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
-msgstr ":"
+msgstr "Τηλέφωνο:"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "              ."
+msgstr ""
+"Ένας αριθμός τηλεφώνου τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να "
+"καλούν όταν έχουν ερωτήσεις."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
-msgstr ":"
+msgstr "Φαξ:"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "                ."
+msgstr ""
+"Ένας αριθμός φαξ τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να "
+"χρησιμοποιούν για να στέλνουν σημαντικά έγγραφα."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
-msgstr ":"
+msgstr "Διεύθυνση:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "                  ."
+msgstr ""
+"Μια φυσική διεύθυνση στην οποία οι επισκέπτες του ιστοτόπου μπορούν να "
+"μεταβούν για να σας επισκεφθούν πρόσωπο με πρόσωπο."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr " ;"
+msgstr "Εμφάνιση ετικετών;"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "   ;"
+msgstr "Εμφάνιση χάρτη της διεύθυνσης;"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "      ."
+msgstr "Προβολή προσαρμοσμένων συνδέσεων προφίλ μέσων κοινωνικής δικτύωσης."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "  %1$s  %2$s"
+msgstr "Επισκεφθείτε την %1$s στο %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr " "
+msgstr "όνομα χρήστη"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "κανάλι"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "εταιρεία"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "συμβούλιο"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -213,7 +229,10 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr " widget     %s    PHP.     plugin         ."
+msgstr ""
+"Τα widget επαφών χρειάζονται την έκδοση %s ή μεταγενέστερη της PHP. "
+"Παρακαλείστε να απενεργοποιήσετε το plugin και να επικοινωνήσετε με τον "
+"διαχειριστή του συστήματός σας."
 
 #~ msgid "Social"
-#~ msgstr " "
+#~ msgstr "Κοινωνικά δίκτυα"

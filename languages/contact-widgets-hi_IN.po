@@ -8,73 +8,66 @@ msgstr ""
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "Tampilkan informasi kontak yang disesuaikan."
+msgstr "कस्टम संपर्क जानकारी प्रदर्शित करें."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
-msgstr "Kontak"
+msgstr "संपर्क"
 
 #: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr "Judul:"
+msgstr "शीर्षक:"
 
 #: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr "Judul widget. Biarkan kosong tanpa judul."
+msgstr "विजेट का शीर्षक. शीर्षक नहीं के लिए खाली छोड़ें."
 
 #: includes/class-contact.php:150
 msgid "Email:"
-msgstr "Email:"
+msgstr "ईमेल:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Alamat email yang dapat digunakan pengunjung situs web untuk menghubungi "
-"Anda."
+msgstr "वह ईमेल पता जिस पर वेबसाइट विज़िटर्स आपसे संपर्क कर सकते हैं."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
-msgstr "Telepon:"
+msgstr "फोन:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Nomor telepon yang dapat dihubungi pengunjung situs web jika ingin "
-"mengajukan pertanyaan."
+msgstr "वह फोन नंबर वेबसाइट विज़िटर्स जिस पर कोई प्रश्न होने पर कॉल कर सकते हैं."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
-msgstr "Faks:"
+msgstr "फ़ैक्स:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Nomor faks yang dapat digunakan pengunjung situs web untuk mengirimkan "
-"dokumen penting."
+"वह फ़ैक्स नंबर जिसका उपयोग वेबसाइट विज़िटर्स कोई ज़रूरी दस्तावेज़ भेजने के लिए कर सकते हैं."
 
 #: includes/class-contact.php:170
 msgid "Address:"
-msgstr "Alamat:"
+msgstr "पता:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Alamat fisik yang dapat dikunjungi pengunjung situs web untuk bertemu Anda "
-"secara langsung."
+msgstr "वह वास्तविक पता जहाँ वेबसाइट विज़िटर्स व्यक्तिगत रूप से आपसे मिल सकते हैं."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr "Tampilkan label?"
+msgstr "प्रदर्शन स्तर?"
 
 #: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Tampilkan peta alamat?"
+msgstr "क्या पते का मानचित्र प्रदर्शित करें?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Tampilkan tautan profil media sosial yang disesuaikan."
+msgstr "कस्टम सामाजिक मीडिया प्रोफ़ाइल लिंक प्रदर्शित करें."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
@@ -86,27 +79,27 @@ msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr "Kunjungi %1$s di %2$s"
+msgstr "%2$s पर %1$s विज़िट करें"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "nama pengguna"
+msgstr "उपयोगकर्ता नाम"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr "saluran"
+msgstr "चैनल"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "perusahaan"
+msgstr "कंपनी"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr "media"
+msgstr "बोर्ड"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -230,8 +223,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widget kontak memerlukan versi PHP %s atau lebih baru. Harap matikan plugin "
-"dan hubungi administrator sistem Anda."
+"संपर्क विजेट को PHP संस्करण %s या इससे उच्चतर संस्करण की आवश्यकता है. कृपया प्लगइन को "
+"निष्क्रिय करें और अपने सिस्टम प्रबंधक से संपर्क करें."
 
 #~ msgid "Social"
-#~ msgstr "Sosial"
+#~ msgstr "सामाजिक"

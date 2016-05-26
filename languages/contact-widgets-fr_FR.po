@@ -1,78 +1,86 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "Affichez les coordonnes personnalises."
+msgstr "Affichez les coordonnées personnalisées."
 
 #: includes/class-contact.php:26
 #, fuzzy
 msgid "Contact Details"
 msgstr "Contact"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr "Titre:"
+msgstr "Titre :"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
 msgstr "Le titre du widget. Laisser vierge pour ne pas avoir de titre."
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:150
 msgid "Email:"
-msgstr "E-mail:"
+msgstr "E-mail :"
 
-#: includes/class-contact.php:177
+#: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
 msgstr ""
-"Une adresse email  laquelle les visiteurs du site Web peuvent vous contacter."
+"Une adresse email à laquelle les visiteurs du site Web peuvent vous "
+"contacter."
 
-#: includes/class-contact.php:180
+#: includes/class-contact.php:160
 msgid "Phone:"
-msgstr "Tlphone:"
+msgstr "Téléphone :"
 
-#: includes/class-contact.php:182
+#: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
 msgstr ""
-"Un numro de tlphone auquel les visiteurs du site Web peuvent vous appeler "
+"Un numéro de téléphone auquel les visiteurs du site Web peuvent vous appeler "
 "s'ils ont des questions."
 
-#: includes/class-contact.php:185
+#: includes/class-contact.php:165
 msgid "Fax:"
-msgstr "Fax:"
+msgstr "Fax :"
 
-#: includes/class-contact.php:187
+#: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
 msgstr ""
-"Un numro de fax que les visiteurs du site Web peuvent utiliser pour envoyer "
+"Un numéro de fax que les visiteurs du site Web peuvent utiliser pour envoyer "
 "des documents importants."
 
-#: includes/class-contact.php:190
+#: includes/class-contact.php:170
 msgid "Address:"
-msgstr "Adresse:"
+msgstr "Adresse :"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
 msgstr ""
-"Une adresse physique  laquelle les visiteurs du site Web peuvent se rendre "
+"Une adresse physique à laquelle les visiteurs du site Web peuvent se rendre "
 "pour vous voir."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr "Afficher les tiquettes?"
+msgstr "Afficher les étiquettes ?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "Afficher un plan de l'adresse?"
+msgstr "Afficher un plan de l'adresse ?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Affichez les liens des profils de mdias sociaux personnaliss."
+msgstr "Affichez les liens des profils de médias sociaux personnalisés."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
@@ -83,7 +91,7 @@ msgstr "Visitez %1$s sur %2$s"
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr "nom dutilisateur"
+msgstr "nom d’utilisateur"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
@@ -93,7 +101,7 @@ msgstr "canal"
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr "socit"
+msgstr "société"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
@@ -222,8 +230,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Contact Widget ncessite une version PHP %s ou suprieure. Veuillez dsactiver "
-"le plug-in et contacter votre administrateur systme."
+"Contact Widget nécessite une version PHP %s ou supérieure. Veuillez "
+"désactiver le plug-in et contacter votre administrateur système."
 
 #~ msgid "Social"
 #~ msgstr "Social"

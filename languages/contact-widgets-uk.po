@@ -1,96 +1,110 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: includes/class-base-widget.php:476
+msgid "Edit"
+msgstr ""
+
 #: includes/class-contact.php:20
 #, fuzzy
 msgid "Display your contact information."
-msgstr "  ."
+msgstr "Відобразити контактні дані."
 
 #: includes/class-contact.php:26
+#, fuzzy
 msgid "Contact Details"
-msgstr ""
+msgstr "Контакт"
 
-#: includes/class-contact.php:164 includes/class-social.php:225
+#: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
-msgstr ":"
+msgstr "Заголовок:"
 
-#: includes/class-contact.php:165 includes/class-social.php:226
+#: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr " .    ,  ."
+msgstr "Заголовок віджету. Щоб заголовка не було, залиште порожнім."
+
+#: includes/class-contact.php:150
+msgid "Email:"
+msgstr "Електронна пошта:"
+
+#: includes/class-contact.php:157
+msgid "An email address where website vistors can contact you."
+msgstr ""
+"Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі "
+"сайту."
+
+#: includes/class-contact.php:160
+msgid "Phone:"
+msgstr "Телефон:"
+
+#: includes/class-contact.php:162
+msgid "A phone number that website vistors can call if they have questions."
+msgstr ""
+"Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі "
+"запитань."
+
+#: includes/class-contact.php:165
+msgid "Fax:"
+msgstr "Факс:"
+
+#: includes/class-contact.php:167
+msgid "A fax number that website vistors can use to send important documents."
+msgstr ""
+"Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
 
 #: includes/class-contact.php:170
-msgid "Email:"
-msgstr " :"
-
-#: includes/class-contact.php:177
-msgid "An email address where website vistors can contact you."
-msgstr "  ,        ."
-
-#: includes/class-contact.php:180
-msgid "Phone:"
-msgstr ":"
-
-#: includes/class-contact.php:182
-msgid "A phone number that website vistors can call if they have questions."
-msgstr " ,         ."
-
-#: includes/class-contact.php:185
-msgid "Fax:"
-msgstr ":"
-
-#: includes/class-contact.php:187
-msgid "A fax number that website vistors can use to send important documents."
-msgstr " ,        ."
-
-#: includes/class-contact.php:190
 msgid "Address:"
-msgstr ":"
+msgstr "Адреса:"
 
-#: includes/class-contact.php:195
+#: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr " ,         ."
+msgstr ""
+"Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
 
-#: includes/class-contact.php:198 includes/class-social.php:236
+#: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
-msgstr " ?"
+msgstr "Відображати написи?"
 
-#: includes/class-contact.php:208
+#: includes/class-contact.php:188
 msgid "Display map of address?"
-msgstr "   ?"
+msgstr "Відображати адресу на мапі?"
 
 #: includes/class-social.php:20
 #, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "       ."
+msgstr "Відобразити настроювані посилання на профілі в соціальних мережах."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/class-social.php:170
+#: includes/class-social.php:163
 #, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
 msgid "Visit %1$s on %2$s"
-msgstr " %1$s  %2$s"
+msgstr "Відвідайте %1$s в %2$s"
 
 #: includes/social-networks.php:9
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "username"
-msgstr " "
+msgstr "ім’я користувача"
 
 #: includes/social-networks.php:10
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "channel"
-msgstr ""
+msgstr "канал"
 
 #: includes/social-networks.php:11
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "company"
-msgstr ""
+msgstr "компанія"
 
 #: includes/social-networks.php:12
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
-msgstr ""
+msgstr "дошка"
 
 #: includes/social-networks.php:17
 msgid "Facebook"
@@ -213,4 +227,9 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr "     PHP %s  .       ."
+msgstr ""
+"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін "
+"і зверніться до системного адміністратора."
+
+#~ msgid "Social"
+#~ msgstr "Спільноти"
