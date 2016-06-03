@@ -8,9 +8,9 @@ Beautifully display social media and contact information on your website with th
 **Tags:** [widget](https://wordpress.org/plugins/tags/widget), [contact](https://wordpress.org/plugins/tags/contact), [social](https://wordpress.org/plugins/tags/social), [sharing](https://wordpress.org/plugins/tags/sharing), [share button](https://wordpress.org/plugins/tags/share button), [share buttons](https://wordpress.org/plugins/tags/share buttons), [share links](https://wordpress.org/plugins/tags/share links), [social icons](https://wordpress.org/plugins/tags/social icons), [social media](https://wordpress.org/plugins/tags/social media), [facebook](https://wordpress.org/plugins/tags/facebook), [twitter](https://wordpress.org/plugins/tags/twitter), [google plus](https://wordpress.org/plugins/tags/google plus), [instagram](https://wordpress.org/plugins/tags/instagram)  
 **Requires at least:** 4.4.2  
 **Tested up to:** 4.5  
-**Stable tag:** 1.3.0  
+**Stable tag:** 1.3.1  
 
-[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
+[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com) 
 
 ## Description ##
 
@@ -33,10 +33,12 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 * Español de México
 * Suomi
 * Français
+* हिन्दी
 * Bahasa Indonesia
 * Italiano
 * 日本語
 * 한국어
+* मराठी
 * Bahasa Melayu
 * Norsk bokmål
 * Nederlands
@@ -46,6 +48,7 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 * Русский
 * Svenska
 * ไทย
+* Tagalog
 * Türkçe
 * Українська
 * Tiếng Việt
@@ -119,25 +122,47 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 ## Changelog ##
 
+### 1.3.1 - June 3, 2016 ###
+* New: Language support for `mr`.
+* New: Add 500px to social networks.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett), [@salvoventura](https://github.com/salvoventura)
+
 ### 1.3.0 - May 19, 2016 ###
-Add front-end "edit" link to quickly edit widgets in the customizer
+* New: Add front-end "Edit" link to quickly edit widgets in the Customizer.
+* Fix: Use WP-CLI nightlies in tests.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 ### 1.2.0 - April 12, 2016 ###
-WordPress 4.5 compatibility
+* New: WordPress 4.5 compatibility.
+* Tweak: Improve widget names.
 
-### 1.1.0 - March 9, 2016 ###
-Add l10n to Google Map embed
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
-### 1.0.3 - March 9, 2016 ###
-Update locale ms_MY
+### 1.1.0 - March 15, 2016 ###
+* New: Support localization on Google Maps.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
+
+### 1.0.4 - March 9, 2016 ###
+* Tweak: Language updates.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 ### 1.0.2 - February 24, 2016 ###
-Add locales -  da_DK de_DE el es_ES es_MX fi fr_FR id_ID it_IT ja ko_KR ms_MY nb_NO nl_NL pl_PL pt_BR pt_PT ru_RU sv_SE th tl tr_TR uk vi zh_CN zh_HK zh_TW
+* New: Language support for 27 locales.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 ### 1.0.1 - February 24, 2016 ###
-Added possibility to add custom fields to contact and social widget
+* New: Added possibility to add custom fields to contact and social widget.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 ### 1.0.0 - February 23, 2016 ###
-Initial release. Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
+* Initial release.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 
