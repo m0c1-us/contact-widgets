@@ -1,22 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: contact-widgets 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-26 20:47+0000\n"
+"POT-Creation-Date: 2016-05-26 22:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: includes/class-base-widget.php:476
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: includes/class-contact.php:20
-#, fuzzy
 msgid "Display your contact information."
-msgstr "Visualizza informazioni di contatto personalizzate."
+msgstr "Display your contact information."
 
 #: includes/class-contact.php:26
-#, fuzzy
 msgid "Contact Details"
-msgstr "Contattaci"
+msgstr "Dati di contatto"
 
 #: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
@@ -24,8 +35,7 @@ msgstr "Titolo:"
 
 #: includes/class-contact.php:145 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
-msgstr ""
-"Il titolo del widget. Lascia il campo vuoto se vuoi omettere il titolo."
+msgstr "Il titolo del widget. Lascia il campo vuoto se vuoi omettere il titolo."
 
 #: includes/class-contact.php:150
 msgid "Email:"
@@ -33,8 +43,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"L'indirizzo email al quale i visitatori del sito web possono contattarti."
+msgstr "L'indirizzo email al quale i visitatori del sito web possono contattarti."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -42,9 +51,7 @@ msgstr "Telefono:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Il numero di telefono che i visitatori del sito web possono usare per "
-"chiamarti in caso di domande."
+msgstr "Il numero di telefono che i visitatori del sito web possono usare per chiamarti in caso di domande."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -52,9 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Il numero di fax che i visitatori del sito web possono usare per inviarti "
-"documenti importanti."
+msgstr "Il numero di fax che i visitatori del sito web possono usare per inviarti documenti importanti."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -62,9 +67,7 @@ msgstr "Indirizzo:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"L'indirizzo fisico presso il quale i visitatori del sito web possono venire "
-"di persona."
+msgstr "L'indirizzo fisico presso il quale i visitatori del sito web possono venire di persona."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -75,13 +78,12 @@ msgid "Display map of address?"
 msgstr "Vuoi visualizzare la mappa dell'indirizzo?"
 
 #: includes/class-social.php:20
-#, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Visualizza link personalizzati a profili di social media."
+msgstr "Display links to your social media profiles."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
-msgstr ""
+msgstr "Profili social"
 
 #: includes/class-social.php:163
 #, php-format
@@ -235,6 +237,3 @@ msgid ""
 msgstr ""
 "Il widget dei contatti richiede la versione PHP %s o una versione più "
 "recente. Disattiva il plug-in e contatta l'amministratore del sistema."
-
-#~ msgid "Social"
-#~ msgstr "Social"

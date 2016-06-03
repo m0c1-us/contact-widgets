@@ -1,22 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: contact-widgets 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-26 20:47+0000\n"
+"POT-Creation-Date: 2016-05-26 22:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: includes/class-base-widget.php:476
 msgid "Edit"
-msgstr ""
+msgstr "Змінити"
 
 #: includes/class-contact.php:20
-#, fuzzy
 msgid "Display your contact information."
-msgstr "Відобразити контактні дані."
+msgstr "Display your contact information."
 
 #: includes/class-contact.php:26
-#, fuzzy
 msgid "Contact Details"
-msgstr "Контакт"
+msgstr "Контактні дані"
 
 #: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
@@ -32,9 +43,7 @@ msgstr "Електронна пошта:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі "
-"сайту."
+msgstr "Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі сайту."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -42,9 +51,7 @@ msgstr "Телефон:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі "
-"запитань."
+msgstr "Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі запитань."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -52,8 +59,7 @@ msgstr "Факс:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
+msgstr "Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -61,8 +67,7 @@ msgstr "Адреса:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
+msgstr "Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -73,13 +78,12 @@ msgid "Display map of address?"
 msgstr "Відображати адресу на мапі?"
 
 #: includes/class-social.php:20
-#, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Відобразити настроювані посилання на профілі в соціальних мережах."
+msgstr "Display links to your social media profiles."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
-msgstr ""
+msgstr "Профілі у соціальних мережах"
 
 #: includes/class-social.php:163
 #, php-format
@@ -231,8 +235,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін "
-"і зверніться до системного адміністратора."
-
-#~ msgid "Social"
-#~ msgstr "Спільноти"
+"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін і "
+"зверніться до системного адміністратора."

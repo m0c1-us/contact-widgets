@@ -1,22 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: contact-widgets 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-26 20:47+0000\n"
+"POT-Creation-Date: 2016-05-26 22:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: includes/class-base-widget.php:476
 msgid "Edit"
-msgstr ""
+msgstr "I-edit"
 
 #: includes/class-contact.php:20
-#, fuzzy
 msgid "Display your contact information."
-msgstr "Ipakita ang custom na impormasyon sa pakikipag-ugnayan."
+msgstr "Display your contact information."
 
 #: includes/class-contact.php:26
-#, fuzzy
 msgid "Contact Details"
-msgstr "Contact"
+msgstr "Contact Details"
 
 #: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
@@ -32,9 +43,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Isang email address kung saan ang mga bisita ng website ay maaaring makipag-"
-"ugnayan sa iyo."
+msgstr "Isang email address kung saan ang mga bisita ng website ay maaaring makipag-ugnayan sa iyo."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -42,9 +51,7 @@ msgstr "Telepono:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Isang numero ng teepono na matatawagan ng mga bisita ng website kung may mga "
-"tanong sila."
+msgstr "Isang numero ng teepono na matatawagan ng mga bisita ng website kung may mga tanong sila."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -52,9 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Ang numero ng fax na magagamit ng mga bisita ng website para makapagpadala "
-"ng mga importanteng dokumento."
+msgstr "Ang numero ng fax na magagamit ng mga bisita ng website para makapagpadala ng mga importanteng dokumento."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -62,9 +67,7 @@ msgstr "Address:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Isang pisikal na address kung saan makakapunta ang mga bisita ng website "
-"para makilala kayo nang personal."
+msgstr "Isang pisikal na address kung saan makakapunta ang mga bisita ng website para makilala kayo nang personal."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -75,13 +78,12 @@ msgid "Display map of address?"
 msgstr "Ipakita ang mapa ng address?"
 
 #: includes/class-social.php:20
-#, fuzzy
 msgid "Display links to your social media profiles."
-msgstr "Ipakita ang mga custom na link ng profile sa social media."
+msgstr "Display links to your social media profiles."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
-msgstr ""
+msgstr "Mga Social Profile"
 
 #: includes/class-social.php:163
 #, php-format
@@ -235,6 +237,3 @@ msgid ""
 msgstr ""
 "Kailangan sa contact widget ang PHP na bersyon %s o mas bago pa. Maaari lang "
 "huwag paganahin ang plugin at makipag-ugnayan sa iyong system administrator."
-
-#~ msgid "Social"
-#~ msgstr "Social"
