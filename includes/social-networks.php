@@ -55,6 +55,11 @@ $fields = [
 		'default' => "https://www.flickr.com/photos/{$username}",
 		'select'  => $username,
 	],
+	'500px'    => [
+		'label'   => __( '500px', 'contact-widgets' ),
+		'default' => "https://www.500px.com/{$username}",
+		'select'  => $username,
+	],
 	'foursquare'  => [
 		'label'   => __( 'Foursquare', 'contact-widgets' ),
 		'default' => "https://foursquare.com/{$username}",
