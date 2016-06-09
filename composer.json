@@ -1,4 +1,8 @@
 {
+  "name" : "godaddy/wp-contact-widgets",
+  "description": "Beautifully display social media and contact information on your website with these simple widgets.",
+  "type" : "wordpress-plugin",
+  "license" : "GPL-2.0+",
   "require": {
       "10up/wp-codeception": "^1.0"
   },
