@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact-widgets 1.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-03 13:58-0500\n"
+"POT-Creation-Date: 2016-06-03 14:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: includes/class-base-widget.php:476
@@ -23,7 +23,7 @@ msgstr "Rediger"
 
 #: includes/class-contact.php:20
 msgid "Display your contact information."
-msgstr "Display your contact information."
+msgstr "Vis dine kontaktoplysninger."
 
 #: includes/class-contact.php:26
 msgid "Contact Details"
@@ -51,8 +51,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
+msgstr "Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -60,8 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
+msgstr "Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -81,7 +79,7 @@ msgstr "Vis kort med adresse?"
 
 #: includes/class-social.php:20
 msgid "Display links to your social media profiles."
-msgstr "Display links to your social media profiles."
+msgstr "Vis links til dine profiler på sociale medier."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
@@ -149,7 +147,7 @@ msgstr "Flickr"
 
 #: includes/social-networks.php:59
 msgid "500px"
-msgstr ""
+msgstr "500px"
 
 #: includes/social-networks.php:64
 msgid "Foursquare"
@@ -241,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og "
-"kontakt din systemadministrator."
+"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og kontakt "
+"din systemadministrator."
