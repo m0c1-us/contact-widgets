@@ -4,6 +4,8 @@ Tags:              widget, contact, social, sharing, share button, share buttons
 Requires at least: 4.4.2
 Tested up to:      4.5
 Stable tag:        1.3.1
+License:           GPLv2+
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 Beautifully display social media and contact information on your website with these simple widgets.
 
