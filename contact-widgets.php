@@ -5,7 +5,7 @@
  * Version: 1.3.1
  * Author: GoDaddy
  * Author URI: https://godaddy.com
- * License: GPL2+
+ * License: GPL-2.0
  * Text Domain: contact-widgets
  * Domain Path: /languages
  */
