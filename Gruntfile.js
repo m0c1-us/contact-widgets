@@ -75,7 +75,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-
 		replace: {
 			version_php: {
 				src: [
@@ -138,7 +137,7 @@ module.exports = function(grunt) {
 					build_dir: BUILD_DIR,
 					assets_dir: 'wp-org-assets',
 					svn_user: svn_username
-				},
+				}
 			}
 		},
 
