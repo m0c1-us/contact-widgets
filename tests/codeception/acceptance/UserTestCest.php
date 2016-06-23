@@ -36,6 +36,9 @@ class AdminTestCest {
 		// Submit the login form
 		$I->click( [ 'name' => 'wp-submit' ] );
 
+		// Add a small wait time here so the submit is done correctly
+		$I->wait( 1 );
+
 		// Wait for page to load [Hack for Safari and IE]
 		$I->waitForElementVisible( [ 'css' => 'body.index-php' ], 5 );
 
