@@ -217,9 +217,13 @@ class AdminTestCest {
 
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widgets .post-edit-link' ] );
 
+		$I->executeJS('jQuery(".wpcw-widgets .post-edit-link")[0].scrollIntoView();');
+
 		$I->click( [ 'css' => '.wpcw-widget-social .post-edit-link' ] );
 
 		$I->canSeeInCurrentUrl( 'wp-admin/customize.php' );
+
+		$I->wait(1); // The animation takes a little bit of time
 
 		$I->canSeeElement( [ 'class' => 'wpcw-widget-social' ] );
 
