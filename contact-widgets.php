@@ -43,7 +43,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 
 			static::$assets_url = plugin_dir_url( __FILE__ ) . 'assets/';
 
-			$composer_autoloader = dirname( __FILE__ ) . '/vendor/autoload.php';
+			$composer_autoloader = __DIR__ . '/vendor/autoload.php';
 
 			if ( defined( 'WP_CLI' ) && WP_CLI && file_exists( $composer_autoloader ) ) {
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 
 			}
 
-			require_once dirname( __FILE__ ) . '/includes/autoload.php';
+			require_once __DIR__ . '/includes/autoload.php';
 
 		}
 
