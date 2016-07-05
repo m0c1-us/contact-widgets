@@ -215,7 +215,7 @@ msgstr "微信"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "中"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"

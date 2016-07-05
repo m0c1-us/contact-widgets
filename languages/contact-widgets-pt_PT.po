@@ -43,9 +43,7 @@ msgstr "E-mail:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Um endereço de correio eletrónico através do qual os visitantes do sítio da "
-"internet o podem contactar."
+msgstr "Um endereço de correio eletrónico através do qual os visitantes do sítio da internet o podem contactar."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -53,9 +51,7 @@ msgstr "Telefone:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Um número de telefone para o qual os visitantes do sítio da internet podem "
-"ligar se pretenderem esclarecer alguma questão."
+msgstr "Um número de telefone para o qual os visitantes do sítio da internet podem ligar se pretenderem esclarecer alguma questão."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -63,9 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Um número de fax que os visitantes do sítio da internet podem utilizar para "
-"enviar documentos importantes."
+msgstr "Um número de fax que os visitantes do sítio da internet podem utilizar para enviar documentos importantes."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -73,9 +67,7 @@ msgstr "Endereço:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Um endereço físico onde os visitantes do sítio da internet o podem visitar "
-"pessoalmente."
+msgstr "Um endereço físico onde os visitantes do sítio da internet o podem visitar pessoalmente."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -223,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "Médio"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"

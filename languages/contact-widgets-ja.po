@@ -215,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "中"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -238,6 +238,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr ""
-"連絡先ウィジェットが%s以上のバージョンの PHP を要求しています。 プラグインを"
-"無効化してシステム管理者に連絡してください。"
+msgstr "連絡先ウィジェットが%s以上のバージョンの PHP を要求しています。 プラグインを無効化してシステム管理者に連絡してください。"

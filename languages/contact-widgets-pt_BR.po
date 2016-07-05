@@ -59,8 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Fax para que os visitantes do seu site possam enviar documentos importantes."
+msgstr "Fax para que os visitantes do seu site possam enviar documentos importantes."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -68,8 +67,7 @@ msgstr "Endereço:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Endereço para que os visitantes do seu site possam visitá-lo pessoalmente."
+msgstr "Endereço para que os visitantes do seu site possam visitá-lo pessoalmente."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -217,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "M"
+msgstr "Médio"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
