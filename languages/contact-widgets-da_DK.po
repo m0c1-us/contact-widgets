@@ -51,8 +51,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
+msgstr "Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -60,8 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
+msgstr "Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -241,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og "
-"kontakt din systemadministrator."
+"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og kontakt "
+"din systemadministrator."
