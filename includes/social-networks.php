@@ -35,6 +35,10 @@ $fields = [
 		'default' => "https://www.linkedin.com/in/{$username}",
 		'select'  => $username,
 	],
+	'rss' => [
+		'label'   => __( 'RSS feed', 'contact-widgets' ),
+		'default' => get_feed_link(),
+	],
 	'pinterest'   => [
 		'label'   => __( 'Pinterest', 'contact-widgets' ),
 		'default' => "https://www.pinterest.com/{$username}",
