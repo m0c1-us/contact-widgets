@@ -83,6 +83,7 @@ $fields = [
 		'label'     => __( 'Skype', 'contact-widgets' ),
 		'default'   => "skype:{$username}?chat",
 		'sanitizer' => 'sanitize_text_field',
+		'escaper'   => 'esc_attr',
 		'select'    => $username,
 	],
 	'soundcloud'  => [
