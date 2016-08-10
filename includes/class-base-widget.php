@@ -454,7 +454,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		echo '</ul>';
 
-		if ( current_user_can( 'edit_theme_options' ) && current_user_can( 'customize' ) ) {
+		if ( current_user_can( 'edit_theme_options' ) && current_user_can( 'customize' ) && isset( $args['id'] ) ) {
 
 			// admin-bar.php -> wp_admin_bar_customize_menu()
 			$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
