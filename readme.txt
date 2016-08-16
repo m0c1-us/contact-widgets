@@ -2,7 +2,7 @@
 Contributors:      godaddy, jonathanbardo, fjarrett
 Tags:              widget, contact, social, sharing, share button, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
 Requires at least: 4.4.2
-Tested up to:      4.5
+Tested up to:      4.6
 Stable tag:        1.3.1
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
