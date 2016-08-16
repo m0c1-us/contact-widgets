@@ -422,7 +422,6 @@ abstract class Base_Widget extends \WP_Widget {
 	protected function before_widget( array $args, array &$fields ) {
 
 		$title = array_shift( $fields );
-
 		echo $args['before_widget'];
 
 		if ( ! empty( $title['value'] ) ) {
@@ -471,7 +470,8 @@ abstract class Base_Widget extends \WP_Widget {
 			);
 
 			printf(
-				'<a class="post-edit-link" href="%s">%s</a>',
+				'<a class="post-edit-link" data-widget-id="%s" href="%s">%s</a>',
+				$args['widget_id'],
 				esc_url( $edit_url ),
 				__( 'Edit' )
 			);
@@ -549,7 +549,13 @@ abstract class Base_Widget extends \WP_Widget {
 
 		if ( is_customize_preview() ) {
 
-			wp_enqueue_script( 'wpcw-helper', \Contact_Widgets::$assets_url . "js/customize-preview-helper{$suffix}.js", [], Plugin::$version );
+			if ( ! wp_script_is( 'jquery', 'enqueued' ) ) {
+
+				wp_enqueue_script( 'jquery' );
+
+			}
+
+			wp_enqueue_script( 'wpcw-helper', \Contact_Widgets::$assets_url . "js/customize-preview-helper{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
 
 		}
 
