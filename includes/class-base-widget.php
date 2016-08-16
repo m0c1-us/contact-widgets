@@ -471,7 +471,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 			printf(
 				'<a class="post-edit-link" data-widget-id="%s" href="%s">%s</a>',
-				$args['widget_id'],
+				esc_attr( $args['widget_id'] ),
 				esc_url( $edit_url ),
 				__( 'Edit' )
 			);
