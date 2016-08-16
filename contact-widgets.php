@@ -5,9 +5,12 @@
  * Version: 1.3.1
  * Author: GoDaddy
  * Author URI: https://godaddy.com
- * License: GPL-2.0
  * Text Domain: contact-widgets
  * Domain Path: /languages
+ * License: GPL-2.0
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Copyright © 2016 GoDaddy Operating Company, LLC. All Rights Reserved.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
