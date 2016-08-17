@@ -111,6 +111,16 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 == Changelog ==
 
+= 1.3.2 - August 16, 2016 =
+
+* WordPress 4.6 compatibility
+* Fix bug with edit button not working
+* Plugin icon update
+* Update translation
+* New: Add RSS to social networks.
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
+
 = 1.3.1 - June 3, 2016 =
 
 * New: Language support for `mr`.
