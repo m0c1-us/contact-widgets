@@ -18,7 +18,8 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "bin/install-wp-codeception.sh"
+      "if [ -n \"$(command -v apt-get)\" ]; then sudo apt-get install openjdk-7-jre-headless --yes || true; fi",
+      "cd vendor/wp-codeception && npm install"
     ]
   }
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact-widgets 1.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-03 13:58-0500\n"
+"POT-Creation-Date: 2016-06-09 19:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,11 @@ msgstr "Sửa"
 
 #: includes/class-contact.php:20
 msgid "Display your contact information."
-msgstr "Display your contact information."
+msgstr "Hiển thị thông tin liên hệ của bạn."
 
 #: includes/class-contact.php:26
 msgid "Contact Details"
-msgstr "Contact Details"
+msgstr "Chi tiết liên hệ"
 
 #: includes/class-contact.php:144 includes/class-social.php:217
 msgid "Title:"
@@ -83,7 +83,7 @@ msgstr "Hiển thị bản đồ địa chỉ?"
 
 #: includes/class-social.php:20
 msgid "Display links to your social media profiles."
-msgstr "Display links to your social media profiles."
+msgstr "Hiển thị các liên kết đến hồ sơ phương tiện xã hội của bạn."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
@@ -151,7 +151,7 @@ msgstr "Flickr"
 
 #: includes/social-networks.php:59
 msgid "500px"
-msgstr ""
+msgstr "500px"
 
 #: includes/social-networks.php:64
 msgid "Foursquare"
@@ -237,7 +237,7 @@ msgstr "VK"
 msgid "Trello"
 msgstr "Trello"
 
-#: contact-widgets.php:89
+#: contact-widgets.php:90
 #, php-format
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "

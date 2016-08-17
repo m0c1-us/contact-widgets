@@ -5,11 +5,11 @@ language:
   - node_js
 
 php:
-  - 5.5
   - 5.6
   - 7.0
 
 env:
+  - WP_VERSION=4.4 WP_MULTISITE=0
   - WP_VERSION=latest WP_MULTISITE=0
   - WP_VERSION=trunk WP_MULTISITE=0
 

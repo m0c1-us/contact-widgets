@@ -1,9 +1,9 @@
-( function ( $ ) {
+( function ( $, api ) {
 
-	$( document ).on( 'click', '.wpcw-widgets', function() {
+	$( document ).on( 'click', '.wpcw-widgets a.post-edit-link', function() {
 
-		wp.customize.WidgetCustomizerPreview.preview.send( 'focus-widget-control', $( this ).prop( 'id' ) );
+		api.WidgetCustomizerPreview.preview.send( 'focus-widget-control', $( this ).data( 'widget-id' ) );
 
 	});
 
-} )( jQuery );
+} )( jQuery, wp.customize );

@@ -5,9 +5,12 @@
  * Version: 1.3.1
  * Author: GoDaddy
  * Author URI: https://godaddy.com
- * License: GPL2+
  * Text Domain: contact-widgets
  * Domain Path: /languages
+ * License: GPL-2.0
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Copyright © 2016 GoDaddy Operating Company, LLC. All Rights Reserved.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,7 +46,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 
 			static::$assets_url = plugin_dir_url( __FILE__ ) . 'assets/';
 
-			$composer_autoloader = dirname( __FILE__ ) . '/vendor/autoload.php';
+			$composer_autoloader = __DIR__ . '/vendor/autoload.php';
 
 			if ( defined( 'WP_CLI' ) && WP_CLI && file_exists( $composer_autoloader ) ) {
 
@@ -62,7 +65,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 
 			}
 
-			require_once dirname( __FILE__ ) . '/includes/autoload.php';
+			require_once __DIR__ . '/includes/autoload.php';
 
 		}
 
