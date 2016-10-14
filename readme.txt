@@ -111,6 +111,11 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 == Changelog ==
 
+= 1.3.3 - October 14, 2016 =
+
+* Minor bug fixes
+* Remove edit button when previewing in the customizer
+
 = 1.3.2 - August 16, 2016 =
 
 * WordPress 4.6 compatibility
