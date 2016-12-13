@@ -103,12 +103,12 @@ final class Hours extends Base_Widget {
 					$hours = $store_hours['not_open'] ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
 					$class = $store_hours['not_open'] ? 'closed' : 'open';
 
-					$microformat_data = array(
+					$microformat_data = [
 						'day'      => $day_of_week,
 						'open'     => $store_hours['open'],
 						'close'    => $store_hours['closed'],
 						'not_open' => $store_hours['not_open'],
-					);
+					];
 
 					printf(
 						'<li %1$s>%2$s<br />%3$s</li>',
@@ -139,15 +139,18 @@ final class Hours extends Base_Widget {
 	protected function get_fields( array $instance, array $fields = [], $ordered = true ) {
 
 		$fields = [
-			'title'   => [
+			'title' => [
 				'label'       => __( 'Title:', 'contact-widgets' ),
 				'description' => __( 'The title of this widget. Leave empty for no title.', 'contact-widgets' ),
 				'value'       => ! empty( $instance['title'] ) ? $instance['title'] : '',
 				'sortable'    => false,
 			],
-			'days'    => [
+			'days' => [
 				'label'       => __( 'Days of the week:', 'contact-widgets' ),
 				'description' => __( 'Enter your hours in the following fields.', 'contact-widgets' ),
+			],
+			'additional_content' => [
+
 			],
 		];
 
@@ -163,7 +166,7 @@ final class Hours extends Base_Widget {
 
 		}
 
-		$fields = apply_filters( 'wphoow_widget_contact_custom_fields', $fields, $instance );
+		$fields = apply_filters( 'wpcw_widget_hours_custom_fields', $fields, $instance );
 		$fields = parent::get_fields( $instance, $fields );
 
 		/**
@@ -228,10 +231,10 @@ final class Hours extends Base_Widget {
 		$open  = date( 'H:i', strtotime( $microformat_data['open'] ) );
 		$close = date( 'H:i', strtotime( $microformat_data['close'] ) );
 
-		$microformat_attributes = array(
+		$microformat_attributes = [
 			'itemprop="openingHours"',
 			'datetime="' . esc_attr( $day . ' ' . $open . '-' . $close ) . '"',
-		);
+		];
 
 		return implode( ' ', $microformat_attributes );
 
