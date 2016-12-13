@@ -93,3 +93,39 @@
 .wpcw-widget-social .icons a.inactive:not(:hover) {
 	color: #ccc;
 }
+
+/**
+ * Hours of Operation Widget
+ */
+.wphoow-widget .form div {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+	.wphoow-widget .form label + div {
+		margin-top: 8px;
+	}
+
+	.wphoow-widget .day-checkbox-toggle {
+		float: right;
+	}
+
+.wphoow-widget input[type="checkbox"] {
+	transform: scale( 0.75 );
+	margin-right: 2px;
+}
+
+.wphoow-widget select {
+	width: 49%;
+	min-width: auto;
+	float: left;
+	margin-bottom: 8px;
+}
+
+.wphoow-widget .form div p,
+body.widgets-php .wphoow-widget .form div p {
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+}

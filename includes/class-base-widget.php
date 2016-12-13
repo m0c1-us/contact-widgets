@@ -397,6 +397,95 @@ abstract class Base_Widget extends \WP_Widget {
 	}
 
 	/**
+	 * Render the 'Day' div and select fields
+	 *
+	 * @param  array $field Field data
+	 * @param  array $day   The current day in the iteration.
+	 * @param  array $hours The array of times.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return mixed
+	 */
+	protected function render_day_input( $field, $day, array $hours ) {
+
+		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
+
+		$field['disabled'] = ( $hours['not_open'] ) ? true : false;
+
+		printf(
+			'<div class="day-container">%1$s<p>%2$s</p></div>',
+			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle"><input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox"><small>' . esc_html__( 'Closed', 'hours-of-operation-widgets' ) . '</small></label></strong></span>',
+			$this->render_hours_selection( $field, sanitize_title( $day ), $hours )
+		);
+
+	}
+
+	/**
+	 * Render the 'Hours' select fields
+	 *
+	 * @param array $field Field data
+	 * @param array $day   The current day in the iteration.
+	 * @param array $hours The array of times.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return mixed
+	 */
+	protected function render_hours_selection( $field, $day, $hours ) {
+
+		ob_start();
+
+		$times = $this->get_half_hour_time_array();
+
+		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
+
+		$disabled_field = $field['disabled'] ? ' disabled="disabled"' : '';
+
+		echo '<select name="' . esc_attr( $field['name'] . '[open]' ) . '"' . $disabled_field . '>';
+
+		foreach ( $times as $time ) {
+
+			echo '<option ' . selected( $hours['open'], $time ) . '>' . $time . '</option>';
+
+		}
+
+		echo '</select>';
+
+		echo '<select name="' . esc_attr( $field['name'] . '[closed]' ) . '"' . $disabled_field . '>';
+
+		foreach ( $times as $time ) {
+
+			echo '<option ' . selected( $hours['closed'], $time ) . '>' . $time . '</option>';
+
+		}
+
+		echo '</select>';
+
+		return ob_get_clean();
+
+	}
+
+	/**
+	 * Generate an array of times in half hour increments
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Array of times to choose from, in half hour increments.
+	 */
+	protected function get_half_hour_time_array() {
+
+		$half_hour_steps = range( 0, 47 * 1800, 1800 );
+
+		return array_map( function ( $time ) {
+
+			return date( get_option( 'time_format' ), $time );
+
+		}, $half_hour_steps );
+
+	}
+
+	/**
 	 * Close wrapper of form field
 	 *
 	 * @param array $field

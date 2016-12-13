@@ -166,6 +166,23 @@
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
+		// Hours of Operation select field toggle
+		$( 'body' ).on( 'change', '.js_wphoow_closed_checkbox', function( e ) {
+
+			var select_fields = $( e.currentTarget ).parents( '.day-container' ).find( 'select' );
+
+			if ( $( this ).is( ':checked' ) ) {
+
+				select_fields.attr( 'disabled', 'disabled' );
+
+				return;
+
+			}
+
+			select_fields.removeAttr( 'disabled' );
+
+		} );
+
 		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
