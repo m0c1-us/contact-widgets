@@ -96,24 +96,31 @@ final class Hours extends Base_Widget {
 
 		foreach ( $fields as $field ) {
 
-			$label = $field['label'];
-
 			if ( isset( $field['days'] ) ) {
 
 				foreach ( $field['days'] as $day_of_week => $store_hours ) {
 
-					$hours = ( $store_hours['not_open'] ) ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
+					$hours = $store_hours['not_open'] ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
+					$class = $store_hours['not_open'] ? 'closed' : 'open';
 
-					$class = ( $store_hours['not_open'] ) ? 'closed' : 'open';
+					$microformat_data = array(
+						'day'      => $day_of_week,
+						'open'     => $store_hours['open'],
+						'close'    => $store_hours['closed'],
+						'not_open' => $store_hours['not_open'],
+					);
 
 					printf(
-						'<li>%s<br />%s</li>',
+						'<li %1$s>%2$s<br />%3$s</li>',
+						$this->get_microformat_markup( $microformat_data ),
 						'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
 						'<div class="hours ' . esc_attr( $class ) . '">' . esc_html( $hours ) . '</div>'
 					);
 
 				}
+
 			}
+
 		}
 
 		$this->after_widget( $args, $fields );
@@ -196,6 +203,37 @@ final class Hours extends Base_Widget {
 		}
 
 		return $days_of_the_week;
+
+	}
+
+	/**
+	 * Generate the opening hours microformat markup
+	 * @link https://schema.org/openingHours
+	 *
+	 * @since NEXT
+	 *
+	 * @param  array $microformat_data Microformat data array.
+	 *
+	 * @return string
+	 */
+	protected function get_microformat_markup( $microformat_data ) {
+
+		if ( $microformat_data['not_open'] ) {
+
+			return;
+
+		}
+
+		$day   = ucwords( substr( $microformat_data['day'], 0, 2 ) );
+		$open  = date( 'H:i', strtotime( $microformat_data['open'] ) );
+		$close = date( 'H:i', strtotime( $microformat_data['close'] ) );
+
+		$microformat_attributes = array(
+			'itemprop="openingHours"',
+			'datetime="' . esc_attr( $day . ' ' . $open . '-' . $close ) . '"',
+		);
+
+		return implode( ' ', $microformat_attributes );
 
 	}
 
