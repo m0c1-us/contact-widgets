@@ -397,9 +397,9 @@ abstract class Base_Widget extends \WP_Widget {
 	}
 
 	/**
-	 * Render the 'Day' div and select fields
+	 * Render the hours container and select fields
 	 *
-	 * @param  array $field Field data
+	 * @param  array $field Field data.
 	 * @param  array $day   The current day in the iteration.
 	 * @param  array $hours The array of times.
 	 *
@@ -409,13 +409,14 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	protected function render_day_input( $field, $day, array $hours ) {
 
-		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
+		$field['name']     = str_replace( 'value', strtolower( $day ), $field['name'] );
+		$field['disabled'] = $hours['not_open'] ? true : false;
 
-		$field['disabled'] = ( $hours['not_open'] ) ? true : false;
+		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . sprintf( _x( 'Apply to All %s', 'Dashicon Down Arrow', 'contact-widgets' ), '<span class="dashicons dashicons-arrow-down-alt"></span>' ) . '</a>' : '';
 
 		printf(
 			'<div class="day-container">%1$s<p>%2$s</p></div>',
-			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle"><input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox"><small>' . esc_html__( 'Closed', 'hours-of-operation-widgets' ) . '</small></label></strong></span>',
+			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle">' . $apply_to_all_toggle . '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label></strong></span>',
 			$this->render_hours_selection( $field, sanitize_title( $day ), $hours )
 		);
 
@@ -442,25 +443,45 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$disabled_field = $field['disabled'] ? ' disabled="disabled"' : '';
 
-		echo '<select name="' . esc_attr( $field['name'] . '[open]' ) . '"' . $disabled_field . '>';
+		?>
+
+		<select name="<?php echo esc_attr( $field['name'] . '[open]' ); ?>" <?php echo $disabled_field; ?>>
+
+		<?php
 
 		foreach ( $times as $time ) {
 
-			echo '<option ' . selected( $hours['open'], $time ) . '>' . $time . '</option>';
+			?>
+
+			<option <?php selected( $hours['open'], $time ); ?>><?php echo esc_html( $time ); ?></option>
+
+			<?php
 
 		}
 
-		echo '</select>';
+		?>
 
-		echo '<select name="' . esc_attr( $field['name'] . '[closed]' ) . '"' . $disabled_field . '>';
+		</select>
+
+		<select name="<?php echo esc_attr( $field['name'] . '[closed]' ); ?>" <?php echo $disabled_field; ?>>
+
+		<?php
 
 		foreach ( $times as $time ) {
 
-			echo '<option ' . selected( $hours['closed'], $time ) . '>' . $time . '</option>';
+			?>
+
+			<option <?php selected( $hours['closed'], $time ); ?>><?php echo esc_html( $time ); ?></option>
+
+			<?php
 
 		}
 
-		echo '</select>';
+		?>
+
+		</select>
+
+		<?php
 
 		return ob_get_clean();
 

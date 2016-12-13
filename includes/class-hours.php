@@ -42,7 +42,7 @@ final class Hours extends Base_Widget {
 
 		$fields = $this->get_fields( $instance );
 
-		echo '<div class="wphoow-widget wphoow-widget-hours">';
+		echo '<div class="wpcw-widget wpcw-widget-hours">';
 
 		echo '<div class="title">';
 
@@ -72,7 +72,7 @@ final class Hours extends Base_Widget {
 
 		echo '</div>'; // End form
 
-		echo '</div>'; // End wphoow-widget-hours
+		echo '</div>'; // End wpcw-widget-hours
 
 	}
 

@@ -183,6 +183,33 @@
 
 		} );
 
+		$( 'body' ).on( 'click', '.js_wpcw_apply_hours_to_all', function( e ) {
+
+			var store_closed = false;
+
+			if ( $( this ).next().is( ':checked' ) ) {
+
+				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).attr( 'disabled', 'disabled' );
+				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input[type="checkbox"]' ).prop( 'checked', true );
+				e.preventDefault();
+
+				return;
+
+			}
+
+			var first_container = $( this ).parents( '.day-container' ),
+			    open   = first_container.find( 'select:first-child' ).val(),
+			    closed = first_container.find( 'select:nth-child(2)' ).val();
+
+			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input[type="checkbox"]' ).prop( 'checked', false );
+			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
+			$( '.wpcw-widget-hours .day-container' ).find( 'select:first-child' ).val( open );
+			$( '.wpcw-widget-hours .day-container' ).find( 'select:nth-child(2)' ).val( closed );
+
+			e.preventDefault();
+
+		} );
+
 		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
