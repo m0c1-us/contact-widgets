@@ -37,7 +37,7 @@
 
 	function start_sortable() {
 
-		var $contact_form = $( '.wpcw-widget .form' );
+		var $contact_form = $( '.wpcw-widget .form' ).not( '.wpcw-widget-hours .form' );
 
 		$contact_form.sortable( {
 			items : '> *:not(.not-sortable)',

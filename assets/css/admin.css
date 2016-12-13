@@ -107,6 +107,10 @@
 		margin-top: 8px;
 	}
 
+	.wpcw-widget-hours .additional_content .wpcw-widget-sortable-handle {
+		display: none;
+	}
+
 	.wpcw-widget-hours .form.ui-sortable .js_wpcw_apply_hours_to_all span.dashicons {
 		position: relative;
 		color: inherit;

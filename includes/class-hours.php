@@ -64,7 +64,19 @@ final class Hours extends Base_Widget {
 					$this->render_day_input( $fields['days'], $day, $hours );
 
 				}
+
+				continue;
+
 			}
+
+			$method = $field['form_callback'];
+
+			if ( is_callable( [ $this, $method ] ) ) {
+
+				$this->$method( $field );
+
+			}
+
 		}
 
 		// Workaround customizer refresh @props @westonruter
@@ -119,7 +131,13 @@ final class Hours extends Base_Widget {
 
 				}
 
+				continue;
+
 			}
+
+			$escape_callback = $field['escaper'];
+
+			echo apply_filters( 'the_content', $escape_callback( $field['value'] ) );
 
 		}
 
@@ -150,7 +168,12 @@ final class Hours extends Base_Widget {
 				'description' => __( 'Enter your hours in the following fields.', 'contact-widgets' ),
 			],
 			'additional_content' => [
-
+				'label'       => __( 'Additional Info.', 'contact-widgets' ),
+				'type'          => 'textarea',
+				'sanitizer'     => function( $value ) { return current_user_can( 'unfiltered_html' ) ? $value : wp_kses_post( stripslashes( $value ) ); },
+				'escaper'       => function( $value ) { return nl2br( apply_filters( 'widget_text', $value ) ); },
+				'form_callback' => 'render_form_textarea',
+				'description' => __( 'Enter additional information about your store.', 'contact-widgets' ),
 			],
 		];
 
