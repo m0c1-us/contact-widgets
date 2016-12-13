@@ -162,7 +162,7 @@ final class Hours extends Base_Widget {
 		/**
 		 * Filter the contact fields
 		 *
-		 * @since 1.0.0
+		 * @since NEXT
 		 *
 		 * @var array
 		 */
@@ -191,9 +191,7 @@ final class Hours extends Base_Widget {
 
 		if ( 1 < $start_of_week ) {
 
-			$array_end = array_splice( $days_of_the_week, ( $start_of_week - 1 ) );
-
-			return array_merge( $array_end, $days_of_the_week );
+			return array_merge( array_splice( $days_of_the_week, ( $start_of_week - 1 ) ), $days_of_the_week );
 
 		}
 

@@ -403,7 +403,7 @@ abstract class Base_Widget extends \WP_Widget {
 	 * @param  array $day   The current day in the iteration.
 	 * @param  array $hours The array of times.
 	 *
-	 * @since 1.0.0
+	 * @since NEXT
 	 *
 	 * @return mixed
 	 */
@@ -428,7 +428,7 @@ abstract class Base_Widget extends \WP_Widget {
 	 * @param array $day   The current day in the iteration.
 	 * @param array $hours The array of times.
 	 *
-	 * @since 1.0.0
+	 * @since NEXT
 	 *
 	 * @return mixed
 	 */
@@ -469,9 +469,9 @@ abstract class Base_Widget extends \WP_Widget {
 	/**
 	 * Generate an array of times in half hour increments
 	 *
-	 * @since 1.0.0
+	 * @since NEXT
 	 *
-	 * @return array Array of times to choose from, in half hour increments.
+	 * @return array
 	 */
 	protected function get_half_hour_time_array() {
 
@@ -488,7 +488,7 @@ abstract class Base_Widget extends \WP_Widget {
 	/**
 	 * Close wrapper of form field
 	 *
-	 * @param array $field
+	 * @param array
 	 */
 	protected function after_form_field( array $field ) {
 
