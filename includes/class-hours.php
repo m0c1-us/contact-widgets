@@ -102,7 +102,7 @@ final class Hours extends Base_Widget {
 
 				foreach ( $field['days'] as $day_of_week => $store_hours ) {
 
-					$hours = ( $store_hours['not_open'] ) ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . ' - ' . $store_hours['closed'];
+					$hours = ( $store_hours['not_open'] ) ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
 
 					$class = ( $store_hours['not_open'] ) ? 'closed' : 'open';
 
