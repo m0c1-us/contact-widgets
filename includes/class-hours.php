@@ -115,6 +115,18 @@ final class Hours extends Base_Widget {
 					$hours = $store_hours['not_open'] ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
 					$class = $store_hours['not_open'] ? 'closed' : 'open';
 
+					if ( $store_hours['custom_text_checkbox'] ) {
+
+						printf(
+							'<li>%1$s %2$s</li>',
+							'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
+							esc_html( $store_hours['custom_text'] )
+						);
+
+						continue;
+
+					}
+
 					$microformat_data = [
 						'day'      => $day_of_week,
 						'open'     => $store_hours['open'],
@@ -123,7 +135,7 @@ final class Hours extends Base_Widget {
 					];
 
 					printf(
-						'<li %1$s>%2$s<br />%3$s</li>',
+						'<li %1$s>%2$s %3$s</li>',
 						$this->get_microformat_markup( $microformat_data ),
 						'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
 						'<div class="hours ' . esc_attr( $class ) . '">' . esc_html( $hours ) . '</div>'
@@ -182,9 +194,11 @@ final class Hours extends Base_Widget {
 			$day = strtolower( $day );
 
 			$fields['days']['days'][ $day ] = [
-				'open'     => ! empty( $instance['days'][ $day ]['open'] ) ? $instance['days'][ $day ]['open'] : '',
-				'closed'   => ! empty( $instance['days'][ $day ]['closed'] ) ? $instance['days'][ $day ]['closed'] : '',
-				'not_open' => ! empty( $instance['days'][ $day ]['not_open'] ) ? true : false,
+				'open'                 => ! empty( $instance['days'][ $day ]['open'] ) ? $instance['days'][ $day ]['open'] : '',
+				'closed'               => ! empty( $instance['days'][ $day ]['closed'] ) ? $instance['days'][ $day ]['closed'] : '',
+				'not_open'             => ! empty( $instance['days'][ $day ]['not_open'] ) ? true : false,
+				'custom_text'          => ! empty( $instance['days'][ $day ]['custom_text'] ) ? $instance['days'][ $day ]['custom_text'] : '',
+				'custom_text_checkbox' => isset( $instance['days'][ $day ]['custom_text_checkbox'] ) ? true : false,
 			];
 
 		}

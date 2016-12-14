@@ -22,7 +22,8 @@
 	margin: 0 0.75em 0.75em 0;
 	border: none;
 }
-.wpcw-widget-social ul li.has-label a {
+.wpcw-widget-social ul li.has-label a,
+.wpcw-widget-hours ul li strong {
 	display: block;
 }
 .wpcw-widget-social ul li.has-label span {

@@ -414,10 +414,16 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . sprintf( _x( 'Apply to All %s', 'Dashicon Down Arrow', 'contact-widgets' ), '<span class="dashicons dashicons-arrow-down-alt"></span>' ) . '</a>' : '';
 
+		$custom_text_checkbox = '<input name="' . $field['name'] . '[custom_text_checkbox]" id="' . $field['name'] . '[custom_text_checkbox]" class="js_wpcw_custom_text_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['custom_text_checkbox'], true ) . '><label for="' . $field['name'] . '[custom_text_checkbox]" class="js_wpcw_custom_text_checkbox"><small>' . esc_html__( 'Custom Text', 'contact-widgets' ) . '</small></label>';
+		$hidden_text_field    = ( ! $hours['custom_text_checkbox'] ) ? ' style="display:none;"' : '';
+		$custom_text_field    = '<input type="text" name="' . $field['name'] . '[custom_text]" id="' . $field['name'] . '[custom_text]" class="widefat custom_text_field" value="' . $hours['custom_text'] . '"' . $hidden_text_field . '/>';
+		$closed_checkbox      = '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label>';
+
 		printf(
-			'<div class="day-container">%1$s<p>%2$s</p></div>',
-			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle">' . $apply_to_all_toggle . '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wphoow_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label></strong></span>',
-			$this->render_hours_selection( $field, sanitize_title( $day ), $hours )
+			'<div class="day-container">%1$s<p>%2$s %3$s</p></div>',
+			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle">' . $apply_to_all_toggle . $custom_text_checkbox . $closed_checkbox . '</strong></span>',
+			$this->render_hours_selection( $field, sanitize_title( $day ), $hours ),
+			$custom_text_field
 		);
 
 	}
@@ -442,10 +448,11 @@ abstract class Base_Widget extends \WP_Widget {
 		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
 
 		$disabled_field = $field['disabled'] ? ' disabled="disabled"' : '';
+		$hidden_field   = $hours['custom_text_checkbox'] ? ' style="display:none;"' : '';
 
 		?>
 
-		<select name="<?php echo esc_attr( $field['name'] . '[open]' ); ?>" <?php echo $disabled_field; ?>>
+		<select name="<?php echo esc_attr( $field['name'] . '[open]' ); ?>" <?php echo $disabled_field . $hidden_field; ?>>
 
 		<?php
 
@@ -463,7 +470,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		</select>
 
-		<select name="<?php echo esc_attr( $field['name'] . '[closed]' ); ?>" <?php echo $disabled_field; ?>>
+		<select name="<?php echo esc_attr( $field['name'] . '[closed]' ); ?>" <?php echo $disabled_field . $hidden_field; ?>>
 
 		<?php
 

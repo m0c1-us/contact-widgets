@@ -103,6 +103,10 @@
 	margin-bottom: 8px;
 }
 
+.wpcw-widget-hours .day-container {
+	height: 55px;
+}
+
 	.wpcw-widget-hours .form label + div {
 		margin-top: 8px;
 	}
@@ -119,9 +123,24 @@
 		margin-left: -5px;
 	}
 
+	.wpcw-widget-hours .form .js_wpcw_closed_checkbox,
+	.wpcw-widget-hours .form .js_wpcw_custom_text_checkbox {
+		display: inline-block;
+		margin-top: -1px;
+	}
+
+		.wpcw-widget-hours .form input.js_wpcw_closed_checkbox {
+			margin-left: 3px;
+		}
+
 	.wpcw-widget-hours .day-checkbox-toggle {
 		float: right;
 	}
+
+.wpcw-widget-hours .custom_text_field {
+	margin: 1px 1px 8px 1px;
+	height: 28px;
+}
 
 .wpcw-widget-hours input[type="checkbox"] {
 	transform: scale( 0.75 );

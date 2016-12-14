@@ -167,7 +167,7 @@
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
 		// Hours of Operation select field toggle
-		$( 'body' ).on( 'change', '.js_wphoow_closed_checkbox', function( e ) {
+		$( 'body' ).on( 'change', '.js_wpcw_closed_checkbox', function( e ) {
 
 			var select_fields = $( e.currentTarget ).parents( '.day-container' ).find( 'select' );
 
@@ -183,12 +183,14 @@
 
 		} );
 
+		// Apply hours to all days in the week
 		$( 'body' ).on( 'click', '.js_wpcw_apply_hours_to_all', function( e ) {
 
-			if ( $( this ).next().is( ':checked' ) ) {
+			if ( $( this ).parents( '.day-container' ).find( 'input.js_wpcw_closed_checkbox' ).is( ':checked' ) ) {
 
 				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).attr( 'disabled', 'disabled' );
-				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input[type="checkbox"]' ).prop( 'checked', true );
+				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', true );
+
 				e.preventDefault();
 
 				return;
@@ -203,6 +205,37 @@
 			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
 			$( '.wpcw-widget-hours .day-container' ).find( 'select:first-child' ).val( open );
 			$( '.wpcw-widget-hours .day-container' ).find( 'select:nth-child(2)' ).val( closed );
+
+			e.preventDefault();
+
+		} );
+
+		// Custom text toggle
+		$( 'body' ).on( 'change', '.js_wpcw_custom_text_checkbox', function( e ) {
+
+			var parent_container  = $( this ).parents( '.day-container' ),
+			    select_fields     = parent_container.find( 'select' ),
+			    custom_text_field = parent_container.find( '.custom_text_field' );
+
+			if ( $( this ).is( ':checked' ) ) {
+
+				select_fields.fadeOut( 'fast', function() {
+
+					custom_text_field.fadeIn();
+
+				} );
+
+				e.preventDefault();
+
+				return;
+
+			}
+
+			custom_text_field.fadeOut( 'fast', function() {
+
+				select_fields.fadeIn();
+
+			});
 
 			e.preventDefault();
 
