@@ -185,8 +185,6 @@
 
 		$( 'body' ).on( 'click', '.js_wpcw_apply_hours_to_all', function( e ) {
 
-			var store_closed = false;
-
 			if ( $( this ).next().is( ':checked' ) ) {
 
 				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).attr( 'disabled', 'disabled' );

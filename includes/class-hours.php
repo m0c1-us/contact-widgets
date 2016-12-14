@@ -173,7 +173,7 @@ final class Hours extends Base_Widget {
 				'sanitizer'     => function( $value ) { return current_user_can( 'unfiltered_html' ) ? $value : wp_kses_post( stripslashes( $value ) ); },
 				'escaper'       => function( $value ) { return nl2br( apply_filters( 'widget_text', $value ) ); },
 				'form_callback' => 'render_form_textarea',
-				'description' => __( 'Enter additional information about your store.', 'contact-widgets' ),
+				'description' => __( 'Enter additional information about your business.', 'contact-widgets' ),
 			],
 		];
 
