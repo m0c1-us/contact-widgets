@@ -111,11 +111,11 @@
 		display: none;
 	}
 
-	.wpcw-widget-hours .form.ui-sortable .js_wpcw_apply_hours_to_all span.dashicons {
+	.wpcw-widget-hours .form .js_wpcw_apply_hours_to_all span.dashicons {
 		position: relative;
 		color: inherit;
 		text-decoration: inherit;
-		font-size: 12px;
+		font-size: inherit;
 		margin-left: -5px;
 	}
 
