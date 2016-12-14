@@ -107,10 +107,6 @@
 	height: 55px;
 }
 
-	.wpcw-widget-hours .form {
-		overflow: hidden;
-	}
-
 	.wpcw-widget-hours .form label + div {
 		margin-top: 8px;
 	}
@@ -142,7 +138,6 @@
 	}
 
 .wpcw-widget-hours .custom_text_field {
-	margin: 1px 1px 8px 1px;
 	height: 28px;
 }
 
