@@ -197,8 +197,6 @@ class AdminTestCest {
 		 */
 		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
 
-		$I->selectOption( 'Gender','Male' );
-
 		$I->click( [ 'css' => "{$selector} select[name$=[monday][open]]" ] );
 		$I->click( [ 'css' => "{$selector} select[name$=[monday][open]] option:nth-child(19)" ] );
 
