@@ -197,6 +197,19 @@ class AdminTestCest {
 		 */
 		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
 
+		$I->selectOption( 'Gender','Male' );
+
+		$I->click( [ 'css' => "{$selector} select[name$=[monday][open]]" ] );
+		$I->click( [ 'css' => "{$selector} select[name$=[monday][open]] option:nth-child(19)" ] );
+
+		$I->click( [ 'css' => "{$selector} select[name$=[monday][closed]]" ] );
+		$I->click( [ 'css' => "{$selector} select[name$=[monday][closed]] option:nth-child(36)" ] );
+
+		$I->click( [ 'css' => "{$selector} input[name$=[tuesday][not_open]]" ] );
+
+		$I->click( [ 'css' => "{$selector} input[name$=[wednesday][custom_text_checkbox]]" ] );
+		$I->fillField( [ 'css' => "{$selector} input[id$=[wednesday][custom_text]]" ], 'We are closed.' );
+
 		/**
 		 * Submit widget form
 		 */
