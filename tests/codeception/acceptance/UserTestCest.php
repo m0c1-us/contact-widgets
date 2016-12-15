@@ -125,6 +125,8 @@ class AdminTestCest {
 
 		$I->amOnPage( admin_url( 'widgets.php' ) );
 
+		$I->wait( 2 );
+
 		$I->canSee( 'Social Profiles', [ 'css' => '.widget h3' ] );
 
 		$selector = '#widget-list div[id$=wpcw_social-__i__]';
@@ -147,8 +149,53 @@ class AdminTestCest {
 		$this->selectSocialIcon( $I, 'facebook', $selector );
 		$this->selectSocialIcon( $I, 'twitter', $selector );
 
+		$I->wait( 2 );
+
 		// Let's test reordering so facebook should be first
 		$I->dragAndDrop( [ 'css' => "{$selector} form p.facebook .wpcw-widget-sortable-handle" ], [ 'css' => "{$selector} .wpcw-widget-social .icons" ] );
+
+		$I->wait( 1 );
+
+		/**
+		 * Submit widget form
+		 */
+		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
+
+		// Wait for all ajax request to finish
+		$I->waitForJS( 'return jQuery.active == 0;', 5 );
+
+	}
+
+	/**
+	 * Validate that we can see the hours of operation widget
+	 *
+	 * @before login
+	 * @param \AcceptanceTester $I
+	 */
+	public function validateWidgetHoursOfOperationForm( AcceptanceTester $I ) {
+
+		$I->wantTo( 'Validate hours of operation form in widgets.php' );
+
+		$I->amOnPage( admin_url( 'widgets.php' ) );
+
+		$I->canSee( 'Hours of Operation', [ 'css' => '.widget h3' ] );
+
+		$selector = '#widget-list div[id$=wpcw_hours-__i__]';
+
+		$I->click( [ 'css' => "$selector .widget-title" ] );
+
+		$I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+
+		$I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+
+		$selector = '#sidebar-1 div[id*=wpcw_hours]';
+
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
+
+		/**
+		 * Fill all fields
+		 */
+		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
 
 		/**
 		 * Submit widget form
@@ -193,8 +240,8 @@ class AdminTestCest {
 		$I->canSee( 'Acceptance tests social', [ 'css' => '.wpcw-widget-social .widget-title' ] );
 
 		// Check that facebook is indeed the first element return in the list
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="facebook"]' ] );
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="twitter"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
 
 	}
 
@@ -223,7 +270,7 @@ class AdminTestCest {
 
 		$I->canSeeInCurrentUrl( 'wp-admin/customize.php' );
 
-		$I->wait(3); // The animation takes a little bit of time
+		$I->wait( 3 ); // The animation takes a little bit of time
 
 		$I->canSeeElement( [ 'class' => 'wpcw-widget-social' ] );
 
