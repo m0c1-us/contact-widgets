@@ -193,8 +193,8 @@ class AdminTestCest {
 		$I->canSee( 'Acceptance tests social', [ 'css' => '.wpcw-widget-social .widget-title' ] );
 
 		// Check that facebook is indeed the first element return in the list
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="facebook"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="twitter"]' ] );
 
 	}
 
@@ -223,7 +223,7 @@ class AdminTestCest {
 
 		$I->canSeeInCurrentUrl( 'wp-admin/customize.php' );
 
-		$I->wait(1); // The animation takes a little bit of time
+		$I->wait(3); // The animation takes a little bit of time
 
 		$I->canSeeElement( [ 'class' => 'wpcw-widget-social' ] );
 
