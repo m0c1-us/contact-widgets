@@ -115,7 +115,7 @@ final class Hours extends Base_Widget {
 					$hours = $store_hours['not_open'] ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
 					$class = $store_hours['not_open'] ? 'closed' : 'open';
 
-					if ( $store_hours['custom_text_checkbox'] ) {
+					if ( $store_hours['custom_text_checkbox'] || $store_hours['not_open'] ) {
 
 						printf(
 							'<li>%1$s %2$s</li>',
@@ -131,7 +131,6 @@ final class Hours extends Base_Widget {
 						'day'      => $day_of_week,
 						'open'     => $store_hours['open'],
 						'close'    => $store_hours['closed'],
-						'not_open' => $store_hours['not_open'],
 					];
 
 					printf(
@@ -257,12 +256,6 @@ final class Hours extends Base_Widget {
 	 * @return string
 	 */
 	protected function get_microformat_markup( $microformat_data ) {
-
-		if ( $microformat_data['not_open'] ) {
-
-			return;
-
-		}
 
 		$day   = ucwords( substr( $microformat_data['day'], 0, 2 ) );
 		$open  = date( 'H:i', strtotime( $microformat_data['open'] ) );
