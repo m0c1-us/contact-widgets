@@ -117,10 +117,12 @@ final class Hours extends Base_Widget {
 
 					if ( $store_hours['custom_text_checkbox'] || $store_hours['not_open'] ) {
 
+						$text = $store_hours['not_open'] ? $hours : $store_hours['custom_text'];
+
 						printf(
 							'<li>%1$s %2$s</li>',
 							'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
-							esc_html( $store_hours['custom_text'] )
+							esc_html( $text )
 						);
 
 						continue;

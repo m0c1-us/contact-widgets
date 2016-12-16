@@ -229,6 +229,14 @@ class AdminTestCest {
 		 */
 		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
 
+		$I->click( [ 'css' => "{$selector} form .day-container:nth-child(3) .js_wpcw_closed_checkbox" ] );
+
+		$I->click( [ 'css' => "{$selector} form .day-container:nth-child(4) .js_wpcw_custom_text_checkbox" ] );
+
+		$I->waitForElementVisible( [ 'css' => "{$selector} form .day-container:nth-child(4) .custom_text_field" ], 3 );
+
+		$I->fillField( [ 'css' => "{$selector} form .day-container:nth-child(4) .custom_text_field" ], 'Custom text' );
+
 		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
 	}
@@ -251,6 +259,8 @@ class AdminTestCest {
 		// Check that facebook is indeed the first element return in the list
 		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Mo 00:00-00:00"]' ] );
 		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Fr 00:00-00:00"]' ] );
+
+		$I->see( '<strong>Wednesday</strong> Closed', '.wpcw-widget-hours ul li:nth-child(3)' );
 
 	}
 
