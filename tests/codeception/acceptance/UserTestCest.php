@@ -125,11 +125,9 @@ class AdminTestCest {
 
 		$I->amOnPage( admin_url( 'widgets.php' ) );
 
-		$I->wait( 2 );
-
 		$I->canSee( 'Social Profiles', [ 'css' => '.widget h3' ] );
 
-		$selector = '#widget-list div[id$=wpcw_social-__i__]';
+		$selector = '#widget-list div[id$=_wpcw_social-__i__]';
 
 		$I->click( [ 'css' => "$selector .widget-title" ] );
 
@@ -149,64 +147,8 @@ class AdminTestCest {
 		$this->selectSocialIcon( $I, 'facebook', $selector );
 		$this->selectSocialIcon( $I, 'twitter', $selector );
 
-		$I->wait( 2 );
-
 		// Let's test reordering so facebook should be first
 		$I->dragAndDrop( [ 'css' => "{$selector} form p.facebook .wpcw-widget-sortable-handle" ], [ 'css' => "{$selector} .wpcw-widget-social .icons" ] );
-
-		$I->wait( 1 );
-
-		/**
-		 * Submit widget form
-		 */
-		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
-
-		// Wait for all ajax request to finish
-		$I->waitForJS( 'return jQuery.active == 0;', 5 );
-
-	}
-
-	/**
-	 * Validate that we can see the hours of operation widget
-	 *
-	 * @before login
-	 * @param \AcceptanceTester $I
-	 */
-	public function validateWidgetHoursOfOperationForm( AcceptanceTester $I ) {
-
-		$I->wantTo( 'Validate hours of operation form in widgets.php' );
-
-		$I->amOnPage( admin_url( 'widgets.php' ) );
-
-		$I->canSee( 'Hours of Operation', [ 'css' => '.widget h3' ] );
-
-		$selector = '#widget-list div[id$=wpcw_hours-__i__]';
-
-		$I->click( [ 'css' => "$selector .widget-title" ] );
-
-		$I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
-
-		$I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
-
-		$selector = '#sidebar-1 div[id*=wpcw_hours]';
-
-		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
-
-		/**
-		 * Fill all fields
-		 */
-		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
-
-		$I->click( [ 'css' => "{$selector} select[name*=[monday][open]]" ] );
-		$I->click( [ 'css' => "{$selector} select[name*=[monday][open]] option:nth-child(19)" ] );
-
-		$I->click( [ 'css' => "{$selector} select[name*=[monday][closed]]" ] );
-		$I->click( [ 'css' => "{$selector} select[name*=[monday][closed]] option:nth-child(36)" ] );
-
-		$I->click( [ 'css' => "{$selector} input[name*=[tuesday][not_open]]" ] );
-
-		$I->click( [ 'css' => "{$selector} input[name*=[wednesday][custom_text_checkbox]]" ] );
-		$I->fillField( [ 'css' => "{$selector} input[id*=[wednesday][custom_text]]" ], 'We are closed.' );
 
 		/**
 		 * Submit widget form
@@ -253,6 +195,62 @@ class AdminTestCest {
 		// Check that facebook is indeed the first element return in the list
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
+
+	}
+
+	/**
+	 * Validate that we can see the hours of operation widget
+	 *
+	 * @before login
+	 * @param \AcceptanceTester $I
+	 */
+	public function validateWidgetHoursOfOperationForm( AcceptanceTester $I ) {
+
+		$I->wantTo( 'Validate hours of operation form in widgets.php' );
+
+		$I->amOnPage( admin_url( 'widgets.php' ) );
+
+		$I->canSee( 'Hours of Operation', [ 'css' => '.widget h3' ] );
+
+		$selector = '#widget-list div[id$=wpcw_hours-__i__]';
+
+		$I->click( [ 'css' => "$selector .widget-title" ] );
+
+		$I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+
+		$I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+
+		$selector = '#sidebar-1 div[id*=wpcw_hours]';
+
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
+
+		/**
+		 * Fill all fields
+		 */
+		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests hours' );
+
+		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
+
+	}
+
+	/**
+	 * Validate hours output
+	 *
+	 * @param \AcceptanceTester $I
+	 */
+	public function validateWidgetHoursOutput( AcceptanceTester $I ) {
+
+		$I->wantTo( 'Validate hours front-end output' );
+
+		$I->amOnPage( home_url() );
+
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-hours' ] );
+
+		$I->canSee( 'Acceptance tests hours', [ 'css' => '.wpcw-widget-hours .widget-title' ] );
+
+		// Check that facebook is indeed the first element return in the list
+		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Mo 00:00-00:00"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Fr 00:00-00:00"]' ] );
 
 	}
 

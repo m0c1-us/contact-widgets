@@ -22,10 +22,12 @@ switch_theme( 'twentysixteen' );
 
 $contact_widgets = get_option( 'widget_wpcw_contact' );
 $social_widgets = get_option( 'widget_wpcw_social' );
+$hours_widgets = get_option( 'widget_wpcw_hours' );
 
 // Let's delete any present widget
 delete_option( 'widget_wpcw_contact' );
 delete_option( 'widget_wpcw_social' );
+delete_option( 'widget_wpcw_hours' );
 
 add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $social_widgets ) {
 
@@ -33,5 +35,6 @@ add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $socia
 
 	update_option( 'widget_wpcw_contact', $contact_widgets );
 	update_option( 'widget_wpcw_social', $social_widgets );
+	update_option( 'widget_wpcw_hours', $hours_widgets );
 
 } );
