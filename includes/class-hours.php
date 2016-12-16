@@ -98,12 +98,6 @@ final class Hours extends Base_Widget {
 
 		$fields = $this->get_fields( $instance );
 
-		if ( $this->is_widget_empty( $fields ) ) {
-
-			return;
-
-		}
-
 		$this->before_widget( $args, $fields );
 
 		foreach ( $fields as $field ) {
