@@ -260,8 +260,6 @@ class AdminTestCest {
 		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Mo 00:00-00:00"]' ] );
 		$I->canSeeElementInDOM( [ 'css' => 'li[datetime="Fr 00:00-00:00"]' ] );
 
-		$I->see( '<strong>Wednesday</strong> Closed', '.wpcw-widget-hours ul li:nth-child(3)' );
-
 	}
 
 	/**
