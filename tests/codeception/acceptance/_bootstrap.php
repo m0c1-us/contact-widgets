@@ -29,7 +29,7 @@ delete_option( 'widget_wpcw_contact' );
 delete_option( 'widget_wpcw_social' );
 delete_option( 'widget_wpcw_hours' );
 
-add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $social_widgets ) {
+add_action( 'shutdown', function() use( $current_theme, $contact_widgets, $social_widgets, $hours_widgets ) {
 
 	switch_theme( $current_theme );
 
