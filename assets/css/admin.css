@@ -97,15 +97,56 @@
 /**
  * Hours of Operation Widget
  */
-.wpcw-widget-hours .form div {
+.wpcw-widget-hours .form div.day-container {
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 8px;
+	padding: 15px 0;
+	border-top: 1px solid rgba(128, 128, 128, 0.27);
 }
 
-.wpcw-widget-hours .day-container {
-	height: 55px;
+.wpcw-widget-hours .form div.hours-selection {
+	width: 100%;
 }
+
+	.wpcw-widget-hours .form div:first-child {
+		border-top: none;
+	}
+
+	.wpcw-widget-hours .day-container:hover {
+		cursor: pointer;
+	}
+
+	.wpcw-widget-hours .day-container span.open-label {
+		float: right;
+		margin-right: 5px;
+	}
+
+	.wpcw-widget-hours .day-container .toggle {
+		font-family: "Dashicons";
+		float: right;
+		font-size: 20px;
+	}
+
+	.wpcw-widget-hours .day-container.closed .toggle:before {
+		content: "\f140";
+	}
+
+	.wpcw-widget-hours .day-container.open .toggle:before {
+		content: "\f142";
+	}
+
+	.wpcw-widget-hours .day-container .open-label.closed {
+		opacity: 0.5;
+	}
+
+	.wpcw-widget-hours .day-container .open-label.open {
+		color: #59CE45;
+		font-weight: 600;
+	}
+
+	.wpcw-widget-hours .day-container.closed div.hidden-container {
+		display: none;
+	}
 
 	.wpcw-widget-hours .form label + div {
 		margin-top: 8px;
@@ -115,12 +156,8 @@
 		display: none;
 	}
 
-	.wpcw-widget-hours .form .js_wpcw_apply_hours_to_all span.dashicons {
-		position: relative;
-		color: inherit;
-		text-decoration: inherit;
-		font-size: inherit;
-		margin-left: -5px;
+	.wpcw-widget-hours .form .js_wpcw_apply_hours_to_all {
+		float: left;
 	}
 
 	.wpcw-widget-hours .form .js_wpcw_closed_checkbox,
@@ -130,11 +167,14 @@
 	}
 
 		.wpcw-widget-hours .form input.js_wpcw_closed_checkbox {
-			margin-left: 3px;
+			margin-left: 8px;
 		}
 
 	.wpcw-widget-hours .day-checkbox-toggle {
-		float: right;
+		display: inline-block;
+		width: 100%;
+		text-align: right;
+		margin-top: 8px;
 	}
 
 .wpcw-widget-hours .custom_text_field {
@@ -147,14 +187,27 @@
 }
 
 .wpcw-widget-hours select {
-	width: 49%;
+	width: 40%;
 	min-width: auto;
 	float: left;
-	margin-bottom: 8px;
+	margin-bottom: 5px;
 }
 
-.wpcw-widget-hours .form div p {
+.wpcw-widget-hours .add-time,
+.wpcw-widget-hours .remove-time {
+	width: 15%;
+	float: right;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.wpcw-widget-hours .remove-time span.dashicons {
+	line-height: 1.4;
+}
+
+.wpcw-widget-hours .form div .hidden-container {
 	display: inline-block;
 	width: 100%;
-	margin: 0;
+	margin: 8px 0;
+	float: left;
 }

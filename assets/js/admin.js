@@ -166,6 +166,71 @@
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
+		$( 'body' ).on( 'click', '.day-container', function( e ) {
+
+			var container = $( this );
+
+			container.find( 'div.hidden-container' ).slideToggle( 'fast', function() {
+
+				if ( container.hasClass( 'closed' ) ) {
+
+					container.removeClass( 'closed' ).addClass( 'open' );
+
+					return;
+
+				}
+
+				container.removeClass( 'open' ).addClass( 'closed' );
+
+			} );
+
+		} );
+
+		$( 'body' ).on( 'click', '.add-time', function( e ) {
+
+			var parent_container = $( this ).parents( '.hidden-container' ).find( '.hours-selection' ).last(),
+          clone            = parent_container.clone(),
+			    length           = parent_container.parent( '.hidden-container' ).find( '.hours-selection' ).length + 1;
+
+			clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( "name", function( i, name ) {
+
+				return name.replace( /\[(\d+)\]$/, function( match, number ) {
+
+					return "[" + ( + number + 1 ) + "]";
+
+				} );
+
+			});
+
+			clone.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
+
+			clone.insertAfter( parent_container );
+
+			e.preventDefault();
+
+		} );
+
+		$( 'body' ).on( 'click', '.remove-time', function( e ) {
+
+			var button = $( this ),
+			    parent = button.parent( '.hours-selection' );
+
+			parent.fadeOut( 'fast', function() {
+
+				parent.remove();
+
+			} );
+
+			e.preventDefualt();
+
+		} );
+
+		$( 'body' ).on( 'click', '.js_wpcw_closed_checkbox, .wpcw-widget-hours select, .add-time, .remove-time, .js_wpcw_apply_hours_to_all', function( e ) {
+
+			e.stopPropagation();
+
+		} );
+
 		// Hours of Operation select field toggle
 		$( 'body' ).on( 'change', '.js_wpcw_closed_checkbox', function( e ) {
 
@@ -205,37 +270,6 @@
 			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
 			$( '.wpcw-widget-hours .day-container' ).find( 'select:first-child' ).val( open );
 			$( '.wpcw-widget-hours .day-container' ).find( 'select:nth-child(2)' ).val( closed );
-
-			e.preventDefault();
-
-		} );
-
-		// Custom text toggle
-		$( 'body' ).on( 'change', '.js_wpcw_custom_text_checkbox', function( e ) {
-
-			var parent_container  = $( this ).parents( '.day-container' ),
-			    select_fields     = parent_container.find( 'select' ),
-			    custom_text_field = parent_container.find( '.custom_text_field' );
-
-			if ( $( this ).is( ':checked' ) ) {
-
-				select_fields.fadeOut( 'fast', function() {
-
-					custom_text_field.fadeIn();
-
-				} );
-
-				e.preventDefault();
-
-				return;
-
-			}
-
-			custom_text_field.fadeOut( 'fast', function() {
-
-				select_fields.fadeIn();
-
-			});
 
 			e.preventDefault();
 

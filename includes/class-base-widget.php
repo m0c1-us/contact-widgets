@@ -412,18 +412,18 @@ abstract class Base_Widget extends \WP_Widget {
 		$field['name']     = str_replace( 'value', strtolower( $day ), $field['name'] );
 		$field['disabled'] = $hours['not_open'] ? true : false;
 
-		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . sprintf( _x( 'Apply to All %s', 'Dashicon Down Arrow', 'contact-widgets' ), '<span class="dashicons dashicons-arrow-down-alt"></span>' ) . '</a>' : '';
+		$open_label = $hours['not_open'] ? __( 'CLOSED', 'wp-contact-widgets' ) : __( 'OPEN', 'wp-contact-widgets' );
+		$open_class = $hours['not_open'] ? 'closed' : 'open';
 
-		$custom_text_checkbox = '<input name="' . $field['name'] . '[custom_text_checkbox]" id="' . $field['name'] . '[custom_text_checkbox]" class="js_wpcw_custom_text_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['custom_text_checkbox'], true ) . '><label for="' . $field['name'] . '[custom_text_checkbox]" class="js_wpcw_custom_text_checkbox"><small>' . esc_html__( 'Custom Text', 'contact-widgets' ) . '</small></label>';
-		$hidden_text_field    = ( ! $hours['custom_text_checkbox'] ) ? ' style="display:none;"' : '';
-		$custom_text_field    = '<input type="text" name="' . $field['name'] . '[custom_text]" id="' . $field['name'] . '[custom_text]" class="widefat custom_text_field" value="' . $hours['custom_text'] . '"' . $hidden_text_field . '/>';
-		$closed_checkbox      = '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label>';
+		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . __( 'Apply to All', 'contact-widgets' ) . '</a>' : '';
+
+		$closed_checkbox = '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label>';
 
 		printf(
-			'<div class="day-container">%1$s<p>%2$s %3$s</p></div>',
-			'<strong>' . esc_html( ucwords( $day ) ) . '<span class="day-checkbox-toggle">' . $apply_to_all_toggle . $custom_text_checkbox . $closed_checkbox . '</strong></span>',
+			'<div class="day-container closed">%1$s<div class="hidden-container">%2$s %3$s</div></div>',
+			'<strong>' . esc_html( ucwords( $day ) ) . '</strong><span class="toggle"></span><span class="open-label ' . $open_class . '">' . $open_label . '</span>',
 			$this->render_hours_selection( $field, sanitize_title( $day ), $hours ),
-			$custom_text_field
+			'<span class="day-checkbox-toggle">' . $apply_to_all_toggle . $closed_checkbox . '</span>'
 		);
 
 	}
@@ -448,47 +448,64 @@ abstract class Base_Widget extends \WP_Widget {
 		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
 
 		$disabled_field = $field['disabled'] ? ' disabled="disabled"' : '';
-		$hidden_field   = $hours['custom_text_checkbox'] ? ' style="display:none;"' : '';
 
-		?>
+		$x = 1;
 
-		<select name="<?php echo esc_attr( $field['name'] . '[open]' ); ?>" <?php echo $disabled_field . $hidden_field; ?>>
-
-		<?php
-
-		foreach ( $times as $time ) {
+		while ( $x <= count( $field['days'][ $day ]['open'] ) ) {
 
 			?>
 
-			<option <?php selected( $hours['open'], $time ); ?>><?php echo esc_html( $time ); ?></option>
+			<div class="hours-selection">
+
+				<select name="<?php echo esc_attr( $field['name'] . '[open][' . $x . ']' ); ?>" <?php echo $disabled_field; ?>>
+
+				<?php
+
+				foreach ( $times as $time ) {
+
+					?>
+
+					<option <?php selected( $hours['open'][ $x ], $time ); ?>><?php echo esc_html( $time ); ?></option>
+
+					<?php
+
+				}
+
+				?>
+
+				</select>
+
+				<select name="<?php echo esc_attr( $field['name'] . '[closed][' . $x . ']' ); ?>" <?php echo $disabled_field; ?>>
+
+				<?php
+
+				foreach ( $times as $time ) {
+
+					?>
+
+					<option <?php selected( $hours['closed'][ $x ], $time ); ?>><?php echo esc_html( $time ); ?></option>
+
+					<?php
+
+				}
+
+				?>
+
+				</select>
+
+				<a href="#" class="<?php echo esc_attr( ( 1 === $x ) ? 'add' : 'remove' ); ?>-time button-secondary">
+
+					<?php echo ( 1 === $x ) ? esc_html__( 'Add', 'wp-contact-widgets' ) : '<span class="dashicons dashicons-no-alt"></span>'; ?>
+
+				</a>
+
+			</div>
 
 			<?php
 
-		}
-
-		?>
-
-		</select>
-
-		<select name="<?php echo esc_attr( $field['name'] . '[closed]' ); ?>" <?php echo $disabled_field . $hidden_field; ?>>
-
-		<?php
-
-		foreach ( $times as $time ) {
-
-			?>
-
-			<option <?php selected( $hours['closed'], $time ); ?>><?php echo esc_html( $time ); ?></option>
-
-			<?php
+			$x++;
 
 		}
-
-		?>
-
-		</select>
-
-		<?php
 
 		return ob_get_clean();
 

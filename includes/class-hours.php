@@ -57,8 +57,6 @@ final class Hours extends Base_Widget {
 
 			if ( 'days' === $key ) {
 
-				parent::print_label( $field );
-
 				foreach ( $field['days'] as $day => $hours ) {
 
 					$this->render_day_input( $fields['days'], $day, $hours );
@@ -106,34 +104,42 @@ final class Hours extends Base_Widget {
 
 				foreach ( $field['days'] as $day_of_week => $store_hours ) {
 
-					$hours = $store_hours['not_open'] ? __( 'Closed', 'contact-widgets' ) : $store_hours['open'] . apply_filters( 'wpcw_hours_seperator', ' - ' ) . $store_hours['closed'];
-					$class = $store_hours['not_open'] ? 'closed' : 'open';
-
-					if ( $store_hours['custom_text_checkbox'] || $store_hours['not_open'] ) {
-
-						$text = $store_hours['not_open'] ? $hours : $store_hours['custom_text'];
+					if ( $store_hours['not_open'] ) {
 
 						printf(
 							'<li>%1$s %2$s</li>',
 							'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
-							esc_html( $text )
+							'<div class="hours closed">' . __( 'Closed', 'wp-contact-widgets' ) . '</div>'
 						);
 
 						continue;
 
 					}
 
+					$hour_length = count( $store_hours['open'] );
+
+					$x = 1;
+
 					$microformat_data = [
-						'day'      => $day_of_week,
-						'open'     => $store_hours['open'],
-						'close'    => $store_hours['closed'],
+						'day'   => $day_of_week,
+						'open'  => $store_hours['open'],
+						'close' => $store_hours['closed'],
 					];
 
+					$hours = [];
+
+					while ( $x <= $hour_length ) {
+
+						$hours[] = '<time ' . $this->get_microformat_markup( $microformat_data, $x ) . '>' . $store_hours['open'][ $x ] . ' - ' . $store_hours['closed'][ $x ] . '</time><br />';
+
+						$x++;
+
+					}
+
 					printf(
-						'<li %1$s>%2$s %3$s</li>',
-						$this->get_microformat_markup( $microformat_data ),
+						'<li>%1$s %2$s</li>',
 						'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
-						'<div class="hours ' . esc_attr( $class ) . '">' . esc_html( $hours ) . '</div>'
+						'<div class="hours open">' . implode( '', $hours ) . '</div>'
 					);
 
 				}
@@ -170,10 +176,7 @@ final class Hours extends Base_Widget {
 				'value'       => ! empty( $instance['title'] ) ? $instance['title'] : '',
 				'sortable'    => false,
 			],
-			'days' => [
-				'label'       => __( 'Days of the week:', 'contact-widgets' ),
-				'description' => __( 'Enter your hours in the following fields.', 'contact-widgets' ),
-			],
+			'days' => [],
 			'additional_content' => [
 				'label'       => __( 'Additional Info.', 'contact-widgets' ),
 				'type'          => 'textarea',
@@ -192,8 +195,6 @@ final class Hours extends Base_Widget {
 				'open'                 => ! empty( $instance['days'][ $day ]['open'] ) ? $instance['days'][ $day ]['open'] : '',
 				'closed'               => ! empty( $instance['days'][ $day ]['closed'] ) ? $instance['days'][ $day ]['closed'] : '',
 				'not_open'             => ! empty( $instance['days'][ $day ]['not_open'] ) ? true : false,
-				'custom_text'          => ! empty( $instance['days'][ $day ]['custom_text'] ) ? $instance['days'][ $day ]['custom_text'] : '',
-				'custom_text_checkbox' => isset( $instance['days'][ $day ]['custom_text_checkbox'] ) ? true : false,
 			];
 
 		}
@@ -251,11 +252,11 @@ final class Hours extends Base_Widget {
 	 *
 	 * @return string
 	 */
-	protected function get_microformat_markup( $microformat_data ) {
+	protected function get_microformat_markup( $microformat_data, $iteration ) {
 
 		$day   = ucwords( substr( $microformat_data['day'], 0, 2 ) );
-		$open  = date( 'H:i', strtotime( $microformat_data['open'] ) );
-		$close = date( 'H:i', strtotime( $microformat_data['close'] ) );
+		$open  = date( 'H:i', strtotime( $microformat_data['open'][ $iteration ] ) );
+		$close = date( 'H:i', strtotime( $microformat_data['close'][ $iteration ] ) );
 
 		$microformat_attributes = [
 			'itemprop="openingHours"',
