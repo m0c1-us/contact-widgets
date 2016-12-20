@@ -324,13 +324,14 @@ final class Hours extends Base_Widget {
 
 		}
 
-		$open_sign_text  = $this->is_business_open( $hours ) ? __( 'Open', 'wp-contact-widgets' ) : __( 'Closed', 'wp-contact-widgets' );
-		$open_sign_class = $this->is_business_open( $hours ) ? 'open' : 'closed';
+		$business_open   = $this->is_business_open( $hours );
+		$open_sign_text  = $business_open ? __( 'Open', 'wp-contact-widgets' ) : __( 'Closed', 'wp-contact-widgets' );
+		$open_sign_class = $business_open ? 'open' : 'closed';
 
 		return sprintf(
 			'<span class="open-sign %1$s">%2$s</span>',
 			esc_attr( $open_sign_class ),
-			apply_filters( 'wpcw_widget_hours_open_sign_text', $open_sign_text, $this->is_business_open( $hours ) )
+			apply_filters( 'wpcw_widget_hours_open_sign_text', $open_sign_text, $business_open )
 		);
 
 	}
