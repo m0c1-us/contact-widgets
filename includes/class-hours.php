@@ -111,6 +111,8 @@ final class Hours extends Base_Widget {
 
 				foreach ( $field['days'] as $day_of_week => $store_hours ) {
 
+					do_action( 'wpcw_widget_hours_before_day', $day_of_week );
+
 					if ( $store_hours['not_open'] ) {
 
 						printf(
@@ -148,6 +150,8 @@ final class Hours extends Base_Widget {
 						'<strong>' . esc_html( ucwords( $day_of_week ) ) . $this->open_sign( $day_of_week, $store_hours ) . '</strong>',
 						'<div class="hours open">' . implode( '', $hours ) . '</div>'
 					);
+
+					do_action( 'wpcw_widget_hours_after_day', $day_of_week );
 
 				}
 
