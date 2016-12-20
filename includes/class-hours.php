@@ -178,12 +178,12 @@ final class Hours extends Base_Widget {
 			],
 			'days' => [],
 			'additional_content' => [
-				'label'       => __( 'Additional Info.', 'contact-widgets' ),
+				'label'         => __( 'Additional Info.', 'contact-widgets' ),
 				'type'          => 'textarea',
 				'sanitizer'     => function( $value ) { return current_user_can( 'unfiltered_html' ) ? $value : wp_kses_post( stripslashes( $value ) ); },
 				'escaper'       => function( $value ) { return nl2br( apply_filters( 'widget_text', $value ) ); },
 				'form_callback' => 'render_form_textarea',
-				'description' => __( 'Enter additional information about your business.', 'contact-widgets' ),
+				'description'   => __( 'Enter additional information about your business.', 'contact-widgets' ),
 			],
 		];
 
@@ -192,9 +192,9 @@ final class Hours extends Base_Widget {
 			$day = strtolower( $day );
 
 			$fields['days']['days'][ $day ] = [
-				'open'                 => ! empty( $instance['days'][ $day ]['open'] ) ? $instance['days'][ $day ]['open'] : '',
-				'closed'               => ! empty( $instance['days'][ $day ]['closed'] ) ? $instance['days'][ $day ]['closed'] : '',
-				'not_open'             => ! empty( $instance['days'][ $day ]['not_open'] ) ? true : false,
+				'open'     => ! empty( $instance['days'][ $day ]['open'] ) ? $instance['days'][ $day ]['open'] : '',
+				'closed'   => ! empty( $instance['days'][ $day ]['closed'] ) ? $instance['days'][ $day ]['closed'] : '',
+				'not_open' => ! empty( $instance['days'][ $day ]['not_open'] ) ? true : false,
 			];
 
 		}
