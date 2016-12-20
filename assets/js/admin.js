@@ -254,6 +254,7 @@
 
 				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).attr( 'disabled', 'disabled' );
 				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', true );
+				$( '.wpcw-widget-hours .day-container' ).find( '.hours-selection:not(:first)' ).remove();
 
 				e.preventDefault();
 

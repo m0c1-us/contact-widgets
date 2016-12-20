@@ -353,6 +353,12 @@ final class Hours extends Base_Widget {
 
 		$iteration = 1;
 
+		if ( $hours['not_open'] ) {
+
+			return false;
+
+		}
+
 		foreach ( $hours['open'] as $open_hours ) {
 
 			if ( $this->current_time >= strtotime( $open_hours ) && $this->current_time <= strtotime( $hours['closed'][ $iteration ] ) ) {
