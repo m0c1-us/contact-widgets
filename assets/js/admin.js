@@ -166,7 +166,7 @@
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
-		$( 'body' ).on( 'click', '.day-container', function( e ) {
+		$( 'body' ).on( 'click', '.day-container', function() {
 
 			var container = $( this );
 
@@ -189,14 +189,13 @@
 		$( 'body' ).on( 'click', '.add-time', function( e ) {
 
 			var parent_container = $( this ).parents( '.hidden-container' ).find( '.hours-selection' ).last(),
-          clone            = parent_container.clone(),
-			    length           = parent_container.parent( '.hidden-container' ).find( '.hours-selection' ).length + 1;
+          clone            = parent_container.clone();
 
-			clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( "name", function( i, name ) {
+			clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
 
 				return name.replace( /\[(\d+)\]$/, function( match, number ) {
 
-					return "[" + ( + number + 1 ) + "]";
+					return '[' + ( + number + 1 ) + ']';
 
 				} );
 
