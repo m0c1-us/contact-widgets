@@ -209,7 +209,7 @@ final class Hours extends Base_Widget {
 		 *
 		 * @var array
 		 */
-		return (array) apply_filters( 'wphoow_widget_contact_fields', $fields, $instance );
+		return (array) apply_filters( 'wpcw_widget_hours_fields', $fields, $instance );
 
 	}
 
@@ -220,8 +220,6 @@ final class Hours extends Base_Widget {
 	 */
 	public function get_days_of_week() {
 
-		$start_of_week = get_option( 'start_of_week', 1 );
-
 		$days_of_the_week = [
 			__( 'Monday', 'contact-widgets' ),
 			__( 'Tuesday', 'contact-widgets' ),
@@ -231,6 +229,23 @@ final class Hours extends Base_Widget {
 			__( 'Saturday', 'contact-widgets' ),
 			__( 'Sunday', 'contact-widgets' ),
 		];
+
+		switch ( apply_filters( 'wpcw_widget_hours_first_day', 'start_of_week' ) ) {
+
+			case 'current_day':
+
+				$start_of_week = array_search( date( 'l', current_time( 'timestamp' ) ), $days_of_the_week ) + 1;
+
+				break;
+
+			case 'start_of_week':
+			default:
+
+				$start_of_week = get_option( 'start_of_week', 1 );
+
+				break;
+
+		}
 
 		if ( 1 < $start_of_week ) {
 
