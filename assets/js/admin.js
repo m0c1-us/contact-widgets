@@ -263,13 +263,53 @@
 			}
 
 			var first_container = $( this ).parents( '.day-container' ),
-			    open   = first_container.find( 'select:first-child' ).val(),
-			    closed = first_container.find( 'select:nth-child(2)' ).val();
+			    length = $( this ).parents( '.day-container' ).find( '.hours-selection' ).length;
 
-			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input[type="checkbox"]' ).prop( 'checked', false );
 			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
-			$( '.wpcw-widget-hours .day-container' ).find( 'select:first-child' ).val( open );
-			$( '.wpcw-widget-hours .day-container' ).find( 'select:nth-child(2)' ).val( closed );
+			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', false );
+
+			$( '.day-container' ).not( first_container ).each( function() {
+
+				$( this ).find( '.hidden-container .hours-selection:not(:first)' ).remove();
+
+				var y = 1,
+				    z = 0;
+
+				while ( y < length ) {
+
+					var duplicate = $( this ).find( '.hidden-container .hours-selection' ).last().clone();
+
+					duplicate.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
+
+						return name.replace( /\[(\d+)\]$/, function( match, number ) {
+
+							return '[' + ( + number + 1 ) + ']';
+
+						} );
+
+					} );
+
+					duplicate.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
+
+					duplicate.insertAfter( $( this ).find( '.hidden-container .hours-selection' ).last() );
+
+					y++;
+
+				}
+
+				while ( z <= length ) {
+
+					var open   = first_container.find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val(),
+							closed = first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
+
+					$( this ).find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val( open );
+					$( this ).find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val( closed );
+
+					z++;
+
+				}
+
+			} );
 
 			e.preventDefault();
 

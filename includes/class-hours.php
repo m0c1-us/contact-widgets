@@ -118,7 +118,7 @@ final class Hours extends Base_Widget {
 						printf(
 							'<li>%1$s %2$s</li>',
 							'<strong>' . esc_html( ucwords( $day_of_week ) ) . $this->open_sign( $day_of_week, $store_hours ) . '</strong>',
-							'<div class="hours closed">' . __( 'Closed', 'wp-contact-widgets' ) . '</div>'
+							'<div class="hours closed">' . __( 'Closed', 'contact-widgets' ) . '</div>'
 						);
 
 						continue;
@@ -154,6 +154,12 @@ final class Hours extends Base_Widget {
 					do_action( 'wpcw_widget_hours_after_day', $day_of_week );
 
 				}
+
+				continue;
+
+			}
+
+			if ( ! $field['show_front_end'] ) {
 
 				continue;
 
@@ -196,9 +202,23 @@ final class Hours extends Base_Widget {
 				'form_callback' => 'render_form_textarea',
 				'description'   => __( 'Enter additional information about your business.', 'contact-widgets' ),
 			],
+			'day_order' => [
+				'label'       => __( 'Current Day on Top', 'contact-widgets' ),
+				'type'        => 'checkbox',
+				'label_after' => true,
+				'show_front_end' => false,
+				'default'     => 'no',
+				'value'       => 1,
+			],
 		];
 
-		foreach ( $this->get_days_of_week() as $day ) {
+		if ( 'no' !== $instance['day_order']['value'] ) {
+
+			$fields['day_order']['atts'] = 'checked="checked"';
+
+		}
+
+		foreach ( $this->get_days_of_week( $instance['day_order']['value'] ) as $day ) {
 
 			$day = strtolower( $day );
 
@@ -231,7 +251,7 @@ final class Hours extends Base_Widget {
 	 *
 	 * @return array
 	 */
-	public function get_days_of_week() {
+	public function get_days_of_week( $current_day ) {
 
 		$days_of_the_week = [
 			__( 'Monday', 'contact-widgets' ),
@@ -243,27 +263,11 @@ final class Hours extends Base_Widget {
 			__( 'Sunday', 'contact-widgets' ),
 		];
 
-		/**
-		 * Filter the start of the week on the front end
-		 *
-		 * @since NEXT
-		 *
-		 * @return string
-		 */
-		switch ( apply_filters( 'wpcw_widget_hours_first_day', 'start_of_week' ) ) {
+		$start_of_week = get_option( 'start_of_week', 1 );
 
-			case 'current_day':
+		if ( 'no' !== $current_day && ! is_admin() ) {
 
-				$start_of_week = array_search( date( 'l', $this->current_time ), $days_of_the_week ) + 1;
-
-				break;
-
-			case 'start_of_week':
-			default:
-
-				$start_of_week = get_option( 'start_of_week', 1 );
-
-				break;
+			$start_of_week = array_search( date( 'l', $this->current_time ), $days_of_the_week ) + 1;
 
 		}
 
@@ -329,7 +333,7 @@ final class Hours extends Base_Widget {
 		}
 
 		$business_open   = $this->is_business_open( $hours );
-		$open_sign_text  = $business_open ? __( 'Open', 'wp-contact-widgets' ) : __( 'Closed', 'wp-contact-widgets' );
+		$open_sign_text  = $business_open ? __( 'Open', 'contact-widgets' ) : __( 'Closed', 'contact-widgets' );
 		$open_sign_class = $business_open ? 'open' : 'closed';
 
 		return sprintf(

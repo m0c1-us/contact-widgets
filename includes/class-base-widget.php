@@ -312,6 +312,12 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	protected function render_form_input( array $field ) {
 
+		if ( ! is_admin() ) {
+
+			return;
+
+		}
+
 		$this->before_form_field( $field );
 
 		printf(
@@ -412,7 +418,7 @@ abstract class Base_Widget extends \WP_Widget {
 		$field['name']     = str_replace( 'value', strtolower( $day ), $field['name'] );
 		$field['disabled'] = $hours['not_open'] ? true : false;
 
-		$open_label = $hours['not_open'] ? __( 'CLOSED', 'wp-contact-widgets' ) : __( 'OPEN', 'wp-contact-widgets' );
+		$open_label = $hours['not_open'] ? __( 'CLOSED', 'contact-widgets' ) : __( 'OPEN', 'contact-widgets' );
 		$open_class = $hours['not_open'] ? 'closed' : 'open';
 
 		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . __( 'Apply to All', 'contact-widgets' ) . '</a>' : '';
@@ -499,7 +505,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 				<a href="#" class="<?php echo esc_attr( ( 1 === $x ) ? 'add' : 'remove' ); ?>-time button-secondary">
 
-					<?php echo ( 1 === $x ) ? esc_html__( 'Add', 'wp-contact-widgets' ) : '<span class="dashicons dashicons-no-alt"></span>'; ?>
+					<?php echo ( 1 === $x ) ? esc_html__( 'Add', 'contact-widgets' ) : '<span class="dashicons dashicons-no-alt"></span>'; ?>
 
 				</a>
 
