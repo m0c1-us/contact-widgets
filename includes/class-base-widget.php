@@ -443,7 +443,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		ob_start();
 
-		$times = $this->get_half_hour_time_array();
+		$times = $this->get_time_array();
 
 		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
 
@@ -463,9 +463,11 @@ abstract class Base_Widget extends \WP_Widget {
 
 				foreach ( $times as $time ) {
 
+					$select = isset( $hours['open'][ $x ] ) ? $hours['open'][ $x ] : '';
+
 					?>
 
-					<option <?php selected( $hours['open'][ $x ], $time ); ?>><?php echo esc_html( $time ); ?></option>
+					<option <?php selected( $select, $time ); ?>><?php echo esc_html( $time ); ?></option>
 
 					<?php
 
@@ -481,9 +483,11 @@ abstract class Base_Widget extends \WP_Widget {
 
 				foreach ( $times as $time ) {
 
+					$select = isset( $hours['closed'][ $x ] ) ? $hours['closed'][ $x ] : '';
+
 					?>
 
-					<option <?php selected( $hours['closed'][ $x ], $time ); ?>><?php echo esc_html( $time ); ?></option>
+					<option <?php selected( $select, $time ); ?>><?php echo esc_html( $time ); ?></option>
 
 					<?php
 
@@ -518,15 +522,38 @@ abstract class Base_Widget extends \WP_Widget {
 	 *
 	 * @return array
 	 */
-	protected function get_half_hour_time_array() {
+	protected function get_time_array() {
 
-		$half_hour_steps = range( 0, 47 * 1800, 1800 );
+		switch ( apply_filters( 'wpcw_hour_increment', 'half_hour' ) ) {
+
+			case 'fifteen_minutes':
+
+				$step = 900;
+
+				break;
+
+			case 'half_hour':
+			default:
+
+				$step = 1800;
+
+			break;
+
+			case 'hour':
+
+				$step = 3600;
+
+				break;
+
+		}
+
+		$steps = range( 0, 47 * 1800, $step );
 
 		return array_map( function ( $time ) {
 
 			return date( get_option( 'time_format' ), $time );
 
-		}, $half_hour_steps );
+		}, $steps );
 
 	}
 
