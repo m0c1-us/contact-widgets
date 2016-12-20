@@ -300,7 +300,7 @@
 				while ( z <= length ) {
 
 					var open   = first_container.find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val(),
-							closed = first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
+					    closed = first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
 
 					$( this ).find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val( open );
 					$( this ).find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val( closed );
