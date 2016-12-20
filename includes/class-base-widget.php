@@ -539,12 +539,6 @@ abstract class Base_Widget extends \WP_Widget {
 
 			break;
 
-			case 'hour':
-
-				$step = 3600;
-
-				break;
-
 		}
 
 		$steps = range( 0, 47 * 1800, $step );
