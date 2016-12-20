@@ -524,6 +524,13 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	protected function get_time_array() {
 
+		/**
+		 * Filter the hour increments in the select field
+		 *
+		 * @since NEXT
+		 *
+		 * @return string
+		 */
 		switch ( apply_filters( 'wpcw_hour_increment', 'half_hour' ) ) {
 
 			case 'fifteen_minutes':

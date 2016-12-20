@@ -207,7 +207,7 @@ final class Hours extends Base_Widget {
 		 *
 		 * @since NEXT
 		 *
-		 * @var array
+		 * @return array
 		 */
 		return (array) apply_filters( 'wpcw_widget_hours_fields', $fields, $instance );
 
@@ -215,6 +215,8 @@ final class Hours extends Base_Widget {
 
 	/**
 	 * Return an array of days of the week
+	 *
+	 * @since NEXT
 	 *
 	 * @return array
 	 */
@@ -230,6 +232,13 @@ final class Hours extends Base_Widget {
 			__( 'Sunday', 'contact-widgets' ),
 		];
 
+		/**
+		 * Filter the start of the week on the front end
+		 *
+		 * @since NEXT
+		 *
+		 * @return string
+		 */
 		switch ( apply_filters( 'wpcw_widget_hours_first_day', 'start_of_week' ) ) {
 
 			case 'current_day':
@@ -253,7 +262,7 @@ final class Hours extends Base_Widget {
 
 		}
 
-		return $days_of_the_week;
+		return (array) $days_of_the_week;
 
 	}
 
