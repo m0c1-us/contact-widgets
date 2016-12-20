@@ -312,12 +312,6 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	protected function render_form_input( array $field ) {
 
-		if ( ! is_admin() ) {
-
-			return;
-
-		}
-
 		$this->before_form_field( $field );
 
 		printf(
