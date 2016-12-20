@@ -10,6 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class Hours extends Base_Widget {
 
+	private $current_day;
+
+	private $current_time;
+
 	/**
 	 * Widget constructor
 	 */
@@ -26,6 +30,9 @@ final class Hours extends Base_Widget {
 			__( 'Hours of Operation', 'contact-widgets' ),
 			$widget_options
 		);
+
+		$this->current_time = current_time( 'timestamp' );
+		$this->current_day  = strtolower( date( 'l', $this->current_time ) );
 
 	}
 
@@ -108,7 +115,7 @@ final class Hours extends Base_Widget {
 
 						printf(
 							'<li>%1$s %2$s</li>',
-							'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
+							'<strong>' . esc_html( ucwords( $day_of_week ) ) . $this->open_sign( $day_of_week, $store_hours ) . '</strong>',
 							'<div class="hours closed">' . __( 'Closed', 'wp-contact-widgets' ) . '</div>'
 						);
 
@@ -138,7 +145,7 @@ final class Hours extends Base_Widget {
 
 					printf(
 						'<li>%1$s %2$s</li>',
-						'<strong>' . esc_html( ucwords( $day_of_week ) ) . '</strong>',
+						'<strong>' . esc_html( ucwords( $day_of_week ) ) . $this->open_sign( $day_of_week, $store_hours ) . '</strong>',
 						'<div class="hours open">' . implode( '', $hours ) . '</div>'
 					);
 
@@ -243,7 +250,7 @@ final class Hours extends Base_Widget {
 
 			case 'current_day':
 
-				$start_of_week = array_search( date( 'l', current_time( 'timestamp' ) ), $days_of_the_week ) + 1;
+				$start_of_week = array_search( date( 'l', $this->current_time ), $days_of_the_week ) + 1;
 
 				break;
 
@@ -288,6 +295,72 @@ final class Hours extends Base_Widget {
 		];
 
 		return implode( ' ', $microformat_attributes );
+
+	}
+
+	/**
+	 * Generate the open sign on the front-end
+	 *
+	 * @param  string $day    The current day in the iteration.
+	 * @param  array  $hours  Open/Closed hours.
+	 *
+	 * @since NEXT
+	 *
+	 *
+	 * @return mixed
+	 */
+	protected function open_sign( $day, $hours ) {
+
+		/**
+		 * Allow users to disable the open sign
+		 *
+		 * @since NEXT
+		 *
+		 * @return string
+		 */
+		if ( (bool) ! apply_filters( 'wpcw_widget_hours_open_sign', true ) || $this->current_day !== $day ) {
+
+			return;
+
+		}
+
+		$open_sign_text  = $this->is_business_open( $hours ) ? __( 'Open', 'wp-contact-widgets' ) : __( 'Closed', 'wp-contact-widgets' );
+		$open_sign_class = $this->is_business_open( $hours ) ? 'open' : 'closed';
+
+		return sprintf(
+			'<span class="open-sign %1$s">%2$s</span>',
+			esc_attr( $open_sign_class ),
+			apply_filters( 'wpcw_widget_hours_open_sign_text', $open_sign_text, $this->is_business_open( $hours ) )
+		);
+
+	}
+
+	/**
+	 * Check if the business is open based on the current server time
+	 *
+	 * @param array $hours Open/Closed times
+	 *
+	 * @since NEXT
+	 *
+	 * @return boolean
+	 */
+	protected function is_business_open( $hours ) {
+
+		$iteration = 1;
+
+		foreach ( $hours['open'] as $open_hours ) {
+
+			if ( $this->current_time >= strtotime( $open_hours ) && $this->current_time <= strtotime( $hours['closed'][ $iteration ] ) ) {
+
+				return true;
+
+			}
+
+			$iteration++;
+
+		}
+
+		return false;
 
 	}
 
