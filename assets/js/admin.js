@@ -166,7 +166,7 @@
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
-		$( 'body' ).on( 'click', '.day-container', function() {
+		$( 'body' ).on( 'click', '.wpcw-widget-hours .day-container', function() {
 
 			var container = $( this );
 
