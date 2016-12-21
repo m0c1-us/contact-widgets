@@ -203,7 +203,7 @@ final class Hours extends Base_Widget {
 				'description'   => __( 'Enter additional information about your business.', 'contact-widgets' ),
 			],
 			'day_order' => [
-				'label'          => __( 'Current Day on Top', 'contact-widgets' ),
+				'label'          => __( 'Keep the current day at the top of the widget.', 'contact-widgets' ),
 				'type'           => 'checkbox',
 				'label_after'    => true,
 				'show_front_end' => false,
