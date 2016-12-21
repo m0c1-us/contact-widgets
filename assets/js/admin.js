@@ -220,7 +220,7 @@
 
 			} );
 
-			e.preventDefalt();
+			e.preventDefault();
 
 		} );
 
