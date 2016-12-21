@@ -237,13 +237,13 @@
 
 			if ( $( this ).is( ':checked' ) ) {
 
-				$select_fields.attr( 'disabled', 'disabled' );
+				$select_fields.prop( 'disabled', true );
 
 				return;
 
 			}
 
-			$select_fields.removeAttr( 'disabled' );
+			$select_fields.prop( 'disabled', false );
 
 		} );
 
@@ -252,7 +252,7 @@
 
 			if ( $( this ).parents( '.day-container' ).find( 'input.js_wpcw_closed_checkbox' ).is( ':checked' ) ) {
 
-				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).attr( 'disabled', 'disabled' );
+				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).prop( 'disabled', true );
 				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', true );
 				$( '.wpcw-widget-hours .day-container' ).find( '.hours-selection:not(:first)' ).remove();
 
@@ -265,7 +265,7 @@
 			var $first_container = $( this ).parents( '.day-container' ),
 			    length = $( this ).parents( '.day-container' ).find( '.hours-selection' ).length;
 
-			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
+			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).prop( 'disabled', false );
 			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', false );
 
 			$( '.day-container' ).not( $first_container ).each( function() {
