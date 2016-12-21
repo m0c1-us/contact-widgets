@@ -188,10 +188,10 @@
 
 		$( 'body' ).on( 'click', '.add-time', function( e ) {
 
-			var parent_container = $( this ).parents( '.hidden-container' ).find( '.hours-selection' ).last(),
-          clone            = parent_container.clone();
+			var $parent_container = $( this ).parents( '.hidden-container' ).find( '.hours-selection' ).last(),
+          $clone            = $parent_container.clone();
 
-			clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
+			$clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
 
 				return name.replace( /\[(\d+)\]$/, function( match, number ) {
 
@@ -201,9 +201,9 @@
 
 			});
 
-			clone.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
+			$clone.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
 
-			clone.insertAfter( parent_container );
+			$clone.insertAfter( $parent_container );
 
 			e.preventDefault();
 
@@ -211,12 +211,12 @@
 
 		$( 'body' ).on( 'click', '.remove-time', function( e ) {
 
-			var button = $( this ),
-			    parent = button.parent( '.hours-selection' );
+			var $button = $( this ),
+			    $parent = $button.parent( '.hours-selection' );
 
-			parent.fadeOut( 'fast', function() {
+			$parent.fadeOut( 'fast', function() {
 
-				parent.remove();
+				$parent.remove();
 
 			} );
 
@@ -233,17 +233,17 @@
 		// Hours of Operation select field toggle
 		$( 'body' ).on( 'change', '.js_wpcw_closed_checkbox', function( e ) {
 
-			var select_fields = $( e.currentTarget ).parents( '.day-container' ).find( 'select' );
+			var $select_fields = $( e.currentTarget ).parents( '.day-container' ).find( 'select' );
 
 			if ( $( this ).is( ':checked' ) ) {
 
-				select_fields.attr( 'disabled', 'disabled' );
+				$select_fields.attr( 'disabled', 'disabled' );
 
 				return;
 
 			}
 
-			select_fields.removeAttr( 'disabled' );
+			$select_fields.removeAttr( 'disabled' );
 
 		} );
 
@@ -262,13 +262,13 @@
 
 			}
 
-			var first_container = $( this ).parents( '.day-container' ),
+			var $first_container = $( this ).parents( '.day-container' ),
 			    length = $( this ).parents( '.day-container' ).find( '.hours-selection' ).length;
 
 			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).removeAttr( 'disabled' );
 			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', false );
 
-			$( '.day-container' ).not( first_container ).each( function() {
+			$( '.day-container' ).not( $first_container ).each( function() {
 
 				$( this ).find( '.hidden-container .hours-selection:not(:first)' ).remove();
 
@@ -277,9 +277,9 @@
 
 				while ( y < length ) {
 
-					var duplicate = $( this ).find( '.hidden-container .hours-selection' ).last().clone();
+					var $duplicate = $( this ).find( '.hidden-container .hours-selection' ).last().clone();
 
-					duplicate.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
+					$duplicate.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
 
 						return name.replace( /\[(\d+)\]$/, function( match, number ) {
 
@@ -289,9 +289,9 @@
 
 					} );
 
-					duplicate.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
+					$duplicate.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
 
-					duplicate.insertAfter( $( this ).find( '.hidden-container .hours-selection' ).last() );
+					$duplicate.insertAfter( $( this ).find( '.hidden-container .hours-selection' ).last() );
 
 					y++;
 
@@ -299,8 +299,8 @@
 
 				while ( z <= length ) {
 
-					var open   = first_container.find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val(),
-					    closed = first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
+					var open   = $first_container.find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val(),
+					    closed = $first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
 
 					$( this ).find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val( open );
 					$( this ).find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val( closed );
