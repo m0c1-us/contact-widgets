@@ -11,6 +11,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Contact extends Base_Widget {
 
 	/**
+	 * Defer Google Maps iframes until pages have fully loaded.
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	 */
+	private $defer_map_iframes = true;
+
+	/**
 	 * Widget constructor
 	 */
 	public function __construct() {
@@ -26,6 +35,16 @@ final class Contact extends Base_Widget {
 			__( 'Contact Details', 'contact-widgets' ),
 			$widget_options
 		);
+
+		/**
+		 * Filter whether to defer Google Maps iframes until
+		 * pages have fully loaded.
+		 *
+		 * @since NEXT
+		 *
+		 * @var bool
+		 */
+		$this->defer_map_iframes = (bool) apply_filters( 'wpcw_contact_defer_map_iframes', $this->defer_map_iframes );
 
 	}
 
@@ -116,37 +135,11 @@ final class Contact extends Base_Widget {
 
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
-			/**
-			 * Filter whether to defer the fetching of Google Maps iframes
-			 * until the page has fully loaded.
-			 *
-			 * @since NEXT
-			 *
-			 * @var bool
-			 */
-			$defer = (bool) apply_filters( 'wpcw_contact_defer_map_iframes', true );
-
-			if ( $defer ) :
-
-				?>
-				<script type="text/javascript">
-				window.onload = ( function() {
-					var iframes = document.getElementsByTagName( 'iframe' );
-					for ( i = 0; i < iframes.length; i++ ) {
-						var src = iframes[i].getAttribute( 'data-src' );
-						if ( src ) {
-							iframes[i].setAttribute( 'src', src );
-						}
-					}
-				} );
-				</script>
-				<?php
-
-			endif;
+			add_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] );
 
 			printf(
-				'<li class="has-map"><iframe %s="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
-				( $defer ) ? 'src="" data-src' : 'src',
+				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s" class="wpcw-widget-contact-map"></iframe></li>',
+				( $this->defer_map_iframes ) ? 'src="" data-src' : 'src',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
 				urlencode( $this->get_google_maps_locale() )
 			);
@@ -275,6 +268,37 @@ final class Contact extends Base_Widget {
 		}
 
 		return $locale;
+
+	}
+
+	/**
+	 * Defer Google Maps iframes with JavaScript.
+	 *
+	 * @action wp_footer
+	 * @since  NEXT
+	 */
+	public function defer_map_iframes_js() {
+
+		if ( ! $this->defer_map_iframes ) {
+
+			return;
+
+		}
+
+		?>
+		<script type="text/javascript">
+		window.onload = ( function() {
+			var iframes = document.getElementsByTagName( 'iframe' );
+			for ( i = 0; i < iframes.length; i++ ) {
+				var src = iframes[i].getAttribute( 'data-src' );
+				if ( src && 'wpcw-widget-contact-map' === iframes[i].getAttribute( 'class' ) ) {
+					iframes[i].setAttribute( 'src', src );
+					iframes[i].removeAttribute( 'data-src' );
+				}
+			}
+		} );
+		</script>
+		<?php
 
 	}
 
