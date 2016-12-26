@@ -116,22 +116,37 @@ final class Contact extends Base_Widget {
 
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
-			?>
-			<script type="text/javascript">
-			window.onload = ( function() {
-				var iframes = document.getElementsByTagName( 'iframe' );
-				for ( i = 0; i < iframes.length; i++ ) {
-					var src = iframes[i].getAttribute( 'data-src' );
-					if ( src ) {
-						iframes[i].setAttribute( 'src', src );
+			/**
+			 * Filter whether to defer the fetching of Google Maps iframes
+			 * until the page has fully loaded.
+			 *
+			 * @since NEXT
+			 *
+			 * @var bool
+			 */
+			$defer = (bool) apply_filters( 'wpcw_contact_defer_map_iframes', true );
+
+			if ( $defer ) :
+
+				?>
+				<script type="text/javascript">
+				window.onload = ( function() {
+					var iframes = document.getElementsByTagName( 'iframe' );
+					for ( i = 0; i < iframes.length; i++ ) {
+						var src = iframes[i].getAttribute( 'data-src' );
+						if ( src ) {
+							iframes[i].setAttribute( 'src', src );
+						}
 					}
-				}
-			} );
-			</script>
-			<?php
+				} );
+				</script>
+				<?php
+
+			endif;
 
 			printf(
-				'<li class="has-map"><iframe src="" data-src="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
+				'<li class="has-map"><iframe %s="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
+				( $defer ) ? 'src="" data-src' : 'src',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
 				urlencode( $this->get_google_maps_locale() )
 			);
