@@ -116,8 +116,22 @@ final class Contact extends Base_Widget {
 
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
+			?>
+			<script type="text/javascript">
+			window.onload = ( function() {
+				var iframes = document.getElementsByTagName( 'iframe' );
+				for ( i = 0; i < iframes.length; i++ ) {
+					var src = iframes[i].getAttribute( 'data-src' );
+					if ( src ) {
+						iframes[i].setAttribute( 'src', src );
+					}
+				}
+			} );
+			</script>
+			<?php
+
 			printf(
-				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
+				'<li class="has-map"><iframe src="" data-src="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
 				urlencode( $this->get_google_maps_locale() )
 			);
