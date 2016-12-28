@@ -28,7 +28,8 @@ abstract class Base_Widget extends \WP_Widget {
 		'sanitizer'      => 'sanitize_text_field',
 		'escaper'        => 'esc_html',
 		'form_callback'  => 'render_form_input',
-		'default'        => '', // Used mainly for social fields to add default value
+		'default'        => '',
+		'save_default'   => true,
 		'value'          => '',
 		'placeholder'    => '',
 		'wrapper'        => 'p',
@@ -102,11 +103,13 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$fields = $this->get_fields( $old_instance );
 
+		$has_sortables = array_filter( wp_list_pluck( $fields, 'sortable' ) );
+
 		foreach ( $fields as $key => $field ) {
 
-			$order       = array_search( $key, array_keys( $new_instance ) );
-			$is_sortable = ( 'title' !== $key && ! empty( $field['sortable'] ) && $order > 0 ); // Start at 1 since title order is 0
-			$field_key   = ( $is_sortable ) ? $key . '[value]' : $key;
+			$order     = array_search( $key, array_keys( $new_instance ) );
+			$ordered   = ( $has_sortables && 'title' !== $key && $order > 0 ); // Start at 1 since title order is 0
+			$field_key = ( $ordered ) ? $key . '[value]' : $key;
 
 			$sanitizer_callback = $field['sanitizer'];
 
@@ -120,13 +123,13 @@ abstract class Base_Widget extends \WP_Widget {
 			}
 
 			// Force default values when empty
-			if ( null === $new_value && $field['default'] ) {
+			if ( null === $new_value && $field['save_default'] && $field['default'] ) {
 
 				$this->set_field_value( $new_instance, $field_key, $field['default'] );
 
 			}
 
-			if ( $is_sortable ) {
+			if ( $ordered ) {
 
 				$this->set_field_value( $new_instance, $key . '[order]', $order );
 

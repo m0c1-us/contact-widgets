@@ -82,7 +82,7 @@ final class Contact extends Base_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$fields = $this->get_fields( $instance, [], true );
+		$fields = $this->get_fields( $instance );
 
 		if ( $this->is_widget_empty( $fields ) ) {
 
