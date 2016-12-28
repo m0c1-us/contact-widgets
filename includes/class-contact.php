@@ -82,7 +82,7 @@ final class Contact extends Base_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$fields = $this->get_fields( $instance );
+		$fields = $this->get_fields( $instance, [], true );
 
 		if ( $this->is_widget_empty( $fields ) ) {
 
@@ -143,8 +143,6 @@ final class Contact extends Base_Widget {
 			'title'   => [
 				'label'       => __( 'Title:', 'contact-widgets' ),
 				'description' => __( 'The title of widget. Leave empty for no title.', 'contact-widgets' ),
-				'value'       => ! empty( $instance['title'] ) ? $instance['title'] : '',
-				'sortable'    => false,
 			],
 			'email'   => [
 				'label'       => __( 'Email:', 'contact-widgets' ),
@@ -180,8 +178,9 @@ final class Contact extends Base_Widget {
 				'label_after'    => true,
 				'type'           => 'checkbox',
 				'sortable'       => false,
+				'default'        => 'no',
 				'value'          => 'yes',
-				'atts'           => $this->checked( 'yes', isset( $instance['labels']['value'] ) ? $instance['labels']['value'] : 'yes' ),
+				'atts'           => $this->checked( 'yes', $this->get_field_value( $instance, 'labels', 'yes' ) ),
 				'show_front_end' => false,
 			],
 			'map'  => [
@@ -190,14 +189,15 @@ final class Contact extends Base_Widget {
 				'label_after'    => true,
 				'type'           => 'checkbox',
 				'sortable'       => false,
+				'default'        => 'no',
 				'value'          => 'yes',
-				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
+				'atts'           => $this->checked( 'yes', $this->get_field_value( $instance, 'map', 'yes' ) ),
 				'show_front_end' => false,
 			],
 		];
 
 		$fields = apply_filters( 'wpcw_widget_contact_custom_fields', $fields, $instance );
-		$fields = parent::get_fields( $instance, $fields );
+		$fields = parent::get_fields( $instance, $fields, $ordered );
 
 		/**
 		 * Filter the contact fields

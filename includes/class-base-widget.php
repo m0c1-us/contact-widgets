@@ -31,10 +31,11 @@ abstract class Base_Widget extends \WP_Widget {
 		'default'        => '', // Used mainly for social fields to add default value
 		'value'          => '',
 		'placeholder'    => '',
+		'wrapper'        => 'p',
 		'sortable'       => true,
 		'atts'           => '', // Input attributes
 		'show_front_end' => true, // Are we showing this field on the front end?
-		'show_empty'     => false, // Show the field even if value is empty
+		'hide_empty'     => true, // Hide the field if its value is empty
 		'select_options' => [], // Only used if type=select & form_callback=render_form_select
 	];
 
@@ -101,35 +102,35 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$fields = $this->get_fields( $old_instance );
 
-		// Force value for checkbox since they are not posted
 		foreach ( $fields as $key => $field ) {
 
-			if ( 'checkbox' === $field['type'] && ! isset( $new_instance[ $key ]['value'] ) ) {
+			$order       = array_search( $key, array_keys( $new_instance ) );
+			$is_sortable = ( 'title' !== $key && ! empty( $field['sortable'] ) && $order > 0 ); // Start at 1 since title order is 0
+			$field_key   = ( $is_sortable ) ? $key . '[value]' : $key;
 
-				$new_instance[ $key ] = [ 'value' => 'no' ];
+			$sanitizer_callback = $field['sanitizer'];
 
-			}
+			$new_value = $this->get_field_value( $new_instance, $field_key, null, false );
+			$old_value = $this->get_field_value( $old_instance, $field_key, null, false );
 
-		}
+			if ( $new_value !== $old_value ) {
 
-		// Starting at 1 since title order is 0
-		$order = 1;
-
-		foreach ( $new_instance as $key => &$instance ) {
-
-			$sanitizer_callback = $fields[ $key ]['sanitizer'];
-
-			// Title can't be an array
-			if ( 'title' === $key ) {
-
-				$instance = $sanitizer_callback( $instance['value'] );
-
-				continue;
+				$this->set_field_value( $new_instance, $field_key, is_null( $new_value ) ? $new_value : $sanitizer_callback( $new_value ) );
 
 			}
 
-			$instance['value'] = $sanitizer_callback( $instance['value'] );
-			$instance['order'] = $order++;
+			// Force default values when empty
+			if ( null === $new_value && $field['default'] ) {
+
+				$this->set_field_value( $new_instance, $field_key, $field['default'] );
+
+			}
+
+			if ( $is_sortable ) {
+
+				$this->set_field_value( $new_instance, $key . '[order]', $order );
+
+			}
 
 		}
 
@@ -152,17 +153,25 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $fields as $key => &$field ) {
 
-			$common_properties = [
-				'key'   => $key,
-				'icon'  => $key,
-				'order' => ! empty( $instance[ $key ]['order'] ) ? absint( $instance[ $key ]['order'] ) : $order,
-				'id'    => $this->get_field_id( $key ),
-				'name'  => $this->get_field_name( $key ) . '[value]',
-				'value' => ! empty( $instance[ $key ]['value'] ) ? $instance[ $key ]['value'] : '',
-			];
+			// Fill in missing properties with defaults
+			$field = wp_parse_args( $field, $this->field_defaults );
 
-			$common_properties = wp_parse_args( $common_properties, $this->field_defaults );
-			$field             = wp_parse_args( $field, $common_properties );
+			// Title is never sortable and is always at the top
+			if ( 'title' === $key ) {
+
+				$field['sortable'] = false;
+
+			}
+
+			// Save sortable field values as an array alongside an order value
+			$field_key = ! empty( $field['sortable'] ) ? $key . '[value]' : $key;
+
+			// Required properties (cannot be empty)
+			$field['key']   = ! empty( $field['key'] )   ? $field['key']   : $key;
+			$field['id']    = ! empty( $field['id'] )    ? $field['id']    : $this->get_field_id( $key );
+			$field['name']  = ! empty( $field['name'] )  ? $field['name']  : $this->get_field_name( $field_key );
+			$field['value'] = ! empty( $field['value'] ) ? $field['value'] : $this->get_field_value( $instance, $field_key );
+			$field['order'] = ! empty( $field['order'] ) ? $field['order'] : $this->get_field_value( $instance, $key . '[order]', $order );
 
 			$default_closure = function( $value ) { return $value; };
 
@@ -183,6 +192,73 @@ abstract class Base_Widget extends \WP_Widget {
 		}
 
 		return $fields;
+
+	}
+
+	/**
+	 * Return a field value from inside an instance
+	 *
+	 * @param  array  $instance
+	 * @param  string $key
+	 * @param  mixed  $default (optional)
+	 * @param  bool   $strict (optional)
+	 *
+	 * @return mixed
+	 */
+	protected function get_field_value( array $instance, $key, $default = '', $strict = true ) {
+
+		$keys = explode( '[', str_replace( ']', '', $key ) );
+		$last = array_pop( $keys );
+
+		foreach ( $keys as $index ) {
+
+			if ( ! array_key_exists( $index, $instance ) ) {
+
+				return $default;
+
+			}
+
+			$instance = $instance[ $index ];
+
+		}
+
+		if ( ! $strict ) {
+
+			return isset( $instance[ $last ] ) ? $instance[ $last ] : $default;
+
+		}
+
+		return ! empty( $instance[ $last ] ) ? $instance[ $last ] : $default;
+
+	}
+
+	/**
+	 * Set a field value inside an instance
+	 *
+	 * @param array  &$instance
+	 * @param string $key
+	 * @param mixed  $value
+	 */
+	protected function set_field_value( array &$instance, $key, $value ) {
+
+		$keys = explode( '[', str_replace( ']', '', $key ) );
+		$last = array_pop( $keys );
+
+		foreach ( $keys as $index ) {
+
+			$index = is_numeric( $index ) ? (int) $index : $index;
+
+			if ( ! array_key_exists( $index, $instance ) ) {
+
+				$instance[ $index ] = [];
+
+			}
+
+			$instance = &$instance[ $index ];
+
+		}
+
+		$instance[ $last ] = $value;
 
 	}
 
@@ -286,10 +362,15 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		printf(
-			'<p class="%s">',
-			implode( ' ', $classes )
-		);
+		if ( $field['wrapper'] ) {
+
+			printf(
+				'<%s class="%s">',
+				esc_attr( $field['wrapper'] ),
+				implode( ' ', $classes )
+			);
+
+		}
 
 		if ( ! $field['label_after'] ) {
 
@@ -345,10 +426,11 @@ abstract class Base_Widget extends \WP_Widget {
 		$this->before_form_field( $field );
 
 		printf(
-			'<select class="%s" id="%s" name="%s" autocomplete="off">',
+			'<select class="%s" id="%s" name="%s" autocomplete="off" %s>',
 			esc_attr( $field['class'] ),
 			esc_attr( $field['id'] ),
-			esc_attr( $field['name'] )
+			esc_attr( $field['name'] ),
+			esc_attr( $field['atts'] )
 		);
 
 		foreach ( $field['select_options'] as $value => $name ) {
@@ -397,171 +479,9 @@ abstract class Base_Widget extends \WP_Widget {
 	}
 
 	/**
-	 * Render the hours container and select fields
-	 *
-	 * @param  array $field Field data.
-	 * @param  array $day   The current day in the iteration.
-	 * @param  array $hours The array of times.
-	 *
-	 * @since NEXT
-	 *
-	 * @return mixed
-	 */
-	protected function render_day_input( $field, $day, array $hours ) {
-
-		$field['name']     = str_replace( 'value', strtolower( $day ), $field['name'] );
-		$field['disabled'] = $hours['not_open'] ? true : false;
-
-		$open_label = $hours['not_open'] ? __( 'CLOSED', 'contact-widgets' ) : __( 'OPEN', 'contact-widgets' );
-		$open_class = $hours['not_open'] ? 'closed' : 'open';
-
-		$apply_to_all_toggle = key( $field['days'] ) === $day ? '<a href="#" class="js_wpcw_apply_hours_to_all">' . __( 'Apply to All', 'contact-widgets' ) . '</a>' : '';
-
-		$closed_checkbox = '<input name="' . $field['name'] . '[not_open]" id="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox" type="checkbox" value="1" ' . $this->checked( $hours['not_open'], true ) . '><label for="' . $field['name'] . '[not_open]" class="js_wpcw_closed_checkbox"><small>' . esc_html__( 'Closed', 'contact-widgets' ) . '</small></label>';
-
-		printf(
-			'<div class="day-container closed">%1$s<div class="hidden-container">%2$s %3$s</div></div>',
-			'<strong>' . esc_html( ucwords( $day ) ) . '</strong><span class="toggle"></span><span class="open-label ' . $open_class . '">' . $open_label . '</span>',
-			$this->render_hours_selection( $field, sanitize_title( $day ), $hours ),
-			'<span class="day-checkbox-toggle">' . $apply_to_all_toggle . $closed_checkbox . '</span>'
-		);
-
-	}
-
-	/**
-	 * Render the 'Hours' select fields
-	 *
-	 * @param array $field Field data
-	 * @param array $day   The current day in the iteration.
-	 * @param array $hours The array of times.
-	 *
-	 * @since NEXT
-	 *
-	 * @return mixed
-	 */
-	protected function render_hours_selection( $field, $day, $hours ) {
-
-		ob_start();
-
-		$times = $this->get_time_array();
-
-		$field['name'] = str_replace( 'value', strtolower( $day ), $field['name'] );
-
-		$disabled_field = $field['disabled'] ? ' disabled="disabled"' : '';
-
-		$x = 1;
-
-		while ( $x <= count( $field['days'][ $day ]['open'] ) ) {
-
-			?>
-
-			<div class="hours-selection">
-
-				<select name="<?php echo esc_attr( $field['name'] . '[open][' . $x . ']' ); ?>" <?php echo $disabled_field; ?>>
-
-				<?php
-
-				foreach ( $times as $time ) {
-
-					$select = isset( $hours['open'][ $x ] ) ? $hours['open'][ $x ] : '';
-
-					?>
-
-					<option <?php selected( $select, $time ); ?>><?php echo esc_html( $time ); ?></option>
-
-					<?php
-
-				}
-
-				?>
-
-				</select>
-
-				<select name="<?php echo esc_attr( $field['name'] . '[closed][' . $x . ']' ); ?>" <?php echo $disabled_field; ?>>
-
-				<?php
-
-				foreach ( $times as $time ) {
-
-					$select = isset( $hours['closed'][ $x ] ) ? $hours['closed'][ $x ] : '';
-
-					?>
-
-					<option <?php selected( $select, $time ); ?>><?php echo esc_html( $time ); ?></option>
-
-					<?php
-
-				}
-
-				?>
-
-				</select>
-
-				<a href="#" class="<?php echo esc_attr( ( 1 === $x ) ? 'add' : 'remove' ); ?>-time button-secondary">
-
-					<?php echo ( 1 === $x ) ? esc_html__( 'Add', 'contact-widgets' ) : '<span class="dashicons dashicons-no-alt"></span>'; ?>
-
-				</a>
-
-			</div>
-
-			<?php
-
-			$x++;
-
-		}
-
-		return ob_get_clean();
-
-	}
-
-	/**
-	 * Generate an array of times in half hour increments
-	 *
-	 * @since NEXT
-	 *
-	 * @return array
-	 */
-	protected function get_time_array() {
-
-		/**
-		 * Filter the hour increments in the select field
-		 *
-		 * @since NEXT
-		 *
-		 * @return string
-		 */
-		switch ( apply_filters( 'wpcw_hour_increment', 'half_hour' ) ) {
-
-			case 'fifteen_minutes':
-
-				$step = 900;
-
-				break;
-
-			case 'half_hour':
-			default:
-
-				$step = 1800;
-
-			break;
-
-		}
-
-		$steps = range( 0, 47 * 1800, $step );
-
-		return array_map( function ( $time ) {
-
-			return date( get_option( 'time_format' ), $time );
-
-		}, $steps );
-
-	}
-
-	/**
 	 * Close wrapper of form field
 	 *
-	 * @param array
+	 * @param array $field
 	 */
 	protected function after_form_field( array $field ) {
 
@@ -571,7 +491,11 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		echo '</p>';
+		if ( $field['wrapper'] ) {
+
+			printf( '</%s>', esc_attr( $field['wrapper'] ) );
+
+		}
 
 	}
 
@@ -584,6 +508,7 @@ abstract class Base_Widget extends \WP_Widget {
 	protected function before_widget( array $args, array &$fields ) {
 
 		$title = array_shift( $fields );
+
 		echo $args['before_widget'];
 
 		if ( ! empty( $title['value'] ) ) {

@@ -100,7 +100,7 @@ final class Social extends Base_Widget {
 			if (
 				is_callable( [ $this, $method ] )
 				&&
-				( ! empty( $field['value'] ) || $field['show_empty'] )
+				( ! empty( $field['value'] ) && ! $field['hide_empty'] )
 			) {
 
 				$this->$method( $field );
@@ -201,6 +201,7 @@ final class Social extends Base_Widget {
 		foreach ( $fields as $key => &$field ) {
 
 			$default = [
+				'icon'      => $key,
 				'sanitizer' => 'esc_url_raw',
 				'escaper'   => 'esc_url',
 				'select'    => '',
@@ -216,8 +217,6 @@ final class Social extends Base_Widget {
 			'title' => [
 				'label'       => __( 'Title:', 'contact-widgets' ),
 				'description' => __( 'The title of widget. Leave empty for no title.', 'contact-widgets' ),
-				'value'       => ! empty( $instance['title'] ) ? $instance['title'] : '',
-				'sortable'    => false,
 			],
 		];
 
@@ -230,8 +229,9 @@ final class Social extends Base_Widget {
 			'label_after'    => true,
 			'type'           => 'checkbox',
 			'sortable'       => false,
+			'default'        => 'no',
 			'value'          => 'yes',
-			'atts'           => $this->checked( 'yes', isset( $instance['labels']['value'] ) ? $instance['labels']['value'] : 'no' ),
+			'atts'           => $this->checked( 'yes', $this->get_field_value( $instance, 'labels', 'no' ) ),
 			'show_front_end' => false,
 		];
 

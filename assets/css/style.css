@@ -27,7 +27,8 @@
 	border: none;
 }
 .wpcw-widget-social ul li.has-label a,
-.wpcw-widget-hours ul li strong {
+.wpcw-widget-hours ul li strong.day,
+.wpcw-widget-hours ul li time {
 	display: block;
 }
 .wpcw-widget-social ul li.has-label span {

@@ -161,159 +161,225 @@
 
 	};
 
+	var dayRow = {
+
+		toggle: function ( e ) {
+
+			e.preventDefault();
+
+			var $day       = $( this ).closest( '.day-row' ),
+			    $container = $day.find( '.day-row-container' );
+
+			if ( $container.is( ':animated' ) ) {
+
+				return false;
+
+			}
+
+			var $icon  = $day.find( '.toggle-icon' ),
+			    active = $day.hasClass( 'active' );
+
+			if ( ! active ) {
+
+				$icon
+					.toggleClass( 'dashicons-arrow-down' )
+					.toggleClass( 'dashicons-arrow-up' );
+
+			}
+
+			$container.slideToggle( 'fast', function () {
+
+				if ( active ) {
+
+					$icon
+						.toggleClass( 'dashicons-arrow-down' )
+						.toggleClass( 'dashicons-arrow-up' );
+
+				}
+
+				$day.toggleClass( 'active' );
+
+			} );
+
+		},
+
+		maybeBlockSelect: function ( e ) {
+
+			var $day = $( this ).closest( '.day-row' );
+
+			if ( $day.hasClass( 'status-closed' ) ) {
+
+				e.preventDefault();
+
+			}
+
+		},
+
+		addBlock: function ( e ) {
+
+			e.preventDefault();
+
+			if ( $( this ).hasClass( 'disabled' ) ) {
+
+				return false;
+
+			}
+
+			var $block  = $( this ).closest( '.time-block' ),
+			    $clone  = dayRow.cloneTimeBlock( $block, $block.parent() ),
+			    $close  = $block.find( 'select.time-block-close' ),
+			    $open   = $clone.find( 'select.time-block-open' );
+
+			$clone.find( 'a.button' ).attr( 'data-action', 'remove' ).text( '-' );
+
+			$( this ).hide();
+
+		},
+
+		removeBlock: function ( e ) {
+
+			e.preventDefault();
+
+			if ( $( this ).hasClass( 'disabled' ) ) {
+
+				return false;
+
+			}
+
+			var $block = $( this ).closest( '.time-block' );
+
+			$block.prev( '.time-block' ).find( 'a.button' ).show();
+
+			$block.remove();
+
+		},
+
+		applyToAll: function ( e ) {
+
+			e.preventDefault();
+
+			var $day       = $( this ).closest( '.day-row' ),
+			    $widget    = $day.closest( '.wpcw-widget' ),
+			    $animating = $widget.find( '.day-row' ).filter( function() { return $( this ).is( ':animated' ); } );
+
+			if ( $animating.length > 0 ) {
+
+				return false;
+
+			}
+
+			if ( $day.hasClass( 'status-closed' ) ) {
+
+				$widget.find( '.status-closed-checkbox input:not(:checked)' ).not( this ).trigger( 'click' );
+
+			} else {
+
+				$widget.find( '.status-closed-checkbox input:checked' ).not( this ).trigger( 'click' );
+
+			}
+
+			var $blocks = $day.find( '.time-block' );
+
+			$widget.find( '.day-row' ).not( $day ).each( function( index ) {
+
+				var $target = $( this ).find( '.time-blocks' );
+
+				$target.empty();
+
+				$blocks.each( function( index ) {
+
+					dayRow.cloneTimeBlock( $( this ), $target, true, true );
+
+				} );
+
+			} );
+
+		},
+
+		cloneTimeBlock: function ( $block, $target, deep, flashDay ) {
+
+			var $day         = $block.closest( '.day-row' ),
+			    day          = parseInt( $day.attr( 'data-day' ) ),
+			    target_day   = parseInt( $target.closest( '.day-row' ).attr( 'data-day' ) ),
+			    block        = parseInt( $block.attr( 'data-time-block' ) ),
+			    target_block = $target.is( ':empty' ) ? 0 : parseInt( $target.find( '.time-block' ).last().attr( 'data-time-block' ) ) + 1,
+			    deep         = ( 'undefined' === typeof deep ) ? false : deep,
+			    flashDay     = ( 'undefined' === typeof flashDay ) ? false : flashDay,
+			    $clone       = $block.clone( deep ),
+			    html         = $clone.html(),
+			    name_search  = '\\[schedule\\]\\[' + day + '\\]\\[blocks\\]\\[' + block + '\\]',
+			    name_replace = '[schedule][' + target_day + '][blocks][' + target_block + ']',
+			    id_search    = 'schedule-' + day + '-blocks-' + block,
+			    id_replace   = 'schedule-' + target_day + '-blocks-' + target_block;
+
+			html = html.replace( new RegExp( name_search, 'g' ), name_replace ),
+			html = html.replace( new RegExp( id_search, 'g' ), id_replace ),
+
+			$clone = $clone.html( html );
+
+			if ( deep ) {
+
+				$clone.find( 'select' ).each( function( index ) {
+
+					var classes = $( this )
+						.attr( 'class' )
+						.split( ' ' )
+						.map( function ( v ) {
+							return v.trim();
+						} )
+						.join( '.' );
+
+					$( this ).val( $block.find( 'select.' + classes ).val() );
+
+				} );
+
+			}
+
+			$target.append( $clone );
+
+			$clone.attr( 'data-time-block', target_block );
+
+			if ( flashDay ) {
+
+				$clone.closest( '.day-row' ).fadeTo( 50, 0.1, function() {
+
+					$( this ).fadeTo( 500, 1.0 );
+
+				} );
+
+			}
+
+			return $clone;
+
+		},
+
+		toggleClosed: function () {
+
+			var $day   = $( this ).closest( '.day-row' ),
+			    closed = $day.hasClass( 'status-closed' );
+
+			$day.toggleClass( 'status-closed' ).toggleClass( 'status-open' );
+
+			$day.find( 'a.button' ).toggleClass( 'disabled', ! closed );
+
+			$day.find( 'select' ).toggleClass( 'disabled', ! closed );
+
+		}
+
+	};
+
 	$( document ).ready( function ( $ ) {
 
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
-		$( 'body' ).on( 'click', '.wpcw-widget-hours .day-container', function() {
-
-			var container = $( this );
-
-			container.find( 'div.hidden-container' ).slideToggle( 'fast', function() {
-
-				if ( container.hasClass( 'closed' ) ) {
-
-					container.removeClass( 'closed' ).addClass( 'open' );
-
-					return;
-
-				}
-
-				container.removeClass( 'open' ).addClass( 'closed' );
-
-			} );
-
-		} );
-
-		$( 'body' ).on( 'click', '.add-time', function( e ) {
-
-			var $parent_container = $( this ).parents( '.hidden-container' ).find( '.hours-selection' ).last(),
-          $clone            = $parent_container.clone();
-
-			$clone.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
-
-				return name.replace( /\[(\d+)\]$/, function( match, number ) {
-
-					return '[' + ( + number + 1 ) + ']';
-
-				} );
-
-			});
-
-			$clone.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
-
-			$clone.insertAfter( $parent_container );
-
-			e.preventDefault();
-
-		} );
-
-		$( 'body' ).on( 'click', '.remove-time', function( e ) {
-
-			var $button = $( this ),
-			    $parent = $button.parent( '.hours-selection' );
-
-			$parent.fadeOut( 'fast', function() {
-
-				$parent.remove();
-
-			} );
-
-			e.preventDefault();
-
-		} );
-
-		$( 'body' ).on( 'click', '.js_wpcw_closed_checkbox, .wpcw-widget-hours select, .add-time, .remove-time, .js_wpcw_apply_hours_to_all', function( e ) {
-
-			e.stopPropagation();
-
-		} );
-
-		// Hours of Operation select field toggle
-		$( 'body' ).on( 'change', '.js_wpcw_closed_checkbox', function( e ) {
-
-			var $select_fields = $( e.currentTarget ).parents( '.day-container' ).find( 'select' );
-
-			if ( $( this ).is( ':checked' ) ) {
-
-				$select_fields.prop( 'disabled', true );
-
-				return;
-
-			}
-
-			$select_fields.prop( 'disabled', false );
-
-		} );
-
-		// Apply hours to all days in the week
-		$( 'body' ).on( 'click', '.js_wpcw_apply_hours_to_all', function( e ) {
-
-			if ( $( this ).parents( '.day-container' ).find( 'input.js_wpcw_closed_checkbox' ).is( ':checked' ) ) {
-
-				$( '.wpcw-widget-hours .day-container' ).find( 'select' ).prop( 'disabled', true );
-				$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', true );
-				$( '.wpcw-widget-hours .day-container' ).find( '.hours-selection:not(:first)' ).remove();
-
-				e.preventDefault();
-
-				return;
-
-			}
-
-			var $first_container = $( this ).parents( '.day-container' ),
-			    length = $( this ).parents( '.day-container' ).find( '.hours-selection' ).length;
-
-			$( '.wpcw-widget-hours .day-container' ).find( 'select' ).prop( 'disabled', false );
-			$( '.wpcw-widget-hours .day-checkbox-toggle' ).find( 'input.js_wpcw_closed_checkbox' ).prop( 'checked', false );
-
-			$( '.day-container' ).not( $first_container ).each( function() {
-
-				$( this ).find( '.hidden-container .hours-selection:not(:first)' ).remove();
-
-				var y = 1,
-				    z = 0;
-
-				while ( y < length ) {
-
-					var $duplicate = $( this ).find( '.hidden-container .hours-selection' ).last().clone();
-
-					$duplicate.find( 'select[name*="[open]"], select[name*="[closed]"]' ).attr( 'name', function( i, name ) {
-
-						return name.replace( /\[(\d+)\]$/, function( match, number ) {
-
-							return '[' + ( + number + 1 ) + ']';
-
-						} );
-
-					} );
-
-					$duplicate.find( '.add-time' ).replaceWith( '<a href="#" class="remove-time button-secondary"><span class="dashicons dashicons-no-alt"></span></a>' );
-
-					$duplicate.insertAfter( $( this ).find( '.hidden-container .hours-selection' ).last() );
-
-					y++;
-
-				}
-
-				while ( z <= length ) {
-
-					var open   = $first_container.find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val(),
-					    closed = $first_container.find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val();
-
-					$( this ).find( '.hours-selection:nth-child(' + z + ') select:first-child' ).val( open );
-					$( this ).find( '.hours-selection:nth-child(' + z + ') select:nth-child(2)' ).val( closed );
-
-					z++;
-
-				}
-
-			} );
-
-			e.preventDefault();
-
-		} );
+		// Hours of Operation
+		$( document ).on( 'click', '.wpcw-widget-hours .day-row-top', dayRow.toggle );
+		$( document ).on( 'mousedown', '.wpcw-widget-hours .time-block select', dayRow.maybeBlockSelect );
+		$( document ).on( 'click', '.wpcw-widget-hours .time-block a.button[data-action="add"]', dayRow.addBlock );
+		$( document ).on( 'click', '.wpcw-widget-hours .time-block a.button[data-action="remove"]', dayRow.removeBlock );
+		$( document ).on( 'click', '.wpcw-widget-hours .apply-to-all', dayRow.applyToAll );
+		$( document ).on( 'change', '.wpcw-widget-hours .status-closed-checkbox input', dayRow.toggleClosed );
 
 		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );
