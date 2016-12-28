@@ -23,6 +23,7 @@ abstract class Base_Widget extends \WP_Widget {
 		'name'           => '',
 		'label'          => '',
 		'label_after'    => false,
+		'hide_label'     => false,
 		'description'    => '',
 		'type'           => 'text',
 		'sanitizer'      => 'sanitize_text_field',
@@ -337,8 +338,9 @@ abstract class Base_Widget extends \WP_Widget {
 	protected function print_label( array $field ) {
 
 		printf(
-			' <label for="%s" title="%s">%s</label>',
+			' <label for="%s" class="%s" title="%s">%s</label>',
 			esc_attr( $field['id'] ),
+			( $field['hide_label'] ) ? 'screen-reader-text' : '',
 			esc_attr( $field['description'] ),
 			esc_html( $field['label'] )
 		);
