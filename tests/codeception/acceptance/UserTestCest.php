@@ -109,7 +109,7 @@ class AdminTestCest {
 		$I->canSee( '123 santa monica blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
 
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map' ] );
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src-data="https://www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed&hl=en"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[data-src="https://www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed&hl=en"]' ] );
 
 	}
 
