@@ -360,7 +360,7 @@ final class Hours extends Base_Widget {
 					'select_options' => $this->get_times(),
 					'hide_empty'     => ( $block > 0 ),
 					'default'        => ( $block > 0 ) ? '' : '00:00',
-					'class'          => ( $is_closed ) ? 'widefat time-block-open disabled' : 'widefat time-block-open',
+					'class'          => ( $is_closed ) ? 'widefat time-block-close disabled' : 'widefat time-block-close',
 					'sortable'       => false,
 					'wrapper'        => '',
 					'append'         => sprintf(
