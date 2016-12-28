@@ -190,9 +190,9 @@ final class Hours extends Base_Widget {
 
 		$this->before_widget( $args, $fields );
 
-		$display_current_status = (bool) ( 'yes' === $this->get_field_value( $instance, 'display_current_status', 'yes' ) );
-		$hide_closed            = (bool) ( 'yes' === $this->get_field_value( $instance, 'hide_closed', 'yes' ) );
-		$display_in_groups      = (bool) ( 'yes' === $this->get_field_value( $instance, 'display_in_groups', 'yes' ) );
+		$display_current_status = ( 'yes' === $this->get_field_value( $instance, 'display_current_status', 'yes' ) );
+		$hide_closed            = ( 'yes' === $this->get_field_value( $instance, 'hide_closed', 'yes' ) );
+		$display_in_groups      = ( 'yes' === $this->get_field_value( $instance, 'display_in_groups', 'yes' ) );
 
 		if ( $display_current_status ) {
 
@@ -227,7 +227,7 @@ final class Hours extends Base_Widget {
 		 */
 		foreach ( $this->get_days_of_week() as $day => $label ) {
 
-			$is_closed = (bool) ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'no' ) );
+			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'no' ) );
 
 			if ( $hide_closed && $is_closed ) {
 

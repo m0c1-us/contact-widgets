@@ -100,7 +100,7 @@ final class Social extends Base_Widget {
 			if (
 				is_callable( [ $this, $method ] )
 				&&
-				( ! empty( $field['value'] ) && ! $field['hide_empty'] )
+				( ! empty( $field['value'] ) || ! $field['hide_empty'] )
 			) {
 
 				$this->$method( $field );
@@ -143,7 +143,7 @@ final class Social extends Base_Widget {
 
 		$this->before_widget( $args, $fields );
 
-		$display_labels = ( 'yes' === $instance['labels']['value'] );
+		$display_labels = ( 'yes' === $this->get_field_value( $instance, 'labels[value]', 'no' ) );
 
 		foreach ( $fields as $field ) {
 
@@ -194,7 +194,7 @@ final class Social extends Base_Widget {
 	 *
 	 * @return array
 	 */
-	protected function get_fields( array $instance, array $fields = [], $ordered = false ) {
+	protected function get_fields( array $instance, array $fields = [], $ordered = true ) {
 
 		include 'social-networks.php';
 
@@ -231,7 +231,7 @@ final class Social extends Base_Widget {
 			'sortable'       => false,
 			'default'        => 'no',
 			'value'          => 'yes',
-			'atts'           => $this->checked( 'yes', $this->get_field_value( $instance, 'labels', 'no' ) ),
+			'atts'           => $this->checked( 'yes', $this->get_field_value( $instance, 'labels[value]', 'no' ) ),
 			'show_front_end' => false,
 		];
 

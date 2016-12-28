@@ -157,14 +157,14 @@ abstract class Base_Widget extends \WP_Widget {
 			$field = wp_parse_args( $field, $this->field_defaults );
 
 			// Title is never sortable and is always at the top
-			if ( 'title' === $key ) {
+			if ( $ordered && 'title' === $key ) {
 
 				$field['sortable'] = false;
 
 			}
 
-			// Save sortable field values as an array alongside an order value
-			$field_key = ! empty( $field['sortable'] ) ? $key . '[value]' : $key;
+			// Save values as an array alongside an order value, except titles
+			$field_key = ( $ordered && 'title' !== $key ) ? $key . '[value]' : $key;
 
 			// Required properties (cannot be empty)
 			$field['key']   = ! empty( $field['key'] )   ? $field['key']   : $key;
