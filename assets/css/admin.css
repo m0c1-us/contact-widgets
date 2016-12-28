@@ -2,7 +2,6 @@
  * Form fields
  */
 .wpcw-widget .form {
-	overflow: auto;
 	margin-bottom: 1em;
 }
 .wpcw-widget .title {
