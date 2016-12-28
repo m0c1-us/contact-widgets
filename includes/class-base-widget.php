@@ -160,7 +160,7 @@ abstract class Base_Widget extends \WP_Widget {
 			$field = wp_parse_args( $field, $this->field_defaults );
 
 			// Title is never sortable and is always at the top
-			if ( $ordered && 'title' === $key ) {
+			if ( 'title' === $key ) {
 
 				$field['sortable'] = false;
 
