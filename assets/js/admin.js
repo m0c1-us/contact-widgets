@@ -226,9 +226,7 @@
 			}
 
 			var $block  = $( this ).closest( '.time-block' ),
-			    $clone  = dayRow.cloneTimeBlock( $block, $block.parent() ),
-			    $close  = $block.find( 'select.time-block-close' ),
-			    $open   = $clone.find( 'select.time-block-open' );
+			    $clone  = dayRow.cloneTimeBlock( $block, $block.parent() );
 
 			$clone.find( 'a.button' ).attr( 'data-action', 'remove' ).text( '-' );
 
@@ -280,13 +278,13 @@
 
 			var $blocks = $day.find( '.time-block' );
 
-			$widget.find( '.day-row' ).not( $day ).each( function( index ) {
+			$widget.find( '.day-row' ).not( $day ).each( function() {
 
 				var $target = $( this ).find( '.time-blocks' );
 
 				$target.empty();
 
-				$blocks.each( function( index ) {
+				$blocks.each( function() {
 
 					dayRow.cloneTimeBlock( $( this ), $target, true, true );
 
@@ -299,12 +297,12 @@
 		cloneTimeBlock: function ( $block, $target, deep, flashDay ) {
 
 			var $day         = $block.closest( '.day-row' ),
-			    day          = parseInt( $day.attr( 'data-day' ) ),
-			    target_day   = parseInt( $target.closest( '.day-row' ).attr( 'data-day' ) ),
-			    block        = parseInt( $block.attr( 'data-time-block' ) ),
-			    target_block = $target.is( ':empty' ) ? 0 : parseInt( $target.find( '.time-block' ).last().attr( 'data-time-block' ) ) + 1,
-			    deep         = ( 'undefined' === typeof deep ) ? false : deep,
-			    flashDay     = ( 'undefined' === typeof flashDay ) ? false : flashDay,
+			    day          = parseInt( $day.attr( 'data-day' ), 10 ),
+			    target_day   = parseInt( $target.closest( '.day-row' ).attr( 'data-day' ), 10 ),
+			    block        = parseInt( $block.attr( 'data-time-block' ), 10 ),
+			    target_block = $target.is( ':empty' ) ? 0 : parseInt( $target.find( '.time-block' ).last().attr( 'data-time-block' ), 10 ) + 1,
+			    deep         = deep || false,
+			    flashDay     = flashDay || false,
 			    $clone       = $block.clone( deep ),
 			    html         = $clone.html(),
 			    name_search  = '\\[schedule\\]\\[' + day + '\\]\\[blocks\\]\\[' + block + '\\]',
@@ -319,7 +317,7 @@
 
 			if ( deep ) {
 
-				$clone.find( 'select' ).each( function( index ) {
+				$clone.find( 'select' ).each( function() {
 
 					var classes = $( this )
 						.attr( 'class' )
