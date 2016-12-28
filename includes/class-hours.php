@@ -306,6 +306,8 @@ final class Hours extends Base_Widget {
 			'description' => __( 'The title of this widget. Leave empty for no title.', 'contact-widgets' ),
 		];
 
+		$iteration = 1;
+
 		foreach ( $this->get_days_of_week() as $day => $label ) {
 
 			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]" ) );
@@ -374,6 +376,11 @@ final class Hours extends Base_Widget {
 
 			}
 
+			$apply_to_all_link = ( 1 === $iteration ) ? sprintf(
+				'<a href="#" class="apply-to-all">%s</a>',
+				__( 'Apply to all', 'contact-widgets' )
+			) : '';
+
 			$fields[ "schedule[{$day}][closed]" ] = [
 				'type'      => 'checkbox',
 				'sanitizer' => function ( $value ) { return ( 'yes' === (string) $value ) ? 'yes' : 'no'; },
@@ -385,11 +392,13 @@ final class Hours extends Base_Widget {
 				'sortable'  => false,
 				'wrapper'   => '',
 				'prepend'   => sprintf(
-					'</div><!-- .time-blocks --><a href="#" class="apply-to-all">%s</a><span class="status-closed-checkbox">',
-					__( 'Apply to all', 'contact-widgets' )
+					'</div><!-- .time-blocks -->%s<span class="status-closed-checkbox">',
+					$apply_to_all_link
 				),
 				'append'    => '</span><!-- .status-closed-checkbox --></div><!-- .day-row-container --></div><!-- .day-row -->',
 			];
+
+			$iteration++;
 
 		}
 
@@ -502,66 +511,6 @@ final class Hours extends Base_Widget {
 		}, $times );
 
 		return array_combine( $keys, $values );
-
-	}
-
-	/**
-	 * Generate the opening hours microformat markup
-	 * @link https://schema.org/openingHours
-	 *
-	 * @since NEXT
-	 *
-	 * @param  array $microformat_data Microformat data array.
-	 *
-	 * @return string
-	 */
-	protected function get_microformat_markup( $microformat_data, $iteration ) {
-
-		$day   = ucwords( substr( $microformat_data['day'], 0, 2 ) );
-		$open  = date( 'H:i', strtotime( $microformat_data['open'][ $iteration ] ) );
-		$close = date( 'H:i', strtotime( $microformat_data['close'][ $iteration ] ) );
-
-		$microformat_attributes = [
-			'itemprop="openingHours"',
-			'datetime="' . esc_attr( $day . ' ' . $open . '-' . $close ) . '"',
-		];
-
-		return implode( ' ', $microformat_attributes );
-
-	}
-
-	/**
-	 * Check if the business is open based on the current server time
-	 *
-	 * @param array $hours Open/Closed times
-	 *
-	 * @since NEXT
-	 *
-	 * @return boolean
-	 */
-	protected function is_business_open( $hours ) {
-
-		$iteration = 1;
-
-		if ( $hours['not_open'] ) {
-
-			return false;
-
-		}
-
-		foreach ( $hours['open'] as $open_hours ) {
-
-			if ( $this->current_time >= strtotime( $open_hours ) && $this->current_time <= strtotime( $hours['closed'][ $iteration ] ) ) {
-
-				return true;
-
-			}
-
-			$iteration++;
-
-		}
-
-		return false;
 
 	}
 
