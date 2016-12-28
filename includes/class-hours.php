@@ -514,4 +514,92 @@ final class Hours extends Base_Widget {
 
 	}
 
+	/**
+	 * Return the schedule of a widget instance.
+	 *
+	 * @param  array  $instance
+	 * @param  bool   $group       (optional)
+	 * @param  bool   $hide_closed (optional)
+	 *
+	 * @return array
+	 */
+	public function get_schedule( array $instance, $group = false, $hide_closed = false ) {
+
+		$schedule     = [];
+		$days_of_week = $this->get_days_of_week();
+
+		foreach ( $days_of_week as $day => $label ) {
+
+			$schedule[ $day ]['label'] = $label;
+
+			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'no' ) );
+
+			if ( $is_closed ) {
+
+				$schedule[ $day ]['open'] = false;
+
+				if ( $hide_closed ) {
+
+					unset( $schedule[ $day ] );
+
+				}
+
+				continue;
+
+			}
+
+			$blocks = $this->get_field_value( $instance, "schedule[{$day}][blocks]", [] );
+
+			foreach ( $blocks as $block ) {
+
+				$schedule[ $day ]['open'][] = [ $block['open'], $block['close'] ];
+
+			}
+
+		}
+
+		if ( ! $group ) {
+
+			return $schedule;
+
+		}
+
+		$groups = [];
+
+		foreach ( $schedule as $day => $data ) {
+
+			if ( false === $data['open'] ) {
+
+				if ( ! $hide_closed ) {
+
+					$groups['closed']['label'][ $day ] = $days_of_week[ $day ];
+					$groups['closed']['open']          = false;
+
+				}
+
+				continue;
+
+			}
+
+			foreach ( (array) $data['open'] as $block ) {
+
+				if ( empty( $block[0] ) || empty( $block[1] ) ) {
+
+					continue;
+
+				}
+
+				$key = md5( $block[0] . $block[1] );
+
+				$groups[ $key ]['label'][ $day ] = $days_of_week[ $day ];
+				$groups[ $key ]['open']          = sprintf( '%s - %s', $block[0], $block[1] );
+
+			}
+
+		}
+
+		return array_values( $groups );
+
+	}
+
 }
