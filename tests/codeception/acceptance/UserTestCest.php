@@ -49,42 +49,42 @@ class AdminTestCest {
 	 * @before login
 	 * @param \AcceptanceTester $I
 	 */
-    public function validateWidgetContactForm( AcceptanceTester $I ) {
+	public function validateWidgetContactForm( AcceptanceTester $I ) {
 
-	    $I->wantTo( 'Validate contact widget form in widgets.php' );
+		$I->wantTo( 'Validate contact widget form in widgets.php' );
 
-	    $I->amOnPage( admin_url( 'widgets.php' ) );
+		$I->amOnPage( admin_url( 'widgets.php' ) );
 
-	    $I->canSee( 'Contact Details', [ 'css' => '.widget h3' ] );
+		$I->canSee( 'Contact Details', [ 'css' => '.widget h3' ] );
 
-	    $selector = '#widget-list div[id$=wpcw_contact-__i__]';
+		$selector = '#widget-list div[id$=wpcw_contact-__i__]';
 
-	    $I->click( [ 'css' => "$selector .widget-title" ] );
+		$I->click( [ 'css' => "$selector .widget-title" ] );
 
-	    $I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+		$I->waitForElementVisible( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-	    $I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
+		$I->click( [ 'css' => "$selector .widgets-chooser-actions .button-primary" ] );
 
-	    $selector = '#sidebar-1 div[id*=wpcw_contact]';
+		$selector = '#sidebar-1 div[id*=wpcw_contact]';
 
-	    $I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
 
-	    /**
-	     * Fill all fields
-	     */
-	    $I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests contact' );
-	    $I->fillField( [ 'css' => "{$selector} form .email input" ], 'info@local.dev' );
-	    $I->fillField( [ 'css' => "{$selector} form .phone input" ], '555-555-5555' );
-	    $I->fillField( [ 'css' => "{$selector} form .fax input" ], '555-555-5556' );
-	    $I->fillField( [ 'css' => "{$selector} form .address textarea" ], '123 santa monica blvd<br> Los Angeles' );
+		/**
+		 * Fill all fields
+		 */
+		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests contact' );
+		$I->fillField( [ 'css' => "{$selector} form .email input" ], 'info@local.dev' );
+		$I->fillField( [ 'css' => "{$selector} form .phone input" ], '555-555-5555' );
+		$I->fillField( [ 'css' => "{$selector} form .fax input" ], '555-555-5556' );
+		$I->fillField( [ 'css' => "{$selector} form .address textarea" ], '123 santa monica blvd<br> Los Angeles' );
 
-	    /**
-	     * Submit widget form
-	     */
-	    $I->click( [ 'css' => "{$selector} form input.button-primary" ] );
+		/**
+		 * Submit widget form
+		 */
+		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
-	    // Wait for all ajax request to finish
-	    $I->waitForJS( 'return jQuery.active == 0;', 5 );
+		// Wait for all ajax request to finish
+		$I->waitForJS( 'return jQuery.active == 0;', 5 );
 
     }
 
@@ -109,7 +109,7 @@ class AdminTestCest {
 		$I->canSee( '123 santa monica blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
 
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map' ] );
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[data-src="https://www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed&hl=en"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe.wpcw-widget-contact-map' ], [ 'src' => '', 'data-src' => 'https://www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed&hl=en' ] );
 
 	}
 
