@@ -48,6 +48,9 @@
 			tolerance: 'pointer',
 			forcePlaceholderSize: true,
 			cursorAt: { top: 40 },
+			start: function( e, ui ){
+				ui.placeholder.height( ui.helper.height() );
+			},
 			stop: function ( e, ui ) {
 				// Trigger change for customizer
 				$contact_form.find( '.customizer_update' ).val( ui.item.index() ).trigger( 'change' );
