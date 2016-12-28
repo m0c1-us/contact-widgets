@@ -315,7 +315,7 @@ final class Hours extends Base_Widget {
 
 				$is_last_block = ( false === $this->get_field_value( $instance, sprintf( 'schedule[%d][blocks][%d][open]', $day, $block + 1 ), false ) );
 
-				$fields["schedule[{$day}][blocks][{$block}][open]"] = [
+				$fields[ "schedule[{$day}][blocks][{$block}][open]" ] = [
 					'type'           => 'select',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
 					'form_callback'  => 'render_form_select',
@@ -345,11 +345,11 @@ final class Hours extends Base_Widget {
 								<div class="time-block" data-time-block="<?php echo absint( $block ); ?>">
 					<?php
 
-					$fields["schedule[{$day}][blocks][{$block}][open]"]['prepend'] = ob_get_clean();
+					$fields[ "schedule[{$day}][blocks][{$block}][open]" ]['prepend'] = ob_get_clean();
 
 				}
 
-				$fields["schedule[{$day}][blocks][{$block}][close]"] = [
+				$fields[ "schedule[{$day}][blocks][{$block}][close]" ] = [
 					'type'           => 'select',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
 					'form_callback'  => 'render_form_select',
@@ -370,7 +370,7 @@ final class Hours extends Base_Widget {
 
 			}
 
-			$fields["schedule[{$day}][closed]"] = [
+			$fields[ "schedule[{$day}][closed]" ] = [
 				'type'      => 'checkbox',
 				'sanitizer' => function ( $value ) { return ( 'yes' === (string) $value ) ? 'yes' : 'no'; },
 				'class'     => 'status-closed-checkbox',
