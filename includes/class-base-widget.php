@@ -108,7 +108,7 @@ abstract class Base_Widget extends \WP_Widget {
 		foreach ( $fields as $key => $field ) {
 
 			$order     = array_search( $key, array_keys( $new_instance ) );
-			$ordered   = ( $has_sortables && 'title' !== $key && $order > 0 ); // Start at 1 since title order is 0
+			$ordered   = ( $has_sortables && 'title' !== $key );
 			$field_key = ( $ordered ) ? $key . '[value]' : $key;
 
 			$sanitizer_callback = $field['sanitizer'];
