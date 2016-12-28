@@ -313,8 +313,7 @@ final class Hours extends Base_Widget {
 
 			foreach ( $blocks as $block ) {
 
-				$next_block    = $block + 1;
-				$is_last_block = empty( $this->get_field_value( $instance, "schedule[{$day}][blocks][{$next_block}][open]" ) );
+				$is_last_block = ( false === $this->get_field_value( $instance, sprintf( 'schedule[%d][blocks][%d][open]', $day, $block + 1 ), false ) );
 
 				$fields["schedule[{$day}][blocks][{$block}][open]"] = [
 					'type'           => 'select',
