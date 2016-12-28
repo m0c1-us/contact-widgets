@@ -301,8 +301,8 @@
 			    target_day   = parseInt( $target.closest( '.day-row' ).attr( 'data-day' ), 10 ),
 			    block        = parseInt( $block.attr( 'data-time-block' ), 10 ),
 			    target_block = $target.is( ':empty' ) ? 0 : parseInt( $target.find( '.time-block' ).last().attr( 'data-time-block' ), 10 ) + 1,
-			    deep         = deep || false,
-			    flashDay     = flashDay || false,
+			    deep         = deep || false, // jshint ignore:line
+			    flashDay     = flashDay || false, // jshint ignore:line
 			    $clone       = $block.clone( deep ),
 			    html         = $clone.html(),
 			    name_search  = '\\[schedule\\]\\[' + day + '\\]\\[blocks\\]\\[' + block + '\\]',
