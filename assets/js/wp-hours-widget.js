@@ -22,7 +22,7 @@
 
 				if ( cur_time < time_blocks[ i ][1] && cur_time >= time_blocks[ i ][0] ) {
 
-					$open_sign.addClass( 'open' ).html( 'Open' );
+					$open_sign.addClass( 'open' ).html( wpcw_hours.open_string );
 
 					return;
 
@@ -30,7 +30,7 @@
 
 			}
 
-			$open_sign.addClass( 'closed' ).html( 'Closed' );
+			$open_sign.addClass( 'closed' ).html( wpcw_hours.closed_string );
 
 		},
 

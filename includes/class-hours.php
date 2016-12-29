@@ -201,7 +201,9 @@ final class Hours extends Base_Widget {
 			wp_enqueue_script( 'wpcw-hours', \Contact_Widgets::$assets_url . "js/wp-hours-widget{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
 
 			wp_localize_script( 'wpcw-hours', 'wpcw_hours', [
-				'schedule' => $this->get_schedule( $instance ),
+				'schedule'      => $this->get_schedule( $instance ),
+				'open_string'   => __( 'Open', 'contact-widgets' ),
+				'closed_string' => __( 'Closed', 'contact-widgets' ),
 			] );
 
 			/**
