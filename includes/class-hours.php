@@ -215,43 +215,21 @@ final class Hours extends Base_Widget {
 
 		}
 
-		/**
-		 * TODO: Combine days that have identical hours when the
-		 * `$display_in_groups` option is ON.
-		 *
-		 * And it should also group closed days if the `$hide_closed`
-		 * option is OFF.
-		 *
-		 * e.g.
-		 *
-		 * Monday - Friday
-		 * 9:00 am - 5:00 pm
-		 *
-		 * Saturday
-		 * 9:00 am - 12:00 pm
-		 *
-		 * Sunday
-		 * Closed
-		 */
-		foreach ( $this->get_days_of_week() as $day => $label ) {
+		$schedule = $this->get_schedule( $instance, $display_in_groups, $hide_closed );
 
-			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'no' ) );
+		foreach ( $schedule as $day => $data ) {
 
-			if ( $hide_closed && $is_closed ) {
+			$is_closed = ( false === $data['open'] );
+
+			if ( $is_closed && $hide_closed ) {
 
 				continue;
 
 			}
 
-			$time_blocks = $this->get_field_value( $instance, "schedule[{$day}][blocks]", [] );
-			$time_blocks = array_combine(
-				wp_list_pluck( $time_blocks, 'open' ),
-				wp_list_pluck( $time_blocks, 'close' )
-			);
-
 			echo '<li>';
 
-			printf( '<strong class="day">%s</strong>', esc_html( $label ) );
+			printf( '<strong class="day">%s</strong>', esc_html( $data['label'] ) );
 
 			if ( $is_closed ) {
 
@@ -261,27 +239,50 @@ final class Hours extends Base_Widget {
 
 			}
 
+			$time_blocks = is_array( $data['open'] ) ? $data['open'] : [ explode( '-', $data['open'] ) ];
+			$time_blocks = array_combine(
+				wp_list_pluck( $time_blocks, 0 ),
+				wp_list_pluck( $time_blocks, 1 )
+			);
+
+			$datetime = ! empty( $data['datetime'] ) ? $data['datetime'] : null;
+
+			if ( ! $datetime ) {
+
+				$datetime = sprintf(
+					'%s %s',
+					substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 ),
+					implode(
+						', ',
+						array_map(
+							function ( $close, $open ) {
+								return sprintf( '%s-%s', $open, $close );
+							},
+							$time_blocks,
+							array_keys( $time_blocks )
+						)
+					)
+				);
+
+			}
+
 			printf(
-				'<time itemprop="openingHours" datetime="%s %s">%s</time>',
-				substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 ),
-				implode( ', ', array_map(
-					function ( $close, $open ) {
-						return sprintf( '%s-%s', $open, $close );
-					},
-					$time_blocks,
-					array_keys( $time_blocks )
-				) ),
-				implode( '<br>', array_map(
-					function ( $close, $open ) {
-						return sprintf(
-							'%s &ndash; %s',
-							date( (string) get_option( 'time_format' ), strtotime( $open ) ),
-							date( (string) get_option( 'time_format' ), strtotime( $close ) )
-						);
-					},
-					$time_blocks,
-					array_keys( $time_blocks )
-				) )
+				'<time itemprop="openingHours" datetime="%s">%s</time>',
+				$datetime,
+				implode(
+					'<br>',
+					array_map(
+						function ( $close, $open ) {
+							return sprintf(
+								'%s &ndash; %s',
+								date( (string) get_option( 'time_format' ), strtotime( $open ) ),
+								date( (string) get_option( 'time_format' ), strtotime( $close ) )
+							);
+						},
+						$time_blocks,
+						array_keys( $time_blocks )
+					)
+				)
 			);
 
 			echo '</li>';
@@ -580,8 +581,8 @@ final class Hours extends Base_Widget {
 
 				if ( ! $hide_closed ) {
 
-					$groups['closed']['label'][ $day ] = $days_of_week[ $day ];
-					$groups['closed']['open']          = false;
+					$groups['closed']['label'][] = $day;
+					$groups['closed']['open']    = false;
 
 				}
 
@@ -599,14 +600,121 @@ final class Hours extends Base_Widget {
 
 				$key = md5( $block[0] . $block[1] );
 
-				$groups[ $key ]['label'][ $day ] = $days_of_week[ $day ];
-				$groups[ $key ]['open']          = sprintf( '%s - %s', $block[0], $block[1] );
+				$groups[ $key ]['label'][] = $day;
+				$groups[ $key ]['open']    = sprintf( '%s-%s', $block[0], $block[1] );
 
 			}
 
 		}
 
+		foreach ( $groups as $key => &$group ) {
+
+			// Microformat datetime
+			$group['datetime'] = sprintf(
+				'%s %s',
+				implode(
+					',',
+					array_map(
+						function ( $day ) {
+							return substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 );
+						},
+						$group['label']
+					)
+				),
+				$group['open']
+			);
+
+			$group['label'] = $this->get_grouped_days_label( $group['label'] );
+
+		}
+
 		return array_values( $groups );
+
+	}
+
+	/**
+	 * Return a label for days that are grouped together that
+	 * also honors the `start_of_week` setting.
+	 *
+	 * @param  array $days
+	 *
+	 * @return string
+	 */
+	protected function get_grouped_days_label( array $days ) {
+
+		$slices       = [];
+		$days_of_week = $this->get_days_of_week();
+		$week         = array_keys( $days_of_week );
+
+		foreach ( array_values( array_diff( $week, $days ) ) as $day ) {
+
+			$slice = array_slice( $week, 0, (int) array_search( $day, $week ) );
+			$week  = array_values( array_diff( $week, $slice ) );
+
+			unset( $week[0] );
+
+			$week  = array_values( $week );
+			$slice = array_combine(
+				$slice,
+				array_intersect_key(
+					$days_of_week,
+					array_flip( $slice )
+				)
+			);
+
+			$slices[] = $slice;
+
+		}
+
+		$last = array_intersect( $week, $days );
+
+		$slices[] = array_combine(
+			$last,
+			array_intersect_key(
+				$days_of_week,
+				array_flip( $last )
+			)
+		);
+
+		$labels = [];
+
+		foreach ( array_values( array_filter( $slices ) ) as $range ) {
+
+			$count = count( $range );
+
+			if ( 1 === $count || 2 === $count ) {
+
+				$labels[] = array_shift( $range );
+
+			}
+
+			if ( 2 === $count ) {
+
+				$labels[] = array_pop( $range );
+
+			}
+
+			if ( $count > 2 ) {
+
+				$labels[] = sprintf(
+					'%s &ndash; %s',
+					array_shift( $range ),
+					array_pop( $range )
+				);
+
+			}
+
+		}
+
+		$length = count( $labels ) - 2;
+
+		return trim(
+			sprintf(
+				'%s %s',
+				( $length > 0 ) ? implode( ', ', array_slice( $labels, 0, $length ) ) . ',' : null,
+				implode( ' & ', array_slice( $labels, -2, 2 ) )
+			)
+		);
 
 	}
 
