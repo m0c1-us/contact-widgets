@@ -375,6 +375,18 @@
 
 		updateTimeSelect: function( $target, time ) {
 
+			if ( ! $target ) {
+
+				$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function( e ) {
+
+					dayRow.updateTimeSelect( $( this ), $( this ).val() );
+
+				} );
+
+				return;
+
+			}
+
 			var $parent = $target.closest( '.time-block' ),
 			    $close_select = $parent.find( '.time-block-close' );
 
@@ -423,6 +435,9 @@
 		$( document ).on( 'wpcw.change', start_sortable );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
 		$( document ).on( 'widget-updated', start_sortable );
+		$( document ).on( 'widget-updated', function() {
+			dayRow.updateTimeSelect();
+		} );
 
 	} );
 
