@@ -34,19 +34,18 @@
 .wpcw-widget-social ul li.has-label span {
 	margin-right: 0.25em;
 }
-.wpcw-widget-hours ul li span.open-sign {
+.wpcw-widget-hours ul li span.wpcw-open-sign {
 	display: inline-block;
-	margin: 0 0 3px 5px;
 	padding: 2px 5px;
 	border-radius: 4px;
 	border: 1px solid transparent;
 }
-.wpcw-widget-hours ul li span.open-sign.open {
+.wpcw-widget-hours ul li span.wpcw-open-sign.open {
 	background-color: #dff0d8;
 	border-color: #d6e9c6;
 	color: #3c763d;
 }
-.wpcw-widget-hours ul li span.open-sign.closed {
+.wpcw-widget-hours ul li span.wpcw-open-sign.closed {
 	background-color: #f2dede;
 	border-color: #ebccd1;
 	color: #a94442;

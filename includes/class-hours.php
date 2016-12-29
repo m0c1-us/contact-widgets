@@ -196,6 +196,14 @@ final class Hours extends Base_Widget {
 
 		if ( $display_current_status ) {
 
+			$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+			wp_enqueue_script( 'wpcw-hours', \Contact_Widgets::$assets_url . "js/wp-hours-widget{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
+
+			wp_localize_script( 'wpcw-hours', 'wpcw_hours', [
+				'schedule' => $this->get_schedule( $instance ),
+			] );
+
 			/**
 			 * TODO: Handle this with JavaScript so it works with full-page caching.
 			 *
