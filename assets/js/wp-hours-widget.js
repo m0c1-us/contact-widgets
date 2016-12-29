@@ -12,7 +12,7 @@
 
 			if ( ! time_blocks ) {
 
-				$open_sign.addClass( 'closed' ).html( 'Closed' );
+				$open_sign.addClass( 'closed' ).html( wpcw_hours.closed_string );
 
 				return;
 
