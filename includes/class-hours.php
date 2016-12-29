@@ -241,14 +241,9 @@ final class Hours extends Base_Widget {
 
 			}
 
-			$time_blocks = array_combine(
-				wp_list_pluck( $data['open'], 0 ),
-				wp_list_pluck( $data['open'], 1 )
-			);
-
 			printf(
 				'<time itemprop="openingHours" datetime="%s">%s</time>',
-				! empty( $data['datetime'] ) ? $data['datetime'] : null,
+				$data['datetime'],
 				implode(
 					'<br>',
 					array_map(
@@ -259,8 +254,8 @@ final class Hours extends Base_Widget {
 								date( (string) get_option( 'time_format' ), strtotime( $close ) )
 							);
 						},
-						$time_blocks,
-						array_keys( $time_blocks )
+						$data['open'],
+						array_keys( $data['open'] )
 					)
 				)
 			);
@@ -541,29 +536,11 @@ final class Hours extends Base_Widget {
 
 			foreach ( $blocks as $block ) {
 
-				$schedule[ $day ]['open'][] = [ $block['open'], $block['close'] ];
+				$schedule[ $day ]['open'][ $block['open'] ] = $block['close'];
 
 			}
 
-			$time_blocks = array_combine(
-				wp_list_pluck( $blocks, 'open' ),
-				wp_list_pluck( $blocks, 'close' )
-			);
-
-			$schedule[ $day ]['datetime'] = sprintf(
-				'%s %s',
-				substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 ),
-				implode(
-					',',
-					array_map(
-						function ( $close, $open ) {
-							return sprintf( '%s-%s', $open, $close );
-						},
-						$time_blocks,
-						array_keys( $time_blocks )
-					)
-				)
-			);
+			$schedule[ $day ]['datetime'] = $this->get_datetime( $day, $schedule[ $day ]['open'] );
 
 		}
 
@@ -581,8 +558,8 @@ final class Hours extends Base_Widget {
 
 				if ( ! $hide_closed ) {
 
-					$groups['closed']['label'][] = $day;
-					$groups['closed']['open']    = false;
+					$groups['closed']['label'][ $day ] = $days_of_week[ $day ];
+					$groups['closed']['open']          = false;
 
 				}
 
@@ -594,16 +571,17 @@ final class Hours extends Base_Widget {
 				implode(
 					'',
 					array_map(
-						function ( $block ) {
-							return sprintf( '%s-%s', $block[0], $block[1] );
+						function ( $close, $open ) {
+							return $open . $close;
 						},
-						$data['open']
+						$data['open'],
+						array_keys( $data['open'] )
 					)
 				)
 			);
 
-			$groups[ $key ]['label'][] = $day;
-			$groups[ $key ]['open']    = $data['open'];
+			$groups[ $key ]['label'][ $day ] = $days_of_week[ $day ];
+			$groups[ $key ]['open']          = $data['open'];
 
 		}
 
@@ -611,38 +589,11 @@ final class Hours extends Base_Widget {
 
 			if ( false !== $group['open'] ) {
 
-				$time_blocks = array_combine(
-					wp_list_pluck( $group['open'], 0 ),
-					wp_list_pluck( $group['open'], 1 )
-				);
-
-				// Microformat datetime
-				$group['datetime'] = sprintf(
-					'%s %s',
-					implode(
-						',',
-						array_map(
-							function ( $day ) {
-								return substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 );
-							},
-							$group['label']
-						)
-					),
-					implode(
-						',',
-						array_map(
-							function ( $close, $open ) {
-								return sprintf( '%s-%s', $open, $close );
-							},
-							$time_blocks,
-							array_keys( $time_blocks )
-						)
-					)
-				);
+				$group['datetime'] = $this->get_datetime( array_keys( $group['label'] ), $group['open'] );
 
 			}
 
-			$group['label'] = $this->get_grouped_days_label( $group['label'] );
+			$group['label'] = $this->get_grouped_days_label( array_keys( $group['label'] ) );
 
 		}
 
@@ -732,6 +683,41 @@ final class Hours extends Base_Widget {
 				( $length > 0 ) ? implode( ', ', array_slice( $labels, 0, $length ) ) . ',' : null,
 				implode( ' & ', array_slice( $labels, -2, 2 ) )
 			)
+		);
+
+	}
+
+	/**
+	 * Return a datetime string suitable for microformats.
+	 *
+	 * e.g. Mo,Tu,We,Th,Fr 09:00-17:00
+	 *
+	 * @param  int|array $days
+	 * @param  array     $time_blocks
+	 *
+	 * @return string
+	 */
+	protected function get_datetime( $days, array $time_blocks ) {
+
+		$days = array_map(
+			function ( $day ) {
+				return substr( jddayofweek( fmod( $day - 1, 7 ), 2 ), 0, 2 );
+			},
+			(array) $days
+		);
+
+		$times = array_map(
+			function ( $close, $open ) {
+				return sprintf( '%s-%s', $open, $close );
+			},
+			$time_blocks,
+			array_keys( $time_blocks )
+		);
+
+		 return sprintf(
+			'%s %s',
+			implode( ',', $days ),
+			implode( ',', $times )
 		);
 
 	}
