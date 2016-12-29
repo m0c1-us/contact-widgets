@@ -716,7 +716,7 @@ final class Hours extends Base_Widget {
 			array_keys( $time_blocks )
 		);
 
-		 return sprintf(
+		return sprintf(
 			'%s %s',
 			implode( ',', $days ),
 			implode( ',', $times )
