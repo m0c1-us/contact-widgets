@@ -362,6 +362,39 @@
 
 			$day.find( 'select' ).toggleClass( 'disabled', ! closed );
 
+		},
+
+		changeTime: function( e ) {
+
+			var $target        = $( e.currentTarget ),
+			    time           = $target.val();
+
+			dayRow.updateTimeSelect( $target, time );
+
+		},
+
+		updateTimeSelect: function( $target, time ) {
+
+			var $parent = $target.closest( '.time-block' ),
+			    $close_select = $parent.find( '.time-block-close' );
+
+			$close_select.children().show();
+			$close_select.find( 'option[value="' + time + '"]' ).prevAll().andSelf().hide();
+
+			if ( time === $target.find( 'option:last-child' ).val() ) {
+
+				$close_select.find( 'option:first-child' ).show().prop( 'selected', true );
+
+				return;
+
+			}
+
+			if ( time >= $close_select.val() ) {
+
+				$close_select.find( 'option[value="' + time + '"]' ).next().prop( 'selected', true );
+
+			}
+
 		}
 
 	};
@@ -378,6 +411,13 @@
 		$( document ).on( 'click', '.wpcw-widget-hours .time-block a.button[data-action="remove"]', dayRow.removeBlock );
 		$( document ).on( 'click', '.wpcw-widget-hours .apply-to-all', dayRow.applyToAll );
 		$( document ).on( 'change', '.wpcw-widget-hours .status-closed-checkbox input', dayRow.toggleClosed );
+		$( document ).on( 'change', '.wpcw-widget-hours .time-block-open', dayRow.changeTime );
+
+		$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function( e ) {
+
+			dayRow.updateTimeSelect( $( this ), $( this ).val() );
+
+		} );
 
 		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );

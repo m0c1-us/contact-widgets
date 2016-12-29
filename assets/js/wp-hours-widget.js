@@ -9,28 +9,26 @@
 					time_blocks = wpcw_hours.schedule[ date.getDay() ].open,
 					$open_sign  = $( '.wpcw-open-sign' );
 
+			if ( time_blocks.length ) {
 
-			if ( ! time_blocks ) {
+				for ( i = 0; i < time_blocks.length; i++ ) {
 
-				$open_sign.addClass( 'closed' ).html( wpcw_hours.closed_string );
+					var open_time   = ( '00:00' !== time_blocks[ i ][0] ) ? time_blocks[ i ][0] : '24:00',
+					    closed_time = ( '00:00' !== time_blocks[ i ][1] ) ? time_blocks[ i ][1] : '24:00';
 
-				return;
+					if ( cur_time < closed_time && cur_time >= open_time ) {
 
-			}
+						$open_sign.addClass( 'open' ).text( wpcw_hours.open_string );
 
-			for ( i = 0; i < time_blocks.length; i++ ) {
+						return;
 
-				if ( cur_time < time_blocks[ i ][1] && cur_time >= time_blocks[ i ][0] ) {
-
-					$open_sign.addClass( 'open' ).html( wpcw_hours.open_string );
-
-					return;
+					}
 
 				}
 
 			}
 
-			$open_sign.addClass( 'closed' ).html( wpcw_hours.closed_string );
+			$open_sign.addClass( 'closed' ).text( wpcw_hours.closed_string );
 
 		},
 
@@ -45,13 +43,7 @@
 
 		addZeros: function( time ) {
 
-			if ( time < 10 ) {
-
-				time = "0" + time;
-
-			}
-
-			return time;
+			return ( time < 10 ) ? "0" + time : time;
 
 		}
 
