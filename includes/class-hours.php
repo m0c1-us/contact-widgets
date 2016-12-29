@@ -202,8 +202,10 @@ final class Hours extends Base_Widget {
 
 			wp_localize_script( 'wpcw-hours', 'wpcw_hours', [
 				'schedule'      => $this->get_schedule( $instance ),
-				'open_string'   => __( 'Open', 'contact-widgets' ),
-				'closed_string' => __( 'Closed', 'contact-widgets' ),
+				'gmt_offset'    => get_option( 'gmt_offset' ),
+				'gmt_time'      => current_time( 'H:i' ),
+				'open_string'   => apply_filters( 'wpcw_hours_open_string', __( 'Open', 'contact-widgets' ) ),
+				'closed_string' => apply_filters( 'wpcw_hours_closed_string',__( 'Closed', 'contact-widgets' ) ),
 			] );
 
 			/**

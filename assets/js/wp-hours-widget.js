@@ -5,19 +5,19 @@
 		init: function( e ) {
 
 			var date        = new Date(),
-					cur_time    = hoursWidget.getCurrentTime( date ),
-					time_blocks = wpcw_hours.schedule[ date.getDay() ].open,
-					$open_sign  = $( '.wpcw-open-sign' ),
-					open        = false;
+			    gmt_time    = wpcw_hours.gmt_time,
+			    time_blocks = wpcw_hours.schedule[ date.getDay() ].open,
+			    $open_sign  = $( '.wpcw-open-sign' ),
+			    open        = false;
 
 			if ( time_blocks ) {
 
 				$.each( time_blocks, function( open_time, close_time ) {
 
-					open_time   = ( '00:00' !== open_time ) ? open_time : '24:00';
-					close_time  = ( '00:00' !== close_time ) ? close_time : '24:00';
+					open_time   = ( '00:00' === open_time ) ? '24:00' : open_time;
+					close_time  = ( '00:00' === close_time ) ? '24:00' : close_time;
 
-					if ( cur_time < close_time && cur_time >= open_time ) {
+					if ( gmt_time < hoursWidget.localizeTime( close_time ) && gmt_time >= hoursWidget.localizeTime( open_time ) ) {
 
 						open = true;
 
@@ -39,12 +39,17 @@
 
 		},
 
-		getCurrentTime: function( date ) {
+		localizeTime: function( time ) {
 
-			var h = hoursWidget.addZeros( date.getHours() ),
-					m = hoursWidget.addZeros( date.getMinutes() );
+			var time_parts = time.split( ':' ),
+			    check_time = new Date();
 
-			return h + ":" + m;
+			check_time.setHours( time_parts[0] );
+			check_time.setMinutes( time_parts[1] );
+
+			var gmt_string = new Date( check_time.toGMTString() );
+
+			return hoursWidget.addZeros( gmt_string.getHours() ) + ':' + hoursWidget.addZeros( gmt_string.getMinutes() );
 
 		},
 
