@@ -434,9 +434,12 @@
 		// Sortable
 		$( document ).on( 'wpcw.change', start_sortable );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
-		$( document ).on( 'widget-updated', start_sortable );
 		$( document ).on( 'widget-updated', function() {
+
+			start_sortable();
+
 			dayRow.updateTimeSelect();
+
 		} );
 
 	} );
