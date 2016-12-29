@@ -8,9 +8,11 @@
 .wpcw-widget .title {
 	margin-top: 1em;
 }
-.wpcw-widget .form p,
-wpcw-widget .form p.sortable-placeholder {
+.wpcw-widget .form p {
 	margin: 0 0 10px 0;
+}
+.wpcw-widget .form p.sortable-placeholder {
+	margin: 0 0 8px 0;
 }
 .wpcw-widget .form label i {
 	margin: 0 7px 0 3px;

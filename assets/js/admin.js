@@ -48,7 +48,7 @@
 			tolerance: 'pointer',
 			forcePlaceholderSize: true,
 			cursorAt: { top: 40 },
-			start: function( e, ui ){
+			start: function( e, ui ) {
 				ui.placeholder.height( ui.helper.height() );
 			},
 			stop: function ( e, ui ) {
