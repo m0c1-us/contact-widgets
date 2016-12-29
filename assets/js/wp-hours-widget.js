@@ -7,24 +7,31 @@
 			var date        = new Date(),
 					cur_time    = hoursWidget.getCurrentTime( date ),
 					time_blocks = wpcw_hours.schedule[ date.getDay() ].open,
-					$open_sign  = $( '.wpcw-open-sign' );
+					$open_sign  = $( '.wpcw-open-sign' ),
+					open        = false;
 
-			if ( time_blocks.length ) {
+			if ( time_blocks ) {
 
-				for ( i = 0; i < time_blocks.length; i++ ) {
+				$.each( time_blocks, function( open_time, close_time ) {
 
-					var open_time   = ( '00:00' !== time_blocks[ i ][0] ) ? time_blocks[ i ][0] : '24:00',
-					    closed_time = ( '00:00' !== time_blocks[ i ][1] ) ? time_blocks[ i ][1] : '24:00';
+					open_time   = ( '00:00' !== open_time ) ? open_time : '24:00';
+					close_time  = ( '00:00' !== close_time ) ? close_time : '24:00';
 
-					if ( cur_time < closed_time && cur_time >= open_time ) {
+					if ( cur_time < close_time && cur_time >= open_time ) {
 
-						$open_sign.addClass( 'open' ).text( wpcw_hours.open_string );
-
-						return;
+						open = true;
 
 					}
 
-				}
+				} );
+
+			}
+
+			if ( open ) {
+
+				$open_sign.addClass( 'open' ).text( wpcw_hours.open_string );
+
+				return;
 
 			}
 
