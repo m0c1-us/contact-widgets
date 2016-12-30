@@ -277,7 +277,7 @@ final class Hours extends Base_Widget {
 					array_map(
 						function ( $close, $open ) {
 							return sprintf(
-								'%s &ndash; %s',
+								is_rtl() ? '%2$s &ndash; %1$s' : '%1$s &ndash; %2$s',
 								date( (string) get_option( 'time_format' ), strtotime( $open ) ),
 								date( (string) get_option( 'time_format' ), strtotime( $close ) )
 							);
@@ -656,7 +656,7 @@ final class Hours extends Base_Widget {
 			if ( $count > 2 ) {
 
 				$labels[] = sprintf(
-					'%s &ndash; %s',
+					is_rtl() ? '%2$s &ndash; %1$s' : '%1$s &ndash; %2$s',
 					array_shift( $range ),
 					array_pop( $range )
 				);
@@ -665,13 +665,15 @@ final class Hours extends Base_Widget {
 
 		}
 
-		$length = count( $labels ) - 2;
+		$last_label = array_pop( $labels );
+		$labels     = is_rtl() ? array_reverse( $labels ) : $labels;
 
 		return trim(
 			sprintf(
-				'%s %s',
-				( $length > 0 ) ? implode( ', ', array_slice( $labels, 0, $length ) ) . ',' : null,
-				implode( ' & ', array_slice( $labels, -2, 2 ) )
+				is_rtl() ? '%3$s%2$s%1$s' : '%1$s%2$s%3$s',
+				( $labels ) ? implode( _x( ', ', 'separator for items in a list: foo, bar, baz', 'contact-widgets' ), $labels ) : null,
+				( $labels ) ? _x( ' &amp; ', 'separator between the last two items in a list: foo, bar, baz &amp; qux', 'contact-widgets' ) : null,
+				$last_label
 			)
 		);
 
