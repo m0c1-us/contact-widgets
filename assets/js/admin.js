@@ -416,7 +416,13 @@
 		$( document ).on( 'change', '.wpcw-widget-hours .status-closed-checkbox input', dayRow.toggleClosed );
 
 		// Sortable
-		$( document ).on( 'wpcw.change', start_sortable );
+		$( document ).on( 'wpcw.change', function() {
+
+			start_sortable();
+
+			initialize_timepicker();
+
+		} );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
 		$( document ).on( 'widget-updated', function() {
 
