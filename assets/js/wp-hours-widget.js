@@ -2,7 +2,7 @@
 
 	var hoursWidget = {
 
-		init: function( e ) {
+		init: function() {
 
 			var date        = new Date(),
 			    gmt_time    = wpcw_hours.gmt_time,
@@ -41,13 +41,13 @@
 
 		localizeTime: function( time ) {
 
-			var time_parts = time.split( ':' ),
-			    check_time = new Date();
+			var time_parts  = time.split( ':' ),
+			    time_object = new Date();
 
-			check_time.setHours( time_parts[0] );
-			check_time.setMinutes( time_parts[1] );
+			time_object.setHours( time_parts[0] );
+			time_object.setMinutes( time_parts[1] );
 
-			var gmt_string = new Date( check_time.toGMTString() );
+			var gmt_string = new Date( time_object.toGMTString() );
 
 			return hoursWidget.addZeros( gmt_string.getHours() ) + ':' + hoursWidget.addZeros( gmt_string.getMinutes() );
 
@@ -55,7 +55,7 @@
 
 		addZeros: function( time ) {
 
-			return ( time < 10 ) ? "0" + time : time;
+			return ( time < 10 ) ? '0' + time : time;
 
 		}
 

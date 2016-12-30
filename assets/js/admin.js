@@ -377,7 +377,7 @@
 
 			if ( ! $target ) {
 
-				$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function( e ) {
+				$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function() {
 
 					dayRow.updateTimeSelect( $( this ), $( this ).val() );
 
@@ -425,7 +425,7 @@
 		$( document ).on( 'change', '.wpcw-widget-hours .status-closed-checkbox input', dayRow.toggleClosed );
 		$( document ).on( 'change', '.wpcw-widget-hours .time-block-open', dayRow.changeTime );
 
-		$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function( e ) {
+		$( document ).find( '.wpcw-widget-hours .time-block-open' ).each( function() {
 
 			dayRow.updateTimeSelect( $( this ), $( this ).val() );
 
