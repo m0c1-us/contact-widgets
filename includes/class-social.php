@@ -149,7 +149,9 @@ final class Social extends Base_Widget {
 
 		foreach ( $fields as $field ) {
 
-			if ( empty( $field['value'] ) || ! $field['show_front_end'] ) {
+			$deprecated = ( isset( $field['deprecated'] ) && $field['deprecated'] );
+
+			if ( empty( $field['value'] ) || ! $field['show_front_end'] || $deprecated ) {
 
 				continue;
 
