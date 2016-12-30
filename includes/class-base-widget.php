@@ -610,8 +610,11 @@ abstract class Base_Widget extends \WP_Widget {
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
-		wp_enqueue_style( 'wpcw-admin', \Contact_Widgets::$assets_url . "css/admin{$suffix}.css", [ 'font-awesome' ], Plugin::$version );
-		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
+		wp_enqueue_style( 'jquery-timepicker', \Contact_Widgets::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
+		wp_enqueue_style( 'wpcw-admin', \Contact_Widgets::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
+
+		wp_enqueue_script( 'jquery-timepicker', \Contact_Widgets::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
+		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
 
 		if ( $GLOBALS['is_IE'] ) {
 

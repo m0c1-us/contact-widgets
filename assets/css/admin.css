@@ -170,13 +170,14 @@
 	margin-bottom: 15px;
 }
 
-.wpcw-widget-hours .time-block select {
+.wpcw-widget-hours .time-block .timeselect {
 	width: calc(40% - 5px);
 	margin-right: 5px;
+	min-height: 28px;
 }
 
 .wpcw-widget-hours .time-block .button {
-	width: calc(20% - 5px);
+	width: calc(19% - 5px);
 	font-size: 18px;
 	text-align: center;
 	line-height: 1.2;

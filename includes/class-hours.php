@@ -304,16 +304,15 @@ final class Hours extends Base_Widget {
 				$is_last_block = ( false === $this->get_field_value( $instance, sprintf( 'schedule[%d][blocks][%d][open]', $day, $block + 1 ), false ) );
 
 				$fields[ "schedule[{$day}][blocks][{$block}][open]" ] = [
-					'type'           => 'select',
+					'type'           => 'text',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
 					'label'          => ( $block > 0 ) ? sprintf( _x( 'Open Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Open Time', 'contact-widgets' ),
 					'hide_label'     => true,
-					'form_callback'  => 'render_form_select',
-					'select_options' => $this->get_times(),
+					'form_callback'  => 'render_form_input',
 					'prepend'        => sprintf( '<div class="time-block" data-time-block="%d">', $block ),
 					'hide_empty'     => ( $block > 0 ),
-					'default'        => ( $block > 0 ) ? '' : '00:00',
-					'class'          => ( $is_closed ) ? 'widefat time-block-open disabled' : 'widefat time-block-open',
+					'placeholder'    => ( $block > 0 ) ? '' : '00:00',
+					'class'          => ( $is_closed ) ? 'timeselect time-block-open disabled' : 'timeselect time-block-open',
 					'sortable'       => false,
 					'wrapper'        => '',
 				];
@@ -340,15 +339,14 @@ final class Hours extends Base_Widget {
 				}
 
 				$fields[ "schedule[{$day}][blocks][{$block}][close]" ] = [
-					'type'           => 'select',
+					'type'           => 'text',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
 					'label'          => ( $block > 0 ) ? sprintf( _x( 'Close Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Close Time', 'contact-widgets' ),
 					'hide_label'     => true,
-					'form_callback'  => 'render_form_select',
-					'select_options' => $this->get_times(),
+					'form_callback'  => 'render_form_input',
 					'hide_empty'     => ( $block > 0 ),
 					'default'        => ( $block > 0 ) ? '' : '00:00',
-					'class'          => ( $is_closed ) ? 'widefat time-block-close disabled' : 'widefat time-block-close',
+					'class'          => ( $is_closed ) ? 'timeselect time-block-close disabled' : 'timeselect time-block-close',
 					'sortable'       => false,
 					'wrapper'        => '',
 					'append'         => sprintf(
@@ -461,42 +459,6 @@ final class Hours extends Base_Widget {
 		$slice_2 = array_slice( $this->days_of_week, 0, count( $this->days_of_week ) - count( $slice_1 ), true );
 
 		return $slice_1 + $slice_2; // Preserve keys
-
-	}
-
-	/**
-	 * Return an array of times in half-hour increments
-	 *
-	 * @since NEXT
-	 *
-	 * @return array
-	 */
-	protected function get_times() {
-
-		/**
-		 * Filter the time increment (in minutes)
-		 *
-		 * @since NEXT
-		 *
-		 * @return int
-		 */
-		$increment = (int) apply_filters( 'wpcw_hours_time_increment', HOUR_IN_SECONDS / 60 / 2 );
-
-		$times = range( 0, DAY_IN_SECONDS / 60, $increment );
-
-		$keys = array_map( function ( $time ) {
-
-			return date( 'H:i', $time * 60 );
-
-		}, $times );
-
-		$values = array_map( function ( $time ) {
-
-			return date( (string) get_option( 'time_format' ), $time * 60 );
-
-		}, $times );
-
-		return array_combine( $keys, $values );
 
 	}
 

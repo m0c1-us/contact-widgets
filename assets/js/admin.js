@@ -56,6 +56,12 @@
 
 	}
 
+	function initialize_timepicker() {
+
+		$( '.timeselect' ).timepicker();
+
+	}
+
 	var socialField = {
 
 		     $btn: null,
@@ -232,6 +238,8 @@
 
 			$( this ).hide();
 
+			initialize_timepicker();
+
 		},
 
 		removeBlock: function ( e ) {
@@ -360,7 +368,7 @@
 
 			$day.find( 'a.button' ).toggleClass( 'disabled', ! closed );
 
-			$day.find( 'select' ).toggleClass( 'disabled', ! closed );
+			$day.find( '.timeselect' ).toggleClass( 'disabled', ! closed );
 
 		},
 
@@ -413,6 +421,8 @@
 
 	$( document ).ready( function ( $ ) {
 
+		initialize_timepicker();
+
 		// Social
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
@@ -437,6 +447,8 @@
 		$( document ).on( 'widget-updated', function() {
 
 			start_sortable();
+
+			initialize_timepicker();
 
 			dayRow.updateTimeSelect();
 

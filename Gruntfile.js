@@ -29,9 +29,12 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'assets/css',
-					src: ['*.css', '!*.min.css'],
+					src: ['*.css', '!*.min.css', '!*.timepicker.css'],
 					dest: 'assets/css',
 					ext: '.min.css'
+				},
+				{
+					'assets/css/jquery.timepicker.min.css': ['assets/css/jquery.timepicker.css']
 				}]
 			}
 		},
@@ -45,8 +48,13 @@ module.exports = function(grunt) {
 				cwd: 'assets/js',
 				dest: 'assets/js',
 				ext: '.min.js',
-				src: ['*.js', '!*.min.js']
-			}
+				src: ['*.js', '!*.min.js', '!*.timepicker.js']
+			},
+			timepicker: {
+				files: {
+					'assets/js/jquery.timepicker.min.js': ['assets/js/jquery.timepicker.js']
+				}
+			},
 		},
 
 		watch: {
@@ -59,7 +67,7 @@ module.exports = function(grunt) {
 				tasks: ['cssmin']
 			},
 			uglify: {
-				files: ['*.js', '!*.js.css'],
+				files: ['*.js', '!*.min.js'],
 				options: {
 					cwd: 'assets/js',
 					nospawn: true
