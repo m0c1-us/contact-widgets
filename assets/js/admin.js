@@ -62,7 +62,7 @@
 			'timeFormat': wpcw_admin.time_format
 		} );
 
-		var timeSelect = {
+		var timePicker = {
 
 			changeTime: function() {
 
@@ -78,8 +78,8 @@
 
 		};
 
-		$( '.timeselect' ).on( 'changeTime', timeSelect.changeTime );
-		$( '.timeselect' ).on( 'showTimepicker', timeSelect.showPicker );
+		$( '.timeselect' ).on( 'changeTime', timePicker.changeTime );
+		$( '.timeselect' ).on( 'showTimepicker', timePicker.showPicker );
 
 	}
 
