@@ -613,6 +613,20 @@ abstract class Base_Widget extends \WP_Widget {
 		wp_enqueue_style( 'jquery-timepicker', \Contact_Widgets::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
 		wp_enqueue_style( 'wpcw-admin', \Contact_Widgets::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
 
+		global $_wp_admin_css_colors;
+
+		$active_scheme = $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ];
+
+		$custom_css = "
+			.ui-timepicker-list .ui-timepicker-selected:hover,
+			.ui-timepicker-list li:hover,
+			li.ui-timepicker-selected {
+				background: {$active_scheme->colors[2]}
+			}
+		";
+
+		wp_add_inline_style( 'jquery-timepicker', $custom_css );
+
 		wp_enqueue_script( 'jquery-timepicker', \Contact_Widgets::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
 		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
 
