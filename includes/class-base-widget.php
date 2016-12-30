@@ -616,6 +616,10 @@ abstract class Base_Widget extends \WP_Widget {
 		wp_enqueue_script( 'jquery-timepicker', \Contact_Widgets::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
 		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
 
+		wp_localize_script( 'wpcw-admin', 'wpcw_admin', [
+			'time_format' => get_option( 'time_format' ),
+		] );
+
 		if ( $GLOBALS['is_IE'] ) {
 
 			wp_enqueue_style( 'wpcw-admin-ie', \Contact_Widgets::$assets_url . "css/admin-ie{$suffix}.css", [ 'wpcw-admin' ], Plugin::$version );
