@@ -2,6 +2,9 @@
 
 namespace WPCW;
 
+use \DateTime;
+use \DateTimeZone;
+
 if ( ! defined( 'ABSPATH' ) ) {
 
 	exit;
@@ -200,21 +203,44 @@ final class Hours extends Base_Widget {
 
 			wp_enqueue_script( 'wpcw-hours', \Contact_Widgets::$assets_url . "js/wp-hours-widget{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
 
-			wp_localize_script( 'wpcw-hours', 'wpcw_hours', [
-				'schedule'      => $this->get_schedule( $instance ),
-				'gmt_offset'    => get_option( 'gmt_offset' ),
-				'gmt_time'      => current_time( 'H:i' ),
-				'open_string'   => apply_filters( 'wpcw_hours_open_string', __( 'Open', 'contact-widgets' ) ),
-				'closed_string' => apply_filters( 'wpcw_hours_closed_string',__( 'Closed', 'contact-widgets' ) ),
-			] );
+			$defaults = [
+				'open'   => __( 'Open', 'contact-widgets' ),
+				'closed' => __( 'Closed', 'contact-widgets' ),
+			];
 
 			/**
-			 * TODO: Handle this with JavaScript so it works with full-page caching.
+			 * Filter to override the JS i18n strings.
 			 *
-			 * 1. Expose this site's timezone and daily schedule as JSON.
-			 * 2. Use JavaScript to compare the visitor's current time against our schedule.
-			 * 3. Populate this element dynamically with JavaScript.
+			 * @since NEXT
+			 *
+			 * @var array
 			 */
+			$overrides = (array) apply_filters( 'wpcw_widget_hours_js_i18n', [] );
+
+			static $enqueued = false;
+
+			// Shared by all instances, only enqueue once
+			if ( ! $enqueued ) {
+
+				wp_localize_script(
+					'wpcw-hours',
+					'wpcw_hours',
+					[
+						'gmt_offset' => (float) $this->get_gmt_offset(),
+						'i18n'       => (array) wp_parse_args( $overrides, $defaults ),
+					]
+				);
+
+				$enqueued = true;
+
+			}
+
+			wp_localize_script(
+				'wpcw-hours',
+				sprintf( 'wpcw_hours_%d', $this->number ),
+				(array) $this->get_schedule( $instance )
+			);
+
 			echo '<li><span class="wpcw-open-sign"></span></li>';
 
 		}
@@ -683,6 +709,42 @@ final class Hours extends Base_Widget {
 			implode( ',', $days ),
 			implode( ',', $times )
 		);
+
+	}
+
+	/**
+	 * Return the GMT offset for this site in milliseconds.
+	 *
+	 * @since NEXT
+	 *
+	 * @return float
+	 */
+	protected function get_gmt_offset() {
+
+		$offset   = get_option( 'gmt_offset' );
+		$timezone = get_option( 'timezone_string' );
+
+		switch ( true ) {
+
+			case is_numeric( $offset ) :
+
+				break;
+
+			case ! empty( $timezone ) :
+
+				$time = new DateTime( 'now', new DateTimeZone( $timezone ) );
+
+				$offset = $time->format( 'Z' );
+
+				break;
+
+			default:
+
+				$offset = 0;
+
+		}
+
+		return (float) $offset * HOUR_IN_SECONDS * 1000; // Milliseconds
 
 	}
 

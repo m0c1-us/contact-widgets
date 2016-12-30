@@ -5,58 +5,49 @@
 
 		init: function() {
 
-			var date        = new Date(),
-			    gmt_time    = wpcw_hours.gmt_time,
-			    time_blocks = wpcw_hours.schedule[ date.getDay() ].open,
-			    $open_sign  = $( '.wpcw-open-sign' ),
-			    open        = false;
+			var date = new Date(),
+			    gmt  = date.getTime() + ( date.getTimezoneOffset() * 60000 ), // Offset in milliseconds
+			    site = new Date( gmt + parseInt( wpcw_hours.gmt_offset, 10 ) ),
+			    day  = site.getDay(),
+			    now  = site.getHours() + ':' + site.getMinutes();
 
-			if ( time_blocks ) {
+			$( '.widget.wpcw-widget-hours' ).each( function() {
 
-				$.each( time_blocks, function( open_time, close_time ) {
+				var schedule = window[ $( this ).prop( 'id' ).replace( '-', '_' ) ], // Get global var for this instance
+				    is_open  = hoursWidget.isOpen( schedule[ day ].open, now ),
+				    $sign    = $( this ).find( '.wpcw-open-sign' );
 
-					open_time   = ( '00:00' === open_time ) ? '24:00' : open_time;
-					close_time  = ( '00:00' === close_time ) ? '24:00' : close_time;
+				hoursWidget.display( is_open, $sign );
 
-					if ( gmt_time < hoursWidget.localizeTime( close_time ) && gmt_time >= hoursWidget.localizeTime( open_time ) ) {
-
-						open = true;
-
-					}
-
-				} );
-
-			}
-
-			if ( open ) {
-
-				$open_sign.addClass( 'open' ).text( wpcw_hours.open_string );
-
-				return;
-
-			}
-
-			$open_sign.addClass( 'closed' ).text( wpcw_hours.closed_string );
+			} );
 
 		},
 
-		localizeTime: function( time ) {
+		isOpen: function ( times, now ) {
 
-			var time_parts  = time.split( ':' ),
-			    time_object = new Date();
+			var i = 0;
 
-			time_object.setHours( time_parts[0] );
-			time_object.setMinutes( time_parts[1] );
+			do {
 
-			var gmt_string = new Date( time_object.toGMTString() );
+				is_open = ( Object.keys( times )[ i ] <= now && now <= Object.values( times )[ i ] );
 
-			return hoursWidget.addZeros( gmt_string.getHours() ) + ':' + hoursWidget.addZeros( gmt_string.getMinutes() );
+				i++;
+
+			}
+			while ( i < Object.keys( times ).length && ! is_open );
+
+			return is_open;
 
 		},
 
-		addZeros: function( time ) {
+		display: function ( is_open, $sign ) {
 
-			return ( time < 10 ) ? '0' + time : time;
+			var string = ( is_open ) ? wpcw_hours.i18n.open : wpcw_hours.i18n.closed;
+
+			$sign
+				.toggleClass( 'open', is_open )
+				.toggleClass( 'closed', ! is_open )
+				.text( string );
 
 		}
 
