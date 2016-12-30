@@ -1,3 +1,4 @@
+/*globals wpcw_hours*/
 ( function ( $ ) {
 
 	var hoursWidget = {
