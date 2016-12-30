@@ -610,8 +610,8 @@ abstract class Base_Widget extends \WP_Widget {
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
-		wp_enqueue_style( 'jquery-timepicker', \Contact_Widgets::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
-		wp_enqueue_style( 'wpcw-admin', \Contact_Widgets::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
+		wp_enqueue_style( 'jquery-timepicker', Plugin::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
+		wp_enqueue_style( 'wpcw-admin', Plugin::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
 
 		global $_wp_admin_css_colors;
 
@@ -627,8 +627,8 @@ abstract class Base_Widget extends \WP_Widget {
 
 		wp_add_inline_style( 'jquery-timepicker', $custom_css );
 
-		wp_enqueue_script( 'jquery-timepicker', \Contact_Widgets::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
-		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
+		wp_enqueue_script( 'jquery-timepicker', Plugin::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
+		wp_enqueue_script( 'wpcw-admin', Plugin::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
 
 		wp_localize_script( 'wpcw-admin', 'wpcw_admin', [
 			'time_format' => get_option( 'time_format' ),
@@ -636,7 +636,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		if ( $GLOBALS['is_IE'] ) {
 
-			wp_enqueue_style( 'wpcw-admin-ie', \Contact_Widgets::$assets_url . "css/admin-ie{$suffix}.css", [ 'wpcw-admin' ], Plugin::$version );
+			wp_enqueue_style( 'wpcw-admin-ie', Plugin::$assets_url . "css/admin-ie{$suffix}.css", [ 'wpcw-admin' ], Plugin::$version );
 
 		}
 
@@ -663,7 +663,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'wpcw', \Contact_Widgets::$assets_url . "css/style{$suffix}.css", [], Plugin::$version );
+		wp_enqueue_style( 'wpcw', Plugin::$assets_url . "css/style{$suffix}.css", [], Plugin::$version );
 
 		if ( is_customize_preview() ) {
 
@@ -673,7 +673,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 			}
 
-			wp_enqueue_script( 'wpcw-helper', \Contact_Widgets::$assets_url . "js/customize-preview-helper{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
+			wp_enqueue_script( 'wpcw-helper', Plugin::$assets_url . "js/customize-preview-helper{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
 
 		}
 

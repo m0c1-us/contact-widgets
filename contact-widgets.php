@@ -31,20 +31,11 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 		private $php_min_version = '5.4';
 
 		/**
-		 * Plugin assets URL
-		 *
-		 * @var string
-		 */
-		public static $assets_url;
-
-		/**
 		 * Class constructor
 		 *
-		 * @param string $cur_php_version
+		 * @param string $php_version (optional)
 		 */
-		public function __construct( $cur_php_version = PHP_VERSION ) {
-
-			static::$assets_url = plugin_dir_url( __FILE__ ) . 'assets/';
+		public function __construct( $php_version = PHP_VERSION ) {
 
 			$composer_autoloader = __DIR__ . '/vendor/autoload.php';
 
@@ -57,7 +48,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 
 			add_action( 'plugins_loaded', array( $this, 'i18n' ) );
 
-			if ( version_compare( $cur_php_version, $this->php_min_version, '<' ) ) {
+			if ( version_compare( $php_version, $this->php_min_version, '<' ) ) {
 
 				add_action( 'shutdown', array( $this, 'notice' ) );
 

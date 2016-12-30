@@ -2,13 +2,15 @@
 
 namespace WPCW;
 
+use Contact_Widgets;
+
 final class TestPluginLoader extends TestCase {
 
 	public function setUp() {
 
 		parent::setUp();
 
-		$this->plugin = new \Contact_Widgets();
+		$this->plugin = new Contact_Widgets();
 
 	}
 
@@ -25,7 +27,7 @@ final class TestPluginLoader extends TestCase {
 
 	function test_construct_invalid_php_version() {
 
-		$this->plugin = new \Contact_Widgets( '5.3' );
+		$this->plugin = new Contact_Widgets( '5.3' );
 
 		$this->do_action_validation( 'shutdown', [ $this->plugin, 'notice' ] );
 
