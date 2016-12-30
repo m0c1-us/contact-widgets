@@ -60,6 +60,18 @@
 
 		$( '.timeselect' ).timepicker();
 
+		$( '.timeselect' ).on( 'changeTime', function() {
+
+			$( this ).attr( 'value', $(this).val() );
+
+		} );
+
+		$( '.timeselect' ).on( 'showTimepicker', function() {
+
+			$( '.ui-timepicker-wrapper' ).css( 'width', $( this ).innerWidth() + 'px' );
+
+		} );
+
 	}
 
 	var socialField = {
@@ -299,6 +311,8 @@
 				} );
 
 			} );
+
+			initialize_timepicker();
 
 		},
 
