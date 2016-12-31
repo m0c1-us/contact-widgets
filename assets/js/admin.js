@@ -197,7 +197,8 @@
 
 		toggle: function( e ) {
 
-			var $day       = $( this ).closest( '.day-row' ),
+			var $this      = $( this ),
+			    $day       = $this.closest( '.day-row' ),
 			    $container = $day.find( '.day-row-container' ),
 			    is_closed  = $day.hasClass( 'status-closed' );
 
@@ -207,11 +208,11 @@
 
 			}
 
+			$this.find( 'input[type="checkbox"]' ).prop( 'checked', is_closed );
+
 			timepicker_init();
 
 			$container.slideToggle( 'fast' );
-
-			$( this ).prev( 'input' ).prop( 'checked', is_closed );
 
 			$day
 				.toggleClass( 'status-open', is_closed )
@@ -307,7 +308,7 @@
 		$( document ).on( 'click', '.wpcw-widget-social .icons a', socialField.init );
 
 		// Hours of Operation
-		$( document ).on( 'click', '.wpcw-widget-hours .day-row-top input, .wpcw-widget-hours .day-row-top label', dayRow.toggle );
+		$( document ).on( 'click', '.wpcw-widget-hours .day-row-top label', dayRow.toggle );
 		$( document ).on( 'click', '.wpcw-widget-hours .time-block .button[data-action="add"]', dayRow.addBlock );
 		$( document ).on( 'click', '.wpcw-widget-hours .time-block .button[data-action="remove"]', dayRow.removeBlock );
 
@@ -316,7 +317,7 @@
 
 			start_sortable();
 
-			initialize_timepicker();
+			timepicker_init();
 
 		} );
 		$( document ).on( 'click.widgets-toggle', start_sortable );
