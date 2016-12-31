@@ -249,7 +249,7 @@ final class Hours extends Base_Widget {
 
 		foreach ( $schedule as $day => $data ) {
 
-			$is_closed = ( false === $data['open'] );
+			$is_closed = empty( $data['open'] );
 
 			if ( $is_closed && $hide_closed ) {
 
@@ -318,97 +318,88 @@ final class Hours extends Base_Widget {
 			'description' => __( 'The title of this widget. Leave empty for no title.', 'contact-widgets' ),
 		];
 
-		$iteration = 1;
-
 		foreach ( $this->get_days_of_week() as $day => $label ) {
 
-			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]" ) );
+			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'yes' ) );
 			$blocks    = range( 0, $this->max_time_blocks - 1 );
 
 			foreach ( $blocks as $block ) {
 
 				$is_last_block = ( false === $this->get_field_value( $instance, sprintf( 'schedule[%d][blocks][%d][open]', $day, $block + 1 ), false ) );
 
+				$fields[ "schedule[{$day}][closed]" ] = [
+					'type'        => 'checkbox',
+					'sanitizer'   => function ( $value ) { return ( 'no' === (string) $value ) ? 'no' : 'yes'; },
+					'label'       => $label,
+					'label_after' => true,
+					'default'     => 'yes',
+					'value'       => 'no',
+					'atts'        => $this->checked( $is_closed, false ),
+					'sortable'    => false,
+					'wrapper'     => '',
+				];
+
+				ob_start();
+
+				?>
+				<div class="day-row <?php echo ( $is_closed ) ? 'status-closed' : 'status-open'; ?>" data-day="<?php echo absint( $day ); ?>">
+					<div class="day-row-top">
+				<?php
+
+				$fields[ "schedule[{$day}][closed]" ]['prepend'] = ob_get_clean();
+
+				ob_start();
+
+					?>
+					<span class="status-open-label"><?php _e( 'Open', 'contact-widgets' ); ?></span>
+					<span class="status-closed-label"><?php _e( 'Closed', 'contact-widgets' ); ?></span>
+				</div><!-- .day-row-top -->
+				<div class="day-row-container">
+					<table class="time-blocks" cellpadding="0" cellspacing="0">
+						<tbody>
+							<?php
+
+				$fields[ "schedule[{$day}][closed]" ]['append'] = ob_get_clean();
+
 				$fields[ "schedule[{$day}][blocks][{$block}][open]" ] = [
 					'type'           => 'text',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
-					'label'          => ( $block > 0 ) ? sprintf( _x( 'Open Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Open Time', 'contact-widgets' ),
+					'label'          => ( $block > 0 ) ? sprintf( _x( 'Open Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Open', 'contact-widgets' ),
 					'hide_label'     => true,
 					'form_callback'  => 'render_form_input',
-					'prepend'        => sprintf( '<div class="time-block" data-time-block="%d">', $block ),
 					'hide_empty'     => ( $block > 0 ),
-					'placeholder'    => date( get_option( 'time_format' ), strtotime( '9:00 AM' ) ),
-					'class'          => ( $is_closed ) ? 'timeselect time-block-open disabled' : 'timeselect time-block-open',
+					'placeholder'    => __( 'Open', 'contact-widgets' ),
+					'class'          => sprintf( 'timeselect widefat time-block-open %s', ( $is_closed ) ? 'disabled' : '' ),
+					'atts'           => disabled( $is_closed, true, false ),
 					'sortable'       => false,
-					'wrapper'        => '',
+					'wrapper'        => 'td',
+					'prepend'        => sprintf( '<tr class="time-block" data-time-block="%d">', $block ),
+					'append'         => '<td>&ndash;</td>',
 				];
-
-				if ( 0 === $block ) {
-
-					ob_start();
-
-					?>
-					<div class="day-row <?php echo ( $is_closed ) ? 'status-closed' : 'status-open'; ?>" data-day="<?php echo absint( $day ); ?>">
-						<div class="day-row-top">
-							<strong><?php echo esc_html( $label ); ?></strong>
-							<span class="toggle-icon dashicons dashicons-arrow-down"></span>
-							<span class="status-open-label"><?php _e( 'Open', 'contact-widgets' ); ?></span>
-							<span class="status-closed-label"><?php _e( 'Closed', 'contact-widgets' ); ?></span>
-						</div><!-- .day-row-top -->
-						<div class="day-row-container">
-							<div class="time-blocks">
-								<div class="time-block" data-time-block="<?php echo absint( $block ); ?>">
-					<?php
-
-					$fields[ "schedule[{$day}][blocks][{$block}][open]" ]['prepend'] = ob_get_clean();
-
-				}
 
 				$fields[ "schedule[{$day}][blocks][{$block}][close]" ] = [
 					'type'           => 'text',
 					'sanitizer'      => function( $value ) { return date( 'H:i', strtotime( (string) $value ) ); },
-					'label'          => ( $block > 0 ) ? sprintf( _x( 'Close Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Close Time', 'contact-widgets' ),
+					'label'          => ( $block > 0 ) ? sprintf( _x( 'Close Time (Block %d)', 'time block number', 'contact-widgets' ), $block + 1 ) : __( 'Close', 'contact-widgets' ),
 					'hide_label'     => true,
 					'form_callback'  => 'render_form_input',
 					'hide_empty'     => ( $block > 0 ),
-					'placeholder'    => date( get_option( 'time_format' ), strtotime( '5:00 PM' ) ),
-					'class'          => ( $is_closed ) ? 'timeselect time-block-close disabled' : 'timeselect time-block-close',
+					'placeholder'    => __( 'Close', 'contact-widgets' ),
+					'class'          => sprintf( 'timeselect widefat time-block-close %s', ( $is_closed ) ? 'disabled' : '' ),
+					'atts'           => disabled( $is_closed, true, false ),
 					'sortable'       => false,
-					'wrapper'        => '',
+					'wrapper'        => 'td',
 					'append'         => sprintf(
-						'<a href="#" class="button button-secondary %s" data-action="%s" %s>%s</a></div><!-- .time-block -->',
+						'<td><a href="#" class="widefat button button-secondary %s" data-action="%s" %s><span class="dashicons dashicons-no-alt %s"></span></a></td></tr>%s',
 						( $is_closed ) ? 'disabled' : '',
 						( $block > 0 ) ? 'remove' : 'add',
 						( ! $is_last_block ) ? 'style="display: none;"' : '',
-						( $block > 0 ) ? '-' : '+'
+						( $block > 0 ) ? '' : 'add',
+						( $is_last_block ) ? '</tbody></table></div><!-- .day-row-container --></div><!-- .day-row -->' : ''
 					),
 				];
 
 			}
-
-			$apply_to_all_link = ( 1 === $iteration ) ? sprintf(
-				'<a href="#" class="apply-to-all">%s</a>',
-				__( 'Apply to all', 'contact-widgets' )
-			) : '';
-
-			$fields[ "schedule[{$day}][closed]" ] = [
-				'type'      => 'checkbox',
-				'sanitizer' => function ( $value ) { return ( 'yes' === (string) $value ) ? 'yes' : 'no'; },
-				'class'     => 'status-closed-checkbox',
-				'label'     => __( 'Closed', 'contact-widgets' ),
-				'default'   => 'no',
-				'value'     => 'yes',
-				'atts'      => $this->checked( $is_closed, true ),
-				'sortable'  => false,
-				'wrapper'   => '',
-				'prepend'   => sprintf(
-					'</div><!-- .time-blocks -->%s<span class="status-closed-checkbox">',
-					$apply_to_all_link
-				),
-				'append'    => '</span><!-- .status-closed-checkbox --></div><!-- .day-row-container --></div><!-- .day-row -->',
-			];
-
-			$iteration++;
 
 		}
 
@@ -506,7 +497,7 @@ final class Hours extends Base_Widget {
 
 			$schedule[ $day ]['label'] = $label;
 
-			$is_closed = ( 'yes' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'no' ) );
+			$is_closed = ( 'no' === $this->get_field_value( $instance, "schedule[{$day}][closed]", 'yes' ) );
 
 			if ( $is_closed ) {
 
@@ -530,7 +521,11 @@ final class Hours extends Base_Widget {
 
 			}
 
-			$schedule[ $day ]['datetime'] = $this->get_datetime( $day, $schedule[ $day ]['open'] );
+			if ( ! empty( $schedule[ $day ]['open'] ) ) {
+
+				$schedule[ $day ]['datetime'] = $this->get_datetime( $day, $schedule[ $day ]['open'] );
+
+			}
 
 		}
 
@@ -544,7 +539,7 @@ final class Hours extends Base_Widget {
 
 		foreach ( $schedule as $day => $data ) {
 
-			if ( false === $data['open'] ) {
+			if ( empty( $data['open'] ) ) {
 
 				if ( ! $hide_closed ) {
 
@@ -577,7 +572,7 @@ final class Hours extends Base_Widget {
 
 		foreach ( $groups as $key => &$group ) {
 
-			if ( false !== $group['open'] ) {
+			if ( ! empty( $group['open'] ) ) {
 
 				$group['datetime'] = $this->get_datetime( array_keys( $group['label'] ), $group['open'] );
 

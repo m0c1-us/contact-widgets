@@ -23,6 +23,7 @@ abstract class Base_Widget extends \WP_Widget {
 		'name'           => '',
 		'label'          => '',
 		'label_after'    => false,
+		'label_wrap'     => true,
 		'hide_label'     => false,
 		'description'    => '',
 		'type'           => 'text',
@@ -76,7 +77,7 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		add_action( 'admin_footer',                            [ $this, 'enqueue_scripts' ] );
+		add_action( 'admin_footer',                            [ $this, 'admin_footer' ] );
 		add_action( 'customize_controls_print_footer_scripts', [ $this, 'print_customizer_scripts' ] );
 
 		?>
@@ -333,22 +334,72 @@ abstract class Base_Widget extends \WP_Widget {
 	/**
 	 * Print current label
 	 *
-	 * @param array $field
+	 * @param array  $field
+	 * @param string $html (optional)
 	 */
-	protected function print_label( array $field ) {
+	protected function print_label( array $field, $html = '' ) {
+
+		// Label wrapping is not compatible with sortable fields
+		$field['label_wrap'] = ( $field['sortable'] ) ? false : $field['label_wrap'];
+
+		switch ( true ) {
+
+			case ( $field['hide_label'] && $field['label_after'] ) :
+
+				$string = '%5$s <label for="%1$s" class="%2$s" title="%3$s">%4$s</label>';
+
+				break;
+
+			case ( $field['hide_label'] ) :
+
+				$string = '<label for="%1$s" class="%2$s" title="%3$s">%4$s</label> %5$s';
+
+				break;
+
+			case ( $field['label_wrap'] && $field['label_after'] ) :
+
+				$string = '<label for="%1$s" class="%2$s" title="%3$s">%5$s %4$s</label>';
+
+				break;
+
+			case ( $field['label_wrap'] ) :
+
+				$string = '<label for="%1$s" class="%2$s" title="%3$s">%4$s %5$s</label>';
+
+				break;
+
+			case ( $field['label_after'] ) :
+
+				$string = '%5$s <label for="%1$s" class="%2$s" title="%3$s">%4$s</label>';
+
+				break;
+
+			default :
+
+				$string = '<label for="%1$s" class="%2$s" title="%3$s">%4$s</label> %5$s';
+
+		}
+
+		if ( $field['sortable'] ) {
+
+			$html = '<span>' . $html . '<span class="wpcw-widget-sortable-handle"><span class="dashicons dashicons-menu"></span></span></span>'; // xss ok
+
+		}
 
 		printf(
-			' <label for="%s" class="%s" title="%s">%s</label>',
+			$string,
 			esc_attr( $field['id'] ),
 			( $field['hide_label'] ) ? 'screen-reader-text' : '',
 			esc_attr( $field['description'] ),
-			esc_html( $field['label'] )
+			esc_html( $field['label'] ),
+			$html // xss ok
 		);
 
 	}
 
 	/**
 	 * Print label and wrapper
+	 *
 	 * @param array $field
 	 */
 	protected function before_form_field( array $field ) {
@@ -377,13 +428,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		if ( ! $field['label_after'] ) {
-
-			$this->print_label( $field );
-
-		}
-
-		if ( $field['sortable'] ) {
+		if ( $field['sortable'] && ! $field['label'] ) {
 
 			echo '<span>';
 
@@ -400,22 +445,18 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$this->before_form_field( $field );
 
-		printf(
-			'<input class="%s" id="%s" name="%s" type="%s" value="%s" placeholder="%s" autocomplete="off" %s>',
-			esc_attr( $field['class'] ),
+		$html = sprintf(
+			'<input type="%s" id="%s" name="%s" class="%s" value="%s" placeholder="%s" autocomplete="off" %s>',
+			esc_attr( $field['type'] ),
 			esc_attr( $field['id'] ),
 			esc_attr( $field['name'] ),
-			esc_attr( $field['type'] ),
+			esc_attr( $field['class'] ),
 			esc_attr( $field['value'] ),
 			esc_attr( $field['placeholder'] ),
 			esc_attr( $field['atts'] )
 		);
 
-		if ( $field['label_after'] ) {
-
-			$this->print_label( $field );
-
-		}
+		$this->print_label( $field, $html );
 
 		$this->after_form_field( $field );
 
@@ -430,7 +471,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$this->before_form_field( $field );
 
-		printf(
+		$html = sprintf(
 			'<select class="%s" id="%s" name="%s" autocomplete="off" %s>',
 			esc_attr( $field['class'] ),
 			esc_attr( $field['id'] ),
@@ -440,7 +481,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $field['select_options'] as $value => $name ) {
 
-			printf(
+			$html .= sprintf(
 				'<option value="%s" %s>%s</option>',
 				$value,
 				$field['value'] === $value ? 'selected' : '',
@@ -449,13 +490,9 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		echo '</select>';
+		$html .= '</select>';
 
-		if ( $field['label_after'] ) {
-
-			$this->print_label( $field );
-
-		}
+		$this->print_label( $field, $html );
 
 		$this->after_form_field( $field );
 
@@ -470,7 +507,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$this->before_form_field( $field );
 
-		printf(
+		$html = sprintf(
 			'<textarea class="%s" id="%s" name="%s" placeholder="%s">%s</textarea>',
 			esc_attr( $field['class'] ),
 			esc_attr( $field['id'] ),
@@ -478,6 +515,8 @@ abstract class Base_Widget extends \WP_Widget {
 			esc_attr( $field['placeholder'] ),
 			esc_textarea( $field['value'] )
 		);
+
+		$this->print_label( $field, $html );
 
 		$this->after_form_field( $field );
 
@@ -490,7 +529,7 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	protected function after_form_field( array $field ) {
 
-		if ( $field['sortable'] ) {
+		if ( $field['sortable'] && ! $field['label'] ) {
 
 			echo '<span class="wpcw-widget-sortable-handle"><span class="dashicons dashicons-menu"></span></span></span>';
 
@@ -603,36 +642,39 @@ abstract class Base_Widget extends \WP_Widget {
 	}
 
 	/**
-	 * Print footer script and styles
+	 * Enqueue admin scripts and styles
+	 *
+	 * @action admin_footer
 	 */
-	public function enqueue_scripts() {
+	public function admin_footer() {
 
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
-		wp_enqueue_style( 'jquery-timepicker', Plugin::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
+		wp_enqueue_style( 'font-awesome', "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome{$suffix}.css", [], '4.7.0' );
+		wp_enqueue_style( 'jquery-timepicker', Plugin::$assets_url . "css/jquery.timepicker{$suffix}.css", [], '1.11.9' );
 		wp_enqueue_style( 'wpcw-admin', Plugin::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
 
 		global $_wp_admin_css_colors;
 
 		$active_scheme = $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ];
 
-		$custom_css = "
-			.ui-timepicker-list .ui-timepicker-selected:hover,
-			.ui-timepicker-list li:hover,
-			li.ui-timepicker-selected {
-				background: {$active_scheme->colors[2]}
-			}
-		";
+		$custom_css = sprintf(
+			"li.ui-timepicker-selected, .ui-timepicker-list li:hover, .ui-timepicker-list .ui-timepicker-selected:hover { background: %s; }",
+			sanitize_hex_color( $active_scheme->colors[2] )
+		);
 
 		wp_add_inline_style( 'jquery-timepicker', $custom_css );
 
-		wp_enqueue_script( 'jquery-timepicker', Plugin::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
-		wp_enqueue_script( 'wpcw-admin', Plugin::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
+		wp_enqueue_script( 'jquery-timepicker', Plugin::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], '1.11.9', true );
+		wp_enqueue_script( 'wpcw-admin', Plugin::$assets_url . "js/admin{$suffix}.js", [ 'jquery', 'jquery-timepicker' ], Plugin::$version, true );
 
-		wp_localize_script( 'wpcw-admin', 'wpcw_admin', [
-			'time_format' => get_option( 'time_format' ),
-		] );
+		wp_localize_script(
+			'wpcw-admin',
+			'wpcw_admin',
+			[
+				'time_format' => (string) get_option( 'time_format' ),
+			]
+		);
 
 		if ( $GLOBALS['is_IE'] ) {
 

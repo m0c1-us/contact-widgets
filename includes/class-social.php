@@ -257,13 +257,15 @@ final class Social extends Base_Widget {
 	/**
 	 * Print label and wrapper
 	 *
-	 * @param array $field
+	 * @param array  $field
+	 * @param string $html (optional)
 	 */
-	protected function print_label( array $field ) {
+	protected function print_label( array $field, $html = '' ) {
 
 		if ( ! isset( $field['social'] ) ) {
 
-			parent::print_label( $field );
+			parent::print_label( $field, $html );
+
 			return;
 
 		}
