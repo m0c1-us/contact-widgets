@@ -11,9 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Social extends Base_Widget {
 
 	/**
+	 * Font Awesome Version
+	 *
+	 * @var string
+	 */
+	private $font_awesome_version;
+
+	/**
 	 * Widget constructor
 	 */
 	public function __construct() {
+
+		$this->font_awesome_version = '4.7.0';
 
 		$widget_options = [
 			'classname'                   => 'wpcw-widgets wpcw-widget-social',
@@ -26,6 +35,24 @@ final class Social extends Base_Widget {
 			__( 'Social Profiles', 'contact-widgets' ),
 			$widget_options
 		);
+
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+
+	}
+
+	/**
+	 * Enqueue social widget assets
+	 *
+	 * @param array $localize_script_data Localized data
+	 * @param array $dependencies         The script dependencies
+	 *
+	 * @since NEXT
+	 */
+	public function enqueue_scripts( $localize_script_data = [], $dependencies = [] ) {
+
+		wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/{$this->font_awesome_version}/css/font-awesome.min.css", [], $this->font_awesome_version );
+
+		parent::enqueue_scripts( [], [ 'font-awesome' ] );
 
 	}
 
@@ -183,7 +210,7 @@ final class Social extends Base_Widget {
 	 */
 	public function front_end_enqueue_scripts() {
 
-		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
+		wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/{$this->font_awesome_version}/css/font-awesome.min.css", [], $this->font_awesome_version );
 
 		parent::front_end_enqueue_scripts();
 

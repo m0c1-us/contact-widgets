@@ -68,6 +68,45 @@ final class Hours extends Base_Widget {
 		$this->max_time_blocks = (int) apply_filters( 'wpcw_widget_hours_max_time_blocks', $this->max_time_blocks );
 		$this->max_time_blocks = ( $this->max_time_blocks > 0 ) ? $this->max_time_blocks : 1; // Must be greater than 0
 
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+
+	}
+
+	/**
+	 * Enqueue timepicker assets
+	 *
+	 * @param array $localize_script_data Localized data
+	 * @param array $dependencies         The script dependencies
+	 *
+	 * @since NEXT
+	 */
+	public function enqueue_scripts( $localize_script_data = [], $dependencies = [] ) {
+
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_style( 'jquery-timepicker', Plugin::$assets_url . "css/jquery.timepicker{$suffix}.css", [], '1.11.9' );
+
+		global $_wp_admin_css_colors;
+
+		$active_scheme = $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ];
+
+		$custom_css = "
+			.ui-timepicker-list .ui-timepicker-selected:hover,
+			.ui-timepicker-list li:hover,
+			li.ui-timepicker-selected {
+				background: {$active_scheme->colors[2]}
+			}
+		";
+
+		wp_add_inline_style( 'jquery-timepicker', $custom_css );
+
+		wp_enqueue_script( 'jquery-timepicker', Plugin::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
+
+		parent::enqueue_scripts(
+			[ 'time_format' => get_option( 'time_format' ) ],
+			[ 'jquery-timepicker' ]
+		);
+
 	}
 
 	/**

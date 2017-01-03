@@ -76,7 +76,7 @@ abstract class Base_Widget extends \WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		add_action( 'admin_footer',                            [ $this, 'enqueue_scripts' ] );
+		add_action( 'admin_enqueue_scripts',                   [ $this, 'enqueue_scripts' ] );
 		add_action( 'customize_controls_print_footer_scripts', [ $this, 'print_customizer_scripts' ] );
 
 		?>
@@ -604,35 +604,23 @@ abstract class Base_Widget extends \WP_Widget {
 
 	/**
 	 * Print footer script and styles
+	 *
+	 * @param array $localize_script_data Localized data
+	 * @param array $dependencies         The script dependencies
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $localize_script_data = [], $dependencies = [] ) {
 
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
-		wp_enqueue_style( 'jquery-timepicker', Plugin::$assets_url . "css/jquery.timepicker{$suffix}.css", [ 'font-awesome' ], '1.11.9' );
-		wp_enqueue_style( 'wpcw-admin', Plugin::$assets_url . "css/admin{$suffix}.css", [ 'jquery-timepicker' ], Plugin::$version );
+		wp_enqueue_style( 'wpcw-admin', Plugin::$assets_url . "css/admin{$suffix}.css", $dependencies, Plugin::$version );
 
-		global $_wp_admin_css_colors;
+		wp_enqueue_script( 'wpcw-admin', Plugin::$assets_url . "js/admin{$suffix}.js", $dependencies, Plugin::$version, true );
 
-		$active_scheme = $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ];
+		if ( $data = array_merge_recursive( [], (array) $localize_script_data ) ) {
 
-		$custom_css = "
-			.ui-timepicker-list .ui-timepicker-selected:hover,
-			.ui-timepicker-list li:hover,
-			li.ui-timepicker-selected {
-				background: {$active_scheme->colors[2]}
-			}
-		";
+			wp_localize_script( 'wpcw-admin', 'wpcw_admin', $data );
 
-		wp_add_inline_style( 'jquery-timepicker', $custom_css );
-
-		wp_enqueue_script( 'jquery-timepicker', Plugin::$assets_url . "js/jquery.timepicker{$suffix}.js", [ 'jquery' ], Plugin::$version, true, '1.11.9' );
-		wp_enqueue_script( 'wpcw-admin', Plugin::$assets_url . "js/admin{$suffix}.js", [ 'jquery-timepicker' ], Plugin::$version, true );
-
-		wp_localize_script( 'wpcw-admin', 'wpcw_admin', [
-			'time_format' => get_option( 'time_format' ),
-		] );
+		}
 
 		if ( $GLOBALS['is_IE'] ) {
 
