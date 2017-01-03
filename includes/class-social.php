@@ -56,9 +56,7 @@ final class Social extends Base_Widget {
 
 		foreach ( $fields as $key => $field ) {
 
-			$deprecated = ( isset( $field['deprecated'] ) && $field['deprecated'] );
-
-			if ( ! isset( $field['social'] ) || $deprecated ) {
+			if ( ! isset( $field['social'] ) || $this->is_social_media_deprecated( $field ) ) {
 
 				continue;
 
@@ -149,9 +147,7 @@ final class Social extends Base_Widget {
 
 		foreach ( $fields as $field ) {
 
-			$deprecated = ( isset( $field['deprecated'] ) && $field['deprecated'] );
-
-			if ( empty( $field['value'] ) || ! $field['show_front_end'] || $deprecated ) {
+			if ( empty( $field['value'] ) || ! $field['show_front_end'] || $this->is_social_media_deprecated( $field ) ) {
 
 				continue;
 
@@ -273,6 +269,21 @@ final class Social extends Base_Widget {
 			esc_attr( $field['icon'] ),
 			esc_html( $field['label'] )
 		);
+
+	}
+
+	/**
+	 * Is the social media selection deprecated
+	 *
+	 * @param  array  $field Field array
+	 *
+	 * @return boolean
+	 *
+	 * @since NEXT
+	 */
+	protected function is_social_media_deprecated( $field ) {
+
+		return ( isset( $field['deprecated'] ) && $field['deprecated'] );
 
 	}
 
