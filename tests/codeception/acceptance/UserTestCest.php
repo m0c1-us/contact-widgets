@@ -37,7 +37,7 @@ class AdminTestCest {
 		$I->click( [ 'name' => 'wp-submit' ] );
 
 		// Wait for page to load [Hack for Safari and IE]
-		$I->waitForElementVisible( [ 'css' => 'body.index-php' ], 5 );
+		$I->waitForElementVisible( [ 'css' => 'body.index-php' ] );
 
 		$cookie = $I->grabCookie( AUTH_COOKIE );
 
@@ -67,7 +67,7 @@ class AdminTestCest {
 
 		$selector = '#sidebar-1 div[id*=wpcw_contact]';
 
-		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ] );
 
 		/**
 		 * Fill all fields
@@ -84,7 +84,7 @@ class AdminTestCest {
 		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
 		// Wait for all ajax request to finish
-		$I->waitForJS( 'return jQuery.active == 0;', 5 );
+		$I->waitForJS( 'return jQuery.active == 0;' );
 
     }
 
@@ -137,7 +137,7 @@ class AdminTestCest {
 
 		$selector = '#sidebar-1 div[id*=wpcw_social]';
 
-		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ], 3 );
+		$I->waitForElementVisible( [ 'css' => "{$selector} .widget-inside" ] );
 
 		/**
 		 * Fill all fields
@@ -156,7 +156,7 @@ class AdminTestCest {
 		$I->click( [ 'css' => "{$selector} form input.button-primary" ] );
 
 		// Wait for all ajax request to finish
-		$I->waitForJS( 'return jQuery.active == 0;', 5 );
+		$I->waitForJS( 'return jQuery.active == 0;' );
 
 	}
 
