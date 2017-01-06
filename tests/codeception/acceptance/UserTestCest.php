@@ -76,7 +76,7 @@ class AdminTestCest {
 		$I->fillField( [ 'css' => "{$selector} form .email input" ], 'info@local.dev' );
 		$I->fillField( [ 'css' => "{$selector} form .phone input" ], '555-555-5555' );
 		$I->fillField( [ 'css' => "{$selector} form .fax input" ], '555-555-5556' );
-		$I->fillField( [ 'css' => "{$selector} form .address textarea" ], '123 santa monica blvd<br> Los Angeles' );
+		$I->fillField( [ 'css' => "{$selector} form .address textarea" ], '1234 Santa Monica Blvd<br>Beverly Hills, CA 90210' );
 
 		/**
 		 * Submit widget form
@@ -106,10 +106,10 @@ class AdminTestCest {
 		$I->canSee( 'info@local.dev', [ 'css' => '.wpcw-widget-contact ul li' ] );
 		$I->canSee( '555-555-5555', [ 'css' => '.wpcw-widget-contact ul li' ] );
 		$I->canSee( '555-555-5556', [ 'css' => '.wpcw-widget-contact ul li' ] );
-		$I->canSee( '123 santa monica blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
+		$I->canSee( '1234 Santa Monica Blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
 
 		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-contact ul li.has-map' ] );
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src="https://www.google.com/maps?q=123+santa+monica+blvd+Los+Angeles&output=embed&hl=en"]' ] );
+		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src="https://www.google.com/maps?q=1234+Santa+Monica+Blvd%0D%0ABeverly+Hills%2C+CA+90210&output=embed&hl=en"]' ] );
 
 	}
 
