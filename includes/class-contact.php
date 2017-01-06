@@ -138,7 +138,7 @@ final class Contact extends Base_Widget {
 			add_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] );
 
 			printf(
-				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s" class="wpcw-widget-contact-map"></iframe></li>',
+				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s" frameborder="0" class="wpcw-widget-contact-map"></iframe></li>',
 				( $this->defer_map_iframes ) ? 'src="" data-src' : 'src',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
 				urlencode( $this->get_google_maps_locale() )
