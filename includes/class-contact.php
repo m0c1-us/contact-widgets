@@ -287,16 +287,16 @@ final class Contact extends Base_Widget {
 
 		?>
 		<script type="text/javascript">
-		window.onload = ( function() {
-			var iframes = document.getElementsByTagName( 'iframe' );
-			for ( i = 0; i < iframes.length; i++ ) {
-				var src = iframes[i].getAttribute( 'data-src' );
-				if ( src && 'wpcw-widget-contact-map' === iframes[i].getAttribute( 'class' ) ) {
-					iframes[i].setAttribute( 'src', src );
-					iframes[i].removeAttribute( 'data-src' );
+			window.onload = ( function() {
+				var cw_map = document.getElementsByClassName( 'wpcw-widget-contact-map' );
+				for ( var i = 0; i < cw_map.length; i++ ) {
+					var src = cw_map[i].getAttribute( 'data-src' );
+					if ( src ) {
+						cw_map[i].setAttribute( 'src', src );
+						cw_map[i].removeAttribute( 'data-src' );
+					}
 				}
-			}
-		} );
+			} );
 		</script>
 		<?php
 
