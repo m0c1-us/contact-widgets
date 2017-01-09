@@ -196,8 +196,11 @@ final class Contact extends Base_Widget {
 				 * Filter Google Map default zoom level of 14 to something else.
 				 *
 				 * @since NEXT
+				 *
+				 * @var int
+				 * @param array $instance Widget instance
 				 */
-				'zoom'           => apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ),
+				'zoom'           => absint( apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ) ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
 				'show_front_end' => false,
 			],
