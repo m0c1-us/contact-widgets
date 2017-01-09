@@ -192,7 +192,12 @@ final class Contact extends Base_Widget {
 				'type'           => 'checkbox',
 				'sortable'       => false,
 				'value'          => 'yes',
-				'zoom'           => apply_filters( 'wpcw_widget_contact_map_zoom', 14 ),
+				/**
+				 * Filter Google Map default zoom level of 14 to something else.
+				 *
+				 * @since NEXT
+				 */
+				'zoom'           => apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
 				'show_front_end' => false,
 			],
