@@ -135,7 +135,11 @@ final class Contact extends Base_Widget {
 
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
-			add_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] );
+			if ( $this->defer_map_iframes && ! has_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] ) ) {
+
+				add_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] );
+
+			}
 
 			printf(
 				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s" frameborder="0" class="wpcw-widget-contact-map"></iframe></li>',
@@ -278,12 +282,6 @@ final class Contact extends Base_Widget {
 	 * @since  NEXT
 	 */
 	public function defer_map_iframes_js() {
-
-		if ( ! $this->defer_map_iframes ) {
-
-			return;
-
-		}
 
 		?>
 		<script type="text/javascript">
