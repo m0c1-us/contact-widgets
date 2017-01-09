@@ -117,9 +117,10 @@ final class Contact extends Base_Widget {
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
 			printf(
-				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed&hl=%s" frameborder="0"></iframe></li>',
+				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed&hl=%s&z=%d" frameborder="0"></iframe></li>',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
-				urlencode( $this->get_google_maps_locale() )
+				urlencode( $this->get_google_maps_locale() ),
+				absint( $fields['map']['zoom'] )
 			);
 
 		}
@@ -191,6 +192,7 @@ final class Contact extends Base_Widget {
 				'type'           => 'checkbox',
 				'sortable'       => false,
 				'value'          => 'yes',
+				'zoom'           => apply_filters( 'wpcw_widget_contact_map_zoom', 14 ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
 				'show_front_end' => false,
 			],
