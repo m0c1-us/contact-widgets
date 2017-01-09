@@ -38,13 +38,13 @@ final class Contact extends Base_Widget {
 
 		/**
 		 * Filter whether to defer Google Maps iframes until
-		 * pages have fully loaded.
+		 * pages have fully loaded. Will always be false on customize preview.
 		 *
 		 * @since NEXT
 		 *
 		 * @var bool
 		 */
-		$this->defer_map_iframes = (bool) apply_filters( 'wpcw_contact_defer_map_iframes', $this->defer_map_iframes );
+		$this->defer_map_iframes = is_customize_preview() ? false : (bool) apply_filters( 'wpcw_contact_defer_map_iframes', $this->defer_map_iframes );
 
 	}
 
