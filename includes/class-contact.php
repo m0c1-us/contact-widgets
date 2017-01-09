@@ -38,7 +38,9 @@ final class Contact extends Base_Widget {
 
 		/**
 		 * Filter whether to defer Google Maps iframes until
-		 * pages have fully loaded. Will always be false on customize preview.
+		 * pages have fully loaded.
+		 *
+		 * Note: Will always be `false` on customize preview.
 		 *
 		 * @since NEXT
 		 *
