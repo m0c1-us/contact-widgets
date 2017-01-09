@@ -197,8 +197,9 @@ final class Contact extends Base_Widget {
 				 *
 				 * @since NEXT
 				 *
-				 * @var int
 				 * @param array $instance Widget instance
+				 *
+				 * @var int
 				 */
 				'zoom'           => absint( apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ) ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
