@@ -223,7 +223,7 @@ class AdminTestCest {
 
 		$I->canSeeInCurrentUrl( 'wp-admin/customize.php' );
 
-		$I->wait( 1 ); // The animation takes a little bit of time
+		$I->wait( 3 ); // The animation takes a little bit of time
 
 		$I->canSeeElement( [ 'class' => 'wpcw-widget-social' ] );
 
