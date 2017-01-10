@@ -45,9 +45,10 @@ $fields = [
 		'select'  => $username,
 	],
 	'youtube'     => [
-		'label'   => __( 'YouTube', 'contact-widgets' ),
-		'default' => "https://www.youtube.com/user/{$username}",
-		'select'  => $username,
+		'label'      => __( 'YouTube', 'contact-widgets' ),
+		'default'    => "https://www.youtube.com/user/{$username}",
+		'select'     => $username,
+		'deprecated' => true,
 	],
 	'vimeo'       => [
 		'label'   => __( 'Vimeo', 'contact-widgets' ),
