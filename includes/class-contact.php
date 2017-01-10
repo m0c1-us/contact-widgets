@@ -11,6 +11,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Contact extends Base_Widget {
 
 	/**
+	 * Defer Google Maps iframes until pages have fully loaded.
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	 */
+	private $defer_map_iframes = true;
+
+	/**
 	 * Widget constructor
 	 */
 	public function __construct() {
@@ -26,6 +35,18 @@ final class Contact extends Base_Widget {
 			__( 'Contact Details', 'contact-widgets' ),
 			$widget_options
 		);
+
+		/**
+		 * Filter whether to defer Google Maps iframes until
+		 * pages have fully loaded.
+		 *
+		 * Note: Will always be `false` on customize preview.
+		 *
+		 * @since NEXT
+		 *
+		 * @var bool
+		 */
+		$this->defer_map_iframes = is_customize_preview() ? false : (bool) apply_filters( 'wpcw_contact_defer_map_iframes', $this->defer_map_iframes );
 
 	}
 
@@ -116,10 +137,18 @@ final class Contact extends Base_Widget {
 
 		if ( 'yes' === $instance['map']['value'] && ! empty( $fields['address']['value'] ) ) {
 
+			if ( $this->defer_map_iframes && ! has_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] ) ) {
+
+				add_action( 'wp_footer', [ $this, 'defer_map_iframes_js' ] );
+
+			}
+
 			printf(
-				'<li class="has-map"><iframe src="//www.google.com/maps?q=%s&output=embed&hl=%s"></iframe></li>',
+				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s&z=%d" frameborder="0" class="wpcw-widget-contact-map"></iframe></li>',
+				( $this->defer_map_iframes ) ? 'src="" data-src' : 'src',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
-				urlencode( $this->get_google_maps_locale() )
+				urlencode( $this->get_google_maps_locale() ),
+				absint( $fields['map']['zoom'] )
 			);
 
 		}
@@ -191,6 +220,16 @@ final class Contact extends Base_Widget {
 				'type'           => 'checkbox',
 				'sortable'       => false,
 				'value'          => 'yes',
+				/**
+				 * Filter Google Map default zoom level of 14 to something else.
+				 *
+				 * @since NEXT
+				 *
+				 * @param array $instance Widget instance
+				 *
+				 * @var int
+				 */
+				'zoom'           => absint( apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ) ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
 				'show_front_end' => false,
 			],
@@ -246,6 +285,31 @@ final class Contact extends Base_Widget {
 		}
 
 		return $locale;
+
+	}
+
+	/**
+	 * Defer Google Maps iframes with JavaScript.
+	 *
+	 * @action wp_footer
+	 * @since  NEXT
+	 */
+	public function defer_map_iframes_js() {
+
+		?>
+		<script type="text/javascript">
+			window.onload = ( function() {
+				var maps = document.getElementsByClassName( 'wpcw-widget-contact-map' );
+				for ( var i = 0; i < maps.length; i++ ) {
+					var src = maps[i].getAttribute( 'data-src' );
+					if ( src ) {
+						maps[i].setAttribute( 'src', src );
+						maps[i].removeAttribute( 'data-src' );
+					}
+				}
+			} );
+		</script>
+		<?php
 
 	}
 

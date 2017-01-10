@@ -24,6 +24,8 @@ This plugin adds two new widgets to your WordPress website:
 
 Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
 
+[![Play video on YouTube](https://i1.ytimg.com/vi/Y3NsrWHd_us/hqdefault.jpg)](https://www.youtube.com/watch?v=Y3NsrWHd_us)
+
 **Languages Supported:**
 
 * English
