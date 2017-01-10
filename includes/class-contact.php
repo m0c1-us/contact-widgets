@@ -13,7 +13,7 @@ final class Contact extends Base_Widget {
 	/**
 	 * Defer Google Maps iframes until pages have fully loaded.
 	 *
-	 * @since NEXT
+	 * @since 1.4.0
 	 *
 	 * @var bool
 	 */
@@ -42,7 +42,7 @@ final class Contact extends Base_Widget {
 		 *
 		 * Note: Will always be `false` on customize preview.
 		 *
-		 * @since NEXT
+		 * @since 1.4.0
 		 *
 		 * @var bool
 		 */
@@ -223,7 +223,7 @@ final class Contact extends Base_Widget {
 				/**
 				 * Filter Google Map default zoom level of 14 to something else.
 				 *
-				 * @since NEXT
+				 * @since 1.4.0
 				 *
 				 * @param array $instance Widget instance
 				 *
@@ -292,7 +292,7 @@ final class Contact extends Base_Widget {
 	 * Defer Google Maps iframes with JavaScript.
 	 *
 	 * @action wp_footer
-	 * @since  NEXT
+	 * @since  1.4.0
 	 */
 	public function defer_map_iframes_js() {
 
