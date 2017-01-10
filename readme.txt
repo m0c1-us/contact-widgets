@@ -118,6 +118,7 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 * Defer iframe loading by default
 * Remove frameborder from iframe
 * Add filter to change zoom level of map
+* Deprecate YouTube link while maintaining backward compatibility
 
 = 1.3.3 - October 14, 2016 =
 
