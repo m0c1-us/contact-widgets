@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: contact-widgets 1.3.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-09 19:06+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-contact-widgets/issues\n"
+"POT-Creation-Date: 2017-01-10 17:47:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,63 +17,76 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/class-base-widget.php:476
+#: contact-widgets.php:93
+msgid ""
+"Contact widgets requires PHP version %s or higher. Please deactivate the "
+"plugin and contact your system administrator."
+msgstr ""
+"Hubungi widget memerlukan versi PHP %s atau lebih tinggi. Sila nyahaktif "
+"pasang masuk dan hubungi pentadbir sistem anda."
+
+#: includes/class-base-widget.php:481
 msgid "Edit"
 msgstr "Edit"
 
-#: includes/class-contact.php:20
+#: includes/class-contact.php:29
 msgid "Display your contact information."
 msgstr "Papar maklumat hubungan anda."
 
-#: includes/class-contact.php:26
+#: includes/class-contact.php:35
 msgid "Contact Details"
 msgstr "Butiran Hubungan"
 
-#: includes/class-contact.php:144 includes/class-social.php:217
+#: includes/class-contact.php:173 includes/class-social.php:217
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: includes/class-contact.php:145 includes/class-social.php:218
+#: includes/class-contact.php:174 includes/class-social.php:218
 msgid "The title of widget. Leave empty for no title."
 msgstr "Tajuk widget Biarkan kosong untuk yang tiada tajuk"
 
-#: includes/class-contact.php:150
+#: includes/class-contact.php:179
 msgid "Email:"
 msgstr "E-mel:"
 
-#: includes/class-contact.php:157
+#: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
 msgstr "Alamat e-mel di mana pelawat halaman utama boleh menghubungi anda"
 
-#: includes/class-contact.php:160
+#: includes/class-contact.php:189
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: includes/class-contact.php:162
+#: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Nombor telefon yang pelawat halaman utama boleh panggil jika mereka mempunyai soalan."
+msgstr ""
+"Nombor telefon yang pelawat halaman utama boleh panggil jika mereka "
+"mempunyai soalan."
 
-#: includes/class-contact.php:165
+#: includes/class-contact.php:194
 msgid "Fax:"
 msgstr "Faks:"
 
-#: includes/class-contact.php:167
+#: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr "Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar dokumen penting,"
+msgstr ""
+"Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar "
+"dokumen penting,"
 
-#: includes/class-contact.php:170
+#: includes/class-contact.php:199
 msgid "Address:"
 msgstr "Alamat:"
 
-#: includes/class-contact.php:175
+#: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
+msgstr ""
+"Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
 
-#: includes/class-contact.php:178 includes/class-social.php:228
+#: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"
 msgstr "Paparkan label?"
 
-#: includes/class-contact.php:188
+#: includes/class-contact.php:217
 msgid "Display map of address?"
 msgstr "Paparkan peta alamat?"
 
@@ -85,8 +98,150 @@ msgstr "Papar pautan ke profil media sosial anda."
 msgid "Social Profiles"
 msgstr "Profil Sosial"
 
+#: includes/social-networks.php:17
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/social-networks.php:22
+msgid "Twitter"
+msgstr "Twitter"
+
+#: includes/social-networks.php:28
+msgid "Google+"
+msgstr "Google+"
+
+#: includes/social-networks.php:34
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/social-networks.php:39
+msgid "RSS feed"
+msgstr ""
+
+#: includes/social-networks.php:43
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: includes/social-networks.php:48
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/social-networks.php:53
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: includes/social-networks.php:58
+msgid "Flickr"
+msgstr "Flickr"
+
+#: includes/social-networks.php:63
+msgid "500px"
+msgstr "500px"
+
+#: includes/social-networks.php:68
+msgid "Foursquare"
+msgstr "Foursquare"
+
+#: includes/social-networks.php:73
+msgid "GitHub"
+msgstr "GitHub"
+
+#: includes/social-networks.php:78
+msgid "Slack"
+msgstr "Slack"
+
+#: includes/social-networks.php:83
+msgid "Skype"
+msgstr "Skype"
+
+#: includes/social-networks.php:90
+msgid "SoundCloud"
+msgstr "SoundCloud"
+
+#: includes/social-networks.php:95
+msgid "TripAdvisor"
+msgstr "TripAdvisor"
+
+#: includes/social-networks.php:99
+msgid "WordPress"
+msgstr "WordPress"
+
+#: includes/social-networks.php:104
+msgid "Yelp"
+msgstr "Yelp"
+
+#: includes/social-networks.php:109
+msgid "Amazon"
+msgstr "Amazon"
+
+#: includes/social-networks.php:113
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/social-networks.php:118
+msgid "Vine"
+msgstr "Vine"
+
+#: includes/social-networks.php:123
+msgid "reddit"
+msgstr "reddit"
+
+#: includes/social-networks.php:128
+msgid "XING"
+msgstr "XING"
+
+#: includes/social-networks.php:132
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: includes/social-networks.php:137
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: includes/social-networks.php:141
+msgid "WeChat"
+msgstr "WeChat"
+
+#: includes/social-networks.php:145
+msgid "Medium"
+msgstr "Medium"
+
+#: includes/social-networks.php:150
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: includes/social-networks.php:155
+msgid "Twitch"
+msgstr "Twitch"
+
+#: includes/social-networks.php:160
+msgid "VK"
+msgstr "VK"
+
+#: includes/social-networks.php:164
+msgid "Trello"
+msgstr "Trello"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "Contact Widgets"
+msgstr "Butiran Hubungan"
+
+#. Description of the plugin/theme
+msgid ""
+"Beautifully display social media and contact information on your website "
+"with these simple widgets."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "GoDaddy"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://godaddy.com"
+msgstr ""
+
 #: includes/class-social.php:163
-#, php-format
 msgctxt ""
 "1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
 "Facebook)"
@@ -112,132 +267,3 @@ msgstr "syarikat "
 msgctxt "Must be lowercase and use url-safe characters"
 msgid "board"
 msgstr "papan"
-
-#: includes/social-networks.php:17
-msgid "Facebook"
-msgstr "Facebook"
-
-#: includes/social-networks.php:22
-msgid "Twitter"
-msgstr "Twitter"
-
-#: includes/social-networks.php:28
-msgid "Google+"
-msgstr "Google+"
-
-#: includes/social-networks.php:34
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: includes/social-networks.php:39
-msgid "Pinterest"
-msgstr "Pinterest"
-
-#: includes/social-networks.php:44
-msgid "YouTube"
-msgstr "YouTube"
-
-#: includes/social-networks.php:49
-msgid "Vimeo"
-msgstr "Vimeo"
-
-#: includes/social-networks.php:54
-msgid "Flickr"
-msgstr "Flickr"
-
-#: includes/social-networks.php:59
-msgid "500px"
-msgstr "500px"
-
-#: includes/social-networks.php:64
-msgid "Foursquare"
-msgstr "Foursquare"
-
-#: includes/social-networks.php:69
-msgid "GitHub"
-msgstr "GitHub"
-
-#: includes/social-networks.php:74
-msgid "Slack"
-msgstr "Slack"
-
-#: includes/social-networks.php:79
-msgid "Skype"
-msgstr "Skype"
-
-#: includes/social-networks.php:85
-msgid "SoundCloud"
-msgstr "SoundCloud"
-
-#: includes/social-networks.php:90
-msgid "TripAdvisor"
-msgstr "TripAdvisor"
-
-#: includes/social-networks.php:94
-msgid "WordPress"
-msgstr "WordPress"
-
-#: includes/social-networks.php:99
-msgid "Yelp"
-msgstr "Yelp"
-
-#: includes/social-networks.php:104
-msgid "Amazon"
-msgstr "Amazon"
-
-#: includes/social-networks.php:108
-msgid "Instagram"
-msgstr "Instagram"
-
-#: includes/social-networks.php:113
-msgid "Vine"
-msgstr "Vine"
-
-#: includes/social-networks.php:118
-msgid "reddit"
-msgstr "reddit"
-
-#: includes/social-networks.php:123
-msgid "XING"
-msgstr "XING"
-
-#: includes/social-networks.php:127
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: includes/social-networks.php:132
-msgid "WhatsApp"
-msgstr "WhatsApp"
-
-#: includes/social-networks.php:136
-msgid "WeChat"
-msgstr "WeChat"
-
-#: includes/social-networks.php:140
-msgid "Medium"
-msgstr "Medium"
-
-#: includes/social-networks.php:145
-msgid "Dribbble"
-msgstr "Dribbble"
-
-#: includes/social-networks.php:150
-msgid "Twitch"
-msgstr "Twitch"
-
-#: includes/social-networks.php:155
-msgid "VK"
-msgstr "VK"
-
-#: includes/social-networks.php:159
-msgid "Trello"
-msgstr "Trello"
-
-#: contact-widgets.php:90
-#, php-format
-msgid ""
-"Contact widgets requires PHP version %s or higher. Please deactivate the "
-"plugin and contact your system administrator."
-msgstr ""
-"Hubungi widget memerlukan versi PHP %s atau lebih tinggi. Sila nyahaktif "
-"pasang masuk dan hubungi pentadbir sistem anda."
