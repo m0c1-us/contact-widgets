@@ -12,12 +12,48 @@ module.exports = function(grunt) {
 
 	}
 
-	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
-
-	// Project configuration.
 	grunt.initConfig({
 
 		pkg: pkg,
+
+		clean: {
+			build: [ BUILD_DIR + '*' ],
+			options: {
+				force: true
+			}
+		},
+
+		copy: {
+			files: {
+				cwd: '.',
+				expand: true,
+				src: [
+					pkg.name + '.php',
+					'readme.txt',
+					'languages/*.mo',
+					'includes/**',
+					'assets/**'
+				],
+				dest: BUILD_DIR
+			}
+		},
+
+		cssjanus: {
+			theme: {
+				options: {
+					swapLtrRtlInUrl: false
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'assets/css',
+						src: [ '*.css', '!*-rtl.css', '!*.min.css', '!*-rtl.min.css' ],
+						dest: 'assets/css',
+						ext: '-rtl.css'
+					}
+				]
+			}
+		},
 
 		cssmin: {
 			options: {
@@ -26,52 +62,61 @@ module.exports = function(grunt) {
 				processImport: false
 			},
 			target: {
-				files: [{
-					expand: true,
-					cwd: 'assets/css',
-					src: ['*.css', '!*.min.css'],
-					dest: 'assets/css',
-					ext: '.min.css'
-				}]
+				files: [
+					{
+						expand: true,
+						cwd: 'assets/css',
+						src: [ '*.css', '!*.min.css' ],
+						dest: 'assets/css',
+						ext: '.min.css'
+					}
+				]
 			}
 		},
 
-		uglify: {
-			options: {
-				ASCIIOnly: true
-			},
-			core: {
-				expand: true,
-				cwd: 'assets/js',
-				dest: 'assets/js',
-				ext: '.min.js',
-				src: ['*.js', '!*.min.js']
-			}
-		},
-
-		watch: {
-			css: {
-				files: ['*.css', '!*.min.css'],
+		devUpdate: {
+			main: {
 				options: {
-					cwd: 'assets/css',
-					nospawn: true
-				},
-				tasks: ['cssmin']
-			},
-			uglify: {
-				files: ['*.js', '!*.js.css'],
-				options: {
-					cwd: 'assets/js',
-					nospawn: true
-				},
-				tasks: ['uglify']
+					updateType: 'force', // just report outdated packages
+					reportUpdated: false, // don't report up-to-date packages
+					semver: true, // stay within semver when updating
+					packages: {
+						devDependencies: true, // only check for devDependencies
+						dependencies: false
+					},
+					packageJson: null, // use matchdep default findup to locate package.json
+					reportOnlyPkgs: [] // use updateType action on all packages
+				}
 			}
 		},
 
-		clean: {
-			build: [ BUILD_DIR + '*' ],
-			options: {
-				force: true
+		jshint: {
+			all: [ 'Gruntfile.js', 'assets/js/**/*.js', '!assets/js/**/*.min.js' ]
+		},
+
+		makepot: {
+			target: {
+				options: {
+					domainPath: 'languages/',
+					include: [ pkg.name + '.php', 'includes/.+\.php' ],
+					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
+					potHeaders: {
+						'x-poedit-keywordslist': true
+					},
+					processPot: function( pot, options ) {
+						pot.headers['report-msgid-bugs-to'] = pkg.bugs.url;
+						return pot;
+					},
+					type: 'wp-plugin',
+					updatePoFiles: true
+				}
+			}
+		},
+
+		po2mo: {
+			files: {
+				src: 'languages/*.po',
+				expand: true
 			}
 		},
 
@@ -104,29 +149,38 @@ module.exports = function(grunt) {
 					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
 					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
 				} ]
-			},
-			pot:{
-				src: 'languages/' + pkg.name + '.pot',
-				overwrite: true,
-				replacements: [ {
-					from: 'charset=CHARSET',
-					to: 'charset=UTF-8'
-				} ]
 			}
 		},
 
-		copy: {
-			files: {
-				cwd: '.',
+		uglify: {
+			options: {
+				ASCIIOnly: true
+			},
+			core: {
 				expand: true,
-				src: [
-					pkg.name + '.php',
-					'readme.txt',
-					'languages/*.mo',
-					'includes/**',
-					'assets/**'
-				],
-				dest: BUILD_DIR
+				cwd: 'assets/js',
+				dest: 'assets/js',
+				ext: '.min.js',
+				src: [ '*.js', '!*.min.js' ]
+			}
+		},
+
+		watch: {
+			css: {
+				files: [ '*.css', '!*.min.css' ],
+				options: {
+					cwd: 'assets/css',
+					nospawn: true
+				},
+				tasks: [ 'cssmin' ]
+			},
+			uglify: {
+				files: [ '*.js', '!*.js.css' ],
+				options: {
+					cwd: 'assets/js',
+					nospawn: true
+				},
+				tasks: [ 'uglify' ]
 			}
 		},
 
@@ -139,38 +193,18 @@ module.exports = function(grunt) {
 					svn_user: svn_username
 				}
 			}
-		},
-
-		pot: {
-			options: {
-				omit_header: false,
-				text_domain: pkg.name,
-				encoding: 'UTF-8',
-				dest: 'languages/',
-				keywords: [ '__', '_e', '__ngettext:1,2', '_n:1,2', '__ngettext_noop:1,2', '_n_noop:1,2', '_c', '_nc:4c,1,2', '_x:1,2c', '_nx:4c,1,2', '_nx_noop:4c,1,2', '_ex:1,2c', 'esc_attr__', 'esc_attr_e', 'esc_attr_x:1,2c', 'esc_html__', 'esc_html_e', 'esc_html_x:1,2c' ],
-				msgmerge: true
-			},
-			files: {
-				src: [ 'includes/*.php', pkg.name + '.php' ],
-				expand: true
-			}
-		},
-
-		po2mo: {
-			files: {
-				src: 'languages/*.po',
-				expand: true
-			}
 		}
 
 	});
 
-	// Default task(s).
-	grunt.registerTask('default', ['cssmin', 'uglify']);
-	grunt.registerTask('version', ['replace'] );
-	grunt.registerTask('build', ['default', 'version', 'clean', 'copy']);
-	grunt.registerTask('deploy', ['build', 'wp_deploy', 'clean']);
-	grunt.registerTask('make_pot', ['pot', 'replace:pot'] );
-	grunt.registerTask('update_translation', ['pot','po2mo']);
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
+
+	grunt.registerTask( 'default', [ 'cssjanus', 'cssmin', 'lint', 'uglify' ] );
+	grunt.registerTask( 'lint', [ 'jshint' ] );
+	grunt.registerTask( 'version', [ 'replace' ] );
+	grunt.registerTask( 'build', [ 'default', 'version', 'clean', 'copy' ] );
+	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean' ] );
+	grunt.registerTask( 'update-pot', [ 'makepot' ] );
+	grunt.registerTask( 'update-mo', [ 'po2mo' ] );
 
 };
