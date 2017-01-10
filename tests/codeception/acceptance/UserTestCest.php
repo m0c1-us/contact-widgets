@@ -145,6 +145,9 @@ class AdminTestCest {
 		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests social' );
 
 		$this->selectSocialIcon( $I, 'facebook', $selector );
+
+		$I->wait( 1 );
+
 		$this->selectSocialIcon( $I, 'twitter', $selector );
 
 		// Let's test reordering so facebook should be first
@@ -192,9 +195,10 @@ class AdminTestCest {
 
 		$I->canSee( 'Acceptance tests social', [ 'css' => '.wpcw-widget-social .widget-title' ] );
 
-		// Check that Facebook is indeed the first element return in the list
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
+		$I->executeJS('jQuery(".wpcw-widget-social ul li:first-child")[0].scrollIntoView();');
+
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="twitter"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="facebook"]' ] );
 
 	}
 

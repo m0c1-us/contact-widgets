@@ -113,6 +113,12 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 == Changelog ==
 
+= 1.4.0 - January 10, 2017 =
+
+* Defer iframe loading by default
+* Remove frameborder from iframe
+* Add filter to change zoom level of map
+
 = 1.3.3 - October 14, 2016 =
 
 * Minor bug fixes

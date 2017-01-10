@@ -13,6 +13,7 @@ modules:
   config:
     WebDriver:
       window_size: 1366x764
+      wait: 20
     BrowserStack:
       browser: IE
       version: 9.0
