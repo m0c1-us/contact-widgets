@@ -150,8 +150,12 @@ class AdminTestCest {
 
 		$this->selectSocialIcon( $I, 'twitter', $selector );
 
+		$I->wait( 1 );
+
 		// Let's test reordering so facebook should be first
 		$I->dragAndDrop( [ 'css' => "{$selector} form p.facebook .wpcw-widget-sortable-handle" ], [ 'css' => "{$selector} .wpcw-widget-social .icons" ] );
+
+		$I->wait( 1 );
 
 		/**
 		 * Submit widget form
@@ -197,8 +201,9 @@ class AdminTestCest {
 
 		$I->executeJS('jQuery(".wpcw-widget-social ul li:first-child")[0].scrollIntoView();');
 
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="twitter"]' ] );
-		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="facebook"]' ] );
+		// Facebook should be first after reordering
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
 
 	}
 
