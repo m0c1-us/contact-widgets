@@ -215,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "กลาง"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -239,5 +239,4 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Contact widget ต้องมี PHP เวอร์ชัน %s หรือที่สูงกว่า "
-"โปรดปิดใช้งานปลั๊กอินและติดต่อผู้ดูแลระบบของคุณ"
+"Contact widget ต้องมี PHP เวอร์ชัน %s หรือที่สูงกว่า โปรดปิดใช้งานปลั๊กอินและติดต่อผู้ดูแลระบบของคุณ"

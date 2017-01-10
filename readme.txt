@@ -3,7 +3,7 @@ Contributors:      godaddy, jonathanbardo, fjarrett
 Tags:              widget, contact, social, sharing, share button, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
 Requires at least: 4.4.2
 Tested up to:      4.7
-Stable tag:        1.3.4
+Stable tag:        1.4.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ This plugin adds two new widgets to your WordPress website:
 *  Social Media Profiles: Displays your social media profiles in an attractive, intuitive way.
 
 Both widgets are compatible with the WordPress Customizer and will automatically refresh when changes are made.
+
+[youtube https://www.youtube.com/watch?v=Y3NsrWHd_us]
 
 **Languages Supported:**
 
@@ -110,6 +112,12 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 </pre>
 
 == Changelog ==
+
+= 1.4.0 - January 10, 2017 =
+
+* Defer iframe loading by default
+* Remove frameborder from iframe
+* Add filter to change zoom level of map
 
 = 1.3.3 - October 14, 2016 =
 

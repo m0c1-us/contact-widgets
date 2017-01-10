@@ -43,9 +43,7 @@ msgstr "Електронна пошта:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі "
-"сайту."
+msgstr "Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі сайту."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -53,9 +51,7 @@ msgstr "Телефон:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі "
-"запитань."
+msgstr "Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі запитань."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -63,8 +59,7 @@ msgstr "Факс:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
+msgstr "Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -72,8 +67,7 @@ msgstr "Адреса:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
+msgstr "Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -221,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "Cередній"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -245,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін "
-"і зверніться до системного адміністратора."
+"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін і "
+"зверніться до системного адміністратора."

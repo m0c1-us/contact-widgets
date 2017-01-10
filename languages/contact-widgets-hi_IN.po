@@ -59,8 +59,7 @@ msgstr "फ़ैक्स:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"वह फ़ैक्स नंबर जिसका उपयोग वेबसाइट विज़िटर्स कोई ज़रूरी दस्तावेज़ भेजने के लिए कर सकते हैं."
+msgstr "वह फ़ैक्स नंबर जिसका उपयोग वेबसाइट विज़िटर्स कोई ज़रूरी दस्तावेज़ भेजने के लिए कर सकते हैं."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -216,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "मध्यम"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -240,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"संपर्क विजेट को PHP संस्करण %s या इससे उच्चतर संस्करण की आवश्यकता है. कृपया प्लगइन को "
-"निष्क्रिय करें और अपने सिस्टम प्रबंधक से संपर्क करें."
+"संपर्क विजेट को PHP संस्करण %s या इससे उच्चतर संस्करण की आवश्यकता है. कृपया "
+"प्लगइन को निष्क्रिय करें और अपने सिस्टम प्रबंधक से संपर्क करें."

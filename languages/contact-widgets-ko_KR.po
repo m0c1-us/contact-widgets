@@ -175,7 +175,7 @@ msgstr "TripAdvisor"
 
 #: includes/social-networks.php:94
 msgid "WordPress"
-msgstr "워드프레스"
+msgstr "WordPress"
 
 #: includes/social-networks.php:99
 msgid "Yelp"
@@ -215,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "중간"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -238,6 +238,4 @@ msgstr "Trello"
 msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
-msgstr ""
-"연락처 위젯은 PHP 버전 %s 이상을 필요로 합니다. 플러그인을 비활성화하고 귀하"
-"의 시스템 관리자에게 연락하십시오."
+msgstr "연락처 위젯은 PHP 버전 %s 이상을 필요로 합니다. 플러그인을 비활성화하고 귀하의 시스템 관리자에게 연락하십시오."

@@ -43,8 +43,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
+msgstr "Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -60,9 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan "
-"trọng."
+msgstr "Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan trọng."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -70,8 +67,7 @@ msgstr "Địa chỉ:"
 
 #: includes/class-contact.php:175
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
+msgstr "Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
 
 #: includes/class-contact.php:178 includes/class-social.php:228
 msgid "Display labels?"
@@ -243,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widget liên hệ yêu cầu phiên bản PHP %s trở lên. Hãy tắt trình cắm và liên "
-"hệ với quản trị viên hệ thống."
+"Widget liên hệ yêu cầu phiên bản PHP %s trở lên. Hãy tắt trình cắm và liên hệ "
+"với quản trị viên hệ thống."

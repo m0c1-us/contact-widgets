@@ -51,8 +51,7 @@ msgstr "Telefoon:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Een telefoonnummer dat websitebezoekers kunnen bellen als ze vragen hebben."
+msgstr "Een telefoonnummer dat websitebezoekers kunnen bellen als ze vragen hebben."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -60,9 +59,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Een faxnummer dat websitebezoekers kunnen gebruiken om belangrijke "
-"documenten te verzenden."
+msgstr "Een faxnummer dat websitebezoekers kunnen gebruiken om belangrijke documenten te verzenden."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -218,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "Gemiddeld"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"

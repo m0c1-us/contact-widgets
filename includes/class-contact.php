@@ -13,7 +13,7 @@ final class Contact extends Base_Widget {
 	/**
 	 * Defer Google Maps iframes until pages have fully loaded.
 	 *
-	 * @since NEXT
+	 * @since 1.4.0
 	 *
 	 * @var bool
 	 */
@@ -42,7 +42,7 @@ final class Contact extends Base_Widget {
 		 *
 		 * Note: Will always be `false` on customize preview.
 		 *
-		 * @since NEXT
+		 * @since 1.4.0
 		 *
 		 * @var bool
 		 */
@@ -144,10 +144,11 @@ final class Contact extends Base_Widget {
 			}
 
 			printf(
-				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s" frameborder="0" class="wpcw-widget-contact-map"></iframe></li>',
+				'<li class="has-map"><iframe %s="https://www.google.com/maps?q=%s&output=embed&hl=%s&z=%d" frameborder="0" class="wpcw-widget-contact-map"></iframe></li>',
 				( $this->defer_map_iframes ) ? 'src="" data-src' : 'src',
 				urlencode( trim( strip_tags( $fields['address']['value'] ) ) ),
-				urlencode( $this->get_google_maps_locale() )
+				urlencode( $this->get_google_maps_locale() ),
+				absint( $fields['map']['zoom'] )
 			);
 
 		}
@@ -219,6 +220,16 @@ final class Contact extends Base_Widget {
 				'type'           => 'checkbox',
 				'sortable'       => false,
 				'value'          => 'yes',
+				/**
+				 * Filter Google Map default zoom level of 14 to something else.
+				 *
+				 * @since 1.4.0
+				 *
+				 * @param array $instance Widget instance
+				 *
+				 * @var int
+				 */
+				'zoom'           => absint( apply_filters( 'wpcw_widget_contact_map_zoom', 14, $instance ) ),
 				'atts'           => $this->checked( 'yes', isset( $instance['map']['value'] ) ? $instance['map']['value'] : 'yes' ),
 				'show_front_end' => false,
 			],
@@ -281,7 +292,7 @@ final class Contact extends Base_Widget {
 	 * Defer Google Maps iframes with JavaScript.
 	 *
 	 * @action wp_footer
-	 * @since  NEXT
+	 * @since  1.4.0
 	 */
 	public function defer_map_iframes_js() {
 

@@ -43,8 +43,7 @@ msgstr "Adres e-mail:"
 
 #: includes/class-contact.php:157
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Adres e-mail, pod jakim odwiedzający witrynę mogą się z Tobą skontaktować."
+msgstr "Adres e-mail, pod jakim odwiedzający witrynę mogą się z Tobą skontaktować."
 
 #: includes/class-contact.php:160
 msgid "Phone:"
@@ -52,8 +51,7 @@ msgstr "Nr tel.:"
 
 #: includes/class-contact.php:162
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Numer telefonu, pod jaki mogą zadzwonić odwiedzający witrynę w razie pytań."
+msgstr "Numer telefonu, pod jaki mogą zadzwonić odwiedzający witrynę w razie pytań."
 
 #: includes/class-contact.php:165
 msgid "Fax:"
@@ -61,8 +59,7 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:167
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Numer faksu, pod jaki odwiedzający witrynę mogą przesłać ważne dokumenty."
+msgstr "Numer faksu, pod jaki odwiedzający witrynę mogą przesłać ważne dokumenty."
 
 #: includes/class-contact.php:170
 msgid "Address:"
@@ -218,7 +215,7 @@ msgstr "WeChat"
 
 #: includes/social-networks.php:140
 msgid "Medium"
-msgstr "Medium"
+msgstr "Średni"
 
 #: includes/social-networks.php:145
 msgid "Dribbble"
@@ -242,5 +239,5 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Widżety kontaktu wymagają PHP w wersji %s lub wyższej. Dezaktywuj wtyczkę "
-"i skontaktuj się z administratorem systemu."
+"Widżety kontaktu wymagają PHP w wersji %s lub wyższej. Dezaktywuj wtyczkę i "
+"skontaktuj się z administratorem systemu."

@@ -109,7 +109,7 @@ class AdminTestCest {
 		$I->canSee( '1234 Santa Monica Blvd', [ 'css' => '.wpcw-widget-contact ul li' ] );
 
 		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-contact ul li.has-map' ] );
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src="https://www.google.com/maps?q=1234+Santa+Monica+BlvdBeverly+Hills%2C+CA+90210&output=embed&hl=en"]' ] );
+		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-contact ul li.has-map iframe[src="https://www.google.com/maps?q=1234+Santa+Monica+BlvdBeverly+Hills%2C+CA+90210&output=embed&hl=en&z=14"]' ] );
 
 	}
 
@@ -145,10 +145,17 @@ class AdminTestCest {
 		$I->fillField( [ 'css' => "{$selector} form .title input" ], 'Acceptance tests social' );
 
 		$this->selectSocialIcon( $I, 'facebook', $selector );
+
+		$I->wait( 1 );
+
 		$this->selectSocialIcon( $I, 'twitter', $selector );
+
+		$I->wait( 1 );
 
 		// Let's test reordering so facebook should be first
 		$I->dragAndDrop( [ 'css' => "{$selector} form p.facebook .wpcw-widget-sortable-handle" ], [ 'css' => "{$selector} .wpcw-widget-social .icons" ] );
+
+		$I->wait( 1 );
 
 		/**
 		 * Submit widget form
@@ -192,9 +199,11 @@ class AdminTestCest {
 
 		$I->canSee( 'Acceptance tests social', [ 'css' => '.wpcw-widget-social .widget-title' ] );
 
-		// Check that Facebook is indeed the first element return in the list
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
-		$I->waitForElementVisible( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
+		$I->executeJS('jQuery(".wpcw-widget-social ul li:first-child")[0].scrollIntoView();');
+
+		// Facebook should be first after reordering
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:first-child span[class*="facebook"]' ] );
+		$I->canSeeElementInDOM( [ 'css' => '.wpcw-widget-social ul li:last-child span[class*="twitter"]' ] );
 
 	}
 
