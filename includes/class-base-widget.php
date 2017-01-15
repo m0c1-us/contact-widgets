@@ -117,6 +117,13 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $new_instance as $key => &$instance ) {
 
+			// Skip unrecognized fields added by other plugins
+			if ( ! array_key_exists( $key, $fields ) ) {
+
+				continue;
+
+			}
+
 			$sanitizer_callback = $fields[ $key ]['sanitizer'];
 
 			// Title can't be an array
