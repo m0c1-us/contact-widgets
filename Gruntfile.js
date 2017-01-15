@@ -203,10 +203,10 @@ module.exports = function(grunt) {
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	grunt.registerTask( 'default', [ 'cssjanus', 'cssmin', 'jshint', 'uglify' ] );
-	grunt.registerTask( 'version', [ 'replace' ] );
 	grunt.registerTask( 'build', [ 'default', 'version', 'clean', 'copy' ] );
 	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
 	grunt.registerTask( 'update-mo', [ 'potomo' ] );
+	grunt.registerTask( 'version', [ 'replace' ] );
 
 };
