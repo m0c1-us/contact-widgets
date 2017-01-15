@@ -77,15 +77,15 @@ module.exports = function(grunt) {
 		devUpdate: {
 			main: {
 				options: {
-					updateType: 'force', // just report outdated packages
-					reportUpdated: false, // don't report up-to-date packages
-					semver: true, // stay within semver when updating
+					updateType: 'force',
+					reportUpdated: false,
+					semver: true,
 					packages: {
-						devDependencies: true, // only check for devDependencies
+						devDependencies: true,
 						dependencies: false
 					},
-					packageJson: null, // use matchdep default findup to locate package.json
-					reportOnlyPkgs: [] // use updateType action on all packages
+					packageJson: null,
+					reportOnlyPkgs: []
 				}
 			}
 		},
@@ -113,10 +113,13 @@ module.exports = function(grunt) {
 			}
 		},
 
-		po2mo: {
+		potomo: {
 			files: {
-				src: 'languages/*.po',
-				expand: true
+				expand: true,
+				cwd: 'languages',
+				src: [ '*.po' ],
+				dest: 'languages',
+				ext: '.mo'
 			}
 		},
 
@@ -199,12 +202,11 @@ module.exports = function(grunt) {
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	grunt.registerTask( 'default', [ 'cssjanus', 'cssmin', 'lint', 'uglify' ] );
-	grunt.registerTask( 'lint', [ 'jshint' ] );
+	grunt.registerTask( 'default', [ 'cssjanus', 'cssmin', 'jshint', 'uglify' ] );
 	grunt.registerTask( 'version', [ 'replace' ] );
 	grunt.registerTask( 'build', [ 'default', 'version', 'clean', 'copy' ] );
 	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
-	grunt.registerTask( 'update-mo', [ 'po2mo' ] );
+	grunt.registerTask( 'update-mo', [ 'potomo' ] );
 
 };
