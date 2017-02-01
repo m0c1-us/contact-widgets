@@ -1,6 +1,6 @@
 === Contact Widgets ===
 Contributors:      godaddy, jonathanbardo, fjarrett
-Tags:              widget, contact, social, share buttons, share links, icons, media, facebook, twitter, google plus, instagram
+Tags:              widget, contact, social, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
 Requires at least: 4.4.2
 Tested up to:      4.7
 Stable tag:        1.4.0
