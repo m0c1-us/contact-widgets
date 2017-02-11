@@ -232,6 +232,9 @@ module.exports = function( grunt ) {
 						section = section.replace( tags[i], '[' + tags[i] + '](https://wordpress.org/plugins/tags/' + tags[i] + '/)' );
 					}
 
+					// YouTube
+					readme = readme.replace( /\[youtube\s+(?:https?:\/\/www\.youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/)(.+?)\]/g, '[![Play video on YouTube](https://i1.ytimg.com/vi/$1/hqdefault.jpg)](https://www.youtube.com/watch?v=$1)' );
+
 					// Tag links
 					readme = readme.replace( matches[0], section );
 
