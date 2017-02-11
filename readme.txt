@@ -1,8 +1,8 @@
 === Contact Widgets ===
-Contributors:      godaddy, jonathanbardo, fjarrett
+Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              widget, contact, social, share button, share buttons, share links, social icons, social media, facebook, twitter, google plus, instagram
-Requires at least: 4.4.2
-Tested up to:      4.7.2
+Requires at least: 4.4
+Tested up to:      4.7
 Stable tag:        1.4.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -115,73 +115,78 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 = 1.4.0 - January 10, 2017 =
 
-* Defer iframe loading by default
-* Remove frameborder from iframe
-* Add filter to change zoom level of map
-* Deprecate YouTube link while maintaining backward compatibility
+* New: WordPress 4.7 compatibility
+* New: Defer map iframe loading by default
+* Tweak: Remove frameborder from map iframes
+* Tweak: Add filter to change zoom level of map
+* Tweak: Deprecate YouTube link while maintaining backward compatibility
+
+Props [@fjarrett](https://github.com/fjarrett), [@jonathanbardo](https://github.com/jonathanbardo), [@EvanHerman](https://github.com/EvanHerman)
 
 = 1.3.3 - October 14, 2016 =
 
-* Minor bug fixes
-* Remove edit button when previewing in the customizer
+* Tweak: Remove edit button during Customize preview
+* Fix: Minor bugs
+
+Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 = 1.3.2 - August 16, 2016 =
 
-* WordPress 4.6 compatibility
-* Fix bug with edit button not working
-* Plugin icon update
-* Update translation
-* New: Add RSS to social networks.
+* New: WordPress 4.6 compatibility
+* New: Add RSS to social networks
+* Tweak: Plugin icon update
+* Tweak: Update translation
+* Fix: Edit button not working
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 = 1.3.1 - June 3, 2016 =
 
-* New: Language support for `mr`.
-* New: Add 500px to social networks.
+* New: Language support for Marathi
+* New: Add 500px to social networks
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett), [@salvoventura](https://github.com/salvoventura)
 
 = 1.3.0 - May 19, 2016 =
 
-* New: Add front-end "Edit" link to quickly edit widgets in the Customizer.
-* Fix: Use WP-CLI nightlies in tests.
+* New: Add front-end "Edit" link to quickly edit widgets in the Customizer
+* Fix: Use WP-CLI nightlies in tests
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 = 1.2.0 - April 12, 2016 =
 
-* New: WordPress 4.5 compatibility.
-* Tweak: Improve widget names.
+* New: WordPress 4.5 compatibility
+* Tweak: Improve widget names
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 = 1.1.0 - March 15, 2016 =
 
-* New: Support localization on Google Maps.
+* New: Support localization on Google Maps
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
 
 = 1.0.4 - March 9, 2016 =
 
-* Tweak: Language updates.
+* Tweak: Language updates
 
 Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 = 1.0.2 - February 24, 2016 =
 
-* New: Language support for 27 locales.
+* New: Language support for 27 locales
 
 Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 = 1.0.1 - February 24, 2016 =
 
-* New: Added possibility to add custom fields to contact and social widget.
+* New: Added possibility to add custom fields to contact and social widget
 
 Props [@jonathanbardo](https://github.com/jonathanbardo)
 
 = 1.0.0 - February 23, 2016 =
 
-* Initial release.
+* Initial release
 
 Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)

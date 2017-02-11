@@ -1,40 +1,36 @@
-module.exports = function(grunt) {
+/* global module, require */
 
-	var BUILD_DIR = 'build/';
+module.exports = function( grunt ) {
+
+	'use strict';
 
 	var pkg = grunt.file.readJSON( 'package.json' );
 
-	var svn_username = false;
-
-	if ( grunt.file.exists( 'svn-username' ) ) {
-
-		svn_username = grunt.file.read( 'svn-username' ).trim();
-
-	}
-
-	grunt.initConfig({
+	grunt.initConfig( {
 
 		pkg: pkg,
 
 		clean: {
-			build: [ BUILD_DIR + '*' ],
-			options: {
-				force: true
-			}
+			build: [ 'build/' ]
 		},
 
 		copy: {
-			files: {
-				cwd: '.',
-				expand: true,
-				src: [
-					pkg.name + '.php',
-					'readme.txt',
-					'languages/*.mo',
-					'includes/**',
-					'assets/**'
-				],
-				dest: BUILD_DIR
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							pkg.name + '.php',
+							'license.txt',
+							'readme.txt',
+							'assets/**',
+							'includes/**',
+							'languages/*.{mo,pot}',
+							'!**/*.{ai,eps,psd}'
+						],
+						dest: 'build/'
+					}
+				]
 			}
 		},
 
@@ -46,9 +42,9 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'assets/css',
+						cwd: 'assets/css/',
 						src: [ '*.css', '!*-rtl.css', '!*.min.css', '!*-rtl.min.css' ],
-						dest: 'assets/css',
+						dest: 'assets/css/',
 						ext: '-rtl.css'
 					}
 				]
@@ -57,17 +53,17 @@ module.exports = function(grunt) {
 
 		cssmin: {
 			options: {
-				shorthandCompacting: false,
+				processImport: false,
 				roundingPrecision: -1,
-				processImport: false
+				shorthandCompacting: false
 			},
-			target: {
+			all: {
 				files: [
 					{
 						expand: true,
-						cwd: 'assets/css',
-						src: [ '*.css', '!*.min.css' ],
-						dest: 'assets/css',
+						cwd: 'assets/css/',
+						src: [ '**/*.css', '!**/*.min.css' ],
+						dest: 'assets/css/',
 						ext: '.min.css'
 					}
 				]
@@ -75,23 +71,42 @@ module.exports = function(grunt) {
 		},
 
 		devUpdate: {
-			main: {
+			packages: {
 				options: {
-					updateType: 'force',
-					reportUpdated: false,
-					semver: true,
+					packageJson: null,
 					packages: {
 						devDependencies: true,
 						dependencies: false
 					},
-					packageJson: null,
-					reportOnlyPkgs: []
+					reportOnlyPkgs: [],
+					reportUpdated: false,
+					semver: true,
+					updateType: 'force'
 				}
 			}
 		},
 
+		imagemin: {
+			options: {
+				optimizationLevel: 3
+			},
+			assets: {
+				expand: true,
+				cwd: 'assets/images/',
+				src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
+				dest: 'assets/images/'
+			},
+			wp_org_assets: {
+				expand: true,
+				cwd: 'wp-org-assets/',
+				src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
+				dest: 'wp-org-assets/'
+			}
+		},
+
 		jshint: {
-			all: [ 'Gruntfile.js', 'assets/js/**/*.js', '!assets/js/**/*.min.js' ]
+			assets: [ 'assets/js/**/*.js', '!assets/js/**/*.min.js' ],
+			gruntfile: [ 'Gruntfile.js' ]
 		},
 
 		makepot: {
@@ -99,7 +114,9 @@ module.exports = function(grunt) {
 				options: {
 					domainPath: 'languages/',
 					include: [ pkg.name + '.php', 'includes/.+\.php' ],
+					mainFile: pkg.name + '.php',
 					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
+					potFilename: pkg.name + '.pot',
 					potHeaders: {
 						'x-poedit-keywordslist': true
 					},
@@ -116,42 +133,44 @@ module.exports = function(grunt) {
 		potomo: {
 			files: {
 				expand: true,
-				cwd: 'languages',
+				cwd: 'languages/',
 				src: [ '*.po' ],
-				dest: 'languages',
+				dest: 'languages/',
 				ext: '.mo'
 			}
 		},
 
 		replace: {
-			version_php: {
+			php: {
 				src: [
-					'**/*.php',
-					'!vendor/**',
-					'!dev-lib/*'
+					pkg.name + '.php',
+					'includes/**/*.php'
 				],
 				overwrite: true,
-				replacements: [ {
-					from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
-					to: 'Version:$1' + pkg.version
-				}, {
-					from: /@version(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
-					to: '@version$1' + pkg.version
-				}, {
-					from: /@since(.*?)NEXT/mg,
-					to: '@since$1' + pkg.version
-				}, {
-					from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
-					to: 'VERSION$1=$2' + pkg.version
-				} ]
+				replacements: [
+					{
+						from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Version:$1' + pkg.version
+					},
+					{
+						from: /@since(.*?)NEXT/mg,
+						to: '@since$1' + pkg.version
+					},
+					{
+						from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+						to: 'VERSION$1=$2' + pkg.version
+					}
+				]
 			},
-			version_readme: {
+			readme: {
 				src: 'readme.*',
 				overwrite: true,
-				replacements: [ {
-					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
-					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
-				} ]
+				replacements: [
+					{
+						from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: '$1Stable tag:$2$3<%= pkg.version %>$4'
+					}
+				]
 			}
 		},
 
@@ -159,54 +178,87 @@ module.exports = function(grunt) {
 			options: {
 				ASCIIOnly: true
 			},
-			core: {
+			all: {
 				expand: true,
-				cwd: 'assets/js',
-				dest: 'assets/js',
-				ext: '.min.js',
-				src: [ '*.js', '!*.min.js' ]
+				cwd: 'assets/js/',
+				src: [ '**/*.js', '!**/*.min.js' ],
+				dest: 'assets/js/',
+				ext: '.min.js'
 			}
 		},
 
 		watch: {
 			css: {
-				files: [ '*.css', '!*.min.css' ],
-				options: {
-					cwd: 'assets/css',
-					nospawn: true
-				},
-				tasks: [ 'cssmin' ]
+				files: [ 'assets/css/**/*.css', '!assets/css/**/*.min.css' ],
+				tasks: [ 'imagemin' ]
 			},
-			uglify: {
-				files: [ '*.js', '!*.js.css' ],
-				options: {
-					cwd: 'assets/js',
-					nospawn: true
-				},
-				tasks: [ 'uglify' ]
+			images: {
+				files: [
+					'assets/images/**/*.{gif,jpeg,jpg,png,svg}',
+					'wp-org-assets/**/*.{gif,jpeg,jpg,png,svg}'
+				],
+				tasks: [ 'imagemin' ]
+			},
+			js: {
+				files: [ 'assets/js/**/*.js', '!assets/js/**/*.min.js' ],
+				tasks: [ 'jshint', 'uglify' ]
+			},
+			readme: {
+				files: 'readme.txt',
+				tasks: [ 'readme' ]
 			}
 		},
 
 		wp_deploy: {
-			deploy: {
+			plugin: {
 				options: {
+					assets_dir: 'wp-org-assets/',
+					build_dir: 'build/',
+					plugin_main_file: pkg.name + '.php',
 					plugin_slug: pkg.name,
-					build_dir: BUILD_DIR,
-					assets_dir: 'wp-org-assets',
-					svn_user: svn_username
+					svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : false
+				}
+			}
+		},
+
+		wp_readme_to_markdown: {
+			options: {
+				post_convert: function( readme ) {
+					var matches = readme.match( /\*\*Tags:\*\*(.*)\r?\n/ ),
+					    tags    = matches[1].trim().split( ', ' ),
+					    section = matches[0];
+
+					for ( var i = 0; i < tags.length; i++ ) {
+						section = section.replace( tags[i], '[' + tags[i] + '](https://wordpress.org/plugins/tags/' + tags[i] + '/)' );
+					}
+
+					// Tag links
+					readme = readme.replace( matches[0], section );
+
+					// Badges
+					readme = readme.replace( '## Description ##', grunt.template.process( pkg.badges.join( ' ' ) ) + "  \r\n\r\n## Description ##" );
+
+					return readme;
+				}
+			},
+			main: {
+				files: {
+					'readme.md': 'readme.txt'
 				}
 			}
 		}
 
-	});
+	} );
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	grunt.registerTask( 'default', [ 'cssjanus', 'cssmin', 'jshint', 'uglify' ] );
-	grunt.registerTask( 'build', [ 'default', 'version', 'clean', 'copy' ] );
-	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean' ] );
+	grunt.registerTask( 'default',    [ 'cssjanus', 'cssmin', 'jshint', 'uglify', 'imagemin', 'readme' ] );
+	grunt.registerTask( 'check',      [ 'devUpdate' ] );
+	grunt.registerTask( 'build',      [ 'default', 'clean:build', 'copy:build' ] );
+	grunt.registerTask( 'deploy',     [ 'build', 'wp_deploy', 'clean:build' ] );
+	grunt.registerTask( 'readme',     [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
-	grunt.registerTask( 'update-mo', [ 'potomo' ] );
-	grunt.registerTask( 'version', [ 'replace' ] );
+	grunt.registerTask( 'update-mo',  [ 'potomo' ] );
+	grunt.registerTask( 'version',    [ 'replace', 'readme' ] );
 
 };
