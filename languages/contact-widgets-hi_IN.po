@@ -67,8 +67,7 @@ msgstr "फ़ैक्स:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"वह फ़ैक्स नंबर जिसका उपयोग वेबसाइट विज़िटर्स कोई ज़रूरी दस्तावेज़ भेजने के लिए कर सकते हैं."
+msgstr "वह फ़ैक्स नंबर जिसका उपयोग वेबसाइट विज़िटर्स कोई ज़रूरी दस्तावेज़ भेजने के लिए कर सकते हैं."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -228,38 +227,5 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "%2$s पर %1$s विज़िट करें"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "उपयोगकर्ता नाम"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "चैनल"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "कंपनी"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "बोर्ड"
+"संपर्क विजेट को PHP संस्करण %s या इससे उच्चतर संस्करण की आवश्यकता है. कृपया "
+"प्लगइन को निष्क्रिय करें और अपने सिस्टम प्रबंधक से संपर्क करें."

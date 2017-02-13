@@ -51,9 +51,7 @@ msgstr "Эл. почта:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Адрес электронной почты, с помощью которого посетители веб-сайта могут "
-"связаться с вами."
+msgstr "Адрес электронной почты, с помощью которого посетители веб-сайта могут связаться с вами."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -61,9 +59,7 @@ msgstr "Телефон:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Номер телефона, по которому посетители веб-сайта могут позвонить вам, если у "
-"них возникнут вопросы."
+msgstr "Номер телефона, по которому посетители веб-сайта могут позвонить вам, если у них возникнут вопросы."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -71,9 +67,7 @@ msgstr "Факс:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Номер факса, который посетители веб-сайта могут использовать для отправки "
-"важных документов."
+msgstr "Номер факса, который посетители веб-сайта могут использовать для отправки важных документов."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -81,9 +75,7 @@ msgstr "Адрес:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Почтовый адрес, с помощью которого посетили веб-сайта смогут посетить вас "
-"лично."
+msgstr "Почтовый адрес, с помощью которого посетили веб-сайта смогут посетить вас лично."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"

@@ -51,8 +51,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
+msgstr "Địa chỉ email mà khách truy cập trang có thể sử dụng để liên hệ với bạn."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -68,9 +67,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan "
-"trọng."
+msgstr "Số fax mà khách truy cập trang có thể sử dụng để gửi những tài liệu quan trọng."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -78,8 +75,7 @@ msgstr "Địa chỉ:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
+msgstr "Địa chỉ thực tế mà khách truy cập trang có thể đến để gặp bạn trực tiếp."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"
@@ -231,38 +227,5 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "Truy cập %1$s trên %2$s"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "tên người dùng"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "kênh"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "công ty"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "diễn đàn"
+"Widget liên hệ yêu cầu phiên bản PHP %s trở lên. Hãy tắt trình cắm và liên hệ "
+"với quản trị viên hệ thống."

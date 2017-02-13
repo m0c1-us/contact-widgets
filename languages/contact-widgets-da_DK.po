@@ -59,8 +59,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
+msgstr "Et telefonnummer, som websidegæster kan ringe til, hvis de har spørgsmål."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -68,8 +67,7 @@ msgstr "Fax:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
+msgstr "Et faxnummer, som websidegæster kan bruge til at sende vigtige dokumenter."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -229,38 +227,5 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "Gå til %1$s på %2$s"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "brugernavn"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "kanal"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "firma"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "forum"
+"Kontaktwidget kræver PHP-version %s eller nyere. Deaktivér plug-in og kontakt "
+"din systemadministrator."

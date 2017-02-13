@@ -51,9 +51,7 @@ msgstr "Електронна пошта:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі "
-"сайту."
+msgstr "Адреса електронної пошти, за якою до вас зможуть звертатися відвідувачі сайту."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -61,9 +59,7 @@ msgstr "Телефон:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі "
-"запитань."
+msgstr "Телефонний номер, за яким відвідувачі сайту можуть телефонувати в разі запитань."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -71,8 +67,7 @@ msgstr "Факс:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
+msgstr "Номер факсу, на який відвідувачі сайту можуть надсилати важливі документи."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -80,8 +75,7 @@ msgstr "Адреса:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
+msgstr "Фактична адреса, за якою відвідувачі сайту можуть зустрітися з вами особисто."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"
@@ -233,38 +227,5 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "Відвідайте %1$s в %2$s"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "ім’я користувача"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "канал"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "компанія"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "дошка"
+"Для віджета контактів потрібна версія PHP %s або новіша. Деактивуйте плагін і "
+"зверніться до системного адміністратора."

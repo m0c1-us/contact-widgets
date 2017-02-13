@@ -51,9 +51,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Alamat email yang dapat digunakan pengunjung situs web untuk menghubungi "
-"Anda."
+msgstr "Alamat email yang dapat digunakan pengunjung situs web untuk menghubungi Anda."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -61,9 +59,7 @@ msgstr "Telepon:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Nomor telepon yang dapat dihubungi pengunjung situs web jika ingin "
-"mengajukan pertanyaan."
+msgstr "Nomor telepon yang dapat dihubungi pengunjung situs web jika ingin mengajukan pertanyaan."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -71,9 +67,7 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Nomor faks yang dapat digunakan pengunjung situs web untuk mengirimkan "
-"dokumen penting."
+msgstr "Nomor faks yang dapat digunakan pengunjung situs web untuk mengirimkan dokumen penting."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -81,9 +75,7 @@ msgstr "Alamat:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Alamat fisik yang dapat dikunjungi pengunjung situs web untuk bertemu Anda "
-"secara langsung."
+msgstr "Alamat fisik yang dapat dikunjungi pengunjung situs web untuk bertemu Anda secara langsung."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"

@@ -227,38 +227,4 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "เยี่ยมชม %1$s ได้ที่ %2$s"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "ชื่อผู้ใช้"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "ช่องทาง"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "บริษัท"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "บอร์ด"
+"Contact widget ต้องมี PHP เวอร์ชัน %s หรือที่สูงกว่า โปรดปิดใช้งานปลั๊กอินและติดต่อผู้ดูแลระบบของคุณ"

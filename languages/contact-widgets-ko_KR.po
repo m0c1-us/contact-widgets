@@ -224,41 +224,6 @@ msgstr "연락처 세부 정보"
 
 #. Description of the plugin/theme
 msgid ""
-"Beautifully display social media and contact information on your website "
-"with these simple widgets."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "%2$s에 %1$s 방문"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "사용자 이름"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "채널"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "회사"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "게시판"
+"Contact widgets requires PHP version %s or higher. Please deactivate the "
+"plugin and contact your system administrator."
+msgstr "연락처 위젯은 PHP 버전 %s 이상을 필요로 합니다. 플러그인을 비활성화하고 귀하의 시스템 관리자에게 연락하십시오."

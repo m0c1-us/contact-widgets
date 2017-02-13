@@ -52,9 +52,7 @@ msgstr "Email:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Μια διεύθυνση email στην οποία οι επισκέπτες του ιστοτόπου μπορούν να "
-"επικοινωνήσουν μαζί σας."
+msgstr "Μια διεύθυνση email στην οποία οι επισκέπτες του ιστοτόπου μπορούν να επικοινωνήσουν μαζί σας."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -62,9 +60,7 @@ msgstr "Τηλέφωνο:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Ένας αριθμός τηλεφώνου τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να "
-"καλούν όταν έχουν ερωτήσεις."
+msgstr "Ένας αριθμός τηλεφώνου τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να καλούν όταν έχουν ερωτήσεις."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -72,9 +68,7 @@ msgstr "Φαξ:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Ένας αριθμός φαξ τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να "
-"χρησιμοποιούν για να στέλνουν σημαντικά έγγραφα."
+msgstr "Ένας αριθμός φαξ τον οποίο οι επισκέπτες του ιστοτόπου μπορούν να χρησιμοποιούν για να στέλνουν σημαντικά έγγραφα."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -82,9 +76,7 @@ msgstr "Διεύθυνση:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Μια φυσική διεύθυνση στην οποία οι επισκέπτες του ιστοτόπου μπορούν να "
-"μεταβούν για να σας επισκεφθούν πρόσωπο με πρόσωπο."
+msgstr "Μια φυσική διεύθυνση στην οποία οι επισκέπτες του ιστοτόπου μπορούν να μεταβούν για να σας επισκεφθούν πρόσωπο με πρόσωπο."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"

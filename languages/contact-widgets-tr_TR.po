@@ -51,8 +51,7 @@ msgstr "E-posta:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr ""
-"Web sitesi ziyaretçilerinin sizinle iletişim kurabileceği bir e-posta adresi."
+msgstr "Web sitesi ziyaretçilerinin sizinle iletişim kurabileceği bir e-posta adresi."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -60,9 +59,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Web sitesi ziyaretçilerinin soru sormak için arayabileceği bir telefon "
-"numarası."
+msgstr "Web sitesi ziyaretçilerinin soru sormak için arayabileceği bir telefon numarası."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -70,9 +67,7 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Web sitesi ziyaretçilerinin önemli belgeleri gönderebileceği bir faks "
-"numarası."
+msgstr "Web sitesi ziyaretçilerinin önemli belgeleri gönderebileceği bir faks numarası."
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -80,8 +75,7 @@ msgstr "Adres:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Web sitesi ziyaretçilerinin sizi bire bir ziyaret edebileceği bir açık adres."
+msgstr "Web sitesi ziyaretçilerinin sizi bire bir ziyaret edebileceği bir açık adres."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"

@@ -59,9 +59,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr ""
-"Nombor telefon yang pelawat halaman utama boleh panggil jika mereka "
-"mempunyai soalan."
+msgstr "Nombor telefon yang pelawat halaman utama boleh panggil jika mereka mempunyai soalan."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -69,9 +67,7 @@ msgstr "Faks:"
 
 #: includes/class-contact.php:196
 msgid "A fax number that website vistors can use to send important documents."
-msgstr ""
-"Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar "
-"dokumen penting,"
+msgstr "Nombor faks di mana pelawat halaman utama boleh gunakan untuk menghantar dokumen penting,"
 
 #: includes/class-contact.php:199
 msgid "Address:"
@@ -79,8 +75,7 @@ msgstr "Alamat:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr ""
-"Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
+msgstr "Alamat fizikal di mana halaman utama boleh pergi untuk melawat anda sendiri."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"
