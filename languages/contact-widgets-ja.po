@@ -224,41 +224,6 @@ msgstr "連絡先詳細"
 
 #. Description of the plugin/theme
 msgid ""
-"Beautifully display social media and contact information on your website "
-"with these simple widgets."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "%2$sにログインして、%1$s にアクセス"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "ユーザー名"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "チャネル"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "会社"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "掲示板"
+"Contact widgets requires PHP version %s or higher. Please deactivate the "
+"plugin and contact your system administrator."
+msgstr "連絡先ウィジェットが%s以上のバージョンの PHP を要求しています。 プラグインを無効化してシステム管理者に連絡してください。"

@@ -117,6 +117,13 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $new_instance as $key => &$instance ) {
 
+			// Skip unrecognized fields added by other plugins
+			if ( ! array_key_exists( $key, $fields ) ) {
+
+				continue;
+
+			}
+
 			$sanitizer_callback = $fields[ $key ]['sanitizer'];
 
 			// Title can't be an array
@@ -518,7 +525,7 @@ abstract class Base_Widget extends \WP_Widget {
 		$rtl    = is_rtl() ? '-rtl' : '';
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', [], '4.5.0' );
+		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', [], '4.7.0' );
 		wp_enqueue_style( 'wpcw-admin', \Contact_Widgets::$assets_url . "css/admin{$rtl}{$suffix}.css", [ 'font-awesome' ], Plugin::$version );
 		wp_enqueue_script( 'wpcw-admin', \Contact_Widgets::$assets_url . "js/admin{$suffix}.js", [ 'jquery' ], Plugin::$version, true );
 

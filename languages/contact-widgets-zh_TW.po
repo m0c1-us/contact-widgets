@@ -223,41 +223,6 @@ msgstr "聯絡人詳細資料"
 
 #. Description of the plugin/theme
 msgid ""
-"Beautifully display social media and contact information on your website "
-"with these simple widgets."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "GoDaddy"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://godaddy.com"
-msgstr ""
-
-#: includes/class-social.php:163
-msgctxt ""
-"1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. "
-"Facebook)"
-msgid "Visit %1$s on %2$s"
-msgstr "在 %2$s 上造訪 %1$s"
-
-#: includes/social-networks.php:9
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "username"
-msgstr "用戶名"
-
-#: includes/social-networks.php:10
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "channel"
-msgstr "頻道"
-
-#: includes/social-networks.php:11
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "company"
-msgstr "公司"
-
-#: includes/social-networks.php:12
-msgctxt "Must be lowercase and use url-safe characters"
-msgid "board"
-msgstr "論壇"
+"Contact widgets requires PHP version %s or higher. Please deactivate the "
+"plugin and contact your system administrator."
+msgstr "聯絡工具程式需要使用 PHP %s 或以上版本。 請停用外掛程式並聯絡您的系統管理員。"
