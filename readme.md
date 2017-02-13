@@ -115,6 +115,13 @@ add_filter( 'wpcw_widget_social_custom_fields', function( $fields, $instance ) {
 
 ## Changelog ##
 
+### 1.4.1 - February 13, 2017 ###
+
+* Tweak: Use FontAwesome 4.7.0
+* Fix: Compatibility issues when other plugins add widget form fields
+
+Props [@jonathanbardo](https://github.com/jonathanbardo), [@fjarrett](https://github.com/fjarrett)
+
 ### 1.4.0 - January 10, 2017 ###
 
 * New: WordPress 4.7 compatibility
