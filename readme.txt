@@ -22,38 +22,9 @@ Both widgets are compatible with the WordPress Customizer and will automatically
 
 [youtube https://www.youtube.com/watch?v=Y3NsrWHd_us]
 
-**Languages Supported:**
+**30 Languages Supported**
 
-* English
-* Dansk
-* Deutsch
-* Ελληνικά
-* Español
-* Español de México
-* Suomi
-* Français
-* हिन्दी
-* Bahasa Indonesia
-* Italiano
-* 日本語
-* 한국어
-* मराठी
-* Bahasa Melayu
-* Norsk bokmål
-* Nederlands
-* Polski
-* Português do Brasil
-* Português
-* Русский
-* Svenska
-* ไทย
-* Tagalog
-* Türkçe
-* Українська
-* Tiếng Việt
-* 简体中文
-* 香港中文版
-* 繁體中文
+English, Dansk, Deutsch, Ελληνικά, Español, Español de México, Suomi, Français, हिन्दी, Bahasa Indonesia, Italiano, 日本語, 한국어, मराठी, Bahasa Melayu, Norsk bokmål, Nederlands, Polski, Português do Brasil, Português, Русский, Svenska, ไทย, Tagalog, Türkçe, Українська, Tiếng Việt, 简体中文, 香港中文版, 繁體中文
 
 **Improvement? Bugs?**
 
