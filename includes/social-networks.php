@@ -166,4 +166,11 @@ $fields = [
 		'default' => "https://trello.com/b/{$board}",
 		'select'  => $board,
 	],
+	'unsplash'     => [
+                'icon'       => 'camera',
+		'label'      => __( 'Unsplash', 'contact-widgets' ),
+		'default'    => "https://unsplash.com/@{$username}",
+		'select'     => $username,
+		'deprecated' => false,
+	],
 ];
