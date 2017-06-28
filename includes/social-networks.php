@@ -171,6 +171,5 @@ $fields = [
 		'label'      => __( 'Unsplash', 'contact-widgets' ),
 		'default'    => "https://unsplash.com/@{$username}",
 		'select'     => $username,
-		'deprecated' => false,
 	],
 ];
