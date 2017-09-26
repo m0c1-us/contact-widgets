@@ -20,8 +20,8 @@ msgid ""
 "Contact widgets requires PHP version %s or higher. Please deactivate the "
 "plugin and contact your system administrator."
 msgstr ""
-"Kontakt-Widgets benötigen PHP-Version %s oder höher. Bitte deaktivieren Sie "
-"das Plugin und kontaktieren Sie Ihren Systemadministrator."
+"Kontakt-Widgets benötigen PHP-Version %s oder höher. Bitte deaktiviere das "
+"Plugin und wende dich an deinen Systemadministrator."
 
 #: includes/class-base-widget.php:488
 msgid "Edit"
@@ -29,7 +29,7 @@ msgstr "Bearbeiten"
 
 #: includes/class-contact.php:29
 msgid "Display your contact information."
-msgstr "Ihre Kontaktdaten anzeigen."
+msgstr "Zeige deine Kontaktdaten an."
 
 #: includes/class-contact.php:35
 msgid "Contact Details"
@@ -49,7 +49,7 @@ msgstr "E-Mail:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
-msgstr "Eine E-Mail-Adresse, mit der sich Website-Besucher mit Ihnen in Verbindung setzen können."
+msgstr "Eine E-Mail-Adresse, mit der sich Website-Besucher mit dir in Verbindung setzen können."
 
 #: includes/class-contact.php:189
 msgid "Phone:"
@@ -57,7 +57,7 @@ msgstr "Telefon:"
 
 #: includes/class-contact.php:191
 msgid "A phone number that website vistors can call if they have questions."
-msgstr "Eine Telefonnummer, unter der sich Website-Besucher bei Ihnen melden können, falls diese Fragen haben."
+msgstr "Eine Telefonnummer, unter der sich Website-Besucher bei dir melden können, falls sie Fragen haben."
 
 #: includes/class-contact.php:194
 msgid "Fax:"
@@ -73,7 +73,7 @@ msgstr "Adresse:"
 
 #: includes/class-contact.php:204
 msgid "A physical address where website vistors can go to visit you in person."
-msgstr "Eine Adresse, unter der Sie Website-Besucher persönlich besuchen können."
+msgstr "Eine Anschrift, unter der dich Website-Besucher persönlich besuchen können."
 
 #: includes/class-contact.php:207 includes/class-social.php:228
 msgid "Display labels?"
@@ -85,7 +85,7 @@ msgstr "Karte zu Adresse anzeigen?"
 
 #: includes/class-social.php:20
 msgid "Display links to your social media profiles."
-msgstr "Links auf die Profile Ihrer sozialen Netzwerke anzeigen."
+msgstr "Zeige Links auf die Profile deiner sozialen Netzwerke an."
 
 #: includes/class-social.php:26
 msgid "Social Profiles"
