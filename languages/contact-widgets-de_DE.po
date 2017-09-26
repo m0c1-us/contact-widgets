@@ -224,8 +224,8 @@ msgid ""
 "Beautifully display social media and contact information on your website "
 "with these simple widgets."
 msgstr ""
-"Mit diesen einfachen Widgets setzen Sie soziale Netzwerke und Kontaktdaten "
-"auf Ihrer Website schön in Szene."
+"Mit diesen einfachen Widgets setzt du soziale Netzwerke und Kontaktdaten auf "
+"deiner Website super in Szene."
 
 #. Author of the plugin/theme
 msgid "GoDaddy"
