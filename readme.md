@@ -11,7 +11,7 @@
 
 Beautifully display social media and contact information on your website with these simple widgets.
 
-[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![devDependencies Status](https://david-dm.org/godaddy/wp-contact-widgets/master/dev-status.svg)](https://david-dm.org/godaddy/wp-contact-widgets/master?type=dev) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-contact-widgets/blob/master/license.txt) [![PHP >= 5.4](https://img.shields.io/badge/php->= 5.4-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 4.4](https://img.shields.io/badge/wordpress->= 4.4-blue.svg)](https://wordpress.org/download/release-archive/)  
+[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![devDependencies Status](https://david-dm.org/godaddy/wp-contact-widgets/master/dev-status.svg)](https://david-dm.org/godaddy/wp-contact-widgets/master?type=dev) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-contact-widgets/blob/master/license.txt) [![PHP >= 5.4](https://img.shields.io/badge/php-%3E=%205.4-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 4.4](https://img.shields.io/badge/wordpress-%3E=%204.4-blue.svg)](https://wordpress.org/download/release-archive/)  
 
 ## Description ##
 
