@@ -155,7 +155,7 @@ msgstr "TripAdvisor"
 
 #: includes/social-networks.php:100
 msgid "WordPress"
-msgstr "WordPress"
+msgstr "워드프레스"
 
 #: includes/social-networks.php:105
 msgid "Yelp"
