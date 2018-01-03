@@ -63,7 +63,7 @@ add_filter( 'wpcw_widget_contact_custom_fields', function ( $fields, $instance )
     'order'       => 2,
     'label'       => __( 'Cellphone:', 'YOURTEXTDOMAIN' ),
     'type'        => 'text',
-    'description' => __( 'A cellphone number that website vistors can call if they have questions.', 'YOURTEXTDOMAIN' ),
+    'description' => __( 'A cellphone number that website visitors can call if they have questions.', 'YOURTEXTDOMAIN' ),
   ];
 
   return $fields;
