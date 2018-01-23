@@ -45,7 +45,7 @@ msgstr "O título do widget. Deixe em branco para não atribuir um título."
 
 #: includes/class-contact.php:179
 msgid "Email:"
-msgstr "E-mail:"
+msgstr "Correio eletrónico:"
 
 #: includes/class-contact.php:186
 msgid "An email address where website vistors can contact you."
