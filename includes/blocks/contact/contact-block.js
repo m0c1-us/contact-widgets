@@ -136,7 +136,7 @@
 							value: displayLabels,
 							checked: !! displayLabels,
 							onChange: function( newDisplayLabels ) {
-								props.setAttributes( { displayLabels: newDisplayLabels } );
+								props.setAttributes( { displayLabels: event.target.checked } );
 							},
 						}
 					),
@@ -148,7 +148,7 @@
 							value: displayMap,
 							checked: !! displayMap,
 							onChange: function( newDisplayMap ) {
-								props.setAttributes( { displayMap: newDisplayMap } );
+								props.setAttributes( { displayMap: event.target.checked } );
 							},
 						}
 					),
@@ -209,7 +209,7 @@
 							el( 'iframe', {
 									src: 'https://www.google.com/maps?q=' + encodeURIComponent( attributes.address ) + '&output=embed&hl=%s&z=14',
 									frameborder: 0,
-									className: 'wpcw-widget-contact-map',
+									className: 'wpcw-widget-contact-map wpcw-contact-block-map',
 								},
 							),
 						),
@@ -266,7 +266,7 @@
 							el( 'iframe', {
 									src: 'https://www.google.com/maps?q=' + encodeURIComponent( attributes.address ) + '&output=embed&hl=%s&z=14',
 									frameborder: 0,
-									className: 'wpcw-widget-contact-map',
+									className: 'wpcw-widget-contact-map wpcw-contact-block-map',
 								},
 							),
 						)

@@ -1,3 +1,6 @@
 .contact-widgets-contact li {
 	list-style: none;
 }
+.wpcw-contact-block-map {
+	width: 100%;
+}
