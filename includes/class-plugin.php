@@ -24,6 +24,20 @@ class Plugin {
 
 		add_action( 'widgets_init', [ get_called_class(), 'register_widgets' ] );
 
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+
+			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+
+		}
+
+		$blog = get_bloginfo();
+
+		if ( is_plugin_active( 'gutenberg/gutenberg.php' ) || version_compare( $blog->version, '5.0', '>=' ) ) {
+
+			new Gutenberg();
+
+		}
+
 	}
 
 	/**
