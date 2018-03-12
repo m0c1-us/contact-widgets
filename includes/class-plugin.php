@@ -32,9 +32,9 @@ class Plugin {
 
 		$blog = get_bloginfo();
 
-		if ( is_plugin_active( 'gutenberg/gutenberg.php' ) || version_compare( $blog->version, '5.0', '>=' ) ) {
+		if ( is_plugin_active( 'gutenberg/gutenberg.php' ) || version_compare( $blog->version, '5.0.0', '>=' ) ) {
 
-			new Gutenberg();
+			new Content_Blocks();
 
 		}
 
