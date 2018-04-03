@@ -12,8 +12,6 @@
  */
 ( function( blocks, components, i18n, element ) {
 
-  console.log( element );
-
   var el                = element.createElement,
       children          = blocks.source.children,
       BlockControls     = wp.blocks.BlockControls,
@@ -207,8 +205,8 @@
               attributes.emailAddress && el( 'li', {
                   className: attributes.displayLabels ? 'has-label' : '',
                 },
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'br', {}, null ),
+                ( attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
+                ( attributes.displayLabels ) && el( 'br', {}, null ),
                 el( 'div', {}, el( 'a', {
                       href: 'mailto:' + attributes.emailAddress,
                     },
@@ -270,8 +268,8 @@
               attributes.emailAddress && el( 'li', {
                   className: attributes.displayLabels ? 'has-label' : '',
                 },
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'br', {}, null ),
+                ( attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
+                ( attributes.displayLabels ) && el( 'br', {}, null ),
                 el( 'div', {}, el( 'a', {
                       href: 'mailto:' + attributes.emailAddress,
                     },

@@ -85,7 +85,6 @@
             }
           )
         ),
-
         /**
          * Block Advanced Settings
          */
@@ -93,29 +92,17 @@
           blocks.InspectorControls,
           { key: 'inspector' },
           el( 'div', { className: 'components-block-description' },
-            el( 'p', {}, i18n.__( 'Setup your contact details.' ) ),
+            el( 'p', {}, i18n.__( 'Select your social profiles.' ) ),
           ),
-          el( 'h2', {}, i18n.__( 'Contact Details' ) ),
+          el( 'h2', {}, i18n.__( 'Social Profiles' ) ),
           el(
             TextControl,
             {
               type: 'text',
               label: i18n.__( 'Social Icons:' ),
               value: socialIcons,
-              onChange: function( newEmailAddress ) {
-                props.setAttributes( { socialIcons: newEmailAddress } );
-              },
-            }
-          ),
-          el(
-            ToggleControl,
-            {
-              type: 'checkbox',
-              label: i18n.__( 'Display labels?' ),
-              value: displayLabels,
-              checked: !! displayLabels,
-              onChange: function( newDisplayLabels ) {
-                props.setAttributes( { displayLabels: event.target.checked } );
+              onChange: function() {
+
               },
             }
           ),
@@ -126,11 +113,11 @@
          */
         el( 'div', { className: props.className },
           el( 'div', {
-            className: 'contact-widgets-content', style: { textAlign: alignment } },
+            className: 'contact-widgets-social', style: { textAlign: alignment } },
             el( blocks.Editable, {
               tagName: 'h3',
               inline: false,
-              placeholder: i18n.__( 'Contact Details Title' ),
+              placeholder: i18n.__( 'Social Profiles Title' ),
               value: attributes.title,
               onChange: function( newTitle ) {
                 props.setAttributes( { title: newTitle } );
@@ -140,12 +127,12 @@
                 props.setFocus( _.extend( {}, focus, { editable: 'title' } ) );
               },
             } ),
-            el( 'div', { className: 'contact-widgets-contact' },
+            el( 'div', { className: 'contact-widgets-social' },
               attributes.socialIcons && el( 'li', {
                   className: attributes.displayLabels ? 'has-label' : '',
                 },
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'br', {}, null ),
+                ( attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
+                ( attributes.displayLabels ) && el( 'br', {}, null ),
                 el( 'div', {}, el( 'a', {
                       href: 'mailto:' + attributes.socialIcons,
                     },
@@ -175,12 +162,12 @@
         el( 'div', { className: props.className },
           el( 'div', { className: 'contact-widgets-content', style: { textAlign: attributes.alignment } },
             el( 'h3', {}, attributes.title ),
-            el( 'div', { className: 'contact-widgets-contact' },
+            el( 'div', { className: 'contact-widgets-social' },
               attributes.emailAddress && el( 'li', {
                   className: attributes.displayLabels ? 'has-label' : '',
                 },
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
-                ( attributes.displayLabels && attributes.displayLabels ) && el( 'br', {}, null ),
+                ( attributes.displayLabels ) && el( 'strong', {}, i18n.__( 'Email' ) ),
+                ( attributes.displayLabels ) && el( 'br', {}, null ),
                 el( 'div', {}, el( 'a', {
                       href: 'mailto:' + attributes.emailAddress,
                     },
