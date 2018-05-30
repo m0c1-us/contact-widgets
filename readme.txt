@@ -81,7 +81,7 @@ Here is an example:
 add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) {
 
   $fields['scribd'] = [
-    'icon'      => 'scribd', //See font-awesome icon slug
+    'icon'      => 'scribd', // See font-awesome icon slug
     'label'     => __( 'Scribd', 'YOURTEXTDOMAIN' ),
     'default'   => 'https://www.scribd.com/username',
     'select'    => 'username',
