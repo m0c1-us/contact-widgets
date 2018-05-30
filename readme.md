@@ -104,7 +104,7 @@ add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) 
 
 ### 1.5.0 - May 31, 2018 ###
 
-* New: Add unsplash support.
+* New: Add support for "Unsplash" (https://unsplash.com/)
 * Tweak: Update FontAwesome to 5.0.6
 * Tweak: Fix typo in widget descriptions.
 
