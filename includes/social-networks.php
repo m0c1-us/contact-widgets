@@ -35,7 +35,7 @@ $fields = [
 		'default' => "https://www.linkedin.com/in/{$username}",
 		'select'  => $username,
 	],
-	'rss' => [
+	'rss'         => [
 		'prefix'  => 'fas',
 		'label'   => __( 'RSS feed', 'contact-widgets' ),
 		'default' => get_feed_link(),
@@ -61,7 +61,7 @@ $fields = [
 		'default' => "https://www.flickr.com/photos/{$username}",
 		'select'  => $username,
 	],
-	'500px'    => [
+	'500px'       => [
 		'label'   => __( '500px', 'contact-widgets' ),
 		'default' => "https://www.500px.com/{$username}",
 		'select'  => $username,
@@ -168,7 +168,7 @@ $fields = [
 		'default' => "https://trello.com/b/{$board}",
 		'select'  => $board,
 	],
-	'unsplash'     => [
+	'unsplash'    => [
 		'prefix'  => 'fas',
 		'icon'    => 'camera',
 		'label'   => __( 'Unsplash', 'contact-widgets' ),

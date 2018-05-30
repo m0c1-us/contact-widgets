@@ -82,7 +82,7 @@ final class Social extends Base_Widget {
 				esc_attr( $field['name'] ),
 				esc_attr( $field['id'] ),
 				esc_attr( $field['label'] ),
-				isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ),
+				isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ), //@codingStandardsIgnoreLine
 				esc_attr( $field['icon'] )
 			);
 
@@ -118,7 +118,7 @@ final class Social extends Base_Widget {
 		echo '<div class="default-fields">';
 
 		// Template form for JS use
-		$this->render_form_input( $this->field_defaults + [ 'social' => true ] );
+		$this->render_form_input( $this->field_defaults + [ 'social' => true ] ); // @codingStandardsIgnoreLine
 
 		echo '</div>'; // End default-fields
 
@@ -161,7 +161,12 @@ final class Social extends Base_Widget {
 				( $display_labels ) ? 'has-label' : 'no-label',
 				$escape_callback( $field['value'] ),
 				esc_attr( $field['target'] ),
-				sprintf( esc_attr_x( 'Visit %1$s on %2$s', '1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook)', 'contact-widgets' ), get_bloginfo( 'name' ), $field['label'] ),
+				sprintf(
+					/* translators: 1. Title of website (e.g. My Cat Blog), 2. Name of social network (e.g. Facebook) */
+					esc_attr__( 'Visit %1$s on %2$s', 'contact-widgets' ),
+					get_bloginfo( 'name' ),
+					$field['label']
+				),
 				isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ),
 				isset( $fields['icon_size']['value'] ) ? esc_attr( $fields['icon_size']['value'] ) : '2x',
 				esc_attr( $field['icon'] ),
@@ -178,12 +183,14 @@ final class Social extends Base_Widget {
 	 * Enqueue scripts and styles for front-end use
 	 *
 	 * @action wp_enqueue_scripts
+	 * @codingStandardsIgnoreStart
 	 */
 	public function front_end_enqueue_scripts() {
 
 		parent::front_end_enqueue_scripts();
 
 	}
+	// @codingStandardsIgnoreEnd
 
 	/**
 	 * Initialize fields for use on front-end of forms
