@@ -38,6 +38,13 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 		public static $assets_url;
 
 		/**
+		 * Font Awesome CSS locations
+		 *
+		 * @var string
+		 */
+		public static $fa_url;
+
+		/**
 		 * Class constructor
 		 *
 		 * @param string $cur_php_version
@@ -45,6 +52,8 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 		public function __construct( $cur_php_version = PHP_VERSION ) {
 
 			static::$assets_url = plugin_dir_url( __FILE__ ) . 'assets/';
+
+			static::$fa_url = $this->font_awesome_url();
 
 			$composer_autoloader = __DIR__ . '/vendor/autoload.php';
 
@@ -70,6 +79,44 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 		}
 
 		/**
+		 * Setup the Front Awesome assets URL
+		 *
+		 * @return string Returns URL where Font Awesome should load from.
+		 *
+		 * @since NEXT
+		 */
+		public function font_awesome_url() {
+
+			/**
+			 * Should Font Awesome be loaded from the CDN.
+			 *
+			 * @var boolean
+			 */
+			$use_cdn = (boolean) apply_filters( 'wpcw_widget_social_icons_use_cdn', false );
+
+			/**
+			 * Font Awesome CDN URL.
+			 *
+			 * @var string
+			 */
+			$fontawesome_cdn_url = (string) esc_url( apply_filters( 'wpcw_widget_social_icons_cdn_url', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' ) );
+
+			$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+			return $use_cdn ? $fontawesome_cdn_url : static::$assets_url . "js/fontawesome-all{$suffix}.js";
+
+		}
+
+		/**
+		 * Enqueue Font Awesome
+		 */
+		public function enqueue_font_awesome() {
+
+			wp_enqueue_script( 'font-awesome', self::$fa_url, [], '5.0.6', true );
+
+		}
+
+		/**
 		 * Load languages
 		 *
 		 * @action plugins_loaded
@@ -90,6 +137,7 @@ if ( ! class_exists( 'Contact_Widgets' ) ) {
 			printf(
 				'<div class="error"><p>%s</p></div>',
 				sprintf(
+					/* translators: Plugin PHP minimum version. */
 					esc_html__( 'Contact widgets requires PHP version %s or higher. Please deactivate the plugin and contact your system administrator.', 'contact-widgets' ),
 					esc_html( $this->php_min_version )
 				)
