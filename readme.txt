@@ -2,7 +2,7 @@
 Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              widget, contact, social, social icons, social media, facebook, twitter, instagram, linkedin, pinterest
 Requires at least: 4.4
-Tested up to:      4.7
+Tested up to:      4.9
 Stable tag:        1.4.1
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,7 @@ add_filter( 'wpcw_widget_contact_custom_fields', function ( $fields, $instance )
     'order'       => 2,
     'label'       => __( 'Cellphone:', 'YOURTEXTDOMAIN' ),
     'type'        => 'text',
-    'description' => __( 'A cellphone number that website vistors can call if they have questions.', 'YOURTEXTDOMAIN' ),
+    'description' => __( 'A cellphone number that website visitors can call if they have questions.', 'YOURTEXTDOMAIN' ),
   ];
 
   return $fields;
@@ -81,7 +81,7 @@ Here is an example:
 add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) {
 
   $fields['scribd'] = [
-    'icon'      => 'scribd', //See font-awesome icon slug
+    'icon'      => 'scribd', // See font-awesome icon slug
     'label'     => __( 'Scribd', 'YOURTEXTDOMAIN' ),
     'default'   => 'https://www.scribd.com/username',
     'select'    => 'username',
@@ -97,6 +97,14 @@ add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) 
 </pre>
 
 == Changelog ==
+
+= 1.5.0 - May 31, 2018 =
+
+* New: Add support for "Unsplash" (https://unsplash.com/)
+* Tweak: Update FontAwesome to 5.0.6
+* Tweak: Fix typo in widget descriptions.
+
+Props [@EvanHerman](https://github.com/evanherman), [@fjarrett](https://github.com/fjarrett), [@salvoventura](https://github.com/salvoventura), [@garrett-eclipse](https://github.com/garrett-eclipse)
 
 = 1.4.1 - February 13, 2017 =
 

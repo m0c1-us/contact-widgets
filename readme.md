@@ -4,14 +4,14 @@
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [fjarrett](https://profiles.wordpress.org/fjarrett), [eherman24](https://profiles.wordpress.org/eherman24)  
 **Tags:**              [widget](https://wordpress.org/plugins/tags/widget/), [contact](https://wordpress.org/plugins/tags/contact/), [social](https://wordpress.org/plugins/tags/social/), [social icons](https://wordpress.org/plugins/tags/social icons/), [social media](https://wordpress.org/plugins/tags/social media/), [facebook](https://wordpress.org/plugins/tags/facebook/), [twitter](https://wordpress.org/plugins/tags/twitter/), [instagram](https://wordpress.org/plugins/tags/instagram/), [linkedin](https://wordpress.org/plugins/tags/linkedin/), [pinterest](https://wordpress.org/plugins/tags/pinterest/)  
 **Requires at least:** 4.4  
-**Tested up to:**      4.7  
+**Tested up to:**      4.9  
 **Stable tag:**        1.4.1  
 **License:**           GPL-2.0  
 **License URI:**       https://www.gnu.org/licenses/gpl-2.0.html  
 
 Beautifully display social media and contact information on your website with these simple widgets.
 
-[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![devDependencies Status](https://david-dm.org/godaddy/wp-contact-widgets/master/dev-status.svg)](https://david-dm.org/godaddy/wp-contact-widgets/master?type=dev) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-contact-widgets/blob/master/license.txt) [![PHP >= 5.4](https://img.shields.io/badge/php->= 5.4-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 4.4](https://img.shields.io/badge/wordpress->= 4.4-blue.svg)](https://wordpress.org/download/release-archive/)  
+[![Build Status](https://travis-ci.org/godaddy/wp-contact-widgets.svg?branch=master)](https://travis-ci.org/godaddy/wp-contact-widgets) [![devDependencies Status](https://david-dm.org/godaddy/wp-contact-widgets/master/dev-status.svg)](https://david-dm.org/godaddy/wp-contact-widgets/master?type=dev) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-contact-widgets/blob/master/license.txt) [![PHP >= 5.4](https://img.shields.io/badge/php-%3E=%205.4-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 4.4](https://img.shields.io/badge/wordpress-%3E=%204.4-blue.svg)](https://wordpress.org/download/release-archive/)  
 
 ## Description ##
 
@@ -67,7 +67,7 @@ add_filter( 'wpcw_widget_contact_custom_fields', function ( $fields, $instance )
     'order'       => 2,
     'label'       => __( 'Cellphone:', 'YOURTEXTDOMAIN' ),
     'type'        => 'text',
-    'description' => __( 'A cellphone number that website vistors can call if they have questions.', 'YOURTEXTDOMAIN' ),
+    'description' => __( 'A cellphone number that website visitors can call if they have questions.', 'YOURTEXTDOMAIN' ),
   ];
 
   return $fields;
@@ -85,7 +85,7 @@ Here is an example:
 add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) {
 
   $fields['scribd'] = [
-    'icon'      => 'scribd', //See font-awesome icon slug
+    'icon'      => 'scribd', // See font-awesome icon slug
     'label'     => __( 'Scribd', 'YOURTEXTDOMAIN' ),
     'default'   => 'https://www.scribd.com/username',
     'select'    => 'username',
@@ -101,6 +101,14 @@ add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) 
 </pre>
 
 ## Changelog ##
+
+### 1.5.0 - May 31, 2018 ###
+
+* New: Add support for "Unsplash" (https://unsplash.com/)
+* Tweak: Update FontAwesome to 5.0.6
+* Tweak: Fix typo in widget descriptions.
+
+Props [@EvanHerman](https://github.com/evanherman), [@fjarrett](https://github.com/fjarrett), [@salvoventura](https://github.com/salvoventura), [@garrett-eclipse](https://github.com/garrett-eclipse)
 
 ### 1.4.1 - February 13, 2017 ###
 
