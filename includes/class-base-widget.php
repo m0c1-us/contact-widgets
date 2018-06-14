@@ -536,7 +536,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		include 'social-networks.php';
 
-		wp_localize_script( 'wpcw-admin', 'fieldsArray', $fields );
+		wp_localize_script( 'wpcw-admin', 'fieldsArray', apply_filters( 'wpcw_widget_social_custom_fields', $fields, [] ) );
 
 		if ( $GLOBALS['is_IE'] ) {
 
@@ -570,7 +570,9 @@ abstract class Base_Widget extends \WP_Widget {
 
 		wp_enqueue_style( 'wpcw', \Contact_Widgets::$assets_url . "css/style{$rtl}{$suffix}.css", [], Plugin::$version );
 
-		wp_enqueue_script( 'font-awesome', \Contact_Widgets::$fa_url, [], '5.0.6', true );
+		wp_enqueue_script( 'font-awesome-config', \Contact_Widgets::$assets_url . "js/fontawesome-config{$suffix}.js", [], Plugin::$version, true );
+
+		wp_enqueue_script( 'font-awesome', \Contact_Widgets::$fa_url, [ 'font-awesome-config' ], '5.0.6', true );
 
 		if ( is_customize_preview() ) {
 

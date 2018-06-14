@@ -100,7 +100,37 @@ add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) 
 }, 10, 2 );
 </pre>
 
+Since Font Awesome v5, some icons require a 'prefix' value when defining a custom icon. If excluded, the default prefix added to icons is 'fab', for the Font Awesome brand icons. If you are adding an icon that is not a brand icon, you will need to add a prefix. For example, if you wanted to add a [graduation cap icon](https://fontawesome.com/icons/graduation-cap?style=solid) you would need to add `'prefix' => 'fas'` to the attributes array.
+
+Here is an example of adding a 'fas' (Solid) icon to the social profiles.
+
+<pre lang="php">
+add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) {
+
+  $fields['lattes'] = [
+    'icon'      => 'graduation-cap', // See font-awesome icon slug
+    'prefix'    => 'fas', // See font-awesome icon prefix
+    'label'     => __( 'Service Name', 'YOURTEXTDOMAIN' ),
+    'default'   => 'https://example.com/username',
+    'select'    => 'username',
+    'sanitizer' => 'esc_url_raw',
+    'escaper'   => 'esc_url',
+    'social'    => true,
+    'target'    => '_blank',
+  ];
+
+  return $fields;
+
+}, 10, 2 );
+</pre>
+
 ## Changelog ##
+
+### 1.5.1 - June 14, 2018 ###
+* Tweak: Added a Font Awesome 5 config file with `showMissingIcons` set to `false`, to prevent conflicts with plugins and themes using Font Awesome v4.
+* Tweak: Filter the social profile fields array before localizing into `admin.js`, fixing custom social profile icons.
+
+Props [@EvanHerman](https://github.com/evanherman)
 
 ### 1.5.0 - May 31, 2018 ###
 
