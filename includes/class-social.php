@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class Social extends Base_Widget {
 
+	private $icon_prefix;
+
 	/**
 	 * Widget constructor
 	 */
@@ -26,6 +28,8 @@ final class Social extends Base_Widget {
 			__( 'Social Profiles', 'contact-widgets' ),
 			$widget_options
 		);
+
+		$this->icon_prefix = \Contact_Widgets::$fontawesome_5 ? 'fab' : 'fa';
 
 	}
 
@@ -82,7 +86,7 @@ final class Social extends Base_Widget {
 				esc_attr( $field['name'] ),
 				esc_attr( $field['id'] ),
 				esc_attr( $field['label'] ),
-				isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ), //@codingStandardsIgnoreLine
+				esc_attr( $this->get_icon_prefix( $field ) ),
 				esc_attr( $field['icon'] )
 			);
 
@@ -167,7 +171,7 @@ final class Social extends Base_Widget {
 					get_bloginfo( 'name' ),
 					$field['label']
 				),
-				isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ),
+				esc_attr( $this->get_icon_prefix( $field ) ),
 				isset( $fields['icon_size']['value'] ) ? esc_attr( $fields['icon_size']['value'] ) : '2x',
 				esc_attr( $field['icon'] ),
 				( $display_labels ) ? esc_html( $field['label'] ) : ''
@@ -273,10 +277,21 @@ final class Social extends Base_Widget {
 		printf(
 			'<label for="%s"><span class="%s fa-%s"></span> <span class="text">%s</span></label>',
 			esc_attr( $field['id'] ),
-			isset( $field['prefix'] ) ? esc_attr( $field['prefix'] ) : esc_attr( 'fab' ),
+			esc_attr( $this->get_icon_prefix( $field ) ),
 			esc_attr( $field['icon'] ),
 			esc_html( $field['label'] )
 		);
+
+	}
+
+	/**
+	 * Determine the icon prefix.
+	 *
+	 * @param array $field
+	 */
+	private function get_icon_prefix( array $field ) {
+
+		return ( \Contact_Widgets::$fontawesome_5 && isset( $field['prefix'] ) ) ? $field['prefix'] : $this->icon_prefix;
 
 	}
 
