@@ -128,19 +128,19 @@ add_filter( 'wpcw_widget_social_custom_fields', function ( $fields, $instance ) 
 
 Out of the box the Font Awesome files are bundled in Contact Widgets and served locally. However, we have included a filter to allow Font Awesome files to be loaded from MaxCDN.
 
-To force the plugin to load the files from MaxCDN you can return a `true` value in the filter `wpcw_widget_social_icons_use_cdn`.
+To force the plugin to load the files from MaxCDN you can return a `true` value in the filter `wpcw_social_icons_use_cdn`.
 
 <pre>
-add_filter( 'wpcw_widget_social_icons_use_cdn', '__return_true' );
+add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 </pre>
 
 ## Changelog ##
 
 ### 1.5.2 - June 18, 2018 ###
-* New: Introduce filter `wpcw_widget_use_fontawesome_5` (default: `false`) to use Font Awesome 5 in Contact Widgets.
-* New: Introduce filter `wpcw_widget_social_icons_use_cdn` (default: `false`) to load Font Awesome v4.7.0 files from MaxCDN.
-* New: Introduce filter `wpcw_widget_social_icons_cdn_url` to alter the default Font Awesome CDN URL.
-* Tweak: Revert back to Font Awesome 4.7.0 with the option to force load Font Awesome v5.0.13.
+* New: Introduce filter `wpcw_social_icons_fontawesome_5` (default: `false`) to use Font Awesome 5 in Contact Widgets.
+* New: Introduce filter `wpcw_social_icons_use_cdn` (default: `false`) to load Font Awesome v4.7.0 files from MaxCDN.
+* New: Introduce filter `wpcw_social_icons_cdn_url` to alter the default Font Awesome CDN URL.
+* Tweak: Revert back to Font Awesome 4.7.0 with the option to force load Font Awesome v5.0.13 via filter *(see above)*.
 
 Props [@EvanHerman](https://github.com/evanherman)
 
