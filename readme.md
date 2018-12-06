@@ -136,6 +136,12 @@ add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 
 ## Changelog ##
 
+### 1.6.0 - December 6th, 2018 ###
+* New: Introduce Contact Details block.
+* New: Introduce Social Profiles block.
+
+Props [@EvanHerman](https://github.com/evanherman)
+
 ### 1.5.2 - June 18, 2018 ###
 * New: Introduce filter `wpcw_social_icons_fontawesome_5` (default: `false`) to use Font Awesome 5 in Contact Widgets.
 * New: Introduce filter `wpcw_social_icons_use_cdn` (default: `false`) to load Font Awesome v4.7.0 files from MaxCDN.
