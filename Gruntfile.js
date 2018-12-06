@@ -67,7 +67,15 @@ module.exports = function( grunt ) {
 						ext: '.min.css'
 					}
 				]
-			}
+			},
+			content_blocks_admin: {
+				files: [
+					{
+						'includes/blocks/contact/css/contact-block.min.css': [ 'includes/blocks/contact/css/contact-block.css' ],
+						'includes/blocks/social/css/social-block.min.css': [ 'includes/blocks/social/css/social-block.css' ],
+					}
+				]
+			},
 		},
 
 		devUpdate: {
@@ -105,7 +113,7 @@ module.exports = function( grunt ) {
 		},
 
 		jshint: {
-			assets: [ 'assets/js/**/*.js', '!assets/js/**/*.min.js' ],
+			assets: [ 'assets/js/**/*.js', '!assets/js/contact-widget-blocks.js', '!assets/js/**/*.min.js' ],
 			gruntfile: [ 'Gruntfile.js' ]
 		},
 
@@ -187,10 +195,23 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		shell: {
+			blocks_dev: [
+				'cross-env BABEL_ENV=default webpack'
+			].join( ' && ' ),
+			blocks_prod: [
+				'cross-env BABEL_ENV=default NODE_ENV=production webpack'
+			].join( ' && ' )
+		},
+
 		watch: {
 			css: {
 				files: [ 'assets/css/**/*.css', '!assets/css/**/*.min.css' ],
 				tasks: [ 'cssjanus', 'cssmin' ]
+			},
+			content_block_css: {
+				files: [ 'includes/blocks/**/*.css', '!includes/blocks/**/*.min.css' ],
+				tasks: [ 'cssmin' ]
 			},
 			images: {
 				files: [
@@ -202,6 +223,10 @@ module.exports = function( grunt ) {
 			js: {
 				files: [ 'assets/js/**/*.js', '!assets/js/**/*.min.js' ],
 				tasks: [ 'jshint', 'uglify' ]
+			},
+			blocks: {
+				files: [ 'includes/blocks/**/*.js', '!includes/blocks/blocks.js', '!includes/blocks/editor.blocks.js', '!includes/blocks/**/*.min.js' ],
+				tasks: [ 'shell:blocks_dev' ]
 			},
 			readme: {
 				files: 'readme.txt',
@@ -262,7 +287,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( 'default',    [ 'cssjanus', 'cssmin', 'jshint', 'uglify', 'imagemin', 'readme' ] );
 	grunt.registerTask( 'check',      [ 'devUpdate' ] );
-	grunt.registerTask( 'build',      [ 'default', 'clean:build', 'copy:build' ] );
+	grunt.registerTask( 'build',      [ 'default', 'shell:blocks_prod', 'clean:build', 'copy:build' ] );
 	grunt.registerTask( 'deploy',     [ 'build', 'wp_deploy', 'clean:build' ] );
 	grunt.registerTask( 'readme',     [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
