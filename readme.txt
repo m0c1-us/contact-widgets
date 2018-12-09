@@ -3,7 +3,7 @@ Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              widget, contact, social, social icons, social media, facebook, twitter, instagram, linkedin, pinterest
 Requires at least: 4.4
 Tested up to:      4.9
-Stable tag:        1.6.0
+Stable tag:        1.6.1
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ Development of this plugin is done [on GitHub](https://github.com/godaddy/wp-con
 1. Contact widget
 2. Social widget
 3. Twenty Sixteen theme showing both widgets
+4. Social widget block settings and icons
+5. Contact widget block settings
+6. Contact widget block rendered
 
 == Frequently Asked Questions ==
 
@@ -131,6 +134,11 @@ add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 </pre>
 
 == Changelog ==
+
+= 1.6.1 - December 9th, 2018 =
+* Tweak: URI Encode the contact map address.
+
+Props [@EvanHerman](https://github.com/evanherman)
 
 = 1.6.0 - December 6th, 2018 =
 * New: Introduce Contact Details block.
