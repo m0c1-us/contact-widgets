@@ -298,9 +298,9 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		printf( // xss ok.
+		printf(
 			'<p class="%s">',
-			implode( ' ', $classes )
+			implode( ' ', $classes ) // @codingStandardsIgnoreLine
 		);
 
 		if ( ! $field['label_after'] ) {
@@ -365,11 +365,11 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $field['select_options'] as $value => $name ) {
 
-			printf( // xss ok.
+			printf(
 				'<option value="%s" %s>%s</option>',
-				$value,
+				esc_attr( $value ),
 				$field['value'] === $value ? 'selected' : '',
-				$name
+				esc_html( $name )
 			);
 
 		}
@@ -435,7 +435,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$title = array_shift( $fields );
 
-		echo $args['before_widget']; // xss ok.
+		echo $args['before_widget']; // @codingStandardsIgnoreLine
 
 		if ( ! empty( $title['value'] ) ) {
 
@@ -448,7 +448,7 @@ abstract class Base_Widget extends \WP_Widget {
 			 */
 			$title = (string) apply_filters( 'widget_title', $title['value'] );
 
-			echo $args['before_title'] . $title . $args['after_title']; // xss ok.
+			echo $args['before_title'] . $title . $args['after_title']; // @codingStandardsIgnoreLine
 
 		}
 
@@ -496,7 +496,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		echo $args['after_widget']; // xss ok.
+		echo $args['after_widget']; // @codingStandardsIgnoreLine
 
 	}
 
@@ -515,7 +515,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		if ( $echo ) {
 
-			echo $result; // xss ok.
+			echo $result; // @codingStandardsIgnoreLine
 
 		}
 

@@ -139,6 +139,9 @@ add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 
 ## Changelog ##
 
+### 1.6.2 - February 20th, 2018 ###
+* Tweak: Adjust the contact block dependencies.
+
 ### 1.6.1 - December 9th, 2018 ###
 * Tweak: URI Encode the contact map address.
 
