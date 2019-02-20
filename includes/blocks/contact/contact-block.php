@@ -26,9 +26,10 @@ class Contact_Block {
 	 */
 	public function contact_block_scripts() {
 
-		$suffix = SCRIPT_DEBUG ? '' : '.min';
+		$depenendency = is_admin() ? 'wp-edit-blocks' : '';
+		$suffix       = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'contact-widgets-contact-block', plugins_url( "css/contact-block{$suffix}.css", __FILE__ ), array( 'wp-edit-blocks' ), Plugin::$version );
+		wp_enqueue_style( 'contact-widgets-contact-block', plugins_url( "css/contact-block{$suffix}.css", __FILE__ ), array( $depenendency ), Plugin::$version );
 
 	}
 }
