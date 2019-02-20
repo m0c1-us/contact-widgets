@@ -298,7 +298,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		printf( // xss ok.
+		printf( // phpcs:ignore.
 			'<p class="%s">',
 			implode( ' ', $classes )
 		);
@@ -365,7 +365,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		foreach ( $field['select_options'] as $value => $name ) {
 
-			printf( // xss ok.
+			printf( // phpcs:ignore.
 				'<option value="%s" %s>%s</option>',
 				$value,
 				$field['value'] === $value ? 'selected' : '',
@@ -435,7 +435,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		$title = array_shift( $fields );
 
-		echo $args['before_widget']; // xss ok.
+		echo $args['before_widget']; // phpcs:ignore.
 
 		if ( ! empty( $title['value'] ) ) {
 
@@ -448,7 +448,7 @@ abstract class Base_Widget extends \WP_Widget {
 			 */
 			$title = (string) apply_filters( 'widget_title', $title['value'] );
 
-			echo $args['before_title'] . $title . $args['after_title']; // xss ok.
+			echo $args['before_title'] . $title . $args['after_title']; // phpcs:ignore.
 
 		}
 
@@ -496,7 +496,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		}
 
-		echo $args['after_widget']; // xss ok.
+		echo $args['after_widget']; // phpcs:ignore.
 
 	}
 
@@ -515,7 +515,7 @@ abstract class Base_Widget extends \WP_Widget {
 
 		if ( $echo ) {
 
-			echo $result; // xss ok.
+			echo $result; // phpcs:ignore.
 
 		}
 

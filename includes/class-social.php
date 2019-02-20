@@ -160,7 +160,7 @@ final class Social extends Base_Widget {
 
 			$escape_callback = $field['escaper'];
 
-			printf( // xss ok.
+			printf( // phpcs:ignore.
 				'<li class="%s"><a href="%s" target="%s" title="%s"><span class="%s fa-%s fa-%s"></span>%s</a></li>',
 				( $display_labels ) ? 'has-label' : 'no-label',
 				$escape_callback( $field['value'] ),
