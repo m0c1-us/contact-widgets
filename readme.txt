@@ -2,7 +2,7 @@
 Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              widget, contact, social, social icons, social media, facebook, twitter, instagram, linkedin, pinterest
 Requires at least: 4.4
-Tested up to:      5.2
+Tested up to:      5.3
 Stable tag:        1.6.2
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -134,6 +134,9 @@ add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 </pre>
 
 == Changelog ==
+
+= 1.7.0 - February 20th, 2018 =
+* Fix: WordPress 5.3 compatibility fixes. (Removed `$` in favor of `jQuery`)
 
 = 1.6.2 - February 20th, 2018 =
 * Tweak: Adjust the contact block dependencies.
