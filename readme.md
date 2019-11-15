@@ -5,7 +5,7 @@
 **Tags:**              [widget](https://wordpress.org/plugins/tags/widget/), [contact](https://wordpress.org/plugins/tags/contact/), [social](https://wordpress.org/plugins/tags/social/), [social icons](https://wordpress.org/plugins/tags/social icons/), [social media](https://wordpress.org/plugins/tags/social media/), [facebook](https://wordpress.org/plugins/tags/facebook/), [twitter](https://wordpress.org/plugins/tags/twitter/), [instagram](https://wordpress.org/plugins/tags/instagram/), [linkedin](https://wordpress.org/plugins/tags/linkedin/), [pinterest](https://wordpress.org/plugins/tags/pinterest/)  
 **Requires at least:** 4.4  
 **Tested up to:**      5.3  
-**Stable tag:**        1.6.2  
+**Stable tag:**        1.7.0  
 **License:**           GPL-2.0  
 **License URI:**       https://www.gnu.org/licenses/gpl-2.0.html  
 

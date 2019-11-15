@@ -3,7 +3,7 @@ Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              widget, contact, social, social icons, social media, facebook, twitter, instagram, linkedin, pinterest
 Requires at least: 4.4
 Tested up to:      5.3
-Stable tag:        1.6.2
+Stable tag:        1.7.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
