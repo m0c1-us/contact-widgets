@@ -136,7 +136,8 @@ add_filter( 'wpcw_social_icons_use_cdn', '__return_true' );
 == Changelog ==
 
 = 1.7.0 - February 20th, 2018 =
-* Fix: WordPress 5.3 compatibility fixes. (Removed `$` in favor of `jQuery`)
+* Fix: WordPress 5.3 compatibility fixes. (Replaced `$` in favor of `jQuery`)
+* Tweak: Removed all references of PHP array shorthand syntax. (Replaced `[]` in favor of `array()`)
 
 = 1.6.2 - February 20th, 2018 =
 * Tweak: Adjust the contact block dependencies.
