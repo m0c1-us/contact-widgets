@@ -1,9 +1,20 @@
 <?php
+/**
+ * TestPluginLoader class.
+ *
+ * @package ContactWidgets
+ */
 
 namespace WPCW;
 
+/**
+ * Contact Widgets TestPluginLoader class.
+ */
 final class TestPluginLoader extends TestCase {
 
+	/**
+	 * TestPluginLoader class setUp function.
+	 */
 	public function setUp() {
 
 		parent::setUp();
@@ -13,28 +24,31 @@ final class TestPluginLoader extends TestCase {
 	}
 
 	/**
-	 * Test that all required actions and filters are added as expected
+	 * Test that all required actions and filters are added as expected.
 	 */
-	function test_construct() {
+	public function test_construct() {
 
-		$this->do_action_validation( 'plugins_loaded', [ $this->plugin, 'i18n' ] );
+		$this->do_action_validation( 'plugins_loaded', array( $this->plugin, 'i18n' ) );
 
-		$this->do_action_validation( 'plugins_loaded', [ __NAMESPACE__ . '\Plugin', 'init' ] );
-
-	}
-
-	function test_construct_invalid_php_version() {
-
-		$this->plugin = new \Contact_Widgets( '5.3' );
-
-		$this->do_action_validation( 'shutdown', [ $this->plugin, 'notice' ] );
+		$this->do_action_validation( 'plugins_loaded', array( __NAMESPACE__ . '\Plugin', 'init' ) );
 
 	}
 
 	/**
-	 * Test subset of output of php notice
+	 * Test plugin shutdown if invalid php version running.
 	 */
-	function test_notice_output_wrong_php_version() {
+	public function test_construct_invalid_php_version() {
+
+		$this->plugin = new \Contact_Widgets( '5.3' );
+
+		$this->do_action_validation( 'shutdown', array( $this->plugin, 'notice' ) );
+
+	}
+
+	/**
+	 * Test subset of output of php notice.
+	 */
+	public function test_notice_output_wrong_php_version() {
 
 		$this->expectOutputRegex( '/class="error"/' );
 

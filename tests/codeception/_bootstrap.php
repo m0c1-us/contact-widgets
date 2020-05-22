@@ -1,14 +1,19 @@
 <?php
+/**
+ * Bootstrap for codeception.
+ *
+ * @package ContactWidgets
+ */
 
-define( 'WP_USE_THEMES', false );
+define( 'WP_USE_THEMES', false ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound -- Used only in testing.
 
 if ( getenv( 'TRAVIS' ) ) {
 
-	require( '/tmp/wordpress/wp-load.php' );
+	require '/tmp/wordpress/wp-load.php';
 
 } else {
 
-	require( '../../../wp-load.php' );
+	require '../../../wp-load.php';
 
 }
 
